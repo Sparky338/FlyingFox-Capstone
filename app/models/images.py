@@ -1,5 +1,5 @@
 from .db import db
-from flask_login import UserMixin
+# from flask_login import UserMixin
 
 class Image(db.Model):
     __tablename__ = 'images'
