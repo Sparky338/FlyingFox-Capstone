@@ -6,4 +6,5 @@ item_routes = Blueprint('items', __name__)
 @item_routes.route("")
 def get_items():
     """Get all items"""
-    return {'items': }
+    # return {'items': }
+    pass
