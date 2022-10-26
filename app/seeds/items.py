@@ -2,23 +2,72 @@ from app.models import db, Item
 
 # adds the items in the store
 def seed_items():
-    beginner_suit = Item (
-        item_name='beginner_suit',
+    Dash = Item (
+        item_name='Dash',
         price="1000.00",
-        description="A wingsuit perfect for beginners",
+        description="A wingsuit perfect for novices. Perfect for learning the basics. Minimum 200 overall skydive jumps.",
         category="Wingsuit"
     )
 
-    tracking_suit = Item (
-        item_name='tracking_suit',
+    River = Item (
+        item_name='River',
+        price="1100.00",
+        description="A wingsuit perfect for beginners. Good all around performance, flocking ability, and acrobatics. Minimum 200 overall skydive jumps.",
+        category="Wingsuit"
+    )
+
+    BTC = Item (
+        item_name='BTC',
+        price="1200.00",
+        description="A wingsuit perfect for intermediate pilots. Great all around performance, flocking ability, and acrobatics. Minimum 75 jumps in a beginner wingsuit.",
+        category="Wingsuit"
+    )
+
+    Prince = Item (
+        item_name='Prince',
+        price="1200.00",
+        description="A wingsuit perfect for intermediate pilots. Ideal for acrobatics and backflying. Minimum 75 jumps in a beginner wingsuit.",
+        category="Wingsuit"
+    )
+
+    Sideshow = Item (
+        item_name='Sideshow',
+        price="1300.00",
+        description="A wingsuit perfect for advanced pilots. Amazing flocking ability, performance, and acrobatics. Minimum 200 jumps in an intermediate wingsuit.",
+        category="Wingsuit"
+    )
+
+    Beast = Item (
+        item_name='Beast',
+        price="1500.00",
+        description="A wingsuit perfect for expert pilots. Excels in all disciplines. Minumum 200 jumps in an advanced wingsuit.",
+        category="Wingsuit"
+    )
+
+    Racer = Item (
+        item_name='Racer',
+        price="1500.00",
+        description="A wingsuit perfect for expert pilots interested in competition. Excels in speed and responsive inputs. Ideal for professional competition. Minumum 200 jumps in an advanced wingsuit.",
+        category="Wingsuit"
+    )
+
+    Daiko = Item (
+        item_name='Daiko',
         price="800.00",
-        description="A track suit perfect for beginners",
+        description="A two piece track suit perfect for beginners and BASE jumping.",
         category="Tracking suit"
     )
 
-    onepiece_tracking_suit = Item (
-        item_name='onepiece_tracking_suit',
-        price="100.00",
-        description="A track suit perfect for getting ready to wingsuit",
+    Mutant = Item (
+        item_name='Mutant',
+        price="1100.00",
+        description="A one piece tracking suit perfect for getting ready to wingsuit.",
+        category="Tracking suit"
+    )
+
+    SFG = Item (
+        item_name='SFG',
+        price="1200.00",
+        description="A one piece track suit perfect for flying fast and long distances. Comparable performance to a beginner wingsuit. Experience with one piece tracking suit highly recommended.",
         category="Tracking suit"
     )
