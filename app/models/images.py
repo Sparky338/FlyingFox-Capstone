@@ -10,13 +10,13 @@ class Image(db.Model):
     image_url = db.Column(db.String(255), nullable=False)
 
     #relationships
-    item = db.relationship("Item" , back_populates="images")
-    review = db.relationship("Review" , back_populates="images")
+    items = db.relationship("Item" , back_populates="images")
+    reviews = db.relationship("Review" , back_populates="images")
 
     def to_dict(self):
         return {
             'id': self.id,
             'item_id': self.item_id,
-            'image_url': self.image_url,
-            'review_id': self.review_id
+            'review_id': self.review_id,
+            'image_url': self.image_url
         }
