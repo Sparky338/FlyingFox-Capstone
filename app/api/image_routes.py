@@ -35,3 +35,7 @@ def upload_image():
     db.session.add(new_image)
     db.session.commit()
     return {"url": url}
+
+
+# url_for to redirect to this route from review, send review id and image url OR lines 13-36 in
+# the review post route. After review commited, can access the id by review.id
