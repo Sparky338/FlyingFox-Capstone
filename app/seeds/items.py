@@ -71,3 +71,17 @@ def seed_items():
         description="A one piece track suit perfect for flying fast and long distances. Comparable performance to a beginner wingsuit. Experience with one piece tracking suit highly recommended.",
         category="Tracking suit"
     )
+
+    Haymaker = Item (
+        item_name='Haymaker',
+        price="2200.00",
+        description="A parachute speciafically made for BASE jumping. Opens quickly and on heading, with easy controlability.",
+        category="Parachute"
+    )
+
+    Epicenter = Item (
+        item_name='Epicenter',
+        price="2200.00",
+        description="A parachute speciafically made for wingsuits. Opens rapidly, softly, and on heading, with easy controlability.",
+        category="Parachute"
+    )
