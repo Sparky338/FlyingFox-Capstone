@@ -85,3 +85,28 @@ def seed_items():
         description="A parachute speciafically made for wingsuits. Opens rapidly, softly, and on heading, with easy controlability.",
         category="Parachute"
     )
+
+    db.session.add(Dash)
+    db.session.add(River)
+    db.session.add(BTC)
+    db.session.add(Prince)
+    db.session.add(Sideshow)
+    db.session.add(Beast)
+    db.session.add(Racer)
+    db.session.add(Daiko)
+    db.session.add(Mutant)
+    db.session.add(SFG)
+    db.session.add(Haymaker)
+    db.session.add(Epicenter)
+
+    db.session.commit()
+    
+
+# Uses a raw SQL query to TRUNCATE the items table.
+# SQLAlchemy doesn't have a built in function to do this
+# TRUNCATE Removes all the data from the table, and RESET IDENTITY
+# resets the auto incrementing primary key, CASCADE deletes any
+# dependent entities
+def undo_items():
+    db.session.execute('TRUNCATE items RESTART IDENTITY CASCADE;')
+    db.session.commit()

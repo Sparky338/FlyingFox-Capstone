@@ -17,6 +17,6 @@ class Image(db.Model):
         return {
             'id': self.id,
             'item_id': self.item_id,
-            'review_id': self.review_id,
-            'image_url': self.image_url
+            'image_url': self.image_url,
+            'review_id': self.review_id
         }
