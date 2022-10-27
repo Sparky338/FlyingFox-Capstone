@@ -63,6 +63,7 @@
     z-index: 1;
 }
 
+.login-link:hover,
 .dev:hover,
 .suits-parachutes-dropdown:hover {
     color:#06a7e2;
@@ -72,6 +73,19 @@
     display: block;
 }
 
-.fa-cart {
+.shopping-cart-link {
+    text-decoration: none;
+    color: white;
+}
+
+.session-links-user,
+.session-links-no-user {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-link {
+    font-size: 16px;
+    text-decoration: none;
     color: white;
 }

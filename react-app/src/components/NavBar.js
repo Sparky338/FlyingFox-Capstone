@@ -13,28 +13,30 @@ const NavBar = () => {
   let sessionLinks;
   sessionUser ?
     sessionLinks = (
-      <div className='session-links-user'>
-        <div className='orders-link'>
-          <Link to='/orders'>MY ORDERS</Link>
-        </div>
-        <div className='logout-user'>
-          {/* <Link to='/logout'>LOGOUT</Link> */}
-          <LogoutButton />
-        </div>
-        <div className='shopping-cart-user'>
-          <Link to='/cart' className='cart-link'>
-            {cartIcon}
-          </Link>
+      <div className='session-links-outer'>
+        <div className='session-links-user'>
+          <div className='orders-link'>
+            <Link to='/orders'>MY ORDERS</Link>
+          </div>
+          <div className='logout-user'>
+            {/* <Link to='/logout'>LOGOUT</Link> */}
+            <LogoutButton />
+          </div>
+          <div className='shopping-cart'>
+            <Link to='/cart' className='shopping-cart-link'>{cartIcon}</Link>
+          </div>
         </div>
       </div>
     ) :
     sessionLinks = (
-      <div className='session-links-no-user'>
-        <div className='login'>
-          <Link to='/login'>LOGIN</Link>
-        </div>
-        <div className='shopping-cart-user'>
-          <Link to='/cart'>{cartIcon}</Link>
+      <div className='session-links-outer'>
+        <div className='session-links-no-user'>
+          <div className='login-container'>
+            <Link to='/login' className='login-link'>LOGIN</Link>
+          </div>
+          <div className='shopping-cart'>
+            <Link to='/cart' className='shopping-cart-link'>{cartIcon}</Link>
+          </div>
         </div>
       </div>
     )
