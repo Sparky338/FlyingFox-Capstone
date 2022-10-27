@@ -1,10 +1,45 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { NavLink, Link } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 
 import "./Navbar.css"
 
 const NavBar = () => {
+  const sessionUser = useSelector(state => state.session.user)
+
+  const cartIcon = <i class="fa-solid fa-cart-shopping"></i>
+
+  let sessionLinks;
+  sessionUser ?
+    sessionLinks = (
+      <div className='session-links-user'>
+        <div className='orders-link'>
+          <Link to='/orders'>MY ORDERS</Link>
+        </div>
+        <div className='logout-user'>
+          {/* <Link to='/logout'>LOGOUT</Link> */}
+          <LogoutButton />
+        </div>
+        <div className='shopping-cart-user'>
+          <Link to='/cart' className='cart-link'>
+            {cartIcon}
+          </Link>
+        </div>
+      </div>
+    ) :
+    sessionLinks = (
+      <div className='session-links-no-user'>
+        <div className='login'>
+          <Link to='/login'>LOGIN</Link>
+        </div>
+        <div className='shopping-cart-user'>
+          <Link to='/cart'>{cartIcon}</Link>
+        </div>
+      </div>
+    )
+
+
   return (
     <div className='outer-most'>
       <div className='outer-nav'>
@@ -27,7 +62,7 @@ const NavBar = () => {
           </div>
 
           <div className='nav-bar-links'>
-            <div className='dropdown'>
+            <div className='dropdown-suits-parachutes'>
               <div className='suits-parachutes-dropdown'>Suits & Parachutes</div>
               <div className='suits-parachutes-content'>
                 <div className='wingsuits-category title'>Wingsuits</div>
@@ -35,9 +70,10 @@ const NavBar = () => {
                 <div className='parachutes-category title'>Parachutes</div>
                 <div className='meet-the-dev title'>Flying Fox Dev</div>
               </div>
-              <div className='dev'>Developer</div>
             </div>
+            <Link className='dev' to='/developer'>Developer</Link>
           </div>
+          {sessionLinks}
         </nav>
       </div>
     </div>

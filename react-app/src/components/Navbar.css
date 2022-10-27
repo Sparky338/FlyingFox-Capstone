@@ -32,14 +32,25 @@
 .nav-bar-links {
     border: solid red 1px;
     display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
     width: 100%;
 }
 
+.dev,
 .suits-parachutes-dropdown {
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 20px;
 }
 
-.dropdown {
+.dev {
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown-suits-parachutes {
     position: relative;
     display: inline-block;
 }
@@ -47,15 +58,20 @@
 .suits-parachutes-content {
     display: none;
     position: absolute;
+    width: 100%;
     background-color: black;
     z-index: 1;
 }
 
+.dev:hover,
 .suits-parachutes-dropdown:hover {
     color:#06a7e2;
 }
 
-
-.dropdown:hover .suits-parachutes-content {
+.dropdown-suits-parachutes:hover .suits-parachutes-content {
     display: block;
+}
+
+.fa-cart {
+    color: white;
 }
