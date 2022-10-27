@@ -55,3 +55,18 @@
     top: 200px;
     left: 50%;
 }
+
+.password-container,
+.email-container {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 20px;
+}
+
+.email-label,
+.password-label {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
