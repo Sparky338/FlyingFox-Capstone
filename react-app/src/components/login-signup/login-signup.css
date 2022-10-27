@@ -70,3 +70,20 @@
     margin-bottom: 3px;
 }
 
+.email-input-field,
+.password-input-field {
+    height: 25px;
+    width: 270px;
+}
+
+button.login-signup-button {
+    border: solid 1px #06a7e2;
+    border-radius: 3px;
+    background-color: black;
+    color: #06a7e2;
+    font-size: 18px;
+    font-weight: 300;
+    padding-left: 30px;
+    padding-right: 30px;
+    height:40px
+}

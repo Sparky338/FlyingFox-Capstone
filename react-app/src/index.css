@@ -15,14 +15,14 @@ body {
     align-items: center;
 }
 
-button {
+.main-button {
     border: #06a7e2;
     border-radius: 6px;
     background-image: radial-gradient( circle, #0584b2, #0b88b7, #108cbb, #1490c0, #1894c5, #1894c4, #1893c4, #1893c3, #148dbc, #0f88b5, #0a82af, #057da8 );
     color: white;
 }
 
-button:hover {
+.main-button:hover {
     background-image: radial-gradient( circle, #252525, #2c2c2d, #323335, #393a3d, #3f4246 );
 }
 
