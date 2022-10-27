@@ -6,7 +6,7 @@ import LogoutButton from './auth/LogoutButton';
 import "./Navbar.css"
 
 const NavBar = () => {
-  const sessionUser = useSelector(state => state.session.user)
+  const sessionUser = useSelector(state => state.session.user);
 
   const cartIcon = <i class="fa-solid fa-cart-shopping"></i>
 
@@ -15,11 +15,10 @@ const NavBar = () => {
     sessionLinks = (
       <div className='session-links-outer'>
         <div className='session-links-user'>
-          <div className='orders-link'>
-            <Link to='/orders'>MY ORDERS</Link>
+          <div className='orders-link-container'>
+            <Link to='/orders' className='orders-link'>MY ORDERS</Link>
           </div>
           <div className='logout-user'>
-            {/* <Link to='/logout'>LOGOUT</Link> */}
             <LogoutButton />
           </div>
           <div className='shopping-cart'>
