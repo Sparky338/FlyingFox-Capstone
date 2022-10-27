@@ -1,7 +1,8 @@
-
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+
+import "./Navbar.css"
 
 const NavBar = () => {
   return (
@@ -26,7 +27,13 @@ const NavBar = () => {
           </div>
 
           <div className='nav-bar-links'>
-            
+            <div className='suits-menu-link'>
+              <div className='products-left'>
+                <div className='wingsuits-category'>Wingsuits</div>
+                <div className='tracking-suits-category'>Tracking Suits</div>
+
+              </div>
+            </div>
           </div>
         </nav>
       </div>
