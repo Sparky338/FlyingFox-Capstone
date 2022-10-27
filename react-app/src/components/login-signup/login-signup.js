@@ -15,7 +15,10 @@ const LoginSignup = () => {
                             <LoginForm />
                         </div>
                     </div>
-                    <div className="vertial-separator">- OR -</div>
+                    <div className="vertical-separator-container">
+                        <div className="vertical-line"></div>
+                        <div className="vertical-separator">- OR -</div>
+                    </div>
                     <div className="signup-container">
                         <h3 className="new-cust">NEW CUSTOMER</h3>
                         <div className="signup-form-container">
