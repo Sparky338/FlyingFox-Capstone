@@ -1,8 +1,5 @@
 /* TODO Add site wide styles */
 body {
-    /* display: flex; */
-    flex-direction: row;
-    justify-content: center;
     width: 100vw;
     margin: auto;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -19,4 +16,8 @@ button {
 
 button:hover {
     background-image: radial-gradient( circle, #252525, #2c2c2d, #323335, #393a3d, #3f4246 );
+}
+
+.title {
+    color: #06a7e2;
 }

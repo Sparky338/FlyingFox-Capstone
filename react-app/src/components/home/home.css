@@ -1,5 +1,6 @@
 .Home-outer {
     display: flex;
-    width: 100%;
+    justify-content: center;
+    width: 80%;
     border: 1px solid red;
 }

@@ -27,12 +27,15 @@ const NavBar = () => {
           </div>
 
           <div className='nav-bar-links'>
-            <div className='suits-menu-link'>
-              <div className='products-left'>
-                <div className='wingsuits-category'>Wingsuits</div>
-                <div className='tracking-suits-category'>Tracking Suits</div>
-
+            <div className='dropdown'>
+              <div className='suits-parachutes-dropdown'>Suits & Parachutes</div>
+              <div className='suits-parachutes-content'>
+                <div className='wingsuits-category title'>Wingsuits</div>
+                <div className='tracking-suits-category title'>Tracking Suits</div>
+                <div className='parachutes-category title'>Parachutes</div>
+                <div className='meet-the-dev title'>Flying Fox Dev</div>
               </div>
+              <div className='dev'>Developer</div>
             </div>
           </div>
         </nav>
