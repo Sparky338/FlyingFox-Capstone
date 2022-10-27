@@ -10,8 +10,8 @@ class Purchase(db.Model):
     price = db.Column(db.Float, nullable = False)
 
     #relationships
-    user = db.relationship("User", back_populates="purchases")
-    item = db.relationship("Item", back_populates="purchases")
+    # user = db.relationship("User", back_populates="purchases")
+    items = db.relationship("Item", back_populates="purchases")
     reviews = db.relationship("Review")
 
     def to_dict(self):
