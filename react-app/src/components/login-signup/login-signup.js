@@ -10,14 +10,14 @@ const LoginSignup = () => {
                 <div className="login-header">LOGIN</div>
                 <div className="login-and-signup-container">
                     <div className="login-container">
-                        <div className="returning-cust">RETURNING CUSTOMER</div>
+                        <h3 className="returning-cust">RETURNING CUSTOMER</h3>
                         <div className="login-form-container">
                             <LoginForm />
                         </div>
                     </div>
                     <div className="vertial-separator">- OR -</div>
                     <div className="signup-container">
-                        <div className="new-cust">NEW CUSTOMER</div>
+                        <h3 className="new-cust">NEW CUSTOMER</h3>
                         <div className="signup-form-container">
                             <SignUpForm />
                         </div>

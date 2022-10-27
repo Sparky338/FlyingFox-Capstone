@@ -3,4 +3,28 @@
     background-color: white;
     color:black;
     height: 100vh; /*change to match height of forms?*/
+    display: flex;
+    justify-content: center;
+}
+
+.login-signup-container {
+    width: 80%;
+    border: solid 1px red;
+}
+
+.login-header {
+    font-size: 35px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.login-and-signup-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.returning-cust,
+.new-cust {
+    font-weight: normal;
 }
