@@ -43,10 +43,24 @@
     margin-top: 40px;
 }
 
+.horizontal-line {
+    width: 100%;
+    background-color: #06a7e2;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    top: 469px;
+    z-index: -1;
+}
+
 .review-header {
     color: #06a7e2;
     font-size: 26px;
     margin-bottom: 40px;
+    background-color: #252525;
+    width: 300px;
+    display: flex;
+    justify-content: center;
 }
 
 .review-container {

@@ -42,7 +42,10 @@ const ItemById = () => {
                             </div>
                         </div>
                         <div className="reviews-picture">
-                            <div className="review-header">{item.item_name.toUpperCase()} REVIEWS</div>
+                            <div className="review-header-container">
+                                <div className="horizontal-line"></div>
+                                <div className="review-header">{item.item_name.toUpperCase()} REVIEWS</div>
+                            </div>
                             <div className="review-container">
                                 <div className="review">Review goes here.</div>
                                 <div className="picture-and-name">
