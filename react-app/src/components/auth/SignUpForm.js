@@ -16,6 +16,7 @@ const SignUpForm = () => {
   const [repeatEmail, setRepeatEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const validationError = [];
   useEffect(() => {
@@ -47,6 +48,9 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
+    setIsSubmitted(true);
+    if (errors.length) return;
+
     if (password === repeatPassword && email === repeatEmail) {
       const data = await dispatch(signUp(firstName, lastName, email, password));
       if (data) {
@@ -85,11 +89,15 @@ const SignUpForm = () => {
 
   return (
     <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind} className="mapped-errors">{error}</div>
-        ))}
-      </div>
+      {isSubmitted && (
+        <div className='errors-container'>
+          {
+            errors.map((error, ind) => (
+              <div key={ind} className="mapped-errors">{error}</div>
+            ))
+          }
+        </div>
+      )}
       <div className='first-last-name-container'>
         <div className='first-name-container'>
           <label className='first-name-label'>First Name</label>
