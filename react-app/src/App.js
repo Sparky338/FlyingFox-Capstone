@@ -34,7 +34,7 @@ function App() {
         <Route path='/login' exact={true}>
           <LoginSignup />
         </Route>
-        <Route path="/items/:id">
+        <Route path="/items/:itemId">
           <ItemById />
         </Route>
         {/* <ProtectedRoute path='/cart' exact={true}>

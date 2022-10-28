@@ -18,7 +18,6 @@ const ItemById = () => {
 
     return (
         <div className="outer-item-div">
-            <h1> test</h1>
             {filteredItem.map((item) => {
                 return (
                     <div className="item-by-id" key={item.id}>
