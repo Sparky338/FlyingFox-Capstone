@@ -21,14 +21,12 @@ const ItemById = () => {
         if (localStorage.getItem('cart')) {
             cart = JSON.parse(localStorage.getItem('cart'))
         }
-        
-        if (filteredItem in cart) {
-            cart[filteredItem].qty++;
-        } else {
-            cart[filteredItem]
-        }
-
-
+        // if (filteredItem in cart) {
+        //     cart[filteredItem].qty++;
+        // } else {
+            cart.push(filteredItem);
+        // }
+        localStorage.setItem('cart', JSON.stringify(cart))
     }
 
     return (
