@@ -31,6 +31,9 @@ function App() {
         <Route path='/login' exact={true}>
           <LoginSignup />
         </Route>
+        {/* <ProtectedRoute path='/cart' exact={true}>
+
+        </ProtectedRoute> */}
         {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
