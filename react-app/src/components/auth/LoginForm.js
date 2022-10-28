@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
+import "../login-signup/login-signup.css"
+
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
@@ -17,6 +19,11 @@ const LoginForm = () => {
       setErrors(data);
     }
   };
+
+  const handleDemo = () => {
+    setEmail('demo@aa.io');
+    setPassword('password');
+  }
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -37,27 +44,29 @@ const LoginForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label htmlFor='email'>Email</label>
+      <div className='email-container'>
+        <label htmlFor='email' className='email-label'>Email</label>
         <input
+          className='email-input-field'
           name='email'
           type='text'
-          placeholder='Email'
           value={email}
           onChange={updateEmail}
         />
       </div>
-      <div>
-        <label htmlFor='password'>Password</label>
+      <div className='password-container'>
+        <label htmlFor='password' className='password-label'>Password</label>
         <input
+          className='password-input-field'
           name='password'
           type='password'
-          placeholder='Password'
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit'>Login</button>
       </div>
+      <button type='submit' className='login-signup-button'>LOGIN</button>
+      <div className='space'></div>
+      <button onClick={handleDemo} className='login-signup-button'>DEMO USER</button>
     </form>
   );
 };

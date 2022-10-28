@@ -1,10 +1,46 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { NavLink, Link } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 
 import "./Navbar.css"
 
 const NavBar = () => {
+  const sessionUser = useSelector(state => state.session.user);
+
+  const cartIcon = <i class="fa-solid fa-cart-shopping"></i>
+
+  let sessionLinks;
+  sessionUser ?
+    sessionLinks = (
+      <div className='session-links-outer'>
+        <div className='session-links-user'>
+          <div className='orders-link-container'>
+            <Link to='/orders' className='orders-link'>MY ORDERS</Link>
+          </div>
+          <div className='logout-user'>
+            <LogoutButton />
+          </div>
+          <div className='shopping-cart'>
+            <Link to='/cart' className='shopping-cart-link'>{cartIcon}</Link>
+          </div>
+        </div>
+      </div>
+    ) :
+    sessionLinks = (
+      <div className='session-links-outer'>
+        <div className='session-links-no-user'>
+          <div className='login-container'>
+            <Link to='/login' className='login-link'>LOGIN</Link>
+          </div>
+          <div className='shopping-cart'>
+            <Link to='/cart' className='shopping-cart-link'>{cartIcon}</Link>
+          </div>
+        </div>
+      </div>
+    )
+
+
   return (
     <div className='outer-most'>
       <div className='outer-nav'>
@@ -27,7 +63,7 @@ const NavBar = () => {
           </div>
 
           <div className='nav-bar-links'>
-            <div className='dropdown'>
+            <div className='dropdown-suits-parachutes'>
               <div className='suits-parachutes-dropdown'>Suits & Parachutes</div>
               <div className='suits-parachutes-content'>
                 <div className='wingsuits-category title'>Wingsuits</div>
@@ -35,9 +71,10 @@ const NavBar = () => {
                 <div className='parachutes-category title'>Parachutes</div>
                 <div className='meet-the-dev title'>Flying Fox Dev</div>
               </div>
-              <div className='dev'>Developer</div>
             </div>
+            <Link className='dev' to='/developer'>Developer</Link>
           </div>
+          {sessionLinks}
         </nav>
       </div>
     </div>
@@ -45,29 +82,3 @@ const NavBar = () => {
 }
 
 export default NavBar;
-
-      // <ul>
-      //   <li>
-      //     <NavLink to='/' exact={true} activeClassName='active'>
-      //       Home
-      //     </NavLink>
-      //   </li>
-      //   {/* <li>
-      //     <NavLink to='/sign-up' exact={true} activeClassName='active'>
-      //     Sign Up
-      //     </NavLink>
-      //   </li> */}
-      //   {/* <li>
-      //     <NavLink to='/users' exact={true} activeClassName='active'>
-      //     Users
-      //     </NavLink>
-      //   </li> */}
-      //   <li>
-      //     <NavLink to='/login' exact={true} activeClassName='active'>
-      //       Login
-      //     </NavLink>
-      //   </li>
-      //   <li>
-      //     <LogoutButton />
-      //   </li>
-      // </ul>
