@@ -59,36 +59,42 @@ const SignUpForm = () => {
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label>First Name</label>
-        <input
-          type='text'
-          name='firstName'
-          onChange={updateFirstName}
-          value={firstName}
-        ></input>
+      <div className='first-last-name-container'>
+        <div className='first-name-container'>
+          <label className='first-name-label'>First Name</label>
+          <input
+            className='first-name-input-field'
+            type='text'
+            name='firstName'
+            onChange={updateFirstName}
+            value={firstName}
+          ></input>
+        </div>
+        <div className='last-name-container'>
+          <label className='last-name-label'>Last Name</label>
+          <input
+            className='last-name-input-field'
+            type='text'
+            name='lastName'
+            onChange={updateLastName}
+            value={lastName}
+          ></input>
+        </div>
       </div>
-      <div>
-        <label>Last Name</label>
+      <div className='email-container'>
+        <label className='email-label'>Email</label>
         <input
-          type='text'
-          name='lastName'
-          onChange={updateLastName}
-          value={lastName}
-        ></input>
-      </div>
-      <div>
-        <label>Email</label>
-        <input
+          className='email-input-field'
           type='text'
           name='email'
           onChange={updateEmail}
           value={email}
         ></input>
       </div>
-      <div>
-        <label>Confirm Email</label>
+      <div className='email-container'>
+        <label className='email-label'>Confirm Email</label>
         <input
+          className='email-input-field'
           type='text'
           name='repeat_email'
           onChange={updateRepeatEmail}
@@ -96,18 +102,20 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <div>
-        <label>Password</label>
+      <div className='password-container'>
+        <label className='password-label'>Password</label>
         <input
+          className='password-input-field'
           type='password'
           name='password'
           onChange={updatePassword}
           value={password}
         ></input>
       </div>
-      <div>
-        <label>Confirm Password</label>
+      <div className='password-container'>
+        <label className='password-label'>Confirm Password</label>
         <input
+          className='password-input-field'
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
@@ -115,7 +123,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <button type='submit'>Sign Up</button>
+      <button type='submit' className='login-signup-button'>Sign Up</button>
     </form>
   );
 };

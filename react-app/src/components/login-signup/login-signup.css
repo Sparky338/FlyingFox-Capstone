@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* align-items: center; */
+    /* border: 1px solid red; */
 }
 
 .returning-cust,
@@ -31,20 +31,31 @@
     font-size: 16px;
 }
 
+.login-container {
+    margin-right: 50px;
+}
+
+.signup-container {
+    margin-left: 50px;
+}
+
 .vertical-separator-container {
     display: flex;
     align-items: center;
-    margin-left: 19px;
-    margin-right: 20px;
+    /* margin-left: 19px;
+    margin-right: 20px; */
 }
 
 .vertical-separator {
     background-color: white;
     display: flex;
     align-items: center;
+    position: absolute;
+    top: 270px;
+    left: 50%;
+    font-size: 12px;
     z-index: 1;
     height: 25px;
-
 }
 
 .vertical-line {
@@ -52,10 +63,18 @@
     background-color: rgb(189, 189, 189);
     height: 250px;
     position: absolute;
-    top: 200px;
+    top: 220px;
     left: 50%;
 }
 
+.first-last-name-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.first-name-container,
+.last-name-container,
 .password-container,
 .email-container {
    display: flex;
@@ -63,6 +82,8 @@
    margin-bottom: 20px;
 }
 
+.first-name-label,
+.last-name-label,
 .email-label,
 .password-label {
     font-size: 12px;
@@ -74,9 +95,19 @@
 .password-input-field {
     height: 25px;
     width: 270px;
+    border-radius: 0;
+    border: 1px solid #acacac;
 }
 
-button.login-signup-button {
+.first-name-input-field,
+.last-name-input-field {
+    height: 25px;
+    width: 120px;
+    border-radius: 0;
+    border: 1px solid #acacac;
+}
+
+.login-signup-button {
     border: solid 1px #06a7e2;
     border-radius: 3px;
     background-color: black;
