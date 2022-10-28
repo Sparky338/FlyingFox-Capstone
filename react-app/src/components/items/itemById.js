@@ -11,6 +11,10 @@ const ItemById = () => {
     const itemsObj = useSelector(state => state.items);
     const items = Object.values(itemsObj);
 
+    function addToCart() {
+        
+    }
+
     if (!itemId) return null;
     if (!itemsObj) return null;
 
@@ -39,6 +43,7 @@ const ItemById = () => {
                                     </div>
                                 </div>
                                 <div className="description">{item.description}</div>
+                                <button className="add-to-cart main-button" onClick={addToCart}>ADD TO CART</button>
                             </div>
                         </div>
                         <div className="reviews-picture">
