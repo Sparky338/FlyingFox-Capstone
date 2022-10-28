@@ -20,6 +20,11 @@ const LoginForm = () => {
     }
   };
 
+  const handleDemo = () => {
+    setEmail('demo@aa.io');
+    setPassword('password');
+  }
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -60,6 +65,8 @@ const LoginForm = () => {
         />
       </div>
       <button type='submit' className='login-signup-button'>LOGIN</button>
+      <div className='space'></div>
+      <button onClick={handleDemo} className='login-signup-button'>DEMO USER</button>
     </form>
   );
 };

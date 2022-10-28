@@ -9,7 +9,6 @@
 
 .login-signup-container {
     width: 80%;
-    border: solid 1px red;
 }
 
 .login-header {
@@ -43,7 +42,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid red; */
 }
 
 .vertical-separator {
@@ -116,4 +114,8 @@
     padding-left: 30px;
     padding-right: 30px;
     height:40px
+}
+
+.space {
+    margin-top: 20px;
 }
