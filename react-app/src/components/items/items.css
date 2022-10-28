@@ -1,1 +1,71 @@
-/* pass */
+.item-outer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.display-carousel {
+    border: solid red 1px;
+}
+
+.item-info-price {
+    border: solid blue 1px;
+}
+
+.name-price-review {
+    border: solid green 1px;
+}
+
+.item-name {
+    color: #06a7e2;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.price-review {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.reviews-picture {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.review-header {
+    color: #06a7e2;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+.review-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review {
+    margin-bottom: 20px;
+}
+
+.picture-and-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.first-last-name {
+    font-weight: 600;
+    font-size: 18px;
+}

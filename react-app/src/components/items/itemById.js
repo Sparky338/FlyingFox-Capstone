@@ -32,13 +32,23 @@ const ItemById = () => {
                             </div>
                             <div className="item-info-price">
                                 <div className="name-price-review">
-                                    <div className="name">{item.item_name}</div>
+                                    <div className="item-name">{item.item_name}</div>
                                     <div className="price-review">
-                                        <div className="price">{item.price}</div>
-                                        <div className="review">Link to review here</div>
+                                        <div className="price">${item.price}</div>
+                                        <div className="review-link">Link to review here</div>
                                     </div>
                                 </div>
                                 <div className="description">{item.description}</div>
+                            </div>
+                        </div>
+                        <div className="reviews-picture">
+                            <div className="review-header">{item.item_name.toUpperCase()} REVIEWS</div>
+                            <div className="review-container">
+                                <div className="review">Review goes here.</div>
+                                <div className="picture-and-name">
+                                    <div className="picture"> image goes here</div>
+                                    <div className="first-last-name"> - firstName LastName goes here </div>
+                                </div>
                             </div>
                         </div>
                     </div>
