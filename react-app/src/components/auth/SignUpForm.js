@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 
+import validator from 'validator';
+
 const SignUpForm = () => {
+  const user = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+
   const [errors, setErrors] = useState([]);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -11,11 +16,41 @@ const SignUpForm = () => {
   const [repeatEmail, setRepeatEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
-  const user = useSelector(state => state.session.user);
-  const dispatch = useDispatch();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const validationError = [];
+  useEffect(() => {
+    if (!firstName) {
+      validationError.push("First name is required")
+    }
+
+    if (!lastName) {
+      validationError.push("Last name is required")
+    }
+
+    if (!(validator.isEmail(email))) {
+      validationError.push("Please provide a valid email");
+    }
+
+    if (email !== repeatEmail)
+      validationError.push("Confirm email must match email");
+
+    if (password.length < 4) {
+      validationError.push("Password needs to have at least 4 characters");
+    }
+
+    if (password !== repeatPassword) {
+      validationError.push("Confirm password must match password");
+    }
+
+    setErrors(validationError);
+  }, [firstName, lastName, email, repeatEmail, password, repeatPassword])
 
   const onSignUp = async (e) => {
     e.preventDefault();
+    setIsSubmitted(true);
+    if (errors.length) return;
+
     if (password === repeatPassword && email === repeatEmail) {
       const data = await dispatch(signUp(firstName, lastName, email, password));
       if (data) {
@@ -54,11 +89,15 @@ const SignUpForm = () => {
 
   return (
     <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
+      {isSubmitted && (
+        <div className='errors-container'>
+          {
+            errors.map((error, ind) => (
+              <div key={ind} className="mapped-errors">{error}</div>
+            ))
+          }
+        </div>
+      )}
       <div className='first-last-name-container'>
         <div className='first-name-container'>
           <label className='first-name-label'>First Name</label>

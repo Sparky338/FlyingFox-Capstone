@@ -34,9 +34,15 @@
     margin-right: 50px;
 }
 
-.signup-container {
-    margin-left: 50px;
+.errors-container{
+    margin-bottom: 10px;
 }
+
+.mapped-errors {
+    color: red;
+    max-width: 270px;
+}
+
 
 .vertical-separator-container {
     display: flex;
@@ -62,6 +68,10 @@
     height: 290px;
     position: absolute;
     top: 220px;
+}
+
+.signup-container {
+    margin-left: 50px;
 }
 
 .first-last-name-container {
