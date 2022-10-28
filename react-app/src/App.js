@@ -6,6 +6,7 @@ import { authenticate } from './store/session';
 import HomePage from './components/home/home';
 import LoginSignup from './components/login-signup/login-signup';
 import { getAllItems } from './store/items';
+import ItemById from './components/items/itemById';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -32,6 +33,9 @@ function App() {
         </Route>
         <Route path='/login' exact={true}>
           <LoginSignup />
+        </Route>
+        <Route path="/items/:id">
+          <ItemById />
         </Route>
         {/* <ProtectedRoute path='/cart' exact={true}>
 

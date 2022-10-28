@@ -18,6 +18,7 @@ const ItemById = () => {
 
     return (
         <div className="outer-item-div">
+            <h1> test</h1>
             {filteredItem.map((item) => {
                 return (
                     <div className="item-by-id" key={item.id}>
@@ -27,10 +28,18 @@ const ItemById = () => {
                                     items=arrayofImages
                                     showPlayButton={false}
                                     showFullscreenButton={false}
-                                    showThumbnails={false}
-                                    autoPlay={true}
-                                    slideInterval={5000}
+                                    infinite={false}
                                 /> */}
+                            </div>
+                            <div className="item-info-price">
+                                <div className="name-price-review">
+                                    <div className="name">{item.item_name}</div>
+                                    <div className="price-review">
+                                        <div className="price">{item.price}</div>
+                                        <div className="review">Link to review here</div>
+                                    </div>
+                                </div>
+                                <div className="description">{item.description}</div>
                             </div>
                         </div>
                     </div>
