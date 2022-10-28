@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import { authenticate } from './store/session';
 import HomePage from './components/home/home';
 import LoginSignup from './components/login-signup/login-signup';
+import { getAllItems } from './store/items';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -15,6 +16,7 @@ function App() {
       await dispatch(authenticate());
       setLoaded(true);
     })();
+    dispatch(getAllItems());
   }, [dispatch]);
 
   if (!loaded) {
