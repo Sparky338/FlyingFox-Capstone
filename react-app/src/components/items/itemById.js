@@ -11,14 +11,25 @@ const ItemById = () => {
     const itemsObj = useSelector(state => state.items);
     const items = Object.values(itemsObj);
 
-    function addToCart() {
-        
-    }
-
     if (!itemId) return null;
     if (!itemsObj) return null;
 
     const filteredItem = items.filter(item => item.id === +itemId)
+
+    const addToCart = () => {
+        let cart = [];
+        if (localStorage.getItem('cart')) {
+            cart = JSON.parse(localStorage.getItem('cart'))
+        }
+        
+        if (filteredItem in cart) {
+            cart[filteredItem].qty++;
+        } else {
+            cart[filteredItem]
+        }
+
+
+    }
 
     return (
         <div className="outer-item-div">
