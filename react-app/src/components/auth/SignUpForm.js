@@ -123,7 +123,7 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <button type='submit' className='login-signup-button'>Sign Up</button>
+      <button type='submit' className='login-signup-button'>CREATE ACCOUNT</button>
     </form>
   );
 };
