@@ -21,8 +21,14 @@ const ItemById = () => {
         if (localStorage.getItem('cart')) {
             cart = JSON.parse(localStorage.getItem('cart'))
         }
-        // if (filteredItem in cart) {
-        //     cart[filteredItem].qty++;
+
+        // let item = cart.find(item => item === filteredItem)
+
+        // console.log("item", item)
+        // console.log("filtered item", filteredItem)
+
+        // if (item) {
+        //     item.qty++;
         // } else {
             cart.push(filteredItem);
         // }
