@@ -1,0 +1,23 @@
+.cart-outer {
+    border:solid 1px green;
+    width: 80%;
+}
+
+.cart-container {
+    display: flex;
+
+}
+
+.cart-and-cart-contents-left {
+    border:solid 1px blue;
+    width: 60%;
+}
+
+.cart-header {
+    display: flex;
+    
+}
+
+.cart-checkout {
+    border:solid 1px red;
+}
