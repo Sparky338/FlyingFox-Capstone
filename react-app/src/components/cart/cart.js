@@ -20,10 +20,15 @@ const Cart = () => {
                         {(!localStorage.getItem('cart')) ?
                             <div className="empty-cart">Your cart is empty!
                                 Perhaps we could interest you in some CATEGORIES?</div> :
-                            <div className="full-cart">
-                                <div className="full-cart-header"> DISPLAY ITEM, QTY, TOTAL</div>
+                            <table className="full-cart-table">
+                                <thead className="table-header">
+                                    <th></th>
+                                    <th>ITEM</th>
+                                    <th>QTY</th>
+                                    <th>TOTAL</th>
+                                </thead>
                                 <div className="cart-items"> DISPLAY ITEM PICTURE AND NAME, VALUE, TOTAL PRICE. X TO SHOW A REMOVAL OF ITEM </div>
-                            </div>}
+                            </table>}
                     </div>
                 </div>
                 <div className="cart-checkout">cart checkout</div>

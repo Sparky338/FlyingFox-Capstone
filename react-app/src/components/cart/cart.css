@@ -1,11 +1,16 @@
 .cart-outer {
-    border:solid 1px green;
-    width: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    height: 100vh;
+    color:black;
 }
 
 .cart-container {
     display: flex;
     justify-content: space-between;
+    width: 80%;
 }
 
 .cart-and-cart-contents-left {
@@ -15,7 +20,10 @@
 
 .cart-header {
     display: flex;
+}
 
+.full-cart-table {
+    border:solid 1px green;
 }
 
 .cart-checkout {
