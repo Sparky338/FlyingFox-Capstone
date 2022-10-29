@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import ImageGallery from 'react-image-gallery';
 
 import "./items.css"
 
 const ItemById = () => {
-
+    const history = useHistory()
     const { itemId } = useParams();
     const user = useSelector(state => state.session.user);
     const itemsObj = useSelector(state => state.items);
@@ -33,6 +33,7 @@ const ItemById = () => {
             cart.push(filteredItem);
         // }
         localStorage.setItem('cart', JSON.stringify(cart))
+        history.push("/cart")
     }
 
     return (

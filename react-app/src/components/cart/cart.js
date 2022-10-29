@@ -1,6 +1,8 @@
 import "./cart.css"
 
 const Cart = () => {
+    const cartLength = JSON.parse(localStorage.getItem('cart')).length
+    const cart = JSON.parse(localStorage.getItem('cart'))
 
     return (
         <div className="cart-outer">
@@ -11,9 +13,9 @@ const Cart = () => {
                         <div className="item-value">
                             {!localStorage.getItem('cart') ?
                                 <div>(0 Items) </div> :
-                                (JSON.parse(localStorage.getItem('cart')).length === 1 ?
+                                (cartLength === 1 ?
                                     <div>(1 Item)</div> :
-                                    <div>({JSON.parse(localStorage.getItem('cart')).length} Items)</div>)}
+                                    <div>({cartLength} Items)</div>)}
                         </div>
                     </div>
                     <div className="cart-contents">
@@ -22,11 +24,17 @@ const Cart = () => {
                                 Perhaps we could interest you in some CATEGORIES?</div> :
                             <table className="full-cart-table">
                                 <thead className="table-header">
-                                    <th></th>
-                                    <th>ITEM</th>
-                                    <th>QTY</th>
-                                    <th>TOTAL</th>
+                                    <tr>
+                                        <th width="20%">&nbsp;</th>
+                                        <th className="table-header-item">ITEM</th>
+                                        <th className="table-header-qty" width="15%">QTY</th>
+                                        <th className="table-header-total" width="20%">TOTAL</th>
+                                        <th width="3%">&nbsp;</th>
+                                    </tr>
                                 </thead>
+                                <tbody className="table-body">
+
+                                </tbody>
                                 <div className="cart-items"> DISPLAY ITEM PICTURE AND NAME, VALUE, TOTAL PRICE. X TO SHOW A REMOVAL OF ITEM </div>
                             </table>}
                     </div>
