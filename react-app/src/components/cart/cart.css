@@ -5,7 +5,7 @@
 
 .cart-container {
     display: flex;
-
+    justify-content: space-between;
 }
 
 .cart-and-cart-contents-left {
@@ -15,9 +15,10 @@
 
 .cart-header {
     display: flex;
-    
+
 }
 
 .cart-checkout {
     border:solid 1px red;
+    width: 38%;
 }

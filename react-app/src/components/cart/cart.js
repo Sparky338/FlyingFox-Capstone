@@ -9,9 +9,11 @@ const Cart = () => {
                     <div className="cart-header">
                         <div className="your-cart">Your Cart</div>
                         <div className="item-value">
-                            {(!localStorage.getItem('cart').length) ?
+                            {!localStorage.getItem('cart') ?
                                 <div>(0 Items) </div> :
-                                ()}
+                                (JSON.parse(localStorage.getItem('cart')).length === 1 ?
+                                    <div>(1 Item)</div> :
+                                    <div>({JSON.parse(localStorage.getItem('cart')).length} Items)</div>)}
                         </div>
                     </div>
                     <div className="cart-contents">
