@@ -1,10 +1,14 @@
 import "./cart.css"
 
 const Cart = () => {
+    if (!localStorage.getItem('cart')) {
+        localStorage.setItem('cart', "[]");
+    }
+
     const cartLength = JSON.parse(localStorage.getItem('cart')).length
     const cart = JSON.parse(localStorage.getItem('cart'))
 
-    // const removeFromCart = 
+    // const removeFromCart =
 
     return (
         <div className="cart-outer">
@@ -21,7 +25,7 @@ const Cart = () => {
                         </div>
                     </div>
                     <div className="cart-contents">
-                        {(!localStorage.getItem('cart')) ?
+                        {(cartLength === 0) ?
                             <div className="empty-cart">Your cart is empty!
                                 Perhaps we could interest you in some CATEGORIES?</div> :
                             <table className="full-cart-table" border="0" cellspacing="0">
