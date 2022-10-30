@@ -24,10 +24,16 @@
 
 .full-cart-table {
     border:solid 1px green;
+    width: 100%;
 }
 
 .table-header-item {
-    display: flex;
+    text-align: left;
+}
+
+.cart-item-total,
+.table-header-total {
+    text-align: right;
 }
 
 .cart-checkout {

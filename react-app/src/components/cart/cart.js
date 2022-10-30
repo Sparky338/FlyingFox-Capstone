@@ -33,9 +33,24 @@ const Cart = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="table-body">
-
+                                    {cart.map((item) => {
+                                        return (
+                                            <tr className="cart-item" key={item.id}>
+                                                <td className="cart-item-image">
+                                                    {item[0].images[0]}
+                                                </td>
+                                                <td className="cart-item-name">
+                                                    {item[0].item_name}
+                                                </td>
+                                                <td className="cart-item-qty"></td>
+                                                <td className="cart-item-total">
+                                                    {item[0].price} {/*times qty*/}
+                                                </td>
+                                            </tr>
+                                        )
+                                    })}
                                 </tbody>
-                                <div className="cart-items"> DISPLAY ITEM PICTURE AND NAME, VALUE, TOTAL PRICE. X TO SHOW A REMOVAL OF ITEM </div>
+                                {/* <div className="cart-items"> DISPLAY ITEM PICTURE AND NAME, VALUE, TOTAL PRICE. X TO SHOW A REMOVAL OF ITEM </div> */}
                             </table>}
                     </div>
                 </div>
