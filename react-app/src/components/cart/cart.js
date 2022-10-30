@@ -8,7 +8,13 @@ const Cart = () => {
     const cartLength = JSON.parse(localStorage.getItem('cart')).length
     const cart = JSON.parse(localStorage.getItem('cart'))
 
-    // const removeFromCart =
+    const removeFromCart = (itemId) => {
+        cart.splice(itemId, 1)
+        localStorage.setItem('cart', JSON.stringify(cart))
+        //update page
+    }
+
+    const xIcon = <i class="fa-solid fa-x"></i>;
 
     return (
         <div className="cart-outer">
@@ -52,7 +58,13 @@ const Cart = () => {
                                                 <td className="cart-item-total">
                                                     ${item[0].price} {/*times qty*/}
                                                 </td>
-                                                <td className="remove-cart-item">X</td>
+                                                <td className="remove-cart-item">
+                                                    <button
+                                                        className="remove-item"
+                                                        onClick={removeFromCart}>
+                                                        {xIcon}
+                                                    </button>
+                                                </td>
                                             </tr>
                                         )
                                     })}

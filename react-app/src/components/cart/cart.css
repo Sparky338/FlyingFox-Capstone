@@ -41,6 +41,12 @@ td {
     text-align: right;
 }
 
+.remove-item {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 .cart-checkout {
     border:solid 1px red;
     width: 38%;
