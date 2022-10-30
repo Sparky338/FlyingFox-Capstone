@@ -22,7 +22,7 @@ const Cart = () => {
                         {(!localStorage.getItem('cart')) ?
                             <div className="empty-cart">Your cart is empty!
                                 Perhaps we could interest you in some CATEGORIES?</div> :
-                            <table className="full-cart-table">
+                            <table className="full-cart-table" border="0" cellspacing="0" >
                                 <thead className="table-header">
                                     <tr>
                                         <th width="10%">&nbsp;</th>
@@ -44,7 +44,7 @@ const Cart = () => {
                                                 </td>
                                                 <td className="cart-item-qty"></td>
                                                 <td className="cart-item-total">
-                                                    {item[0].price} {/*times qty*/}
+                                                    ${item[0].price} {/*times qty*/}
                                                 </td>
                                             </tr>
                                         )
