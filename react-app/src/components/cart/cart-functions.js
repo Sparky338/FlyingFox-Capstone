@@ -1,5 +1,3 @@
-import { useHistory, useParams } from "react-router-dom";
-
 if (!localStorage.getItem('cart')) {
     localStorage.setItem('cart', "[]");
 }

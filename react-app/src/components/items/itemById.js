@@ -13,15 +13,15 @@ const ItemById = () => {
 
     if (!itemId) return null;
     if (!itemsObj) return null;
+    if (!localStorage.getItem('cart')) {
+        localStorage.setItem('cart', "[]");
+    }
 
     const filteredItem = items.filter(item => item.id === +itemId)
     const localStorageItems = JSON.parse(localStorage.getItem("Items"))
     const cart = JSON.parse(localStorage.getItem('cart'))
 
     const addToCart = () => {
-        if (!localStorage.getItem('cart')) {
-            localStorage.setItem('cart', "[]");
-        }
 
         // let item = cart.find(item => item === filteredItem)
 
