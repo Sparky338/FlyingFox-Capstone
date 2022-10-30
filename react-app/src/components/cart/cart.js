@@ -1,17 +1,19 @@
 import "./cart.css"
 
 const Cart = () => {
+    const cartLength = JSON.parse(localStorage.getItem('cart')).length
+    const cart = JSON.parse(localStorage.getItem('cart'))
+
     if (!localStorage.getItem('cart')) {
         localStorage.setItem('cart', "[]");
     }
 
-    const cartLength = JSON.parse(localStorage.getItem('cart')).length
-    const cart = JSON.parse(localStorage.getItem('cart'))
-
-    const removeFromCart = (itemId) => {
-        cart.splice(itemId, 1)
-        localStorage.setItem('cart', JSON.stringify(cart))
-        //update page
+    const removeFromCart =  (itemId) => {
+        let res = window.confirm('Are you sure you want to remove this?')
+        if (res) {
+            cart.splice(itemId, 1)
+            localStorage.setItem('cart', JSON.stringify(cart))
+        }
     }
 
     const xIcon = <i class="fa-solid fa-x"></i>;
@@ -61,7 +63,7 @@ const Cart = () => {
                                                 <td className="remove-cart-item">
                                                     <button
                                                         className="remove-item"
-                                                        onClick={removeFromCart}>
+                                                        onClick={removeFromCart} >
                                                         {xIcon}
                                                     </button>
                                                 </td>
