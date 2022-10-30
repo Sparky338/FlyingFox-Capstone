@@ -4,6 +4,8 @@ const Cart = () => {
     const cartLength = JSON.parse(localStorage.getItem('cart')).length
     const cart = JSON.parse(localStorage.getItem('cart'))
 
+    // const removeFromCart = 
+
     return (
         <div className="cart-outer">
             <div className="cart-container">
@@ -22,7 +24,7 @@ const Cart = () => {
                         {(!localStorage.getItem('cart')) ?
                             <div className="empty-cart">Your cart is empty!
                                 Perhaps we could interest you in some CATEGORIES?</div> :
-                            <table className="full-cart-table" border="0" cellspacing="0" >
+                            <table className="full-cart-table" border="0" cellspacing="0">
                                 <thead className="table-header">
                                     <tr>
                                         <th width="10%">&nbsp;</th>
@@ -46,12 +48,13 @@ const Cart = () => {
                                                 <td className="cart-item-total">
                                                     ${item[0].price} {/*times qty*/}
                                                 </td>
+                                                <td className="remove-cart-item">X</td>
                                             </tr>
                                         )
                                     })}
                                 </tbody>
-                                {/* <div className="cart-items"> DISPLAY ITEM PICTURE AND NAME, VALUE, TOTAL PRICE. X TO SHOW A REMOVAL OF ITEM </div> */}
-                            </table>}
+                            </table>
+                        }
                     </div>
                 </div>
                 <div className="cart-checkout">cart checkout</div>
