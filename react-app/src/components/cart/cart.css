@@ -26,6 +26,10 @@
     border:solid 1px green;
 }
 
+.table-header-item {
+    display: flex;
+}
+
 .cart-checkout {
     border:solid 1px red;
     width: 38%;

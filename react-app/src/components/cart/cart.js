@@ -25,10 +25,10 @@ const Cart = () => {
                             <table className="full-cart-table">
                                 <thead className="table-header">
                                     <tr>
-                                        <th width="20%">&nbsp;</th>
+                                        <th width="10%">&nbsp;</th>
                                         <th className="table-header-item">ITEM</th>
-                                        <th className="table-header-qty" width="15%">QTY</th>
-                                        <th className="table-header-total" width="20%">TOTAL</th>
+                                        <th className="table-header-qty" width="10%">QTY</th>
+                                        <th className="table-header-total" width="15%">TOTAL</th>
                                         <th width="3%">&nbsp;</th>
                                     </tr>
                                 </thead>
