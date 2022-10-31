@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Checkout from "./Checkout";
 import "./cart.css"
 
 const Cart = () => {
@@ -125,7 +126,9 @@ const Cart = () => {
                         }
                     </div>
                 </div>
-                <div className="cart-checkout">cart checkout</div>
+                <div className="cart-checkout">
+                    <Checkout />
+                </div>
             </div>
         </div>
     )
