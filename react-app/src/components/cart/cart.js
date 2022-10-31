@@ -10,10 +10,11 @@ const Cart = () => {
         localStorage.setItem('cart', "[]");
     }
 
-    const removeFromCart = (itemId) => {
+    const removeFromCart = (e) => {
+        console.log("item id", e.currentTarget.id)
         let res = window.confirm('Are you sure you want to remove this?')
         if (res) {
-            cart.splice(itemId, 1)
+            cart.splice(e.currentTarget.id, 1)
             localStorage.setItem('cart', JSON.stringify(cart))
             setCartState(localStorage.getItem('cart'))
         }
@@ -66,6 +67,7 @@ const Cart = () => {
                                                 <td className="remove-cart-item">
                                                     <button
                                                         className="remove-item"
+                                                        id={item} //want the local storage cart arr number
                                                         onClick={removeFromCart} >
                                                         {xIcon}
                                                     </button>
