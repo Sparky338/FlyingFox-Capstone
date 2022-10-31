@@ -1,18 +1,21 @@
+import { useEffect, useState } from "react";
 import "./cart.css"
 
 const Cart = () => {
     const cartLength = JSON.parse(localStorage.getItem('cart')).length
     const cart = JSON.parse(localStorage.getItem('cart'))
+    const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
 
     if (!localStorage.getItem('cart')) {
         localStorage.setItem('cart', "[]");
     }
 
-    const removeFromCart =  (itemId) => {
+    const removeFromCart = (itemId) => {
         let res = window.confirm('Are you sure you want to remove this?')
         if (res) {
             cart.splice(itemId, 1)
             localStorage.setItem('cart', JSON.stringify(cart))
+            setCartState(localStorage.getItem('cart'))
         }
     }
 
