@@ -7,8 +7,9 @@ const Cart = () => {
         localStorage.setItem('cart', "{}");
     }
 
-    const cartLength = JSON.parse(localStorage.getItem('cart')).length
+    // const cartLength = JSON.parse(localStorage.getItem('cart')).length
     const cart = JSON.parse(localStorage.getItem('cart'))
+    const cartObjLength = Object.keys(cart).length
     const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
 
 
@@ -34,13 +35,13 @@ const Cart = () => {
                         <div className="item-value">
                             {!localStorage.getItem('cart') ?
                                 <div>(0 Items) </div> :
-                                (cartLength === 1 ?
+                                (cartObjLength === 1 ?
                                     <div>(1 Item)</div> :
-                                    <div>({cartLength} Items)</div>)}
+                                    <div>({cartObjLength} Items)</div>)}
                         </div>
                     </div>
                     <div className="cart-contents">
-                        {(cartLength === 0) ?
+                        {(cartObjLength === 0) ?
                             <div className="empty-cart">Your cart is empty!
                                 Perhaps we could interest you in some CATEGORIES?</div> :
                             <table className="full-cart-table" border="0" cellspacing="0">
@@ -59,7 +60,6 @@ const Cart = () => {
                                             <tr className="cart-item" key={i}>
                                                 <td className="cart-item-image">
                                                     {item[1][0].images[0]}
-                                                    {/* {console.log(item, i)} */}
                                                 </td>
                                                 <td className="cart-item-name">
                                                     {item[1][0].item_name}
@@ -71,8 +71,8 @@ const Cart = () => {
                                                 <td className="remove-cart-item">
                                                     <button
                                                         className="remove-item"
-                                                        id={item} //want the local storage cart arr number
-                                                        itemId={item[1][0].id}
+                                                        // id={item}
+                                                        // itemId={item[1][0].id}
                                                         onClick={removeFromCart(item[1][0].id)} >
                                                         {xIcon}
                                                     </button>
