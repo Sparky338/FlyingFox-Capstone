@@ -6,19 +6,27 @@ const Cart = () => {
     if (!localStorage.getItem('cart')) {
         localStorage.setItem('cart', "{}");
     }
+    if (!localStorage.getItem('itemQuantity')) {
+        localStorage.setItem('itemQuantity', "{}");
+    }
 
     // const cartLength = JSON.parse(localStorage.getItem('cart')).length
     const cart = JSON.parse(localStorage.getItem('cart'))
+    const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
     const cartObjLength = Object.keys(cart).length
-    const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
-    const [qtyState, setQtyState] = useState()
+    const itemQty= JSON.parse(localStorage.getItem('itemQuantity'))
 
-    const handleQty = (qty) => {
+    const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
+    const [qtyState, setQtyState] = useState(localStorage.getItem('itemQuantity') || '')
+
+    const handleQty = (qty, itemId) => {
         if (parseInt(qty) <= 0 || isNaN(parseInt(qty))) {
             qty = 1
             alert("Quantity must be at least 1. If you wish to remove this item, click the X at the end of the row.")
         }
-
+        itemQuantity[itemId] = qty
+        localStorage.setItem('itemQuantity', JSON.stringify(itemQuantity))
+        setQtyState(qty)
     }
 
     const removeFromCart = itemId => (e) => {
@@ -85,8 +93,8 @@ const Cart = () => {
                                                             type="number"
                                                             className="quantity-form-value"
                                                             min="1"
-                                                            value="1"
-                                                            onChange={(e) => handleQty(e.target.value)}
+                                                            value={qtyState}
+                                                            onChange={(e) => handleQty(e.target.value, item[1][0].id)}
                                                         />
                                                         {/* <input
                                                             type="button"
