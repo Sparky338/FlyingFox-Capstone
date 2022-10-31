@@ -16,7 +16,8 @@ const Cart = () => {
         let res = window.confirm('Are you sure you want to remove this?')
         if (res) {
             // cart.splice(e.currentTarget.id, 1)
-            delete cart.id
+            console.log(cart)
+            delete cart.item
             localStorage.setItem('cart', JSON.stringify(cart))
             setCartState(localStorage.getItem('cart'))
         }
@@ -55,11 +56,12 @@ const Cart = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="table-body">
-                                    {Object.entries(cart).map((item, i) => { //for (let [key,value] of Object.entries(cart)
+                                    {Object.entries(cart).map((item, i) => {
                                         return (
                                             <tr className="cart-item" key={i}>
                                                 <td className="cart-item-image">
                                                     {item[1][0].images[0]}
+                                                    {/* {console.log(item, i)} */}
                                                 </td>
                                                 <td className="cart-item-name">
                                                     {item[1][0].item_name}
@@ -71,7 +73,7 @@ const Cart = () => {
                                                 <td className="remove-cart-item">
                                                     <button
                                                         className="remove-item"
-                                                        id={item[1][0].id} //want the local storage cart arr number
+                                                        id={item} //want the local storage cart arr number
                                                         onClick={removeFromCart} >
                                                         {xIcon}
                                                     </button>
