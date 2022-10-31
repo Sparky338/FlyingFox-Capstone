@@ -34,10 +34,10 @@ const Cart = () => {
                         <div className="your-cart">Your Cart</div>
                         <div className="item-value">
                             {!localStorage.getItem('cart') ?
-                                <div>(0 Items) </div> :
+                                <div className="item-counter">(0 items) </div> :
                                 (cartObjLength === 1 ?
-                                    <div>(1 Item)</div> :
-                                    <div>({cartObjLength} Items)</div>)}
+                                    <div className="item-counter">(1 item)</div> :
+                                    <div className="item-counter">({cartObjLength} items)</div>)}
                         </div>
                     </div>
                     <div className="cart-contents">

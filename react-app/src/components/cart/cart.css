@@ -11,6 +11,7 @@
     display: flex;
     justify-content: space-between;
     width: 80%;
+    margin-top: 50px;
 }
 
 .cart-and-cart-contents-left {
@@ -20,6 +21,23 @@
 .cart-header {
     display: flex;
     margin-bottom: 20px;
+}
+
+.your-cart {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.item-value {
+    font-weight: 600;
+}
+
+.item-counter {
+    text-align: end;
+    position:relative;
+    bottom: -5px;
+    left: 5px;
+
 }
 
 .full-cart-table {
