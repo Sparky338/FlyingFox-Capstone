@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import "./cart.css"
 
 const Cart = () => {
+    // Must be first to render an empty cart
+    if (!localStorage.getItem('cart')) {
+        localStorage.setItem('cart', "{}");
+    }
+
     const cartLength = JSON.parse(localStorage.getItem('cart')).length
     const cart = JSON.parse(localStorage.getItem('cart'))
     const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
 
-    if (!localStorage.getItem('cart')) {
-        localStorage.setItem('cart', "[]");
-    }
 
     const removeFromCart = (e) => {
         console.log("item id", e.currentTarget.id)
@@ -21,6 +23,8 @@ const Cart = () => {
     }
 
     const xIcon = <i class="fa-solid fa-x"></i>;
+
+
 
     return (
         <div className="cart-outer">

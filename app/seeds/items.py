@@ -100,7 +100,7 @@ def seed_items():
     db.session.add(Epicenter)
 
     db.session.commit()
-    
+
 
 # Uses a raw SQL query to TRUNCATE the items table.
 # SQLAlchemy doesn't have a built in function to do this

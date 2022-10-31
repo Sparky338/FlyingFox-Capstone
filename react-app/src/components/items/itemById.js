@@ -14,7 +14,7 @@ const ItemById = () => {
     if (!itemId) return null;
     if (!itemsObj) return null;
     if (!localStorage.getItem('cart')) {
-        localStorage.setItem('cart', "[]");
+        localStorage.setItem('cart', "{}"); // object with pk, key into pk
     }
 
     const filteredItem = items.filter(item => item.id === +itemId)
@@ -31,7 +31,7 @@ const ItemById = () => {
         // if (item) {
         //     item.qty++;
         // } else {
-            cart.push(filteredItem);
+            cart[itemId] = filteredItem;
         // }
         localStorage.setItem('cart', JSON.stringify(cart))
         history.push("/cart")
