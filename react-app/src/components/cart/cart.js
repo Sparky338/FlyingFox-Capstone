@@ -13,10 +13,10 @@ const Cart = () => {
 
 
     const removeFromCart = (e) => {
-        console.log("item id", e.currentTarget.id)
         let res = window.confirm('Are you sure you want to remove this?')
         if (res) {
-            cart.splice(e.currentTarget.id, 1)
+            // cart.splice(e.currentTarget.id, 1)
+            delete cart.id
             localStorage.setItem('cart', JSON.stringify(cart))
             setCartState(localStorage.getItem('cart'))
         }
@@ -55,23 +55,23 @@ const Cart = () => {
                                     </tr>
                                 </thead>
                                 <tbody className="table-body">
-                                    {cart.map((item) => {
+                                    {Object.entries(cart).map((item, i) => { //for (let [key,value] of Object.entries(cart)
                                         return (
-                                            <tr className="cart-item" key={item.id}>
+                                            <tr className="cart-item" key={i}>
                                                 <td className="cart-item-image">
-                                                    {item[0].images[0]}
+                                                    {item[1][0].images[0]}
                                                 </td>
                                                 <td className="cart-item-name">
-                                                    {item[0].item_name}
+                                                    {item[1][0].item_name}
                                                 </td>
                                                 <td className="cart-item-qty"></td>
                                                 <td className="cart-item-total">
-                                                    ${item[0].price} {/*times qty*/}
+                                                    ${item[1][0].price} {/*times qty*/}
                                                 </td>
                                                 <td className="remove-cart-item">
                                                     <button
                                                         className="remove-item"
-                                                        id={item[0].id} //want the local storage cart arr number
+                                                        id={item[1][0].id} //want the local storage cart arr number
                                                         onClick={removeFromCart} >
                                                         {xIcon}
                                                     </button>
