@@ -48,10 +48,18 @@
     text-align: left;
 }
 
+.cart-item {
+    font-size: 20px;
+}
+
 td {
     border-top: 1px solid #e1e1e1;
     padding: 20px 5px;
     vertical-align: top;
+}
+
+.cart-item-total {
+    font-weight: 600;
 }
 
 .cart-item-total,
