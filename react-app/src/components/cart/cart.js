@@ -67,7 +67,7 @@ const Cart = () => {
                                                 <td className="remove-cart-item">
                                                     <button
                                                         className="remove-item"
-                                                        id={item} //want the local storage cart arr number
+                                                        id={item[0].id} //want the local storage cart arr number
                                                         onClick={removeFromCart} >
                                                         {xIcon}
                                                     </button>
