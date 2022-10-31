@@ -11,7 +11,15 @@ const Cart = () => {
     const cart = JSON.parse(localStorage.getItem('cart'))
     const cartObjLength = Object.keys(cart).length
     const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
+    const [qtyState, setQtyState] = useState()
 
+    const handleQty = (qty) => {
+        if (parseInt(qty) <= 0 || isNaN(parseInt(qty))) {
+            qty = 1
+            alert("Quantity must be at least 1. If you wish to remove this item, click the X at the end of the row.")
+        }
+
+    }
 
     const removeFromCart = itemId => (e) => {
         let res = window.confirm('Are you sure you want to remove this?')
@@ -64,7 +72,31 @@ const Cart = () => {
                                                 <td className="cart-item-name">
                                                     {item[1][0].item_name}
                                                 </td>
-                                                <td className="cart-item-qty"></td>
+                                                <td className="cart-item-qty">
+                                                    <form className="qty-form">
+                                                        {/* <input
+                                                            type="button"
+                                                            className="quantity-form-minus"
+                                                            value="-"
+                                                            // min="0"
+                                                            // onChange={(e) => handleQty(e.target.value)}
+                                                        /> */}
+                                                        <input
+                                                            type="number"
+                                                            className="quantity-form-value"
+                                                            min="1"
+                                                            value="1"
+                                                            onChange={(e) => handleQty(e.target.value)}
+                                                        />
+                                                        {/* <input
+                                                            type="button"
+                                                            className="quantity-form-plus"
+                                                            value="+"
+                                                            // min="0"
+                                                            // onChange={(e) => handleQty(e.target.value)}
+                                                        /> */}
+                                                    </form>
+                                                </td>
                                                 <td className="cart-item-total">
                                                     ${item[1][0].price} {/*times qty*/}
                                                 </td>

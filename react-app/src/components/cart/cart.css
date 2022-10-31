@@ -58,6 +58,14 @@ td {
     vertical-align: top;
 }
 
+.qty-form {
+    display: flex;
+}
+
+.quantity-form-value {
+    width: 30px;
+}
+
 .cart-item-total {
     font-weight: 600;
 }
