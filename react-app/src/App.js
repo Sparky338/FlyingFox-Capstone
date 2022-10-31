@@ -5,6 +5,10 @@ import NavBar from './components/NavBar';
 import { authenticate } from './store/session';
 import HomePage from './components/home/home';
 import LoginSignup from './components/login-signup/login-signup';
+import { getAllItems } from './store/items';
+import ItemById from './components/items/itemById';
+import ProtectedRoute from "./components/auth/ProtectedRoute"
+import Cart from './components/cart/cart';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -15,6 +19,7 @@ function App() {
       await dispatch(authenticate());
       setLoaded(true);
     })();
+    dispatch(getAllItems());
   }, [dispatch]);
 
   if (!loaded) {
@@ -31,6 +36,12 @@ function App() {
         <Route path='/login' exact={true}>
           <LoginSignup />
         </Route>
+        <Route path="/items/:itemId">
+          <ItemById />
+        </Route>
+        <ProtectedRoute path='/cart' exact={true}>
+          <Cart />
+        </ProtectedRoute>
         {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
