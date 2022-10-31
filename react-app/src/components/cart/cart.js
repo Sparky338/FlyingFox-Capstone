@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Checkout from "./Checkout";
+import CartTable from "./cartTable";
 import "./cart.css"
 
 const Cart = () => {
@@ -15,7 +16,7 @@ const Cart = () => {
     const cart = JSON.parse(localStorage.getItem('cart'))
     const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
     const cartObjLength = Object.keys(cart).length
-    const itemQty= JSON.parse(localStorage.getItem('itemQuantity'))
+    const itemQty = JSON.parse(localStorage.getItem('itemQuantity'))
 
     const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
     const [qtyState, setQtyState] = useState(localStorage.getItem('itemQuantity') || '')
@@ -38,10 +39,6 @@ const Cart = () => {
             setCartState(localStorage.getItem('cart'))
         }
     }
-
-    const xIcon = <i class="fa-solid fa-x"></i>;
-
-
 
     return (
         <div className="cart-outer">
@@ -71,57 +68,7 @@ const Cart = () => {
                                         <th width="3%">&nbsp;</th>
                                     </tr>
                                 </thead>
-                                <tbody className="table-body">
-                                    {Object.entries(cart).map((item, i) => {
-                                        return (
-                                            <tr className="cart-item" key={i}>
-                                                <td className="cart-item-image">
-                                                    {item[1][0].images[0]}
-                                                </td>
-                                                <td className="cart-item-name">
-                                                    {item[1][0].item_name}
-                                                </td>
-                                                <td className="cart-item-qty">
-                                                    <form className="qty-form">
-                                                        {/* <input
-                                                            type="button"
-                                                            className="quantity-form-minus"
-                                                            value="-"
-                                                            // min="0"
-                                                            // onChange={(e) => handleQty(e.target.value)}
-                                                        /> */}
-                                                        <input
-                                                            type="number"
-                                                            className="quantity-form-value"
-                                                            min="1"
-                                                            value={qtyState}
-                                                            onChange={(e) => handleQty(e.target.value, item[1][0].id)}
-                                                        />
-                                                        {/* <input
-                                                            type="button"
-                                                            className="quantity-form-plus"
-                                                            value="+"
-                                                            // min="0"
-                                                            // onChange={(e) => handleQty(e.target.value)}
-                                                        /> */}
-                                                    </form>
-                                                </td>
-                                                <td className="cart-item-total">
-                                                    ${item[1][0].price} {/*times qty*/}
-                                                </td>
-                                                <td className="remove-cart-item">
-                                                    <button
-                                                        className="remove-item"
-                                                        // id={item}
-                                                        // itemId={item[1][0].id}
-                                                        onClick={removeFromCart(item[1][0].id)} >
-                                                        {xIcon}
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        )
-                                    })}
-                                </tbody>
+                                <CartTable />
                             </table>
                         }
                     </div>
