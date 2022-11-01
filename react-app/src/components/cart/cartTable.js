@@ -53,7 +53,7 @@ const CartTable = () => {
                             </form>
                         </td>
                         <td className="cart-item-total">
-                            ${item[1][0].price} {/*times qty*/}
+                            ${item[1][0].price * itemQuantity[item[1][0].id]}
                         </td>
                         <td className="remove-cart-item">
                             <button
