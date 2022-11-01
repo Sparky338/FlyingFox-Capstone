@@ -14,24 +14,24 @@ const CartTable = () => {
     const xIcon = <i class="fa-solid fa-x"></i>;
 
     const handleQty = (qty, itemId) => {
-        dispatch(editCart(qty, itemId))
-        // if (parseInt(qty) <= 0 || isNaN(parseInt(qty))) {
-        //     qty = 1
-        //     alert("Quantity must be at least 1. If you wish to remove this item, click the X at the end of the row.")
-        // }
-        // itemQuantity[itemId] = qty
-        // localStorage.setItem('itemQuantity', JSON.stringify(itemQuantity))
-        // setQtyState(qty)
+        // dispatch(editCart(qty, itemId))
+        if (parseInt(qty) <= 0 || isNaN(parseInt(qty))) {
+            qty = 1
+            alert("Quantity must be at least 1. If you wish to remove this item, click the X at the end of the row.")
+        }
+        itemQuantity[itemId] = qty
+        localStorage.setItem('itemQuantity', JSON.stringify(itemQuantity))
+        setQtyState(qty)
     }
 
     const removeFromCart = itemId => (e) => {
-        dispatch(deleteCart(itemId))
-        // let res = window.confirm('Are you sure you want to remove this?')
-        // if (res) {
-        //     delete cart[itemId]
-        //     localStorage.setItem('cart', JSON.stringify(cart))
-        //     setCartState(localStorage.getItem('cart'))
-        // }
+        // dispatch(deleteCart(itemId))
+        let res = window.confirm('Are you sure you want to remove this?')
+        if (res) {
+            delete cart[itemId]
+            localStorage.setItem('cart', JSON.stringify(cart))
+            setCartState(localStorage.getItem('cart'))
+        }
     }
 
     return (
@@ -51,7 +51,7 @@ const CartTable = () => {
                                     type="number"
                                     className="quantity-form-value"
                                     min="1"
-                                    value={qtyState}
+                                    value={itemQuantity[item[1][0].id]}
                                     onChange={(e) => handleQty(e.target.value, item[1][0].id)}
                                 />
                             </form>

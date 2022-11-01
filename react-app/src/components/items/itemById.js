@@ -10,11 +10,15 @@ const ItemById = () => {
     const user = useSelector(state => state.session.user);
     const itemsObj = useSelector(state => state.items);
     const items = Object.values(itemsObj);
+    const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
 
     if (!itemId) return null;
     if (!itemsObj) return null;
     if (!localStorage.getItem('cart')) {
         localStorage.setItem('cart', "{}"); // object with pk, key into pk
+    }
+    if (!localStorage.getItem('itemQuantity')) {
+        localStorage.setItem('itemQuantity', "{}");
     }
 
     const filteredItem = items.filter(item => item.id === +itemId)
@@ -22,18 +26,17 @@ const ItemById = () => {
     const cart = JSON.parse(localStorage.getItem('cart'))
 
     const addToCart = () => {
+        let item = Object.keys(cart).find(itemId => itemId === filteredItem[0].id)
 
-        let itemInCart = Object.keys(cart).find(itemId => itemId === filteredItem[0].id)
-
-        // console.log("item", item)
-        // console.log("filtered item", filteredItem)
-        if (itemInCart) {
-            itemInCart.qty++;
+        if (item) {
+            itemQuantity[itemId] += 1;
         } else {
             cart[itemId] = filteredItem;
-
+            itemQuantity[itemId] = 1
+            // cart[itemId.qty] = 1;
         }
         localStorage.setItem('cart', JSON.stringify(cart))
+        localStorage.setItem('itemQuantity', JSON.stringify(itemQuantity))
         history.push("/cart")
     }
 
