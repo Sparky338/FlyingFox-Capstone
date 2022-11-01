@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./cart.css"
 
 const Checkout = () => {
@@ -6,14 +7,22 @@ const Checkout = () => {
     const cartItemPrice = Object.entries(cart).map((item, i) => {
         return item[1][0].price});
     const itemQtyValue = Object.values(itemQuantity);
+    const [sum, setSum] = useState(0)
 
     const getTotalSum = () => {
         return cartItemPrice.reduce(
             function(acc, price, index){
                 return acc + price * itemQtyValue[index]
-            }, 0
+            }, 0,
         )
     }
+
+    window.addEventListener('storage', e => setSum(e))
+    // useEffect(() => {
+    //     if (itemQuantity) {
+    //         setSum(itemQuantity)
+    //     }
+    // }, [])
 
     return (
         <div className="checkout-outer">
