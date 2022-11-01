@@ -2,33 +2,33 @@
 
 // Types
 const GET_CART = 'cart/GET_CART';
-const CREATE_CART = 'cart/CREATE_CART';
+const ADD_CART = 'cart/ADD_CART';
 const EDIT_CART = 'cart/EDIT_CART';
 const DELETE_CART = 'cart/DELETE_CART';
 
 // Action Creators
-const getCartAction = (cart) => {
+const getCartItems = (cart) => {
     return {
         type: GET_CART,
         cart
     }
 }
 
-const createCartAction = (cart) => {
+const addCartItems = (cart) => {
     return {
-        type: CREATE_CART,
+        type: ADD_CART,
         cart
     }
 }
 
-const editCartAction = (cart) => {
+const editCartItems = (cart) => {
     return {
         type: EDIT_CART,
         cart
     }
 }
 
-export const deleteCartAction = (cartId) => {
+export const deleteCartItems = (cartId) => {
     return {
         type: DELETE_CART,
         cartId
@@ -37,16 +37,16 @@ export const deleteCartAction = (cartId) => {
 
 
 // Thunks
-export const getAllCart = () => async dispatch => {
+export const getCart = () => async dispatch => {
     const res = await fetch('/api/cart');
 
     if (res.ok) {
         const cart = await res.json();
-        dispatch(getCartAction(cart.cart));
+        dispatch(getCartItems(cart.cart));
     }
 };
 
-export const createCart = (cartData) => async dispatch => {
+export const addCart = (cartData) => async dispatch => {
 
     const res = await fetch(`/api/cart`, {
         method: 'POST',
@@ -56,7 +56,7 @@ export const createCart = (cartData) => async dispatch => {
 
     if (res.ok) {
         const cart = await res.json();
-        dispatch(createCartAction(cart));
+        dispatch(addCartItems(cart));
         return cart;
     }
 };
@@ -70,7 +70,7 @@ export const editCart = (cartId, editCartData) => async dispatch => {
 
     if (res.ok) {
         const cart = await res.json();
-        dispatch(editCartAction(cart));
+        dispatch(editCartItems(cart));
         return cart;
     }
 };
@@ -83,7 +83,7 @@ export const deleteCart = (cartId) => async dispatch => {
 
     if (res.ok) {
         const cart = `${cartId}`
-        dispatch(deleteCartAction(cart))
+        dispatch(deleteCartItems(cart))
     }
 }
 
@@ -96,7 +96,7 @@ export default function cartReducer(state = initialState, action) {
         case GET_CART:
             action.cart.forEach(cart => newState[cart.id] = cart)
             return newState;
-        case CREATE_CART:
+        case ADD_CART:
             newState[action.cart.id] = action.cart
             return newState;
         case EDIT_CART:
@@ -105,8 +105,6 @@ export default function cartReducer(state = initialState, action) {
         case DELETE_CART:
             delete newState[action.cartId]
             return newState;
-        case CLEAR_CART:
-            return {}
         default:
             return state;
     }
