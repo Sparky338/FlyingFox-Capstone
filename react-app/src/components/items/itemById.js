@@ -26,10 +26,10 @@ const ItemById = () => {
     const cart = JSON.parse(localStorage.getItem('cart'))
 
     const addToCart = () => {
-        let item = Object.keys(cart).find(itemId => itemId === filteredItem[0].id)
+        let item = Object.keys(itemQuantity).find(itemId => +itemId === filteredItem[0].id)
 
         if (item) {
-            itemQuantity[itemId] += 1;
+            itemQuantity[itemId]++;
         } else {
             cart[itemId] = filteredItem;
             itemQuantity[itemId] = 1
