@@ -23,16 +23,16 @@ const ItemById = () => {
 
     const addToCart = () => {
 
-        // let item = cart.find(item => item === filteredItem)
+        let itemInCart = Object.keys(cart).find(itemId => itemId === filteredItem[0].id)
 
         // console.log("item", item)
         // console.log("filtered item", filteredItem)
-
-        // if (item) {
-        //     item.qty++;
-        // } else {
+        if (itemInCart) {
+            itemInCart.qty++;
+        } else {
             cart[itemId] = filteredItem;
-        // }
+
+        }
         localStorage.setItem('cart', JSON.stringify(cart))
         history.push("/cart")
     }

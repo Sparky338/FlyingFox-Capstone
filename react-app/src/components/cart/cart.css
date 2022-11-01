@@ -91,7 +91,7 @@ td {
     flex-direction: column;
 }
 
-.horizontal-line {
+.checkout-horizontal-line {
     width: 100%;
     background-color: black;
     height: 5px;

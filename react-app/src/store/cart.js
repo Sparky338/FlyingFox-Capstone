@@ -81,6 +81,7 @@ export const deleteCart = (itemId) => dispatch => {
         const cart = localStorage.getItem('cart')
         delete cart[itemId]
         localStorage.setItem('cart', JSON.stringify(cart))
+        // dispatch(deleteCartItems())
         // setCartState(localStorage.getItem('cart')) // to re-render
     }
 
