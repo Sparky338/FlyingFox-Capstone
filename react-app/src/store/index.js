@@ -23,7 +23,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const configureStore = (preloadedState) => {
-  return createStore(rootReducer, preloadedState, enhancer);
+  return createStore(rootReducer, preloadedState, enhancer); //loadFromLocalStorage() for preloadedState?
+  // store.subscribe(() => saveToLocalStorage(store.getState())); ?
 };
 
 export default configureStore;
