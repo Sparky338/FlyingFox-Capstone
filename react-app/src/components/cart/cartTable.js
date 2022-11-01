@@ -1,13 +1,15 @@
 import "./cart.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 
-const CartTable = () => {
-    const cart = JSON.parse(localStorage.getItem('cart'))
-    const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
-    const [qtyState, setQtyState] = useState(localStorage.getItem('itemQuantity') || '')
-    const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
+const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
+    // const cart = JSON.parse(cartState)
+    // const itemQuantity = JSON.parse(qtyState)
+    // const cart = JSON.parse(localStorage.getItem('cart'))
+    // const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
+    // const [qtyState, setQtyState] = useState(localStorage.getItem('itemQuantity') || '')
+    // const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
 
     const xIcon = <i class="fa-solid fa-x"></i>;
 
@@ -16,23 +18,33 @@ const CartTable = () => {
             qty = 1
             alert("Quantity must be at least 1. If you wish to remove this item, click the X at the end of the row.")
         }
-        itemQuantity[itemId] = +qty
-        localStorage.setItem('itemQuantity', JSON.stringify(itemQuantity))
-        setQtyState(qty)
+        // itemQuantity[itemId] = +qty
+        setQtyState({...itemQty, [itemId]:+qty})
+        // localStorage.setItem('itemQty', JSON.stringify(itemQty))
     }
 
     const removeFromCart = itemId => (e) => {
         let res = window.confirm('Are you sure you want to remove this?')
         if (res) {
-            delete cart[itemId]
-            localStorage.setItem('cart', JSON.stringify(cart))
-            setCartState(localStorage.getItem('cart'))
+            setCartState({...cartState, [itemId]:undefined})
+            setQtyState({...itemQty, [itemId]:undefined})
+            // delete cartState[itemId]
+            // delete itemQty[itemId]
+
+            // localStorage.setItem('cart', JSON.stringify(cartState))
+            // localStorage.setItem('itemQty', JSON.stringify(itemQty))
+            // setCartState(localStorage.getItem('cart'))
         }
     }
 
+    useEffect(() =>{
+        console.log("this is the cart state", cartState)
+        // console.log(qtyState)
+    },[])
+
     return (
         <tbody className="table-body">
-            {Object.entries(cart).map((item, i) => {
+            {cartState&& Object.entries(cartState).map((item, i) => {
                 return (
                     <tr className="cart-item" key={i}>
                         <td className="cart-item-image">
@@ -47,13 +59,13 @@ const CartTable = () => {
                                     type="number"
                                     className="quantity-form-value"
                                     min="1"
-                                    value={itemQuantity[item[1][0].id]}
+                                    value={itemQty[item[1][0].id]}
                                     onChange={(e) => handleQty(e.target.value, item[1][0].id)}
                                 />
                             </form>
                         </td>
                         <td className="cart-item-total">
-                            ${item[1][0].price * itemQuantity[item[1][0].id]}
+                            ${item[1][0].price * itemQty[item[1][0].id]}
                         </td>
                         <td className="remove-cart-item">
                             <button

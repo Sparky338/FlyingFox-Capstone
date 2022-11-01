@@ -17,12 +17,13 @@ const Checkout = () => {
         )
     }
 
-    window.addEventListener('storage', e => setSum(e))
+    
+    // window.addEventListener('storage', e => setSum(e))
     // useEffect(() => {
-    //     if (itemQuantity) {
+
     //         setSum(itemQuantity)
-    //     }
-    // }, [])
+
+    // }, [itemQuantity])
 
     return (
         <div className="checkout-outer">

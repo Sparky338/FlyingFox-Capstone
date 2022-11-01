@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Checkout from "./Checkout";
 import CartTable from "./cartTable";
 import "./cart.css"
@@ -8,18 +8,23 @@ const Cart = () => {
     if (!localStorage.getItem('cart')) {
         localStorage.setItem('cart', "{}");
     }
-    if (!localStorage.getItem('itemQuantity')) {
-        localStorage.setItem('itemQuantity', "{}");
+    if (!localStorage.getItem('itemQty')) {
+        localStorage.setItem('itemQty', "{}");
     }
 
-    // const cartLength = JSON.parse(localStorage.getItem('cart')).length
     const cart = JSON.parse(localStorage.getItem('cart'))
-    const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
     const cartObjLength = Object.keys(cart).length
-    const itemQty = JSON.parse(localStorage.getItem('itemQuantity'))
+    const [cartState, setCartState] = useState(JSON.parse(localStorage.getItem('cart')) || '')
+    const [itemQty, setQtyState] = useState(JSON.parse(localStorage.getItem('itemQuantity')) || '')
+    useEffect(() => {
+        localStorage.setItem('itemQty', JSON.stringify(itemQty))
+        localStorage.setItem('cart', JSON.stringify(cartState))
+        localStorage.setItem('itemQty', JSON.stringify(itemQty))
+    }, [itemQty, cartState])
+    // const cartLength = JSON.parse(localStorage.getItem('cart')).length
+    // const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
+    // const itemQty = JSON.parse(localStorage.getItem('itemQuantity'))
 
-    const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
-    const [qtyState, setQtyState] = useState(localStorage.getItem('itemQuantity') || '')
 
     // const handleQty = (qty, itemId) => {
     //     if (parseInt(qty) <= 0 || isNaN(parseInt(qty))) {
@@ -68,7 +73,12 @@ const Cart = () => {
                                         <th width="3%">&nbsp;</th>
                                     </tr>
                                 </thead>
-                                <CartTable />
+                                <CartTable
+                                    cartState={cartState}
+                                    setCartState={setCartState}
+                                    itemQty={itemQty}
+                                    setQtyState={setQtyState}
+                                />
                             </table>
                         }
                     </div>
