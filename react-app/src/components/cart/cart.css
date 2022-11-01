@@ -85,3 +85,18 @@ td {
     border:solid 1px red;
     width: 38%;
 }
+
+.checkout-outer {
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-line {
+    width: 100%;
+    background-color: black;
+    height: 5px;
+    /* position: absolute;
+    left: 0;
+    top: 100px; */
+    /* z-index: -1; */
+}
