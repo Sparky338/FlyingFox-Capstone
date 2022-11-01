@@ -5,9 +5,9 @@ import { useState } from "react"
 
 const CartTable = () => {
     const cart = JSON.parse(localStorage.getItem('cart'))
+    const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
     const [qtyState, setQtyState] = useState(localStorage.getItem('itemQuantity') || '')
     const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
-    const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
 
     const xIcon = <i class="fa-solid fa-x"></i>;
 
