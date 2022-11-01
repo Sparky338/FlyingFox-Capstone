@@ -1,11 +1,9 @@
 import "./cart.css"
 import { useState } from "react"
-// import { useDispatch } from "react-redux"
-// import { deleteCart, editCart } from "../../store/cart";
+
 
 
 const CartTable = () => {
-    // const dispatch = useDispatch();
     const cart = JSON.parse(localStorage.getItem('cart'))
     const [qtyState, setQtyState] = useState(localStorage.getItem('itemQuantity') || '')
     const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
@@ -14,7 +12,6 @@ const CartTable = () => {
     const xIcon = <i class="fa-solid fa-x"></i>;
 
     const handleQty = (qty, itemId) => {
-        // dispatch(editCart(qty, itemId))
         if (parseInt(qty) <= 0 || isNaN(parseInt(qty))) {
             qty = 1
             alert("Quantity must be at least 1. If you wish to remove this item, click the X at the end of the row.")
@@ -25,7 +22,6 @@ const CartTable = () => {
     }
 
     const removeFromCart = itemId => (e) => {
-        // dispatch(deleteCart(itemId))
         let res = window.confirm('Are you sure you want to remove this?')
         if (res) {
             delete cart[itemId]
@@ -62,8 +58,6 @@ const CartTable = () => {
                         <td className="remove-cart-item">
                             <button
                                 className="remove-item"
-                                // id={item}
-                                // itemId={item[1][0].id}
                                 onClick={removeFromCart(item[1][0].id)} >
                                 {xIcon}
                             </button>

@@ -33,7 +33,6 @@ const ItemById = () => {
         } else {
             cart[itemId] = filteredItem;
             itemQuantity[itemId] = 1
-            // cart[itemId.qty] = 1;
         }
         localStorage.setItem('cart', JSON.stringify(cart))
         localStorage.setItem('itemQuantity', JSON.stringify(itemQuantity))

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Checkout from "./Checkout";
 import CartTable from "./cartTable";
 import "./cart.css"
