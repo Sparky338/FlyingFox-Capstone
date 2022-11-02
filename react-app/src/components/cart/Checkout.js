@@ -27,7 +27,7 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
             <div className="checkout-horizontal-line"></div>
             <div className="checkout-total-container">
                 <div className="checkout-total-text">Item Total</div>
-                <div className="checkout-total">${sum}</div>
+                <div className="checkout-total">${sum}.00</div>
             </div>
             <div className="checkout-horizontal-line"></div>
             <button className="checkout-button">CHECKOUT</button> Add onClick

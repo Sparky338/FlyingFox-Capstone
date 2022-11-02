@@ -54,7 +54,7 @@
 
 td {
     border-top: 1px solid #e1e1e1;
-    padding: 20px 5px;
+    padding: 20px 0px;
     vertical-align: top;
 }
 
@@ -64,6 +64,11 @@ td {
 
 .quantity-form-value {
     width: 30px;
+}
+
+.cart-item-qty{
+    display: flex;
+    justify-content: center;
 }
 
 .cart-item-total {
@@ -83,7 +88,7 @@ td {
 
 .cart-checkout {
     border-radius: 5px;
-    width: 38%;
+    width: 35%;
     height: 250px;
     background-color: #06a7e2;
 }

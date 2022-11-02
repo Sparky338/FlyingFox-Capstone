@@ -48,7 +48,7 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
                             </form>
                         </td>
                         <td className="cart-item-total">
-                            ${item[1][0].price * itemQty[item[1][0].id]}
+                            ${item[1][0].price * itemQty[item[1][0].id]}.00
                         </td>
                         <td className="remove-cart-item">
                             <button
