@@ -3,15 +3,16 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 40px;
+    border: solid 1px white;
 }
 
-/* .display-carousel {
-    border: solid red 1px;
-} */
+.display-carousel {
+    width: 40vw;
+}
 
-/* .item-info-price {
-    border: solid blue 1px;
-} */
+.item-info-price {
+    width: 40vw;
+}
 
 /* .name-price-review {
     border: solid green 1px;

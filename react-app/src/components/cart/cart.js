@@ -1,26 +1,23 @@
 import { useEffect, useState } from "react";
+import Checkout from "./Checkout";
+import CartTable from "./cartTable";
 import "./cart.css"
 
 const Cart = () => {
-    const cartLength = JSON.parse(localStorage.getItem('cart')).length
-    const cart = JSON.parse(localStorage.getItem('cart'))
-    const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
-
+    // Must be first to render an empty cart
     if (!localStorage.getItem('cart')) {
-        localStorage.setItem('cart', "[]");
+        localStorage.setItem('cart', "{}");
+    }
+    if (!localStorage.getItem('itemQty')) {
+        localStorage.setItem('itemQty', "{}");
     }
 
-    const removeFromCart = (e) => {
-        console.log("item id", e.currentTarget.id)
-        let res = window.confirm('Are you sure you want to remove this?')
-        if (res) {
-            cart.splice(e.currentTarget.id, 1)
-            localStorage.setItem('cart', JSON.stringify(cart))
-            setCartState(localStorage.getItem('cart'))
-        }
-    }
-
-    const xIcon = <i class="fa-solid fa-x"></i>;
+    const [cartState, setCartState] = useState(JSON.parse(localStorage.getItem('cart')) || '')
+    const [itemQty, setQtyState] = useState(JSON.parse(localStorage.getItem('itemQty')) || '')
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cartState))
+        localStorage.setItem('itemQty', JSON.stringify(itemQty))
+    }, [itemQty, cartState])
 
     return (
         <div className="cart-outer">
@@ -29,15 +26,17 @@ const Cart = () => {
                     <div className="cart-header">
                         <div className="your-cart">Your Cart</div>
                         <div className="item-value">
-                            {!localStorage.getItem('cart') ?
-                                <div>(0 Items) </div> :
-                                (cartLength === 1 ?
-                                    <div>(1 Item)</div> :
-                                    <div>({cartLength} Items)</div>)}
+                            {!cartState ?
+                                <div className="item-counter">(0 items) </div> :
+                                (Object.values(itemQty)
+                                    .reduce((sum, x)=> sum += x, 0) === 1 ?
+                                    <div className="item-counter">(1 item)</div> :
+                                    <div className="item-counter">({Object.values(itemQty)
+                                    .reduce((sum, x)=> sum += x, 0)} items)</div>)}
                         </div>
                     </div>
                     <div className="cart-contents">
-                        {(cartLength === 0) ?
+                        {(Object.entries(itemQty).length === 0) ?
                             <div className="empty-cart">Your cart is empty!
                                 Perhaps we could interest you in some CATEGORIES?</div> :
                             <table className="full-cart-table" border="0" cellspacing="0">
@@ -50,37 +49,24 @@ const Cart = () => {
                                         <th width="3%">&nbsp;</th>
                                     </tr>
                                 </thead>
-                                <tbody className="table-body">
-                                    {cart.map((item) => {
-                                        return (
-                                            <tr className="cart-item" key={item.id}>
-                                                <td className="cart-item-image">
-                                                    {item[0].images[0]}
-                                                </td>
-                                                <td className="cart-item-name">
-                                                    {item[0].item_name}
-                                                </td>
-                                                <td className="cart-item-qty"></td>
-                                                <td className="cart-item-total">
-                                                    ${item[0].price} {/*times qty*/}
-                                                </td>
-                                                <td className="remove-cart-item">
-                                                    <button
-                                                        className="remove-item"
-                                                        id={item[0].id} //want the local storage cart arr number
-                                                        onClick={removeFromCart} >
-                                                        {xIcon}
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        )
-                                    })}
-                                </tbody>
+                                <CartTable
+                                    cartState={cartState}
+                                    setCartState={setCartState}
+                                    itemQty={itemQty}
+                                    setQtyState={setQtyState}
+                                />
                             </table>
                         }
                     </div>
                 </div>
-                <div className="cart-checkout">cart checkout</div>
+                <div className="cart-checkout">
+                    <Checkout
+                        cartState={cartState}
+                        setCartState={setCartState}
+                        itemQty={itemQty}
+                        setQtyState={setQtyState}
+                    />
+                </div>
             </div>
         </div>
     )

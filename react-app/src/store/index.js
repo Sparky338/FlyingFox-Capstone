@@ -1,11 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import itemsReducer from './items';
+import purchasesReducer from './purchases';
 import session from './session'
 
 const rootReducer = combineReducers({
   session,
-  items:itemsReducer
+  items:itemsReducer,
+  purchases:purchasesReducer,
 });
 
 
@@ -21,7 +23,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const configureStore = (preloadedState) => {
-  return createStore(rootReducer, preloadedState, enhancer);
+  return createStore(rootReducer, preloadedState, enhancer); //loadFromLocalStorage() for preloadedState?
+  // store.subscribe(() => saveToLocalStorage(store.getState())); ?
 };
 
 export default configureStore;
