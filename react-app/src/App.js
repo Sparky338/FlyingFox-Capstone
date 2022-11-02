@@ -47,6 +47,9 @@ function App() {
         <ProtectedRoute path='/checkout'>
           <CheckoutPage />
         </ProtectedRoute>
+        {/* <ProtectedRoute path='/orders/:orderId'>
+          <Orders />
+        </ProtectedRoute> */}
         <ProtectedRoute path='/orders'>
           <Orders />
         </ProtectedRoute>

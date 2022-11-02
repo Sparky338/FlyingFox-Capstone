@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import {useDispatch} from "react-redux";
-import {useHistory} from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom"
 import { createPurchase } from "../../store/purchases";
 
 import "./cart.css"
@@ -36,12 +36,12 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
             return item[1][0]
         }); // Array of objects lining up with quantities below
         const cartQuantities = Object.values(itemQuantity) // Array of values lining up with items above
-
+        
         if (sum === 0) return alert("You can't checkout with nothing in your cart. Please select something to buy!")
 
         dispatch(createPurchase(cartItems, cartQuantities))
         // CLEAR LOCAL STORAGE
-        history.push("/checkout")
+        // history.push("/checkout")
     }
 
     return (

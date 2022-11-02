@@ -52,7 +52,7 @@ export const getAllPurchases = () => async dispatch => {
 };
 
 export const createPurchase = (cartItems, cartQuantities) => async dispatch => {
-
+console.log("inside the create thunk", cartItems, cartQuantities)
     const res = await fetch(`/api/purchases`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
