@@ -39,7 +39,7 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
 
         if (sum === 0) return alert("You can't checkout with nothing in your cart. Please select something to buy!")
 
-        dispatch(createPurchase(cartItemsId, cartQuantities))
+        dispatch(createPurchase(cartItemsId, cartQuantities, sum))
         // CLEAR LOCAL STORAGE
         // history.push("/checkout")
     }
