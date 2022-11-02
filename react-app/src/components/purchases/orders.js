@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
+import "./orders.css"
+
 const Orders = () => {
     return (
         <div className="orders-outer">
             <div className="orders-header">My Orders</div>
             <div className="orders-container">
-                <table className="full-cart-table" border="0" cellspacing="0">
+                <table className="full-orders-table" border="0" cellspacing="0">
                     <thead className="table-header">
                         <tr>
                             <th className="table-header-order" width="10%">Order #</th>
@@ -12,6 +15,26 @@ const Orders = () => {
                             <th width="10%">&nbsp;</th>
                         </tr>
                     </thead>
+                    <tbody className="table-body">
+                        {/* {cartState&& Object.entries(cartState).map((item, i) => { */}
+                        {/* return ( */}
+                        <tr className="orders" >
+                            <td className="order-number">
+
+                            </td>
+                            <td className="order-item-names">
+
+                            </td>
+                            <td className="order-status">
+
+                            </td>
+                            <td className="order-details">
+                                <Link to='/orders/:id' className="order-details-link">Order Details</Link>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
                 </table>
             </div>
         </div>
