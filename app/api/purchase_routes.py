@@ -20,6 +20,7 @@ def add_user_purchases():
     purchaser_id = current_user.id
     form = CreatePurchase()
     form['csrf_token'].data = request.cookies['csrf_token']
+    
 
     if form.validate_on_submit():
         purchase = Purchase()
