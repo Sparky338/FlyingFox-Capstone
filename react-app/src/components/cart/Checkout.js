@@ -3,6 +3,10 @@ import "./cart.css"
 
 const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
     const [sum, setSum] = useState(0)
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    const itemQuantity = JSON.parse(localStorage.getItem('itemQty'));
+
+
 
     useEffect(() => {
         if (itemQty && cartState) {
@@ -18,8 +22,19 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
                     }, 0)
             )
         }
-
     }, [cartState, itemQty])
+
+    const handleCheckout = async (e) => {
+        e.preventDefault();
+        const cartItems = Object.entries(cart).map((item) => {
+            return item[1][0]
+        }); // Array of objects lining up with quantities below
+        const cartQuantities = Object.values(itemQuantity) // Array of values lining up with items above
+
+        if (sum === 0) return alert("You can't checkout with nothing in your cart. Please select something to buy!")
+
+        // const newPurchase = {local storage grabbing array of items and qty}
+    }
 
     return (
         <div className="checkout-outer">
@@ -30,7 +45,7 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
                 <div className="checkout-total">${sum}.00</div>
             </div>
             <div className="checkout-horizontal-line"></div>
-            <button className="checkout-button">CHECKOUT</button> Add onClick
+            <button className="checkout-button" onClick={handleCheckout}>CHECKOUT</button>
 
         </div>
     )

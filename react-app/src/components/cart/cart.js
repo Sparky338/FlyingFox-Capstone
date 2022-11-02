@@ -12,14 +12,9 @@ const Cart = () => {
         localStorage.setItem('itemQty', "{}");
     }
 
-    const cart = JSON.parse(localStorage.getItem('cart'))
-    const cartObjLength = Object.keys(cart).length
     const [cartState, setCartState] = useState(JSON.parse(localStorage.getItem('cart')) || '')
     const [itemQty, setQtyState] = useState(JSON.parse(localStorage.getItem('itemQty')) || '')
     useEffect(() => {
-        console.log("cart", cartState)
-        console.log("item", itemQty)
-
         localStorage.setItem('cart', JSON.stringify(cartState))
         localStorage.setItem('itemQty', JSON.stringify(itemQty))
     }, [itemQty, cartState])

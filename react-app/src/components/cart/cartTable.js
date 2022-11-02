@@ -18,8 +18,10 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
 
             let newCartState = Object.assign({}, cartState)
             delete newCartState[itemId]
+
             let newQtyState = Object.assign({}, itemQty)
             delete newQtyState[itemId]
+            
             setCartState(newCartState)
             setQtyState(newQtyState)
         }
