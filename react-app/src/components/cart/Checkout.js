@@ -32,14 +32,14 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
 
     const handleCheckout = async (e) => {
         e.preventDefault();
-        const cartItems = Object.entries(cart).map((item) => {
-            return item[1][0]
+        const cartItemsId = Object.entries(cart).map((item) => {
+            return item[1][0].id
         }); // Array of objects lining up with quantities below
         const cartQuantities = Object.values(itemQuantity) // Array of values lining up with items above
-        
+
         if (sum === 0) return alert("You can't checkout with nothing in your cart. Please select something to buy!")
 
-        dispatch(createPurchase(cartItems, cartQuantities))
+        dispatch(createPurchase(cartItemsId, cartQuantities))
         // CLEAR LOCAL STORAGE
         // history.push("/checkout")
     }

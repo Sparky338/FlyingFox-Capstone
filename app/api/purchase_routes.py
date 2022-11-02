@@ -12,8 +12,9 @@ def get_user_purchases():
     return {'purchases': [p.to_dict() for p in purchases]}
 
 
-@purchase_routes.route("/checkout", methods="POST")
+@purchase_routes.route("", methods="POST")
 @login_required
 def add_user_purchases():
     """Add items from local session cart to user purchases"""
-    pass
+    purchaser_id = current_user.id
+    
