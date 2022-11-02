@@ -2,7 +2,7 @@ from .db import db
 
 class Purchase(db.Model):
     __tablename__ = 'purchases'
-
+# 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete="CASCADE"), nullable=False)
     item_id = db.Column(db.Integer, db.ForeignKey("items.id", ondelete="CASCADE"), nullable=False)

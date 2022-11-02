@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from flask_login import current_user, login_required
 from app.models import db, Item, Purchase
-from ..forms.purchase_form import CreatePurchase
+# from ..forms.purchase_form import CreatePurchase
 
 purchase_routes = Blueprint("purchases", __name__)
 
@@ -17,17 +17,16 @@ def get_user_purchases():
 @login_required
 def add_user_purchases():
     """Add items from local session cart to user purchases"""
-    print("request here", request.json)
+    # print("request here", request.json)
+    cart_id = request.json['cartItemsId']
+    cart_qty = request.json['cartQuantities']
+
     purchaser_id = current_user.id
-    form = CreatePurchase()
-    print("dir form here", dir(form))
-    form['csrf_token'].data = request.cookies['csrf_token']
-    # form['csrf_token'].data = request.json['csrf_token']
 
 
     if form.validate_on_submit():
         purchase = Purchase()
-        form.populate_obj(purchase)
+        # form.populate_obj(purchase)
         purchase.user_id = purchaser_id
         purchase.item_id = [i.to_dict() for i in cartItemsId]
         purchase.quantity = [q.to_dict() for q in cartQuantities]
@@ -35,5 +34,5 @@ def add_user_purchases():
         db.session.add(purchase)
         db.session.commit()
         return {'purchases': purchase.to_dict()}
-    else:
-        return {'errors': form.errors}, 400
+    # else:
+    #     return {'errors': form.errors}, 400
