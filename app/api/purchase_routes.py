@@ -23,13 +23,17 @@ def add_user_purchases():
     cart_total = request.json['sum']
     purchaser_id = current_user.id
 
+    print("items prices?", [items[i].to_dict() for i in cart_id])
+
     if cart_id:
         purchase = Purchase()
         purchases_items = Purchases_Items()
+        items = Item()
 
         purchase.user_id = purchaser_id
         purchases_items.user_id = purchaser_id
         purchases_items.item_id = [i.to_dict() for i in cart_id]
+        purchases_items.price = [items[i].to_dict() for i in cart_id]
         purchases_items.quantity = [q.to_dict() for q in cart_qty]
         purchase.price = cart_total
 
