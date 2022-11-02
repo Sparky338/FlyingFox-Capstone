@@ -1,15 +1,30 @@
 .orders-outer {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
     width: 100%;
+    border: solid 1px green;
 }
 
 .orders-container {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
 
+    border: solid 1px red
+}
+
+.full-orders-table {
+    width: 100%;
+}
+
+.table-header-order,
+.table-header-item-summary,
+.table-header-status,
+.order-status,
+.order-item-names,
+.order-number {
+    text-align: left;
 }
 
 .order-details-link {

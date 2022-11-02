@@ -9,7 +9,7 @@ const Orders = () => {
                 <table className="full-orders-table" border="0" cellspacing="0">
                     <thead className="table-header">
                         <tr>
-                            <th className="table-header-order" width="10%">Order #</th>
+                            <th className="table-header-order" width="15%">Order #</th>
                             <th className="table-header-item-summary">Item Summary</th>
                             <th className="table-header-status" width="15%">Status</th>
                             <th width="10%">&nbsp;</th>
