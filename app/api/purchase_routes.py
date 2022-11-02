@@ -13,14 +13,17 @@ def get_user_purchases():
     return {'purchases': [p.to_dict() for p in purchases]}
 
 
-@purchase_routes.route("", methods="POST")
+@purchase_routes.route("", methods=["POST"])
 @login_required
 def add_user_purchases():
     """Add items from local session cart to user purchases"""
+    print("request here", request.json)
     purchaser_id = current_user.id
     form = CreatePurchase()
+    print("dir form here", dir(form))
     form['csrf_token'].data = request.cookies['csrf_token']
-    print(request.json)
+    # form['csrf_token'].data = request.json['csrf_token']
+
 
     if form.validate_on_submit():
         purchase = Purchase()

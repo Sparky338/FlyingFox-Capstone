@@ -56,7 +56,7 @@ console.log("inside the create thunk", cartItemsId, cartQuantities)
     const res = await fetch(`/api/purchases`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(cartItemsId, cartQuantities)
+        body: JSON.stringify({cartItemsId, cartQuantities})
     });
 
     if (res.ok) {

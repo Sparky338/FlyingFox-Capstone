@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 40px;
-    border: solid 1px white;
+    /* border: solid 1px white; */
 }
 
 .display-carousel {
