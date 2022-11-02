@@ -51,17 +51,17 @@ export const getAllPurchases = () => async dispatch => {
     }
 };
 
-export const createPurchase = (purchaseData) => async dispatch => {
-    if (!purchaseData.imageUrl) purchaseData.imageUrl = "https://cdn.pixabay.com/photo/2017/04/19/10/24/vinyl-2241789_960_720.png"
+export const createPurchase = (cartItems, cartQuantities) => async dispatch => {
 
     const res = await fetch(`/api/purchases`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(purchaseData)
+        body: JSON.stringify(cartItems, cartQuantities)
     });
 
     if (res.ok) {
         const purchase = await res.json();
+        console.log(purchase)
         dispatch(createPurchaseAction(purchase));
         return purchase;
     }

@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
+import {useDispatch} from "react-redux";
+import {useHistory} from "react-router-dom"
+import { createPurchase } from "../../store/purchases";
+
 import "./cart.css"
 
 const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
-    const [sum, setSum] = useState(0)
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const [sum, setSum] = useState(0);
     const cart = JSON.parse(localStorage.getItem('cart'));
     const itemQuantity = JSON.parse(localStorage.getItem('itemQty'));
 
@@ -33,7 +39,8 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
 
         if (sum === 0) return alert("You can't checkout with nothing in your cart. Please select something to buy!")
 
-        // const newPurchase = {local storage grabbing array of items and qty}
+        dispatch(createPurchase(cartItems, cartQuantities))
+        history.push("/checkout")
     }
 
     return (
