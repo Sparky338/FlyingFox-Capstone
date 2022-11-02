@@ -23,11 +23,24 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
         // localStorage.setItem('itemQty', JSON.stringify(itemQty))
     }
 
-    const removeFromCart = itemId => (e) => {
+    const removeFromCart = itemId => {
         let res = window.confirm('Are you sure you want to remove this?')
         if (res) {
-            setCartState({...cartState, [itemId]:undefined})
-            setQtyState({...itemQty, [itemId]:undefined})
+
+            let newCartState = Object.assign({}, cartState)
+            delete newCartState[itemId]
+            let newQtyState = Object.assign({}, itemQty)
+            delete newQtyState[itemId]
+            // console.log(newCartState)
+            setCartState(newCartState)
+            setQtyState(newQtyState)
+
+            // setQtyState(state => Object.keys(itemQty)
+            // .filter(key => key !== itemId)
+            // .reduce((obj, key) => {
+            //   obj[key] = itemQty[key];
+            //   return obj;
+            // }, {}))
             // delete cartState[itemId]
             // delete itemQty[itemId]
 
@@ -38,7 +51,7 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
     }
 
     useEffect(() =>{
-        console.log("this is the cart state", cartState)
+        // console.log("this is the cart state", cartState)
         // console.log(qtyState)
     },[])
 
@@ -70,7 +83,7 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
                         <td className="remove-cart-item">
                             <button
                                 className="remove-item"
-                                onClick={removeFromCart(item[1][0].id)} >
+                                onClick={() => removeFromCart(item[1][0].id)} >
                                 {xIcon}
                             </button>
                         </td>
