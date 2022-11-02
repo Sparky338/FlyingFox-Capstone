@@ -15,7 +15,7 @@ const ItemById = () => {
     if (!itemId) return null;
     if (!itemsObj) return null;
     if (!localStorage.getItem('cart')) {
-        localStorage.setItem('cart', "{}"); // object with pk, key into pk
+        localStorage.setItem('cart', "{}");
     }
     if (!localStorage.getItem('itemQty')) {
         localStorage.setItem('itemQty', "{}");

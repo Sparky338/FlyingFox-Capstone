@@ -1,15 +1,6 @@
 import "./cart.css"
-import { useEffect, useState } from "react"
-
-
 
 const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
-    // const cart = JSON.parse(cartState)
-    // const itemQuantity = JSON.parse(qtyState)
-    // const cart = JSON.parse(localStorage.getItem('cart'))
-    // const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
-    // const [qtyState, setQtyState] = useState(localStorage.getItem('itemQuantity') || '')
-    // const [cartState, setCartState] = useState(localStorage.getItem('cart') || '')
 
     const xIcon = <i class="fa-solid fa-x"></i>;
 
@@ -18,9 +9,7 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
             qty = 1
             alert("Quantity must be at least 1. If you wish to remove this item, click the X at the end of the row.")
         }
-        // itemQuantity[itemId] = +qty
         setQtyState({...itemQty, [itemId]:+qty})
-        // localStorage.setItem('itemQty', JSON.stringify(itemQty))
     }
 
     const removeFromCart = itemId => {
@@ -31,29 +20,10 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
             delete newCartState[itemId]
             let newQtyState = Object.assign({}, itemQty)
             delete newQtyState[itemId]
-            // console.log(newCartState)
             setCartState(newCartState)
             setQtyState(newQtyState)
-
-            // setQtyState(state => Object.keys(itemQty)
-            // .filter(key => key !== itemId)
-            // .reduce((obj, key) => {
-            //   obj[key] = itemQty[key];
-            //   return obj;
-            // }, {}))
-            // delete cartState[itemId]
-            // delete itemQty[itemId]
-
-            // localStorage.setItem('cart', JSON.stringify(cartState))
-            // localStorage.setItem('itemQty', JSON.stringify(itemQty))
-            // setCartState(localStorage.getItem('cart'))
         }
     }
-
-    useEffect(() =>{
-        // console.log("this is the cart state", cartState)
-        // console.log(qtyState)
-    },[])
 
     return (
         <tbody className="table-body">

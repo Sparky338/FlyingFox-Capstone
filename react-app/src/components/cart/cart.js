@@ -23,29 +23,6 @@ const Cart = () => {
         localStorage.setItem('cart', JSON.stringify(cartState))
         localStorage.setItem('itemQty', JSON.stringify(itemQty))
     }, [itemQty, cartState])
-    // const cartLength = JSON.parse(localStorage.getItem('cart')).length
-    // const itemQuantity = JSON.parse(localStorage.getItem('itemQuantity'))
-    // const itemQty = JSON.parse(localStorage.getItem('itemQuantity'))
-
-
-    // const handleQty = (qty, itemId) => {
-    //     if (parseInt(qty) <= 0 || isNaN(parseInt(qty))) {
-    //         qty = 1
-    //         alert("Quantity must be at least 1. If you wish to remove this item, click the X at the end of the row.")
-    //     }
-    //     itemQuantity[itemId] = qty
-    //     localStorage.setItem('itemQuantity', JSON.stringify(itemQuantity))
-    //     setQtyState(qty)
-    // }
-
-    // const removeFromCart = itemId => (e) => {
-    //     let res = window.confirm('Are you sure you want to remove this?')
-    //     if (res) {
-    //         delete cart[itemId]
-    //         localStorage.setItem('cart', JSON.stringify(cart))
-    //         setCartState(localStorage.getItem('cart'))
-    //     }
-    // }
 
     return (
         <div className="cart-outer">
