@@ -66,6 +66,7 @@ const NavBar = () => {
             <div className='dropdown-suits-parachutes'>
               <div className='suits-parachutes-dropdown'>Suits & Parachutes</div>
               <div className='suits-parachutes-content'>
+                {/* <div wrapping title, key into state to make links using category to sort, names, id number */}
                 <div className='wingsuits-category title'>Wingsuits</div>
                 <div className='tracking-suits-category title'>Tracking Suits</div>
                 <div className='parachutes-category title'>Parachutes</div>

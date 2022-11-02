@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Checkout from "./Checkout";
+import Checkout from "./checkout";
 import CartTable from "./cartTable";
 import "./cart.css"
 
