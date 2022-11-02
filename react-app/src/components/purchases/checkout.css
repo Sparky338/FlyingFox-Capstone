@@ -1,0 +1,17 @@
+.successful-checkout {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.redirection-options {
+    font-size: 26px;
+
+}
+
+.home-link,
+.order-link {
+    text-decoration: none;
+    color: #06a7e2;
+}
