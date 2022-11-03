@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getAllPurchases } from "../../store/purchases";
 import { getAllPurchasesItems } from "../../store/purchasesItems";
@@ -7,6 +7,8 @@ import "./orders.css"
 
 const Orders = () => {
     const dispatch = useDispatch();
+    const purchases = useSelector(state => state.purchases);
+    const purchasesItems = useSelector(state => state.purchasesItems);
 
     useEffect(() => {
         dispatch(getAllPurchases())
@@ -17,34 +19,32 @@ const Orders = () => {
         <div className="orders-outer">
             <div className="orders-header">My Orders</div>
             <div className="orders-container">
-                <table className="full-orders-table" border="0" cellspacing="0">
+                <table className="full-orders-table" border="0" cellSpacing="0">
                     <thead className="table-header">
                         <tr>
                             <th className="table-header-order" width="15%">Order #</th>
                             <th className="table-header-item-summary">Item Summary</th>
-                            <th className="table-header-status" width="15%">Status</th>
-                            <th width="10%">&nbsp;</th>
+                            <th width="15%">&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody className="table-body">
                         {/* {cartState&& Object.entries(cartState).map((item, i) => { */}
                         {/* return ( */}
-                        <tr className="orders" >
-                            <td className="order-number">
-
-                            </td>
-                            <td className="order-item-names">
-
-                            </td>
-                            <td className="order-status">
-
-                            </td>
-                            <td className="order-details">
-                                <Link to='/orders/:id' className="order-details-link">Order Details</Link>
-                            </td>
-                        </tr>
-
-
+                        {Object.entries(purchases).map((purchase, i) => {
+                            return (
+                                <tr className="orders" key={i}>
+                                    <td className="order-number">
+                                        {purchase[1].id}
+                                    </td>
+                                    <td className="order-item-names">
+                                        {purchasesItems}
+                                    </td>
+                                    <td className="order-details">
+                                        <Link to={`/orders/${purchase[1].id}`} className="order-details-link">Order Details</Link>
+                                    </td>
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 </table>
             </div>
