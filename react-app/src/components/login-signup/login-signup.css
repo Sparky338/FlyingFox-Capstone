@@ -125,6 +125,11 @@
     height:40px
 }
 
+.login-signup-button:hover {
+    background-color: #06a7e2;
+    color: white;
+}
+
 .space {
     margin-top: 20px;
 }
