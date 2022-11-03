@@ -74,6 +74,13 @@
     display: block;
 }
 
+.navbar-item-links {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    
+}
+
 .session-links-user,
 .session-links-no-user {
     display: flex;

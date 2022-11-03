@@ -18,12 +18,12 @@ def get_user_purchases():
 def add_user_purchases():
     """Add items from local session cart to user purchases"""
 
-    cart_id = request.json['cartItemsId']
-    cart_qty = request.json['cartQuantities']
+    cart_id_list = request.json['cartItemsId']
+    cart_qty_list = request.json['cartQuantities']
     cart_total = request.json['sum']
     purchaser_id = current_user.id
-    
-    if cart_id:
+
+    if cart_id_list:
         purchase = Purchase()
         purchases_items = Purchases_Items()
 
@@ -33,8 +33,8 @@ def add_user_purchases():
         db.session.commit()
 
         purchases_items.purchase_id = purchase.id
-        purchases_items.item_id = [i.to_dict() for i in cart_id]
-        purchases_items.quantity = [q for q in cart_qty]
+        purchases_items.item_id = [i.to_dict() for i in cart_id_list]
+        purchases_items.quantity = [q for q in cart_qty_list]
 
         db.session.add(purchases_items)
         db.session.commit()
