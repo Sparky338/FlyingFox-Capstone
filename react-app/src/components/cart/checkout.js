@@ -40,8 +40,8 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
         const cartQuantities = Object.values(itemQuantity) // Array of values lining up with items above
 
         dispatch(createPurchase(cartItemsId, cartQuantities, sum))
-        localStorage.clear()
-        history.push("/checkout")
+        // localStorage.clear()
+        // history.push("/checkout")
     }
 
     return (

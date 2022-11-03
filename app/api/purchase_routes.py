@@ -28,11 +28,14 @@ def add_user_purchases():
         purchases_items = Purchases_Items()
 
         purchase.user_id = purchaser_id
+        purchase.price = cart_total
+        db.session.add(purchase)
+        db.session.commit()
+
+        purchases_items.purchase_id = purchase.id
         purchases_items.item_id = [i for i in cart_id]
         purchases_items.quantity = [q for q in cart_qty]
-        purchase.price = cart_total
 
-        db.session.add(purchase)
         db.session.add(purchases_items)
         db.session.commit()
         return {

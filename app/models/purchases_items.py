@@ -21,9 +21,7 @@ class Purchases_Items(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'user_id': self.user_id,
-            'item_id': self.item_id,
-            'price': self.price,
             'purchase_id': self.purchase_id,
+            'item_id': self.item_id,
             'quantity': self.quantity
         }
