@@ -12,6 +12,13 @@ def get_user_purchases():
     purchases = Purchase.query.filter_by(user_id=current_user.id)
     return {'purchases': [p.to_dict() for p in purchases]}
 
+# @purchase_routes.route("")
+# @login_required
+# def get_user_purchases_items():
+#     """Get all purchases_items"""
+#     purchases_items = Purchases_Items
+#     return {'purchases_items': [pi.to_dict() for pi in purchases_items]}
+
 
 @purchase_routes.route("", methods=["POST"])
 @login_required
@@ -34,8 +41,8 @@ def add_user_purchases():
 
         for (id, qty) in zip(cart_id_list, cart_qty_list):
             purchases_items.purchase_id = purchase.id
-            purchases_items.item_id = id #[i for i in cart_id_list]
-            purchases_items.quantity = qty #[q for q in cart_qty_list]
+            purchases_items.item_id = id
+            purchases_items.quantity = qty
             db.session.add(purchases_items)
 
         db.session.commit()

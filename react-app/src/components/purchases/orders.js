@@ -1,7 +1,17 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { getAllPurchases, getAllPurchasesItems } from "../../store/purchases";
 import "./orders.css"
 
 const Orders = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAllPurchases())
+        // dispatch(getAllPurchasesItems())
+    })
+
     return (
         <div className="orders-outer">
             <div className="orders-header">My Orders</div>
