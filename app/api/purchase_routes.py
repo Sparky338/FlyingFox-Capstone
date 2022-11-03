@@ -17,28 +17,27 @@ def get_user_purchases():
 @login_required
 def add_user_purchases():
     """Add items from local session cart to user purchases"""
-    # print("request here", request.json)
+
     cart_id = request.json['cartItemsId']
     cart_qty = request.json['cartQuantities']
     cart_total = request.json['sum']
     purchaser_id = current_user.id
 
-    print("items prices?", [items[i].to_dict() for i in cart_id])
+    if cart_id:
+        purchase = Purchase()
+        purchases_items = Purchases_Items()
 
-    # if cart_id:
-    #     purchase = Purchase()
-    #     items = Item()
-    #     purchases_items = Purchases_Items()
+        purchase.user_id = purchaser_id
+        purchases_items.item_id = [i for i in cart_id]
+        purchases_items.quantity = [q for q in cart_qty]
+        purchase.price = cart_total
 
-    #     purchase.user_id = purchaser_id
-    #     # purchases_items.user_id = purchaser_id
-    #     purchases_items.item_id = [i.to_dict() for i in cart_id]
-    #     # purchases_items.price = [items[i].to_dict() for i in cart_id]
-    #     purchases_items.quantity = [q.to_dict() for q in cart_qty]
-    #     purchase.price = cart_total
-
-    #     db.session.add(purchase)
-    #     db.session.commit()
-    #     return {'purchases': purchase.to_dict()}
+        db.session.add(purchase)
+        db.session.add(purchases_items)
+        db.session.commit()
+        return {
+            'purchases': purchase.to_dict(),
+            'purchases_items':purchases_items.to_dict()
+        }
     # else:
     #     return {'errors': form.errors}, 400
