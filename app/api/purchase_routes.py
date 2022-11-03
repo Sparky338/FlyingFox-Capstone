@@ -38,9 +38,5 @@ def add_user_purchases():
             db.session.add(purchases_items)
 
         db.session.commit()
-        return {
-            'purchases': purchase.to_dict(),
-            'purchases_items':purchases_items.to_dict()
-        }
     # else:
     #     return {'errors': form.errors}, 400

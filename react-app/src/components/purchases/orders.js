@@ -28,8 +28,6 @@ const Orders = () => {
                         </tr>
                     </thead>
                     <tbody className="table-body">
-                        {/* {cartState&& Object.entries(cartState).map((item, i) => { */}
-                        {/* return ( */}
                         {Object.entries(purchases).map((purchase, i) => {
                             return (
                                 <tr className="orders" key={i}>

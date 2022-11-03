@@ -8,9 +8,6 @@ class Purchase(db.Model):
     # total price
     price = db.Column(db.Float, nullable = False)
 
-    # item_id = db.Column(db.Integer, db.ForeignKey("items.id", ondelete="CASCADE"), nullable=False)
-    # quantity = db.Column(db.Integer, nullable=False)
-
     #relationships
     # items = db.relationship("Item", back_populates="purchases")
     purchases_items = db.relationship("Purchases_Items", back_populates="purchases")

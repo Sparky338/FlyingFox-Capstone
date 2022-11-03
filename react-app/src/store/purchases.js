@@ -61,9 +61,8 @@ console.log("inside the create thunk", cartItemsId, cartQuantities)
 
     if (res.ok) {
         const purchase = await res.json();
-        console.log(purchase)
         dispatch(createPurchaseAction(purchase));
-        return purchase;
+        return purchase
     }
 };
 
