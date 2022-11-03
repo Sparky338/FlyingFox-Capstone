@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
   session,
   items:itemsReducer,
   purchases:purchasesReducer,
-  purchsesItems:purchasesItemsReducer,
+  purchasesItems:purchasesItemsReducer,
 });
 
 
