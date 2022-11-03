@@ -13,7 +13,7 @@ class Purchase(db.Model):
 
     #relationships
     # items = db.relationship("Item", back_populates="purchases")
-    purchases_items = db.relationship("Item", back_populates="purchases")
+    purchases_items = db.relationship("Purchases_Items", back_populates="purchases")
     reviews = db.relationship("Review")
 
     def to_dict(self):

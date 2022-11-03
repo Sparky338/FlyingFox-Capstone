@@ -15,8 +15,8 @@ class Purchases_Items(db.Model):
     # price = db.Column(db.Integer, db.ForeignKey("items.price", ondelete="CASCADE"), nullable=False)
 
     #relationsips
-    items = db.relationship("Item", back_populates="purchases_items")
     purchases = db.relationship("Purchase", back_populates="purchases_items")
+    items = db.relationship("Item", back_populates="purchases_items")
 
     def to_dict(self):
         return {
