@@ -7,6 +7,7 @@ import "./Navbar.css"
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
+  const itemsState = useSelector(state => state.items);
 
   const cartIcon = <i class="fa-solid fa-cart-shopping"></i>
 
@@ -66,7 +67,16 @@ const NavBar = () => {
             <div className='dropdown-suits-parachutes'>
               <div className='suits-parachutes-dropdown'>Suits & Parachutes</div>
               <div className='suits-parachutes-content'>
-                <div className='wingsuits-category title'>Wingsuits</div>
+                {/* <div wrapping title, key into state to make links using category to sort, names, id number */}
+                <div className='wingsuit-links-container'>
+                  <div className='wingsuits-category title'>Wingsuits</div>
+                  {Object.entries(itemsState).map((item, i) => {
+                    // {console.log(item)}
+                    return (
+                      <div key={i}> {/*if (item[1].category === "Wingsuit")*/ (item[1].item_name)} </div>
+                    )
+                  })}
+                </div>
                 <div className='tracking-suits-category title'>Tracking Suits</div>
                 <div className='parachutes-category title'>Parachutes</div>
                 <div className='meet-the-dev title'>Flying Fox Dev</div>

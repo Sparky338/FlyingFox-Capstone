@@ -8,6 +8,7 @@ const LogoutButton = () => {
   const history = useHistory()
   const dispatch = useDispatch()
   const onLogout = async (e) => {
+    localStorage.clear()
     await dispatch(logout());
     history.push("/")
   };

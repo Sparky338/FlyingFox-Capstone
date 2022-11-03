@@ -1,6 +1,7 @@
-from flask import Blueprint
+from flask import Blueprint, request
 from flask_login import current_user, login_required
-from app.models import db, Item, Purchase
+from app.models import db, Item, Purchase, Purchases_Items
+# from ..forms.purchase_form import CreatePurchase
 
 purchase_routes = Blueprint("purchases", __name__)
 
@@ -12,8 +13,34 @@ def get_user_purchases():
     return {'purchases': [p.to_dict() for p in purchases]}
 
 
-@purchase_routes.route("/checkout", methods="POST")
+@purchase_routes.route("", methods=["POST"])
 @login_required
 def add_user_purchases():
     """Add items from local session cart to user purchases"""
-    pass
+
+    cart_id = request.json['cartItemsId']
+    cart_qty = request.json['cartQuantities']
+    cart_total = request.json['sum']
+    purchaser_id = current_user.id
+    
+    if cart_id:
+        purchase = Purchase()
+        purchases_items = Purchases_Items()
+
+        purchase.user_id = purchaser_id
+        purchase.price = cart_total
+        db.session.add(purchase)
+        db.session.commit()
+
+        purchases_items.purchase_id = purchase.id
+        purchases_items.item_id = [i.to_dict() for i in cart_id]
+        purchases_items.quantity = [q for q in cart_qty]
+
+        db.session.add(purchases_items)
+        db.session.commit()
+        return {
+            'purchases': purchase.to_dict(),
+            'purchases_items':purchases_items.to_dict()
+        }
+    # else:
+    #     return {'errors': form.errors}, 400

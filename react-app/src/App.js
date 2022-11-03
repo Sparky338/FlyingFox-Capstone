@@ -9,6 +9,8 @@ import { getAllItems } from './store/items';
 import ItemById from './components/items/itemById';
 import ProtectedRoute from "./components/auth/ProtectedRoute"
 import Cart from './components/cart/cart';
+import CheckoutPage from './components/purchases/checkout-page';
+import Orders from './components/purchases/orders';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -41,6 +43,15 @@ function App() {
         </Route>
         <ProtectedRoute path='/cart' exact={true}>
           <Cart />
+        </ProtectedRoute>
+        <ProtectedRoute path='/checkout'>
+          <CheckoutPage />
+        </ProtectedRoute>
+        {/* <ProtectedRoute path='/orders/:orderId'>
+          <Orders />
+        </ProtectedRoute> */}
+        <ProtectedRoute path='/orders'>
+          <Orders />
         </ProtectedRoute>
         {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
