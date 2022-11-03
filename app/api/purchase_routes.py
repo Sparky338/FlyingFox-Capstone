@@ -33,7 +33,7 @@ def add_user_purchases():
         db.session.commit()
 
         purchases_items.purchase_id = purchase.id
-        purchases_items.item_id = [i.to_dict() for i in cart_id_list]
+        purchases_items.item_id = [i for i in cart_id_list]
         purchases_items.quantity = [q for q in cart_qty_list]
 
         db.session.add(purchases_items)
