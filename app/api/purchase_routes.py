@@ -22,7 +22,7 @@ def add_user_purchases():
     cart_qty = request.json['cartQuantities']
     cart_total = request.json['sum']
     purchaser_id = current_user.id
-
+    
     if cart_id:
         purchase = Purchase()
         purchases_items = Purchases_Items()
@@ -33,7 +33,7 @@ def add_user_purchases():
         db.session.commit()
 
         purchases_items.purchase_id = purchase.id
-        purchases_items.item_id = [i for i in cart_id]
+        purchases_items.item_id = [i.to_dict() for i in cart_id]
         purchases_items.quantity = [q for q in cart_qty]
 
         db.session.add(purchases_items)
