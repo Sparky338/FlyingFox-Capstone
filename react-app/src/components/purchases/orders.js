@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getAllPurchases, getAllPurchasesItems } from "../../store/purchases";
+import { getAllPurchases } from "../../store/purchases";
+import { getAllPurchasesItems } from "../../store/purchasesItems";
 import "./orders.css"
 
 const Orders = () => {
@@ -9,7 +10,7 @@ const Orders = () => {
 
     useEffect(() => {
         dispatch(getAllPurchases())
-        // dispatch(getAllPurchasesItems())
+        dispatch(getAllPurchasesItems())
     })
 
     return (

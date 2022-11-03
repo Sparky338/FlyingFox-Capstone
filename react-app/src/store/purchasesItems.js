@@ -8,7 +8,7 @@ const getPurchasesItemsAction = (purchasesItems) => {
 }
 
 export const getAllPurchasesItems = () => async dispatch => {
-    const res = await fetch('/api/purchases');
+    const res = await fetch('/api/purchases_items');
 
     if (res.ok) {
         const purchasesItems = await res.json();
