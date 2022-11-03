@@ -24,7 +24,6 @@ def add_user_purchases():
 
     if cart_id_list:
         purchase = Purchase()
-        purchases_items = Purchases_Items()
 
         purchase.user_id = purchaser_id
         purchase.price = cart_total
@@ -32,6 +31,7 @@ def add_user_purchases():
         db.session.commit()
 
         for (id, qty) in zip(cart_id_list, cart_qty_list):
+            purchases_items = Purchases_Items()
             purchases_items.purchase_id = purchase.id
             purchases_items.item_id = id
             purchases_items.quantity = qty
