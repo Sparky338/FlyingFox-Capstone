@@ -12,8 +12,7 @@ export const getAllPurchasesItems = () => async dispatch => {
 
     if (res.ok) {
         const purchasesItems = await res.json();
-        console.log("purchases items", purchasesItems)
-        dispatch(getPurchasesItemsAction(purchasesItems));
+        dispatch(getPurchasesItemsAction(purchasesItems.purchases_items));
     }
 };
 

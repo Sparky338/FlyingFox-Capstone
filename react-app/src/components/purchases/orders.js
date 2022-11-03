@@ -11,7 +11,7 @@ const Orders = () => {
     useEffect(() => {
         dispatch(getAllPurchases())
         dispatch(getAllPurchasesItems())
-    })
+    }, [dispatch])
 
     return (
         <div className="orders-outer">
