@@ -33,6 +33,10 @@
     text-align: left;
 }
 
+.order-number {
+    padding-left: 10px;
+}
+
 .order-details-link {
     text-decoration: none;
     color: #06a7e2;

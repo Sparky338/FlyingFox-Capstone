@@ -22,7 +22,7 @@ const Orders = () => {
                 <table className="full-orders-table" border="0" cellSpacing="0">
                     <thead className="table-header">
                         <tr>
-                            <th className="table-header-order" width="15%">Order #</th>
+                            <th className="table-header-order" width="10%">Order #</th>
                             <th className="table-header-item-summary">Item Summary</th>
                             <th width="15%">&nbsp;</th>
                         </tr>

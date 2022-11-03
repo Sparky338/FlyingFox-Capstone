@@ -1,5 +1,8 @@
-const GET_PURCHASES_ITEMS = 'purchases/GET_PURCHASES_ITEMS';
+// Types
+const GET_PURCHASES_ITEMS = 'purchases_items/GET_PURCHASES_ITEMS';
+const CLEAR_PURCHASES_ITEMS = 'purchases_items/CLEAR_PURCHASES_ITEMS';
 
+// Action creators
 const getPurchasesItemsAction = (purchasesItems) => {
     return {
         type: GET_PURCHASES_ITEMS,
@@ -7,6 +10,13 @@ const getPurchasesItemsAction = (purchasesItems) => {
     }
 }
 
+export const clearPurchaseItemsAction = () => {
+    return {
+        type: CLEAR_PURCHASES_ITEMS
+    }
+}
+
+//thunk
 export const getAllPurchasesItems = () => async dispatch => {
     const res = await fetch('/api/purchases_items');
 
@@ -25,6 +35,9 @@ export default function purchasesItemsReducer(state = initialState, action) {
         case GET_PURCHASES_ITEMS:
             action.purchasesItems.forEach(purchaseItem => newState[purchaseItem.id] = purchaseItem)
             return newState;
+        case CLEAR_PURCHASES_ITEMS:
+            console.log("CLEAR_PURCHASES_ITEMS called")
+            return initialState
         default:
             return state;
     }
