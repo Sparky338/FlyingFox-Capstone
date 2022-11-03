@@ -32,11 +32,12 @@ def add_user_purchases():
         db.session.add(purchase)
         db.session.commit()
 
-        purchases_items.purchase_id = purchase.id
-        purchases_items.item_id = [i for i in cart_id_list]
-        purchases_items.quantity = [q for q in cart_qty_list]
+        for (id, qty) in zip(cart_id_list, cart_qty_list):
+            purchases_items.purchase_id = purchase.id
+            purchases_items.item_id = id #[i for i in cart_id_list]
+            purchases_items.quantity = qty #[q for q in cart_qty_list]
+            db.session.add(purchases_items)
 
-        db.session.add(purchases_items)
         db.session.commit()
         return {
             'purchases': purchase.to_dict(),
