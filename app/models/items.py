@@ -11,9 +11,9 @@ class Item(db.Model):
 
     #relationships
     images = db.relationship("Image", back_populates="items", cascade = "all, delete", lazy=False)
-    # purchases = db.relationship("Purchase", back_populates="items", cascade = "all, delete", lazy=False)
     purchases_items = db.relationship("Purchase", back_populates="items")
     reviews = db.relationship("Review", back_populates="items", cascade = "all, delete", lazy=False)
+    # purchases = db.relationship("Purchase", back_populates="items", cascade = "all, delete", lazy=False)
 
     def to_dict(self):
         return {
