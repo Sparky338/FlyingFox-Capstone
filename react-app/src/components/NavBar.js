@@ -73,7 +73,7 @@ const NavBar = () => {
                   {Object.entries(itemsState).map((item, i) => {
                     // {console.log(item)}
                     return (
-                      <div key={i}> {if (item[1].category === "Wingsuit") (item[1].item_name)} </div>
+                      <div key={i}> {/*if (item[1].category === "Wingsuit")*/ (item[1].item_name)} </div>
                     )
                   })}
                 </div>
