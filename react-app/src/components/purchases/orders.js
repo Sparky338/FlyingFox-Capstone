@@ -34,15 +34,19 @@ const Orders = () => {
                                     <td className="order-number">
                                         {purchase[1].id}
                                     </td>
-                                    {Object.entries(purchasesItems).filter(
+                                    <td className="order-item-names" key={i}>
+                                        {/* {console.log(purchItem[1].item_id)} */}
+                                        {/* {purchasesItems[3].item_id} */}
+                                    </td>
+                                    {/* {Object.entries(purchasesItems).filter(
                                         purchaseItem => purchaseItem[1].purchase_id === purchase[1].id).map(
                                             (purchItem, i) => {
                                                 <td className="order-item-names" key={i}>
-                                                    {/* {console.log(purchItem[1].item_id)} */}
+                                                    {console.log(purchItem[1].item_id)}
                                                     {purchItem[1].item_id}test
                                                 </td>
                                             }
-                                        )}
+                                        )} */}
                                     <td className="order-details">
                                         <Link to={`/orders/${purchase[1].id}`} className="order-details-link">Order Details</Link>
                                     </td>

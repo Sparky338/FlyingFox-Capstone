@@ -9,7 +9,7 @@ purchase_routes = Blueprint("purchases", __name__)
 @login_required
 def get_user_purchases():
     """Get all purchases of the current user"""
-    purchases = Purchase.query.filter_by(user_id=current_user.id).join(Purchases_Items)
+    purchases = Purchase.query.filter_by(user_id=current_user.id)
     return {'purchases': [p.to_dict() for p in purchases]}
 
 @purchase_routes.route("", methods=["POST"])
