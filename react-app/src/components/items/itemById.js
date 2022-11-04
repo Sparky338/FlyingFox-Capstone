@@ -1,16 +1,18 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import ImageGallery from 'react-image-gallery';
 
 import "./items.css"
+import { getItemReviews } from "../../store/reviews";
 
 const ItemById = () => {
-    const history = useHistory()
+    const history = useHistory();
+    const dispatch = useDispatch();
     const { itemId } = useParams();
-    const user = useSelector(state => state.session.user);
     const itemsObj = useSelector(state => state.items);
     const items = Object.values(itemsObj);
-    const itemQty = JSON.parse(localStorage.getItem('itemQty'))
+    const itemQty = JSON.parse(localStorage.getItem('itemQty'));
 
     const formatting_options = {
         style: 'currency',
@@ -18,6 +20,10 @@ const ItemById = () => {
         minimumFractionDigits: 2,
     };
     const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
+
+    // useEffect(() => {
+    //     dispatch(getItemReviews(+itemId));
+    // }, [dispatch, itemId])
 
     if (!itemId) return null;
     if (!itemsObj) return null;
