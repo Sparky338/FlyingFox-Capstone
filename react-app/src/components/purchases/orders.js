@@ -35,6 +35,7 @@ const Orders = () => {
                                 <th className="table-header-order" width="10%">Order #</th>
                                 <th className="table-header-item-summary">Item Summary</th>
                                 <th width="15%">&nbsp;</th>
+                                <th width="15%">&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody className="table-body">
@@ -50,6 +51,10 @@ const Orders = () => {
                                         <td className="order-details">
                                             <Link to={`/orders/${purchase[1].id}`} className="order-details-link">Order Details</Link>
                                         </td>
+                                        <td className="cancel-order">
+                                            ADD CANCEL ORDER FUNC
+                                        </td>
+
                                     </tr>
                                 )
                             })}

@@ -1,8 +1,8 @@
 """create tables for items, images, purchases, purchases_items, reviews, and users
 
-Revision ID: 019d659c5c17
+Revision ID: 38d7836695fe
 Revises: 
-Create Date: 2022-11-03 19:46:43.946801
+Create Date: 2022-11-04 15:03:50.188381
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '019d659c5c17'
+revision = '38d7836695fe'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -56,6 +56,8 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('item_id', sa.Integer(), nullable=False),
     sa.Column('purchase_id', sa.Integer(), nullable=False),
+    sa.Column('first_name', sa.String(length=50), nullable=False),
+    sa.Column('last_name', sa.String(length=50), nullable=False),
     sa.Column('review', sa.String(length=1000), nullable=False),
     sa.ForeignKeyConstraint(['item_id'], ['items.id'], ondelete='CASCADE'),
     sa.ForeignKeyConstraint(['purchase_id'], ['purchases.id'], ondelete='CASCADE'),
