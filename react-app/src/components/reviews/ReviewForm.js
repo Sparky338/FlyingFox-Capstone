@@ -32,7 +32,7 @@ const ReviewForm = () => {
 
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
-        const newReview = { ...review, reviewBody, imageUrl };
+        const newReview = { ...review, firstName, lastName, reviewBody, imageUrl };
 
         if (formType === "Leave a review") {
             const awaitedReview = await dispatch(createReview(newReview))
@@ -75,7 +75,7 @@ const ReviewForm = () => {
                         <input
                             className="review-form-review"
                             value={lastName}
-                            onChange={e => setFirstName(e.target.value)}
+                            onChange={e => setlastName(e.target.value)}
                             placeholder="Last name"
                         />
                     </label>
