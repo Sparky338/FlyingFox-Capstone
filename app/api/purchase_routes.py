@@ -1,7 +1,6 @@
 from flask import Blueprint, request
 from flask_login import current_user, login_required
 from app.models import db, Item, Purchase, Purchases_Items
-# from ..forms.purchase_form import CreatePurchase
 
 purchase_routes = Blueprint("purchases", __name__)
 
@@ -21,6 +20,8 @@ def add_user_purchases():
     cart_qty_list = request.json['cartQuantities']
     cart_total = request.json['sum']
     purchaser_id = current_user.id
+
+    #add error handling for missing data
 
     if cart_id_list:
         purchase = Purchase()
