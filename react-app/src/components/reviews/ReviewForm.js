@@ -1,5 +1,5 @@
-import {useHistory} from 'react-router-dom';
-import {useDispatch} from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 
@@ -24,32 +24,64 @@ const ReviewForm = () => {
         setValidationErrors(errors);
     }, [reviewBody, imageUrl])
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setHasSubmitted(true)
+
+        if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
+
+        const newReview = { ...review, reviewBody, imageUrl };
+
+        if (formType === "Leave a review") {
+            const awaitedReview = await dispatch(createReview(newReview))
+            history.push(`/items/${awaitedReview.item_id}`)
+        } else if (formType === "Edit Review") {
+            const awaitedReview = await dispatch(editReview(review.id, newReview))
+            history.push(`/items/${awaitedReview.item_id}`)
+        }
+
+        // dispatch(clearReviewAction())
+    };
+
     return (
         <div className="review-form-outer">
-            <form className="review-form" onSubmit={handleSubmit}>
+            <div className="review-form-outer">
+                <form className="review-form" onSubmit={handleSubmit}>
+                    <h2 className="song-form-header">{formType}</h2>
+                    {hasSubmitted && validationErrors.length > 0 && (
+                        <div className="outer-error">
+                            <div className="error-handling">There were errors in your submission:</div>
+                            <ul className="errors-handling">
+                                {validationErrors.map(error => (
+                                    <li className="errors-list" key={error}>{error}</li>
+                                ))}
+                            </ul>
 
-                <div className="review-form-review-data">
+                        </div>
+                    )}
                     <label className="review-form-label">
                         Review*:
                         <input
                             className="review-form-review"
+                            value={reviewBody}
+                            onChange={e => setReviewBody(e.target.value)}
                             placeholder="Write a review"
-                            // onChange={e => }
                         />
                     </label>
                     <label className="review-form-label">
                         Image URL:
                         <input
                             className="review-form-image"
+                            value={imageUrl}
+                            onChange={e => setImageUrl(e.target.value)}
                             placeholder="Input an image URL "
-                            // onChange={e => }
                         />
                     </label>
 
 
-                </div>
-            </form>
-        </div>
+                </form>
+            </div>
+        </div >
     )
 }
 
