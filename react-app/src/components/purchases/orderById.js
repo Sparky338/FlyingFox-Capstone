@@ -16,6 +16,8 @@ const OrderById = () => {
     };
     const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
 
+    const filterdPurchasesItems = Object.entries(purchasesItems).filter(pi => pi[1].purchase_id === +orderId)
+
     return (
         <div className="id-order-outer">
             <div className="id-order-header">ORDER NUMBER: #{orderId}</div>
@@ -31,11 +33,13 @@ const OrderById = () => {
                         </tr>
                     </thead>
                     <tbody className="table-body">
-                        {Object.entries(purchasesItems).map((purchaseItem, i) => {
+                    {filterdPurchasesItems.map(
+                        (purchaseItem, i) => {
                             return (
                                 <tr className="id-order-item" key={i}>
                                     <td className="id-order-item-image">
                                         {items[purchaseItem[1].item_id].images[0]}
+
                                     </td>
                                     <td className="id-order-item-name">
                                         {items[purchaseItem[1].item_id].item_name}
@@ -56,7 +60,7 @@ const OrderById = () => {
                             <td></td>
                             <td></td>
                             <td className="id-order-total">ORDER TOTAL:</td>
-                            <td className="id-order-total-price">{dollarFormatter.format(purchases[orderId].price)}</td>
+                            <td className="id-order-total-price">{dollarFormatter.format(purchases[+orderId].price)}</td>
                             <td></td>
                         </tr>
                     </tfoot>
