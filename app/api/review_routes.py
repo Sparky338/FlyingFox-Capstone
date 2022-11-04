@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from app.models import User, db, Review, Purchase
 from flask_login import login_required
-from app.forms import CreateReviewForm, EditReviewForm
+from app.forms import CreateReview, EditReview
 
 review_routes = Blueprint('review', __name__)
 
@@ -18,7 +18,7 @@ def create_review():
     """
     Add a review
     """
-    form = CreateReviewForm()
+    form = CreateReview()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
@@ -40,7 +40,7 @@ def edit_review(id):
     """
     Update item by Id
     """
-    form = EditReviewForm()
+    form = EditReview()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
