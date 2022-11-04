@@ -39,7 +39,7 @@ const Cart = () => {
                         {(Object.entries(itemQty).length === 0) ?
                             <div className="empty-cart">Your cart is empty!
                                 Perhaps we could interest you in some CATEGORIES?</div> :
-                            <table className="full-cart-table" border="0" cellspacing="0">
+                            <table className="full-cart-table" border="0" cellSpacing="0">
                                 <thead className="table-header">
                                     <tr>
                                         <th width="10%">&nbsp;</th>

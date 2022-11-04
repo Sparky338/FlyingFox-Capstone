@@ -1,42 +1,62 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getAllPurchases } from "../../store/purchases";
+import { getAllPurchasesItems } from "../../store/purchasesItems";
 import "./orders.css"
 
 const Orders = () => {
+    const dispatch = useDispatch();
+    const purchases = useSelector(state => state.purchases);
+    const purchasesItems = useSelector(state => state.purchasesItems);
+
+    const formatting_options = {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+    };
+    const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
+
+    useEffect(() => {
+        dispatch(getAllPurchases())
+        dispatch(getAllPurchasesItems())
+    }, [dispatch])
+
     return (
         <div className="orders-outer">
-            <div className="orders-header">My Orders</div>
-            <div className="orders-container">
-                <table className="full-orders-table" border="0" cellspacing="0">
-                    <thead className="table-header">
-                        <tr>
-                            <th className="table-header-order" width="15%">Order #</th>
-                            <th className="table-header-item-summary">Item Summary</th>
-                            <th className="table-header-status" width="15%">Status</th>
-                            <th width="10%">&nbsp;</th>
-                        </tr>
-                    </thead>
-                    <tbody className="table-body">
-                        {/* {cartState&& Object.entries(cartState).map((item, i) => { */}
-                        {/* return ( */}
-                        <tr className="orders" >
-                            <td className="order-number">
-
-                            </td>
-                            <td className="order-item-names">
-
-                            </td>
-                            <td className="order-status">
-
-                            </td>
-                            <td className="order-details">
-                                <Link to='/orders/:id' className="order-details-link">Order Details</Link>
-                            </td>
-                        </tr>
-
-
-                    </tbody>
-                </table>
-            </div>
+            <div className="orders-header">MY ORDERS</div>
+            {(Object.entries(purchases).length === 0) ?
+                <div className="empty-orders"> You haven't bought anything yet!
+                    Please buy something first.</div> :
+                <div className="orders-container">
+                    <table className="full-orders-table" border="0" cellSpacing="0">
+                        <thead className="table-header">
+                            <tr>
+                                <th className="table-header-order" width="10%">Order #</th>
+                                <th className="table-header-item-summary">Item Summary</th>
+                                <th width="15%">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody className="table-body">
+                            {Object.entries(purchases).map((purchase, i) => {
+                                return (
+                                    <tr className="orders" key={i}>
+                                        <td className="order-number">
+                                            {purchase[1].id}
+                                        </td>
+                                        <td className="order-item-summary">
+                                            {dollarFormatter.format(purchase[1].price)}
+                                        </td>
+                                        <td className="order-details">
+                                            <Link to={`/orders/${purchase[1].id}`} className="order-details-link">Order Details</Link>
+                                        </td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+            }
         </div>
     )
 }

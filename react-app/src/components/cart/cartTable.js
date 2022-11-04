@@ -1,6 +1,12 @@
 import "./cart.css"
 
 const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
+    const formatting_options = {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+    };
+    const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
 
     const xIcon = <i class="fa-solid fa-x"></i>;
 
@@ -21,7 +27,7 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
 
             let newQtyState = Object.assign({}, itemQty)
             delete newQtyState[itemId]
-            
+
             setCartState(newCartState)
             setQtyState(newQtyState)
         }
@@ -50,7 +56,7 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
                             </form>
                         </td>
                         <td className="cart-item-total">
-                            ${item[1][0].price * itemQty[item[1][0].id]}.00
+                            {dollarFormatter.format(item[1][0].price * itemQty[item[1][0].id])}
                         </td>
                         <td className="remove-cart-item">
                             <button

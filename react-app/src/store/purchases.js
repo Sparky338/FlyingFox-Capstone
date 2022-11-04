@@ -3,7 +3,7 @@ const GET_PURCHASES = 'purchases/GET_PURCHASES';
 const CREATE_PURCHASE = 'purchases/CREATE_PURCHASE';
 const EDIT_PURCHASE = 'purchases/EDIT_PURCHASE';
 const DELETE_PURCHASE = 'purchases/DELETE_PURCHASE';
-// const CLEAR_PURCHASES = 'purchases/CLEAR_PURCHASE';
+const CLEAR_PURCHASES = 'purchases/CLEAR_PURCHASE';
 
 // Action Creators
 const getPurchasesAction = (purchases) => {
@@ -34,11 +34,11 @@ export const deletePurchaseAction = (purchaseId) => {
     }
 }
 
-// export const clearPurchaseAction = () => {
-//     return {
-//         type: CLEAR_PURCHASES
-//     }
-// }
+export const clearPurchaseAction = () => {
+    return {
+        type: CLEAR_PURCHASES
+    }
+}
 
 
 // Thunks
@@ -61,9 +61,8 @@ console.log("inside the create thunk", cartItemsId, cartQuantities)
 
     if (res.ok) {
         const purchase = await res.json();
-        console.log(purchase)
         dispatch(createPurchaseAction(purchase));
-        return purchase;
+        return purchase
     }
 };
 
@@ -111,8 +110,9 @@ export default function purchasesReducer(state = initialState, action) {
         case DELETE_PURCHASE:
             delete newState[action.purchaseId]
             return newState;
-        // case CLEAR_PURCHASES:
-        //     return {}
+        case CLEAR_PURCHASES:
+            console.log("CLEAR_PURCHASES called")
+            return initialState
         default:
             return state;
     }

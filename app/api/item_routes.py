@@ -13,4 +13,4 @@ def get_items():
 def get_item_by_id(id):
     """Get one item by id"""
     item = item.query.filter_by(id=id).all()
-    return {item: [i.to_dict() for i in item]}
+    return {'item': [i.to_dict() for i in item]}

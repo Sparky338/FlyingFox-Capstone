@@ -1,6 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { clearPurchaseAction } from '../../store/purchases';
+import { clearPurchaseItemsAction } from '../../store/purchasesItems';
 import { logout } from '../../store/session';
 import "../Navbar.css"
 
@@ -9,6 +11,8 @@ const LogoutButton = () => {
   const dispatch = useDispatch()
   const onLogout = async (e) => {
     localStorage.clear()
+    await dispatch(clearPurchaseItemsAction())
+    await dispatch(clearPurchaseAction())
     await dispatch(logout());
     history.push("/")
   };

@@ -12,6 +12,13 @@ const ItemById = () => {
     const items = Object.values(itemsObj);
     const itemQty = JSON.parse(localStorage.getItem('itemQty'))
 
+    const formatting_options = {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+    };
+    const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
+
     if (!itemId) return null;
     if (!itemsObj) return null;
     if (!localStorage.getItem('cart')) {
@@ -22,7 +29,6 @@ const ItemById = () => {
     }
 
     const filteredItem = items.filter(item => item.id === +itemId)
-    const localStorageItems = JSON.parse(localStorage.getItem("Items"))
     const cart = JSON.parse(localStorage.getItem('cart'))
 
     const addToCart = () => {
@@ -57,7 +63,7 @@ const ItemById = () => {
                                 <div className="name-price-review">
                                     <div className="item-name">{item.item_name}</div>
                                     <div className="price-review">
-                                        <div className="price">${item.price}</div>
+                                        <div className="price">{dollarFormatter.format(item.price)}</div>
                                         <div className="review-link">Link to review here</div>
                                     </div>
                                 </div>
