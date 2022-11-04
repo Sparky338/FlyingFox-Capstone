@@ -17,14 +17,19 @@ const ReviewForm = () => {
     useEffect(() => {
         const errors = [];
 
+
+        if (!firstName) errors.push("First name is required");
+        if (firstName.length > 50) errors.push("First name must be less than 50 characters");
+        if (!lastName) errors.push("Last name is required");
+        if (lastName.length > 50) errors.push("Last name must be less than 50 characters");
         if (!reviewBody) errors.push("Review is required");
-        if (reviewBody.length < 10) errors.push("Review must be at least 10 characters long");
-        if (reviewBody.length > 1000) errors.push("Review must be less than 1,000 characters long");
+        if (reviewBody.length < 10) errors.push("Review must be at least 10 characters");
+        if (reviewBody.length > 1000) errors.push("Review must be less than 1,000 characters");
         if (imageUrl && !imageUrl.endsWith('.jpg') && !imageUrl.endsWith('.jpeg') && !imageUrl.endsWith('.png')) {
             errors.push("Image file must be a jpg, jpeg, or png");
         }
         setValidationErrors(errors);
-    }, [reviewBody, imageUrl])
+    }, [firstName, lastName, reviewBody, imageUrl])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
