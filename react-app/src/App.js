@@ -12,6 +12,7 @@ import Cart from './components/cart/cart';
 import CheckoutPage from './components/purchases/checkout-page';
 import Orders from './components/purchases/orders';
 import OrderById from './components/purchases/orderById';
+import ReviewForm from './components/reviews/ReviewForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path='/login' exact={true}>
           <LoginSignup />
+        </Route>
+        <Route path='/items/:itemId/review'>
+          <ReviewForm />
         </Route>
         <Route path="/items/:itemId">
           <ItemById />

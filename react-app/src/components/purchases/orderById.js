@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import "./orders.css"
 
@@ -17,6 +17,7 @@ const OrderById = () => {
     const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
 
     const filterdPurchasesItems = Object.entries(purchasesItems).filter(pi => pi[1].purchase_id === +orderId)
+    const reviewIcon = <i class="fa-regular fa-message"></i>
 
     return (
         <div className="id-order-outer">
@@ -50,7 +51,9 @@ const OrderById = () => {
                                     <td className="id-order-item-total">
                                         {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
                                     </td>
-                                    <td className="id-order-item-review">r</td>
+                                    <td className="id-order-item-review">
+                                        <Link to={`items/${purchaseItem[1].item_id}/review`}>{reviewIcon}</Link>
+                                    </td>
                                 </tr>
                             )
                         })}
@@ -60,7 +63,7 @@ const OrderById = () => {
                             <td></td>
                             <td></td>
                             <td className="id-order-total">ORDER TOTAL:</td>
-                            <td className="id-order-total-price">{dollarFormatter.format(purchases[+orderId].price)}</td>
+                            <td className="id-order-total-price">{dollarFormatter.format(purchases[orderId].price)}</td>
                             <td></td>
                         </tr>
                     </tfoot>

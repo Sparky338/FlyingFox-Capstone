@@ -1,16 +1,21 @@
 import { useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
+import { createReview, editReview } from '../../store/reviews';
 
-const ReviewForm = () => {
+import "./reviews.css";
+
+
+const ReviewForm = ({review, formType}) => {
     const history = useHistory();
     const dispatch = useDispatch();
+    const reviews = useSelector(state => state.reviews);
 
-    const [firstName, setFirstName] = useState(review.firstName || "");
-    const [lastName, setLastName] = useState(review.lastName || "");
-    const [reviewBody, setReviewBody] = useState(review.review || "");
-    const [imageUrl, setImageUrl] = useState(review.image || "");
+    const [firstName, setFirstName] = useState(reviews.first_name || "");
+    const [lastName, setLastName] = useState(reviews.lastName || "");
+    const [reviewBody, setReviewBody] = useState(reviews.review || "");
+    const [imageUrl, setImageUrl] = useState(reviews.image || "");
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -51,10 +56,10 @@ const ReviewForm = () => {
     };
 
     return (
-        <div className="review-form-outer">
+        <div className="review-form-outer-container">
             <div className="review-form-outer">
                 <form className="review-form" onSubmit={handleSubmit}>
-                    <h2 className="song-form-header">{formType}</h2>
+                    <h2 className="review-form-header">{formType}</h2>
                     {hasSubmitted && validationErrors.length > 0 && (
                         <div className="outer-error">
                             <div className="error-handling">There were errors in your submission:</div>
