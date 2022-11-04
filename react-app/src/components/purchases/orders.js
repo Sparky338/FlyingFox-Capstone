@@ -24,7 +24,7 @@ const Orders = () => {
 
     return (
         <div className="orders-outer">
-            <div className="orders-header">My Orders</div>
+            <div className="orders-header">MY ORDERS</div>
             {(Object.entries(purchases).length === 0) ?
                 <div className="empty-orders"> You haven't bought anything yet!
                     Please buy something first.</div> :

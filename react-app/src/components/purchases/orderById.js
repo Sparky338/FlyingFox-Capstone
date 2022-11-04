@@ -35,7 +35,7 @@ const OrderById = () => {
                             return (
                                 <tr className="id-order-item" key={i}>
                                     <td className="id-order-item-image">
-                                        {/* {item[1][0].images[0]} */}
+                                        {items[purchaseItem[1].item_id].images[0]}
                                     </td>
                                     <td className="id-order-item-name">
                                         {items[purchaseItem[1].item_id].item_name}
@@ -46,7 +46,7 @@ const OrderById = () => {
                                     <td className="id-order-item-total">
                                         {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
                                     </td>
-                                    <td className="id-order-item-review">review</td>
+                                    <td className="id-order-item-review">r</td>
                                 </tr>
                             )
                         })}
