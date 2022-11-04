@@ -7,6 +7,8 @@ const ReviewForm = () => {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    const [firstName, setFirstName] = useState(review.firstName || "");
+    const [lastName, setLastName] = useState(review.lastName || "");
     const [reviewBody, setReviewBody] = useState(review.review || "");
     const [imageUrl, setImageUrl] = useState(review.image || "");
     const [validationErrors, setValidationErrors] = useState([]);
@@ -59,6 +61,24 @@ const ReviewForm = () => {
 
                         </div>
                     )}
+                    <label className="review-form-label">
+                        First Name*:
+                        <input
+                            className="review-form-review"
+                            value={firstName}
+                            onChange={e => setFirstName(e.target.value)}
+                            placeholder="First name"
+                        />
+                    </label>
+                    <label className="review-form-label">
+                        Last Name*:
+                        <input
+                            className="review-form-review"
+                            value={lastName}
+                            onChange={e => setFirstName(e.target.value)}
+                            placeholder="Last name"
+                        />
+                    </label>
                     <label className="review-form-label">
                         Review*:
                         <input
