@@ -11,9 +11,9 @@ const LogoutButton = () => {
   const dispatch = useDispatch()
   const onLogout = async (e) => {
     localStorage.clear()
+    await dispatch(logout());
     await dispatch(clearPurchaseItemsAction())
     await dispatch(clearPurchaseAction())
-    await dispatch(logout());
     history.push("/")
   };
 
