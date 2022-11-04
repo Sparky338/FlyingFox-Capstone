@@ -77,8 +77,6 @@ const ReviewForm = () => {
                             placeholder="Input an image URL "
                         />
                     </label>
-
-
                 </form>
             </div>
         </div >

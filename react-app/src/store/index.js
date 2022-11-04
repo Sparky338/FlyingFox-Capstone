@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import itemsReducer from './items';
 import purchasesReducer from './purchases';
 import purchasesItemsReducer from './purchasesItems';
+import reviewsReducer from './reviews';
 import session from './session'
 
 const rootReducer = combineReducers({
@@ -10,6 +11,7 @@ const rootReducer = combineReducers({
   items:itemsReducer,
   purchases:purchasesReducer,
   purchasesItems:purchasesItemsReducer,
+  reviews:reviewsReducer,
 });
 
 
