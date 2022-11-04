@@ -5,23 +5,33 @@ from app.forms import CreateReviewForm, EditReviewForm
 
 review_routes = Blueprint('review', __name__)
 
-@review_routes.route('')
-def get_reviews_by_id():
-    pass
+@review_routes.route('/<int:id>')
+def get_reviews_by_item_id(id):
+    """Get reviews by the item's id"""
+    reviews = Review.query.filter_by(item_id=id)
+    return {'reviews': [r.to_dict() for r in reviews]}
+
 
 @review_routes.route('', methods=["POST"])
 @login_required
 def create_review():
     """
-    Add review
+    Add a review
     """
     form = CreateReviewForm()
-    review = Review()
-    form.populate_obj(review)
-    db.session.add(review)
-    db.session.commit()
+    form['csrf_token'].data = request.cookies['csrf_token']
 
-    return {'ok': "ok"}
+    if form.validate_on_submit():
+        review = Review()
+        form.populate_obj(review)
+
+        db.session.add(review)
+        db.session.commit()
+
+        return {'reviews': review.to_dict()}
+    else:
+        return {'errors': form.errors}, 400
+
 
 
 @review_routes.route('/<int:id>', methods=["PUT"])
@@ -31,10 +41,15 @@ def edit_review(id):
     Update item by Id
     """
     form = EditReviewForm()
-    review = Review.query.filter_by(id=id).first()
-    form.populate_obj(review)
-    db.session.commit()
-    return {'ok': "ok"}
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        review = Review.query.filter_by(id=id).first()
+        form.populate_obj(review)
+        db.session.commit()
+        return {'reviews': review.to_dict()}
+    else:
+        return {'errors': form.errors}, 400
 
 
 @review_routes.route('/<int:id>', methods=["DELETE"])
@@ -46,4 +61,4 @@ def delete_review(id):
     review = Review.query.filter_by(id=id).first()
     db.session.delete(review)
     db.session.commit()
-    return {'ok': "ok"}
+    return {'message': "Deleted Successfully"}
