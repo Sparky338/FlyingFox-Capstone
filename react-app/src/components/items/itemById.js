@@ -22,7 +22,6 @@ const ItemById = () => {
     }
 
     const filteredItem = items.filter(item => item.id === +itemId)
-    const localStorageItems = JSON.parse(localStorage.getItem("Items"))
     const cart = JSON.parse(localStorage.getItem('cart'))
 
     const addToCart = () => {

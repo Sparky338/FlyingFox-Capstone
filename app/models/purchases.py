@@ -9,7 +9,6 @@ class Purchase(db.Model):
     price = db.Column(db.Float, nullable = False)
 
     #relationships
-    items = db.relationship("Item", back_populates="purchases")
     purchases_items = db.relationship("Purchases_Items", back_populates="purchases")
     reviews = db.relationship("Review")
 
@@ -20,5 +19,4 @@ class Purchase(db.Model):
             'price': self.price,
             'review': [r.to_dict() for r in self.reviews],
             'purchases_items': [pi.to_dict() for pi in self.purchases_items],
-            'items': [i.to_dict() for i in self.items]
         }
