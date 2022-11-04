@@ -75,7 +75,7 @@ const ReviewForm = () => {
                         <input
                             className="review-form-review"
                             value={lastName}
-                            onChange={e => setlastName(e.target.value)}
+                            onChange={e => setLastName(e.target.value)}
                             placeholder="Last name"
                         />
                     </label>
