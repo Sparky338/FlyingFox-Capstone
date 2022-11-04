@@ -42,6 +42,8 @@ export const clearReviewAction = () => {
 
 
 // Thunks
+
+// TODO: change get all to get by id
 export const getAllReviews = () => async dispatch => {
     const res = await fetch('/api/reviews');
 
