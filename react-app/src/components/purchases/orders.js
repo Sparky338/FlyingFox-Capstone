@@ -10,6 +10,13 @@ const Orders = () => {
     const purchases = useSelector(state => state.purchases);
     const purchasesItems = useSelector(state => state.purchasesItems);
 
+    const formatting_options = {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+    };
+    const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
+
     useEffect(() => {
         dispatch(getAllPurchases())
         dispatch(getAllPurchasesItems())
@@ -37,19 +44,9 @@ const Orders = () => {
                                         <td className="order-number">
                                             {purchase[1].id}
                                         </td>
-                                        <td className="order-item-names" key={i}>
-                                            {/* {console.log(purchItem[1].item_id)} */}
-                                            {/* {purchasesItems[3].item_id} */}
+                                        <td className="order-item-summary">
+                                            {dollarFormatter.format(purchase[1].price)}
                                         </td>
-                                        {/* {Object.entries(purchasesItems).filter(
-                                        purchaseItem => purchaseItem[1].purchase_id === purchase[1].id).map(
-                                            (purchItem, i) => {
-                                                <td className="order-item-names" key={i}>
-                                                    {console.log(purchItem[1].item_id)}
-                                                    {purchItem[1].item_id}test
-                                                </td>
-                                            }
-                                        )} */}
                                         <td className="order-details">
                                             <Link to={`/orders/${purchase[1].id}`} className="order-details-link">Order Details</Link>
                                         </td>

@@ -11,6 +11,12 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
     const [sum, setSum] = useState(0);
     const cart = JSON.parse(localStorage.getItem('cart'));
     const itemQuantity = JSON.parse(localStorage.getItem('itemQty'));
+    const formatting_options = {
+        style: 'currency',
+        currency: 'USD',
+        minimumFractionDigits: 2,
+    };
+    const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
 
 
 
@@ -50,7 +56,7 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
             <div className="checkout-horizontal-line"></div>
             <div className="checkout-total-container">
                 <div className="checkout-total-text">Item Total</div>
-                <div className="checkout-total">${sum}.00</div>
+                <div className="checkout-total">{dollarFormatter.format(sum)}</div>
             </div>
             <div className="checkout-horizontal-line"></div>
             <button className="checkout-button" onClick={handleCheckout}>CHECKOUT</button>
