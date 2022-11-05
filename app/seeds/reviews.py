@@ -5,8 +5,8 @@ def seed_reviews():
         user_id="1",
         item_id="1",
         purchase_id="1",
-        first_name="Joe",
-        last_name="Smith",
+        first_name="Demo",
+        last_name="Lition",
         review="This is an amazing wingsuit! Helped me so much to learn the basics.",
         image="https://upload.wikimedia.org/wikipedia/commons/d/d8/Wingsuit_Flying_over_Langar_Airfield_UK.jpg"
     )
