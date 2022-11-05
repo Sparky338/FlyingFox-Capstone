@@ -38,7 +38,6 @@
     align-items: center;
 }
 
-
 .review-form-label {
     margin-bottom: 20px;
     font-size: 20px;
@@ -51,11 +50,16 @@
     border-radius: 6px;
     border: solid 1px #06a7e2;
     margin-top: 5px;
-    width: 250px;
+    width: 400px;
+    font-size: 22px;
+}
+
+.review-text-area {
+    height: 300px
 }
 
 .review-submit-button {
     height: 50px;
     font-size: 22px;
-    width: 250px;
+    width: 400px;
 }

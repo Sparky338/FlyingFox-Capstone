@@ -89,15 +89,14 @@ const ReviewForm = ({ review, formType }) => {
                             placeholder="Last name"
                         />
                     </label>
-                    <label className="review-form-label">
+                    <label className="review-form-label review-text-label">
                         Review*
-                        <input
-                            className="review-form-review"
-                            type="text area"
+                        <textarea
+                            className="review-form-review review-text-area"
                             value={reviewBody}
                             onChange={e => setReviewBody(e.target.value)}
                             placeholder="Write a review"
-                        />
+                        ></textarea>
                     </label>
                     <label className="review-form-label">
                         Image URL
