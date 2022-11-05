@@ -8,15 +8,16 @@ const EditReviewForm = () => {
     const reviewsState = useSelector(state => state.reviews);
 
     if (!reviewId) return null;
+    if (!reviewsState) return null;
 
-    const reviewerId = reviewsState[reviewId].user_id;
+    const reviewerId = reviewsState[reviewId]?.user_id;
     const review = reviewsState[reviewId];
 
     if (currentUser.id === reviewerId) {
         return (
             <ReviewForm review={review} formType="Edit Review" />
         );
-    }
+    } else return null
 }
 
 export default EditReviewForm;

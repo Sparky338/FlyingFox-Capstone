@@ -10,11 +10,12 @@ import "./reviews.css";
 const ReviewForm = ({ review, formType}) => {
     const history = useHistory();
     const dispatch = useDispatch();
+    console.log(review)
 
-    const [firstName, setFirstName] = useState(review.firstName || "");
-    const [lastName, setLastName] = useState(review.lastName || "");
-    const [reviewBody, setReviewBody] = useState(review.reviewBody || "");
-    const [imageUrl, setImageUrl] = useState(review.imageUrl || "");
+    const [firstName, setFirstName] = useState(review.first_name || "");
+    const [lastName, setLastName] = useState(review.last_name || "");
+    const [reviewBody, setReviewBody] = useState(review.review || "");
+    const [imageUrl, setImageUrl] = useState(review.imageUrl || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
