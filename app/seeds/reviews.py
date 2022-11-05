@@ -1,7 +1,7 @@
 from app.models import db, Review
 
 def seed_reviews():
-    dash_review = Review (
+    dashreview = Review (
         user_id="1",
         item_id="1",
         purchase_id="1",
@@ -11,7 +11,7 @@ def seed_reviews():
         image="https://upload.wikimedia.org/wikipedia/commons/d/d8/Wingsuit_Flying_over_Langar_Airfield_UK.jpg"
     )
 
-    db.session.add(dash_review)
+    db.session.add(dashreview)
 
     db.session.commit()
 
