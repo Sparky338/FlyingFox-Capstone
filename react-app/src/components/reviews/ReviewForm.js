@@ -6,35 +6,32 @@ import { createReview, editReview } from '../../store/reviews';
 
 import "./reviews.css";
 
-
-const ReviewForm = ({ review, formType}) => {
+const ReviewForm = ({ storedReview, formType}) => {
     const history = useHistory();
     const dispatch = useDispatch();
-    console.log(review)
 
-    const [firstName, setFirstName] = useState(review.first_name || "");
-    const [lastName, setLastName] = useState(review.last_name || "");
-    const [reviewBody, setReviewBody] = useState(review.review || "");
-    const [imageUrl, setImageUrl] = useState(review.imageUrl || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
+    const [first_name, setFirstName] = useState(storedReview.first_name || "");
+    const [last_name, setLastName] = useState(storedReview.last_name || "");
+    const [review, setReviewBody] = useState(storedReview.review || "");
+    const [imageUrl, setImageUrl] = useState(storedReview.imageUrl || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
     useEffect(() => {
         const errors = [];
 
-
-        if (!firstName) errors.push("First name is required");
-        if (firstName.length > 50) errors.push("First name must be less than 50 characters");
-        if (!lastName) errors.push("Last name is required");
-        if (lastName.length > 50) errors.push("Last name must be less than 50 characters");
-        if (!reviewBody) errors.push("Review is required");
-        if (reviewBody.length < 10) errors.push("Review must be at least 10 characters");
-        if (reviewBody.length > 1000) errors.push("Review must be less than 1,000 characters");
+        if (!first_name) errors.push("First name is required");
+        if (first_name.length > 50) errors.push("First name must be less than 50 characters");
+        if (!last_name) errors.push("Last name is required");
+        if (last_name.length > 50) errors.push("Last name must be less than 50 characters");
+        if (!review) errors.push("Review is required");
+        if (review.length < 10) errors.push("Review must be at least 10 characters");
+        if (review.length > 1000) errors.push("Review must be less than 1,000 characters");
         if (imageUrl && !imageUrl.endsWith('.jpg') && !imageUrl.endsWith('.jpeg') && !imageUrl.endsWith('.png')) {
             errors.push("Image file must be a jpg, jpeg, or png");
         }
         setValidationErrors(errors);
-    }, [firstName, lastName, reviewBody, imageUrl])
+    }, [first_name, last_name, review, imageUrl])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -42,14 +39,16 @@ const ReviewForm = ({ review, formType}) => {
 
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
-        const newReview = { ...review, firstName, lastName, reviewBody, imageUrl };
+        const newReview = { ...storedReview, first_name, last_name, review, imageUrl };
 
         if (formType === "Leave a review") {
             const awaitedReview = await dispatch(createReview(newReview))
-            history.push(`/items/${awaitedReview.item_id}`)
+            history.push(`/orders`)
+            if (awaitedReview) alert("Your review was successfully posted!")
         } else if (formType === "Edit Review") {
-            const awaitedReview = await dispatch(editReview(review.id, newReview))
-            history.push(`/items/${awaitedReview.item_id}`)
+            const awaitedReview = await dispatch(editReview(storedReview.id, newReview))
+            history.push(`/orders`)
+            if (awaitedReview) alert("Your review was successfully edited!")
         }
 
         // dispatch(clearReviewAction())
@@ -75,7 +74,8 @@ const ReviewForm = ({ review, formType}) => {
                         First Name*
                         <input
                             className="review-form-review"
-                            value={firstName}
+                            type="text"
+                            value={first_name}
                             onChange={e => setFirstName(e.target.value)}
                             placeholder="First name"
                         />
@@ -84,7 +84,8 @@ const ReviewForm = ({ review, formType}) => {
                         Last Name*
                         <input
                             className="review-form-review"
-                            value={lastName}
+                            type="text"
+                            value={last_name}
                             onChange={e => setLastName(e.target.value)}
                             placeholder="Last name"
                         />
@@ -93,7 +94,8 @@ const ReviewForm = ({ review, formType}) => {
                         Review*
                         <textarea
                             className="review-form-review review-text-area"
-                            value={reviewBody}
+                            type="text"
+                            value={review}
                             onChange={e => setReviewBody(e.target.value)}
                             placeholder="Write a review"
                         ></textarea>
@@ -102,6 +104,7 @@ const ReviewForm = ({ review, formType}) => {
                         Image URL
                         <input
                             className="review-form-review"
+                            type="text"
                             value={imageUrl}
                             onChange={e => setImageUrl(e.target.value)}
                             placeholder="Input an image URL "
