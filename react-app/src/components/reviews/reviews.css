@@ -2,7 +2,6 @@
     width: 80%;
     display: flex;
     flex-direction: column;
-    border: solid 1px blue;
 }
 
 .review-form-header {
@@ -24,15 +23,10 @@
     align-items: center;
 }
 
-.outer-error {
-    border: solid 1px red;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* align-items: center; */
-}
-
 .error-handling {
     color: red;
+    display: flex;
+    justify-content: center;
 }
 
 .errors-list {
@@ -56,11 +50,12 @@
     height: 40px;
     border-radius: 6px;
     border: solid 1px #06a7e2;
-    margin-left: 5px;
+    margin-top: 5px;
+    width: 250px;
 }
 
 .review-submit-button {
     height: 50px;
     font-size: 22px;
-    width: 200px;
+    width: 250px;
 }

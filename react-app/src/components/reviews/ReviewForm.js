@@ -72,7 +72,7 @@ const ReviewForm = ({ review, formType }) => {
                         </div>
                     )}
                     <label className="review-form-label">
-                        First Name*:
+                        First Name*
                         <input
                             className="review-form-review"
                             value={firstName}
@@ -81,7 +81,7 @@ const ReviewForm = ({ review, formType }) => {
                         />
                     </label>
                     <label className="review-form-label">
-                        Last Name*:
+                        Last Name*
                         <input
                             className="review-form-review"
                             value={lastName}
@@ -90,7 +90,7 @@ const ReviewForm = ({ review, formType }) => {
                         />
                     </label>
                     <label className="review-form-label">
-                        Review*:
+                        Review*
                         <input
                             className="review-form-review"
                             type="text area"
@@ -100,7 +100,7 @@ const ReviewForm = ({ review, formType }) => {
                         />
                     </label>
                     <label className="review-form-label">
-                        Image URL:
+                        Image URL
                         <input
                             className="review-form-review"
                             value={imageUrl}
