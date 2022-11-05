@@ -10,12 +10,7 @@ const OrderById = () => {
     const purchases = useSelector(state => state.purchases);
     const purchasesItems = useSelector(state => state.purchasesItems);
 
-    // useEffect(() => {
-    //     dispatch(getItemReviews(+itemId));
-    // }, [dispatch, itemId])
-
     let reviewed = false;
-    // if ()
 
     const formatting_options = {
         style: 'currency',
@@ -60,6 +55,7 @@ const OrderById = () => {
                                         {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
                                     </td>
                                     <td className="id-order-item-review">
+                                    {/* {if (purchases[purchaseItem[1].purchase_id].reviews)} */}
 
                                         <Link to={`/items/${purchaseItem[1].item_id}/review`}>{reviewIcon}</Link>
                                     </td>

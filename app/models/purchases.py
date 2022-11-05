@@ -17,6 +17,6 @@ class Purchase(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'price': self.price,
-            'review': [r.to_dict() for r in self.reviews],
+            'reviews': [r.to_dict() for r in self.reviews],
             'purchases_items': [pi.to_dict() for pi in self.purchases_items],
         }
