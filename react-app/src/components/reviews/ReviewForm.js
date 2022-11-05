@@ -7,14 +7,14 @@ import { createReview, editReview } from '../../store/reviews';
 import "./reviews.css";
 
 
-const ReviewForm = ({ review, formType, hasReview }) => {
+const ReviewForm = ({ review, formType}) => {
     const history = useHistory();
     const dispatch = useDispatch();
 
     const [firstName, setFirstName] = useState(review.firstName || "");
     const [lastName, setLastName] = useState(review.lastName || "");
-    const [reviewBody, setReviewBody] = useState(review.review || "");
-    const [imageUrl, setImageUrl] = useState(review.image || "");
+    const [reviewBody, setReviewBody] = useState(review.reviewBody || "");
+    const [imageUrl, setImageUrl] = useState(review.imageUrl || "");
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -56,7 +56,7 @@ const ReviewForm = ({ review, formType, hasReview }) => {
 
     return (
         <div className="review-form-outer-container">
-            <div className="review-form-header">{formType}FORM TYPE HERE</div>
+            <div className="review-form-header">{formType}</div>
             <div className="review-form-container">
                 <form className="review-form" onSubmit={handleSubmit}>
                     {hasSubmitted && validationErrors.length > 0 && (

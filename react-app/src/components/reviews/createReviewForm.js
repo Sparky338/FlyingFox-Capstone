@@ -13,7 +13,7 @@ const CreateReviewForm = () => {
 
     if (currentUser) {
         return (
-            <ReviewForm review={review} formType="Leave a review" hasReview={false}/>
+            <ReviewForm review={review} formType="Leave a review"/>
         );
     }
 }

@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import NavBar from './components/NavBar';
+import { getAllItems } from './store/items';
+import { getAllReviews } from './store/reviews';
 import { authenticate } from './store/session';
+
+import NavBar from './components/NavBar';
 import HomePage from './components/home/home';
 import LoginSignup from './components/login-signup/login-signup';
-import { getAllItems } from './store/items';
 import ItemById from './components/items/itemById';
 import ProtectedRoute from "./components/auth/ProtectedRoute"
 import Cart from './components/cart/cart';
 import CheckoutPage from './components/purchases/checkout-page';
 import Orders from './components/purchases/orders';
 import OrderById from './components/purchases/orderById';
-import ReviewForm from './components/reviews/ReviewForm';
-import { getAllReviews } from './store/reviews';
+import CreateReviewForm from './components/reviews/createReviewForm';
+import EditReviewForm from './components/reviews/editReviewForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -43,10 +45,10 @@ function App() {
           <LoginSignup />
         </Route>
         <Route path='/items/:itemId/review/:reviewId/edit'>
-          <ReviewForm />
+          <EditReviewForm />
         </Route>
         <Route path='/items/:itemId/review'>
-          <ReviewForm />
+          <CreateReviewForm />
         </Route>
         <Route path="/items/:itemId">
           <ItemById />
