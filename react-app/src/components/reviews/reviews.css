@@ -11,21 +11,39 @@
     margin-top: 10px;
 }
 
+.error-handling {
+    color: red;
+    display: flex;
+    
+}
+
+.errors-list {
+    font-size: 18px;
+    color:red;
+    list-style: none;
+}
+
 .review-form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: solid 1px ;
 }
 
 .review-form-label {
     margin-bottom: 20px;
-    margin-right: 5px;
     font-size: 20px;
-
 }
 
 .review-form-review {
-    height: 30px;
+    height: 40px;
     border-radius: 6px;
     border: solid 1px #06a7e2;
+    margin-left: 5px;
+}
+
+.review-submit-button {
+    height: 50px;
+    font-size: 22px;
+    width: 200px;
 }

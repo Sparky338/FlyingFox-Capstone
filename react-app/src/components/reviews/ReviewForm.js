@@ -108,6 +108,7 @@ const ReviewForm = ({ review, formType }) => {
                             placeholder="Input an image URL "
                         />
                     </label>
+                    <input className='main-button review-submit-button' type="submit" value="Post Review" />
                 </form>
             </div>
         </div >
