@@ -9,8 +9,8 @@ const EditReviewForm = () => {
 
     if (!reviewId) return null;
 
-    const reviewerId = reviewsState[+reviewId].user_id;
-    const review = reviewsState[+reviewId];
+    const reviewerId = reviewsState[reviewId].user_id;
+    const review = reviewsState[reviewId];
 
     if (currentUser.id === reviewerId) {
         return (

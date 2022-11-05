@@ -52,7 +52,7 @@ const OrderById = () => {
                                         {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
                                     </td>
                                     <td className="id-order-item-review">
-                                        <Link to={`items/${purchaseItem[1].item_id}/review`}>{reviewIcon}</Link>
+                                        <Link to={`/items/${purchaseItem[1].item_id}/review`}>{reviewIcon}</Link>
                                     </td>
                                 </tr>
                             )

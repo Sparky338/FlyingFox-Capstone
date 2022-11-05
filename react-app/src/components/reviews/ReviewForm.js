@@ -10,12 +10,13 @@ import "./reviews.css";
 const ReviewForm = ({ review, formType }) => {
     const history = useHistory();
     const dispatch = useDispatch();
-    const reviews = useSelector(state => state.reviews);
+    // const reviews = useSelector(state => state.reviews);
+    console.log(review)
 
-    const [firstName, setFirstName] = useState(reviews.first_name || "");
-    const [lastName, setLastName] = useState(reviews.lastName || "");
-    const [reviewBody, setReviewBody] = useState(reviews.review || "");
-    const [imageUrl, setImageUrl] = useState(reviews.image || "");
+    const [firstName, setFirstName] = useState(review.firstName || "");
+    const [lastName, setLastName] = useState(review.lastName || "");
+    const [reviewBody, setReviewBody] = useState(review.review || "");
+    const [imageUrl, setImageUrl] = useState(review.image || "");
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -107,7 +108,7 @@ const ReviewForm = ({ review, formType }) => {
                             placeholder="Input an image URL "
                         />
                     </label>
-                    <input className='main-button review-submit-button' type="submit" value="Post Review" />
+                    <input type="submit" className='main-button review-submit-button' value="Post Review" />
                 </form>
             </div>
         </div >
