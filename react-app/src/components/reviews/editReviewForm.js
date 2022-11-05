@@ -14,7 +14,7 @@ const EditReviewForm = () => {
 
     if (currentUser.id === reviewerId) {
         return (
-            <ReviewForm review={review} formType="Edit Review" hasReview={false} />
+            <ReviewForm review={review} formType="Edit Review" hasReview={true} />
         );
     }
 }

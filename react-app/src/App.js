@@ -42,6 +42,9 @@ function App() {
         <Route path='/login' exact={true}>
           <LoginSignup />
         </Route>
+        <Route path='/items/:itemId/review/:reviewId/edit'>
+          <ReviewForm />
+        </Route>
         <Route path='/items/:itemId/review'>
           <ReviewForm />
         </Route>

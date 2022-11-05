@@ -5,6 +5,7 @@ import "./orders.css"
 
 const OrderById = () => {
     const { orderId } = useParams()
+    const user = useSelector(state => state.session.user)
     const items = useSelector(state => state.items);
     const reviewsState = useSelector(state => state.reviews);
     const purchases = useSelector(state => state.purchases);
@@ -20,6 +21,7 @@ const OrderById = () => {
     const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
 
     const filterdPurchasesItems = Object.entries(purchasesItems).filter(pi => pi[1].purchase_id === +orderId)
+    const filterdReviews = Object.entries(reviewsState).filter(review => review[1].user_id === user.id)
     const reviewIcon = <i class="fa-regular fa-message"></i>
 
     return (
@@ -37,31 +39,43 @@ const OrderById = () => {
                         </tr>
                     </thead>
                     <tbody className="table-body">
-                    {filterdPurchasesItems.map(
-                        (purchaseItem, i) => {
-                            return (
-                                <tr className="id-order-item" key={i}>
-                                    <td className="id-order-item-image">
-                                        {items[purchaseItem[1].item_id].images[0]}
+                        {filterdPurchasesItems.map(
+                            (purchaseItem, i) => {
+                                return (
+                                    <tr className="id-order-item" key={i}>
+                                        <td className="id-order-item-image">
+                                            {items[purchaseItem[1].item_id].images[0]}
 
-                                    </td>
-                                    <td className="id-order-item-name">
-                                        {items[purchaseItem[1].item_id].item_name}
-                                    </td>
-                                    <td className="id-order-item-qty">
-                                        {purchaseItem[1].quantity}
-                                    </td>
-                                    <td className="id-order-item-total">
-                                        {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
-                                    </td>
-                                    <td className="id-order-item-review">
-                                    {/* {if (purchases[purchaseItem[1].purchase_id].reviews)} */}
+                                        </td>
+                                        <td className="id-order-item-name">
+                                            {items[purchaseItem[1].item_id].item_name}
+                                        </td>
+                                        <td className="id-order-item-qty">
+                                            {purchaseItem[1].quantity}
+                                        </td>
+                                        <td className="id-order-item-total">
+                                            {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
+                                        </td>
+                                        <td className="id-order-item-review">
+                                            {filterdReviews.map((review, i) => {
+                                                return (
+                                                    <>
+                                                        {(review[1].item_id === purchaseItem[1].item_id) ?
+                                                            <div> {reviewed = true}
+                                                                <Link to={`/items/${purchaseItem[1].item_id}/review/${review[1].id}/edit`}>{reviewIcon}</Link>
+                                                            </div> :
+                                                            <div> {reviewed}
+                                                                <Link to={`/items/${purchaseItem[1].item_id}/review`}>{reviewIcon}</Link>
+                                                            </div>
+                                                        }
+                                                    </>
+                                                )
+                                            })}
 
-                                        <Link to={`/items/${purchaseItem[1].item_id}/review`}>{reviewIcon}</Link>
-                                    </td>
-                                </tr>
-                            )
-                        })}
+                                        </td>
+                                    </tr>
+                                )
+                            })}
                     </tbody>
                     <tfoot className="id-order-table-footer">
                         <tr className="id-order-table-footer-row">

@@ -10,8 +10,6 @@ import "./reviews.css";
 const ReviewForm = ({ review, formType, hasReview }) => {
     const history = useHistory();
     const dispatch = useDispatch();
-    // const reviews = useSelector(state => state.reviews);
-    console.log(review)
 
     const [firstName, setFirstName] = useState(review.firstName || "");
     const [lastName, setLastName] = useState(review.lastName || "");
