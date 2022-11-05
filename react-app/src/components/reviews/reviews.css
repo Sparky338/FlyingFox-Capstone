@@ -1,0 +1,31 @@
+.review-form-outer-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-form-header {
+    font-size: 30px;
+    color:white;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-form-label {
+    margin-bottom: 20px;
+    margin-right: 5px;
+    font-size: 20px;
+
+}
+
+.review-form-review {
+    height: 30px;
+    border-radius: 6px;
+    border: solid 1px #06a7e2;
+}

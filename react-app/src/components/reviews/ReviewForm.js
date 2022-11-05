@@ -7,7 +7,7 @@ import { createReview, editReview } from '../../store/reviews';
 import "./reviews.css";
 
 
-const ReviewForm = ({review, formType}) => {
+const ReviewForm = ({ review, formType }) => {
     const history = useHistory();
     const dispatch = useDispatch();
     const reviews = useSelector(state => state.reviews);
@@ -57,9 +57,9 @@ const ReviewForm = ({review, formType}) => {
 
     return (
         <div className="review-form-outer-container">
-            <div className="review-form-outer">
+            <div className="review-form-header">{formType}FORM TYPE HERE</div>
+            <div className="review-form-container">
                 <form className="review-form" onSubmit={handleSubmit}>
-                    <h2 className="review-form-header">{formType}</h2>
                     {hasSubmitted && validationErrors.length > 0 && (
                         <div className="outer-error">
                             <div className="error-handling">There were errors in your submission:</div>
@@ -93,6 +93,7 @@ const ReviewForm = ({review, formType}) => {
                         Review*:
                         <input
                             className="review-form-review"
+                            type="text area"
                             value={reviewBody}
                             onChange={e => setReviewBody(e.target.value)}
                             placeholder="Write a review"
@@ -101,7 +102,7 @@ const ReviewForm = ({review, formType}) => {
                     <label className="review-form-label">
                         Image URL:
                         <input
-                            className="review-form-image"
+                            className="review-form-review"
                             value={imageUrl}
                             onChange={e => setImageUrl(e.target.value)}
                             placeholder="Input an image URL "
