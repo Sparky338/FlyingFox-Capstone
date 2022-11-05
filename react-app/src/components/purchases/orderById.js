@@ -5,9 +5,17 @@ import "./orders.css"
 
 const OrderById = () => {
     const { orderId } = useParams()
-    const items = useSelector(state => state.items)
-    const purchases = useSelector(state => state.purchases)
-    const purchasesItems = useSelector(state => state.purchasesItems)
+    const items = useSelector(state => state.items);
+    const reviewsState = useSelector(state => state.reviews);
+    const purchases = useSelector(state => state.purchases);
+    const purchasesItems = useSelector(state => state.purchasesItems);
+
+    // useEffect(() => {
+    //     dispatch(getItemReviews(+itemId));
+    // }, [dispatch, itemId])
+
+    let reviewed = false;
+    // if ()
 
     const formatting_options = {
         style: 'currency',
@@ -52,6 +60,7 @@ const OrderById = () => {
                                         {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
                                     </td>
                                     <td className="id-order-item-review">
+
                                         <Link to={`/items/${purchaseItem[1].item_id}/review`}>{reviewIcon}</Link>
                                     </td>
                                 </tr>

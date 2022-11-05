@@ -5,6 +5,13 @@ from app.forms import CreateReview, EditReview
 
 review_routes = Blueprint('reviews', __name__)
 
+@review_routes.route('')
+def get_all_reviews():
+    """Get all reviews"""
+    reviews = Review.query.all()
+    return {'reviews': [r.to_dict() for r in reviews]}
+
+
 @review_routes.route('/<int:id>')
 def get_reviews_by_item_id(id):
     """Get reviews by the item's id"""

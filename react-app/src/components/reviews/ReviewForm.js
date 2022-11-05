@@ -7,7 +7,7 @@ import { createReview, editReview } from '../../store/reviews';
 import "./reviews.css";
 
 
-const ReviewForm = ({ review, formType }) => {
+const ReviewForm = ({ review, formType, hasReview }) => {
     const history = useHistory();
     const dispatch = useDispatch();
     // const reviews = useSelector(state => state.reviews);
