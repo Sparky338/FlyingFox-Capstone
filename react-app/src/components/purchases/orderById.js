@@ -62,10 +62,10 @@ const OrderById = () => {
                                                     <>
                                                         {(review[1].item_id === purchaseItem[1].item_id) ?
                                                             <div> {reviewed = true}
-                                                                <Link to={`/items/${purchaseItem[1].item_id}/review/${review[1].id}/edit`}>{reviewIcon}</Link>
+                                                                <Link to={`/items/${purchaseItem[1].item_id}/review/${review[1].id}/edit`} className="review-text" >Edit Review</Link>
                                                             </div> :
                                                             <div> {reviewed}
-                                                                <Link to={`/items/${purchaseItem[1].item_id}/review`}>{reviewIcon}</Link>
+                                                                <Link to={`/items/${purchaseItem[1].item_id}/review`} className="review-text" >Leave Review</Link>
                                                             </div>
                                                         }
                                                     </>
