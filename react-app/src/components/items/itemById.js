@@ -86,13 +86,15 @@ const ItemById = () => {
                                 <div className="review-header">{item.item_name.toUpperCase()} REVIEWS</div>
                             </div>
                             {filteredReviews.map((review, i) => {
-                                <div className="review-container">
-                                    <div className="review">{review.review}</div>
-                                    <div className="picture-and-name">
-                                        <div className="picture"> {review.image}</div>
-                                        <div className="first-last-name"> -{review.first_name} {review.last_name} </div>
+                                return (
+                                    <div className="review-container" key={i}>
+                                        <div className="review">{review.review}</div>
+                                        <div className="picture-and-name">
+                                            <div className="picture"> {review.image}</div>
+                                            <div className="first-last-name"> -{review.first_name} {review.last_name} </div>
+                                        </div>
                                     </div>
-                                </div>
+                                )
                             })}
                         </div>
                     </div>
