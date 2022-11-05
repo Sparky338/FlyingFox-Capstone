@@ -13,6 +13,7 @@ import CheckoutPage from './components/purchases/checkout-page';
 import Orders from './components/purchases/orders';
 import OrderById from './components/purchases/orderById';
 import ReviewForm from './components/reviews/ReviewForm';
+import { getAllReviews } from './store/reviews';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -24,6 +25,7 @@ function App() {
       setLoaded(true);
     })();
     dispatch(getAllItems());
+    dispatch(getAllReviews());
   }, [dispatch]);
 
   if (!loaded) {
