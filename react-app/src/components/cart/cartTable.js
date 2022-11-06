@@ -15,6 +15,10 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
             qty = 1
             alert("Quantity must be at least 1. If you wish to remove this item, click the X at the end of the row.")
         }
+        if (parseInt(qty) > 10) {
+            qty = 10
+            alert("Quantity must be less than 10. After all, they are custom made.")
+        }
         setQtyState({...itemQty, [itemId]:+qty})
     }
 
@@ -50,6 +54,7 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
                                     type="number"
                                     className="quantity-form-value"
                                     min="1"
+                                    max="10"
                                     value={itemQty[item[1][0].id]}
                                     onChange={(e) => handleQty(e.target.value, item[1][0].id)}
                                 />
