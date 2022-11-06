@@ -15,7 +15,7 @@ def get_user_purchases():
 @purchase_routes.route("", methods=["POST"])
 @login_required
 def add_user_purchases():
-    """Add items from local session cart to user purchases"""
+    """Add items from local session cart and shipping information to user purchases"""
 
     cart_id_list = request.json['cartItemsId']
     cart_qty_list = request.json['cartQuantities']
