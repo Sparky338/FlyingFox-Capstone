@@ -69,9 +69,9 @@ const Cart = () => {
                         itemQty={itemQty}
                         setQtyState={setQtyState}
                     />
-                    <div className="shipping-info-container">
+                    {/* <div className="shipping-info-container">
                         <ShippingInfo />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

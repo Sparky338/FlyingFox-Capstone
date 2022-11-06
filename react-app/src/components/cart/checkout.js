@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom"
 import { createPurchase } from "../../store/purchases";
+import ShippingInfo from "./shippingInfo";
 
 import "./cart.css"
 
@@ -59,6 +60,9 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
                 <div className="checkout-total">{dollarFormatter.format(sum)}</div>
             </div>
             <div className="checkout-horizontal-line"></div>
+            <div className="shipping-info-container">
+                        <ShippingInfo />
+                    </div>
             <button className="checkout-button" onClick={handleCheckout}>CHECKOUT</button>
 
         </div>

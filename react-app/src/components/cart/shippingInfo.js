@@ -2,16 +2,21 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
+import "./cart.css"
 
-const ShippingInfo = () =>{
+const ShippingInfo = () => {
     const currentUser = useSelector(state => state.session.user)
     const history = useHistory();
     const dispatch = useDispatch();
 
     const [first_name, setFirstName] = useState("");
     const [last_name, setLastName] = useState("");
-    const [review, setReviewBody] = useState("");
-    const [image_url, setImageUrl] = useState(""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
+    const [address, setAddress] = useState("");
+    const [address2, setAddress2] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [zipCode, setZipCode] = useState("");
+
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -22,14 +27,16 @@ const ShippingInfo = () =>{
         if (first_name.length > 50) errors.push("First name must be less than 50 characters");
         if (!last_name) errors.push("Last name is required");
         if (last_name.length > 50) errors.push("Last name must be less than 50 characters");
-        if (!review) errors.push("Review is required");
-        if (review.length < 10) errors.push("Review must be at least 10 characters");
-        if (review.length > 1000) errors.push("Review must be less than 1,000 characters");
-        if (image_url && !image_url.endsWith('.jpg') && !image_url.endsWith('.jpeg') && !image_url.endsWith('.png')) {
-            errors.push("Image file must be a jpg, jpeg, or png");
-        }
+        if (!address) errors.push("An address is required");
+        if (address.length < 5) errors.push("An address must be longer than 5 characters");
+        if (!city) errors.push("A city is required");
+        if (!state) errors.push("A state is required");
+        if (!zipCode) errors.push("A zip code is required");
+        if (zipCode.length !== 5) errors.push("Zip code must be exacly 5 numbers")
+        if (zipCode)
+
         setValidationErrors(errors);
-    }, [first_name, last_name, review, image_url])
+    }, [first_name, last_name,])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -43,9 +50,9 @@ const ShippingInfo = () =>{
 
     return (
         <div className="shipping-info-outer">
-            <div className="review-form-header">Shipping Information</div>
-            <div className="review-form-container">
-                <form className="review-form" onSubmit={handleSubmit}>
+            <div className="shipping-form-header">Shipping Information</div>
+            <div className="shipping-form-container">
+                <form className="shipping-form" onSubmit={handleSubmit}>
                     {hasSubmitted && validationErrors.length > 0 && (
                         <div className="outer-error">
                             <div className="error-handling">There were errors in your submission:</div>
@@ -57,67 +64,76 @@ const ShippingInfo = () =>{
 
                         </div>
                     )}
-                    <label className="review-form-label">
+                    <label className="shipping-form-label">
                         First Name*
                         <input
-                            className="review-form-review"
+                            className="shipping-form-review"
                             type="text"
                             value={first_name}
                             onChange={e => setFirstName(e.target.value)}
                             placeholder="First name"
                         />
                     </label>
-                    <label className="review-form-label">
+                    <label className="shipping-form-label">
                         Last Name*
                         <input
-                            className="review-form-review"
+                            className="shipping-form-review"
                             type="text"
                             value={last_name}
                             onChange={e => setLastName(e.target.value)}
                             placeholder="Last name"
                         />
                     </label>
-                    <label className="review-form-label">
-                        Address
+                    <label className="shipping-form-label">
+                        Address*
                         <input
-                            className="review-form-review"
+                            className="shipping-form-review"
                             type="text"
-                            value={image_url}
-                            onChange={e => setImageUrl(e.target.value)}
+                            value={address}
+                            onChange={e => setAddress(e.target.value)}
                             placeholder="Address"
                         />
                     </label>
-                    <label className="review-form-label">
-                        City
+                    <label className="shipping-form-label">
+                        Address 2
                         <input
-                            className="review-form-review"
+                            className="shipping-form-review"
                             type="text"
-                            value={image_url}
-                            onChange={e => setImageUrl(e.target.value)}
+                            value={address2}
+                            onChange={e => setAddress2(e.target.value)}
+                            placeholder="Address 2"
+                        />
+                    </label>
+                    <label className="shipping-form-label">
+                        City*
+                        <input
+                            className="shipping-form-review"
+                            type="text"
+                            value={city}
+                            onChange={e => setCity(e.target.value)}
                             placeholder="City"
                         />
                     </label>
-                    <label className="review-form-label">
-                        State
+                    <label className="shipping-form-label">
+                        State*
                         <input
-                            className="review-form-review"
+                            className="shipping-form-review"
                             type="text"
-                            value={image_url}
-                            onChange={e => setImageUrl(e.target.value)}
+                            value={state}
+                            onChange={e => setState(e.target.value)}
                             placeholder="State"
                         />
                     </label>
-                    <label className="review-form-label">
-                        ZipCode
+                    <label className="shipping-form-label">
+                        ZipCode*
                         <input
-                            className="review-form-review"
+                            className="shipping-form-review"
                             type="text"
-                            value={image_url}
-                            onChange={e => setImageUrl(e.target.value)}
+                            value={zipCode}
+                            onChange={e => setZipCode(e.target.value)}
                             placeholder="ZipCode"
                         />
                     </label>
-                    <input type="submit" className='main-button review-submit-button' value="Post Review" />
                 </form>
             </div>
         </div>
