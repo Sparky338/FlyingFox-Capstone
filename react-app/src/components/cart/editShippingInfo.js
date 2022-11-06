@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom"
 import { editPurchase } from "../../store/purchases";
 
-import "./cart.css"
+import "./editShipping.css"
 
 const EditShippingInfo = () => {
     const dispatch = useDispatch();
