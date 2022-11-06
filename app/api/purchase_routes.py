@@ -16,19 +16,21 @@ def get_user_purchases():
 @login_required
 def add_user_purchases():
     """Add items from local session cart and shipping information to user purchases"""
+    form = CreateShipping()
+    form['csrf_token'].data = request.cookies['csrf_token']
 
     cart_id_list = request.json['cartItemsId']
     cart_qty_list = request.json['cartQuantities']
     cart_total = request.json['sum']
     purchaser_id = current_user.id
 
-    #add error handling for missing data
-
-    if cart_id_list:
+    if form.validate_on_submit():
         purchase = Purchase()
 
+        form.populate_obj(purchase)
         purchase.user_id = purchaser_id
         purchase.price = cart_total
+        
         db.session.add(purchase)
         db.session.commit()
 
@@ -40,8 +42,8 @@ def add_user_purchases():
             db.session.add(purchases_items)
 
         db.session.commit()
-    # else:
-    #     return {'errors': form.errors}, 400
+    else:
+        return {'errors': form.errors}, 400
 
 
 # @purchase_routes.route("/<int:id>", methods=["PUT"])
