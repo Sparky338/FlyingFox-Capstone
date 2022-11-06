@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import "./cart.css"
 
-const ShippingInfo = ({first_name, setFirstName, last_name, setLastName, address, setAddress,address2, setAddress2, city, setCity, state, setState, zipCode, setZipCode, validationErrors, setValidationErrors, hasSubmitted, setHasSubmitted}) => {
+const ShippingInfo = ({first_name, setFirstName, last_name, setLastName, address, setAddress,address2, setAddress2, city, setCity, state, setState, zipCode, setZipCode, validationErrors, setValidationErrors, hasSubmitted, setHasSubmitted, handleCheckout}) => {
     const currentUser = useSelector(state => state.session.user)
     const history = useHistory();
     const dispatch = useDispatch();
@@ -38,21 +38,21 @@ const ShippingInfo = ({first_name, setFirstName, last_name, setLastName, address
     //     setValidationErrors(errors);
     // }, [first_name, last_name, address, address2, city, state, zipCode])
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setHasSubmitted(true)
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     setHasSubmitted(true)
 
-        if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
+    //     if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
 
-    };
+    // };
 
 
     return (
         <div className="shipping-info-outer">
             <div className="shipping-form-header">Shipping Information</div>
             <div className="shipping-form-container">
-                <form className="shipping-form" onSubmit={handleSubmit}>
+                <form className="shipping-form" onSubmit={handleCheckout}>
                     {hasSubmitted && validationErrors.length > 0 && (
                         <div className="outer-error">
                             <div className="error-handling">There were errors in your submission:</div>

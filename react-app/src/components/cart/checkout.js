@@ -68,7 +68,10 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
 
     const handleCheckout = async (e) => {
         e.preventDefault();
+        setHasSubmitted(true)
+
         if (sum === 0) return alert("You can't checkout with nothing in your cart. Please select something to buy!")
+        if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
         const cartItemsId = Object.entries(cart).map((item) => {
             return item[1][0].id
@@ -109,6 +112,8 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
                             setValidationErrors={setValidationErrors}
                             hasSubmitted={hasSubmitted}
                             setHasSubmitted={setHasSubmitted}
+                            handleCheckout={handleCheckout}
+
                         />
                     </div>
             <button className="checkout-button" onClick={handleCheckout}>CHECKOUT</button>
