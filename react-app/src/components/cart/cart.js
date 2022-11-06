@@ -15,6 +15,7 @@ const Cart = () => {
 
     const [cartState, setCartState] = useState(JSON.parse(localStorage.getItem('cart')) || '')
     const [itemQty, setQtyState] = useState(JSON.parse(localStorage.getItem('itemQty')) || '')
+    
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cartState))
         localStorage.setItem('itemQty', JSON.stringify(itemQty))
