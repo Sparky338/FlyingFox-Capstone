@@ -1,12 +1,55 @@
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom"
+
 import "./cart.css"
 
-const ShippingInfo = ({first_name, setFirstName, last_name, setLastName, address, setAddress,address2, setAddress2, city, setCity, state, setState, zipCode, setZipCode, validationErrors, setValidationErrors, hasSubmitted, setHasSubmitted, handleCheckout}) => {
+const EditShippingInfo = () => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const [first_name, setFirstName] = useState("");
+    const [last_name, setLastName] = useState("");
+    const [address, setAddress] = useState("");
+    const [address2, setAddress2] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [zipCode, setZipCode] = useState("");
+
+    const [validationErrors, setValidationErrors] = useState([]);
+    const [hasSubmitted, setHasSubmitted] = useState(false);
+
+    useEffect(() => {
+        const errors = [];
+
+        if (!first_name) errors.push("First name is required");
+        if (first_name.length > 50) errors.push("First name must be less than 50 characters");
+        if (!last_name) errors.push("Last name is required");
+        if (last_name.length > 50) errors.push("Last name must be less than 50 characters");
+        if (!address) errors.push("An address is required");
+        if (address.length < 5) errors.push("An address must be longer than 5 characters");
+        if (!city) errors.push("A city is required");
+        if (!state) errors.push("A state is required");
+        if (!zipCode) errors.push("A zip code is required");
+        if (zipCode.length !== 5) errors.push("Zip code must be exacly 5 numbers")
+        if (isNaN(zipCode)) errors.push("Zip code must be a number.")
+
+        setValidationErrors(errors);
+    }, [first_name, last_name, address, city, state, zipCode])
+
+    const handleEdit = async (e) => {
+        e.preventDefault();
+        setHasSubmitted(true)
+
+        if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
+
+        const shippingInformation = {first_name, last_name, address, address2, city, state, zipCode}
+    }
 
     return (
         <div className="shipping-info-outer">
             <div className="shipping-form-header">Shipping Information</div>
             <div className="shipping-form-container">
-                <form className="shipping-form" onSubmit={handleCheckout}>
+                <form className="shipping-form" onSubmit={handleEdit}>
                     {hasSubmitted && validationErrors.length > 0 && (
                         <div className="outer-error">
                             <div className="error-handling">There were errors in your submission:</div>
@@ -88,10 +131,11 @@ const ShippingInfo = ({first_name, setFirstName, last_name, setLastName, address
                             placeholder="ZipCode"
                         />
                     </label>
+                    <input type="submit" className='main-button edit-shipping-submit-button' value="Submit Changes" />
                 </form>
             </div>
         </div>
     )
 }
 
-export default ShippingInfo;
+export default EditShippingInfo
