@@ -52,4 +52,9 @@ def add_edit_purchase():
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        
+        purchases_items = Purchases_Items()
+        form.populate_obj(purchases_items)
+        db.session.commit()
+        return {'purchases_items': purchases_items.to_dict()}
+    else:
+        return {'errors': form.errors}, 400
