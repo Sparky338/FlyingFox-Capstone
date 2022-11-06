@@ -4,5 +4,4 @@ from wtforms.validators import DataRequired
 
 
 class EditPurchase(FlaskForm):
-    quantity = IntegerField()
-
+    quantity = IntegerField('quantity', validators=[DataRequired()])

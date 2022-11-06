@@ -1,6 +1,7 @@
 
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import EditOrderForm from "./editOrderForm";
 
 
 import "./orders.css"
@@ -34,6 +35,7 @@ const OrderById = () => {
                             <th className="table-header-item">ITEM</th>
                             <th className="table-header-qty" width="10%">QTY</th>
                             <th className="table-header-total" width="15%">TOTAL</th>
+                            <th width="5%">&nbsp;</th>
                             <th width="5%">&nbsp;</th>
                         </tr>
                     </thead>
@@ -74,6 +76,15 @@ const OrderById = () => {
                                                         key={i}
                                                     >Leave Review</Link>
                                                 }
+                                            </>
+                                        </td>
+                                        <td className="id-order-item-edit">
+                                            <>
+                                                <EditOrderForm
+                                                    item_name={items[purchaseItem[1].item_id].item_name}
+                                                    quantity={purchaseItem[1].quantity}
+                                                    purchase_id={purchaseItem[1].purchase_id}
+                                                />
                                             </>
                                         </td>
                                     </tr>
