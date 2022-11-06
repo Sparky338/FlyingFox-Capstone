@@ -16,6 +16,7 @@ import OrderById from './components/purchases/orderById';
 import CreateReviewForm from './components/reviews/createReviewForm';
 import EditReviewForm from './components/reviews/editReviewForm';
 import EditOrderForm from './components/purchases/editOrderForm';
+import EditShippingInfo from './components/cart/editShippingInfo';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -58,9 +59,9 @@ function App() {
         <ProtectedRoute path='/checkout'>
           <CheckoutPage />
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/orders/:orderId/items/:itemId/edit'>
-          <EditOrderForm />
-        </ProtectedRoute> */}
+        <ProtectedRoute path='/orders/:orderId/edit'>
+          <EditShippingInfo />
+        </ProtectedRoute>
         <ProtectedRoute path='/orders/:orderId'>
           <OrderById />
         </ProtectedRoute>

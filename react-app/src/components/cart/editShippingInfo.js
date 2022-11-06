@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory, useParams } from "react-router-dom"
 
 import "./cart.css"
 
 const EditShippingInfo = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [first_name, setFirstName] = useState("");
-    const [last_name, setLastName] = useState("");
-    const [address, setAddress] = useState("");
-    const [address2, setAddress2] = useState("");
-    const [city, setCity] = useState("");
-    const [state, setState] = useState("");
-    const [zipCode, setZipCode] = useState("");
+    const purchases = useSelector(state => state.purchases)
+    const {orderId} = useParams()
+
+    const [first_name, setFirstName] = useState(purchases[orderId].first_name || "");
+    const [last_name, setLastName] = useState(purchases[orderId].last_name || "");
+    const [address, setAddress] = useState(purchases[orderId].address || "");
+    const [address2, setAddress2] = useState(purchases[orderId].address2 || "");
+    const [city, setCity] = useState(purchases[orderId].state|| "");
+    const [state, setState] = useState(purchases[orderId].city || "");
+    const [zipCode, setZipCode] = useState(purchases[orderId].zipCode || "");
 
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);

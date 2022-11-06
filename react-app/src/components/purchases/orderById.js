@@ -115,7 +115,7 @@ const OrderById = () => {
                 <div className="order-shipping-info-city">City: {purchases[orderId].city}</div>
                 <div className="order-shipping-info-state">State: {purchases[orderId].state}</div>
                 <div className="order-shipping-info-zipcode">Zip code: {purchases[orderId].zipCode}</div>
-                <Link to="edit sjipping here" className="order-edit-shipping">Edit Shipping Information</Link>
+                <Link to={`/orders/${orderId}/edit`} className="order-edit-shipping">Edit Shipping Information</Link>
             </div>
         </div>
     )
