@@ -58,7 +58,7 @@ function App() {
         <ProtectedRoute path='/checkout'>
           <CheckoutPage />
         </ProtectedRoute>
-        <ProtectedRoute path='/orders/:orderId/edit'>
+        <ProtectedRoute path='/orders/:orderId/items/:itemId/edit'>
           <EditOrderForm />
         </ProtectedRoute>
         <ProtectedRoute path='/orders/:orderId'>

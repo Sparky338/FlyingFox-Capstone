@@ -1,15 +1,33 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useLocation, useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { editPurchase } from "../../store/purchases";
 
 const EditOrderForm = () => {
     let data = useLocation()
+    const dispatch = useDispatch()
+    const history = useHistory()
     const [qty, setQty] = useState(data.state.quantity || "")
+    const [validationErrors, setValidationErrors] = useState([]);
+    const [hasSubmitted, setHasSubmitted] = useState(false);
 
     useEffect(() => {
         const errors = [];
-
+        if (parseInt(qty) <= 0 || isNaN(parseInt(qty))) {
+            errors.push("Quantity must be a number and at least 1.")
+        }
         setValidationErrors(errors);
-    }, [])
+    }, [qty])
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setHasSubmitted(true)
+
+        if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
+
+        const awaitedEdit = dispatch(editPurchase(data.state.purchase_id, qty))
+        history.push(`/orders/${awaitedEdit.purchase_id}`)
+    };
 
     return (
         <div className="edit-order-outer">
@@ -32,11 +50,11 @@ const EditOrderForm = () => {
                             className="edit-order-form-input"
                             type="number"
                             min="1"
-                            value={image_url}
-                            onChange={e => setImageUrl(e.target.value)}
+                            value={qty}
+                            onChange={e => setQty(e.target.value)}
                         />
                     </label>
-                    <input type="submit" className='main-button review-submit-button' value="Post Review" />
+                    <input type="submit" className='main-button edit-order-submit-button' value="Edit Order" />
                 </form>
             </div>
 

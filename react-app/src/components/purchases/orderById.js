@@ -82,7 +82,7 @@ const OrderById = () => {
                                         <td className="id-order-item-edit">
                                             <>
                                                 <Link to={{
-                                                        pathname:`/orders/${purchaseItem[1].item_id}/edit`,
+                                                        pathname:`/orders/${purchaseItem[1].purchase_id}/items/${purchaseItem[1].item_id}/edit`,
                                                         state: {
                                                             item_name: items[purchaseItem[1].item_id].item_name,
                                                             quantity: purchaseItem[1].quantity,
@@ -102,7 +102,7 @@ const OrderById = () => {
                             <td></td>
                             <td></td>
                             <td className="id-order-total">ORDER TOTAL:</td>
-                            <td className="id-order-total-price">{dollarFormatter.format(purchases[orderId].price)}</td>
+                            {/* <td className="id-order-total-price">{dollarFormatter.format(purchases[orderId].price)}</td> */}
                             <td></td>
                             <td></td>
                         </tr>
