@@ -23,7 +23,7 @@ const OrderById = () => {
 
     const filterdPurchasesItems = Object.entries(purchasesItems).filter(pi => pi[1].purchase_id === +orderId)
     const filterdReviews = Object.entries(reviewsState).filter(review => review[1].user_id === user.id)
-    // console.log("filtered", filterdReviews)
+
     return (
         <div className="id-order-outer">
             <div className="id-order-header">ORDER NUMBER: #{orderId}</div>

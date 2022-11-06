@@ -30,7 +30,7 @@ def add_user_purchases():
         form.populate_obj(purchase)
         purchase.user_id = purchaser_id
         purchase.price = cart_total
-        
+
         db.session.add(purchase)
         db.session.commit()
 
@@ -46,17 +46,17 @@ def add_user_purchases():
         return {'errors': form.errors}, 400
 
 
-# @purchase_routes.route("/<int:id>", methods=["PUT"])
-# @login_required
-# def add_edit_purchase():
-#     """Edit the quantity of a purchased item"""
-#     form = EditPurchase()
-#     form['csrf_token'].data = request.cookies['csrf_token']
+@purchase_routes.route("/<int:id>", methods=["PUT"])
+@login_required
+def edit_purchase(id):
+    """Update the shipping address of a purchase"""
+    form = EditShipping()
+    form['csrf_token'].data = request.cookies['csrf_token']
 
-#     if form.validate_on_submit():
-#         purchases_items = Purchases_Items()
-#         form.populate_obj(purchases_items)
-#         db.session.commit()
-#         return {'purchases_items': purchases_items.to_dict()}
-#     else:
-#         return {'errors': form.errors}, 400
+    if form.validate_on_submit():
+        purchase = Purchase.query.filter_by(id=id).first()
+        form.populate_obj(purchase)
+        db.session.commit()
+        return
+    else:
+        return {'errors': form.errors}, 400

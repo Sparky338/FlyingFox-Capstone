@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom"
+import { editPurchase } from "../../store/purchases";
 
 import "./cart.css"
 
@@ -46,6 +47,9 @@ const EditShippingInfo = () => {
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
         const shippingInformation = {first_name, last_name, address, address2, city, state, zipCode}
+
+        await dispatch(editPurchase(+orderId, shippingInformation))
+        history.push("/orders")
     }
 
     return (
