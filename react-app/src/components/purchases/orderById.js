@@ -66,7 +66,8 @@ const OrderById = () => {
                                                     >Edit Review</Link>
                                                     :
                                                     <Link to={{
-                                                        pathname: `/items/${purchaseItem[1].item_id}/review`, state: {
+                                                        pathname: `/items/${purchaseItem[1].item_id}/review`,
+                                                        state: {
                                                             user_id: user.id,
                                                             item_id: purchaseItem[1].item_id,
                                                             purchase_id: purchaseItem[1].purchase_id
@@ -80,11 +81,16 @@ const OrderById = () => {
                                         </td>
                                         <td className="id-order-item-edit">
                                             <>
-                                                <EditOrderForm
-                                                    item_name={items[purchaseItem[1].item_id].item_name}
-                                                    quantity={purchaseItem[1].quantity}
-                                                    purchase_id={purchaseItem[1].purchase_id}
-                                                />
+                                                <Link to={{
+                                                        pathname:`/orders/${purchaseItem[1].item_id}/edit`,
+                                                        state: {
+                                                            item_name: items[purchaseItem[1].item_id].item_name,
+                                                            quantity: purchaseItem[1].quantity,
+                                                            purchase_id: purchaseItem[1].purchase_id
+                                                        }
+                                                    }}
+                                                    className="Edit-order-link"
+                                                >Edit Order</Link>
                                             </>
                                         </td>
                                     </tr>
@@ -97,6 +103,7 @@ const OrderById = () => {
                             <td></td>
                             <td className="id-order-total">ORDER TOTAL:</td>
                             <td className="id-order-total-price">{dollarFormatter.format(purchases[orderId].price)}</td>
+                            <td></td>
                             <td></td>
                         </tr>
                     </tfoot>

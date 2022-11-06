@@ -40,7 +40,6 @@ const ReviewForm = ({ storedReview, formType}) => {
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
         const newReview = { ...storedReview, first_name, last_name, review, image_url };
-console.log(newReview)
 
         if (formType === "Leave a review") {
             const awaitedReview = await dispatch(createReview(newReview))
