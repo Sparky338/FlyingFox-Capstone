@@ -20,9 +20,9 @@ const EditReviewForm = () => {
         let res = window.confirm('Are you sure you want to delete this review?');
 
         if (res) {
-            const awaitedDelete = await dispatch(deleteReview(reviewId))
-            if (awaitedDelete) alert("Your review has been deleted.")
-            history.push("/")
+            await dispatch(deleteReview(reviewId))
+            history.push("/orders")
+            alert("Your review has been deleted.")
         }
 
     }
@@ -31,7 +31,7 @@ const EditReviewForm = () => {
         return (
             <>
                 <ReviewForm storedReview={review} formType="Edit Review" />
-                <button className="delete-review-button" onClick={handleDelete}>Delete Review</button>
+                <button className="delete-review-button main-button" onClick={handleDelete}>Delete Review</button>
             </>
 
         );

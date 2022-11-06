@@ -58,9 +58,11 @@
     height: 300px
 }
 
+.delete-review-button,
 .review-submit-button {
     height: 50px;
     font-size: 22px;
     width: 400px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
