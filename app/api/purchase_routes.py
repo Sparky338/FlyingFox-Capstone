@@ -22,12 +22,13 @@ def add_user_purchases():
     cart_id_list = request.json['cartItemsId']
     cart_qty_list = request.json['cartQuantities']
     cart_total = request.json['sum']
+    shipping_info = request.json['shippingInformation']
     purchaser_id = current_user.id
 
     if form.validate_on_submit():
         purchase = Purchase()
 
-        form.populate_obj(purchase)
+        form.populate_obj(shipping_info)
         purchase.user_id = purchaser_id
         purchase.price = cart_total
 

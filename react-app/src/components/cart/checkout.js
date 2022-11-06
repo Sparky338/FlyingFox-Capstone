@@ -98,7 +98,7 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
                             first_name={first_name}
                             setFirstName={setFirstName}
                             last_name={last_name}
-                            setlastName={setLastName}
+                            setLastName={setLastName}
                             address={address}
                             setAddress={setAddress}
                             address2={address2}
