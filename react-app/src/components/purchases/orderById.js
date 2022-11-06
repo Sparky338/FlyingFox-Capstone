@@ -110,9 +110,12 @@ const OrderById = () => {
             </div>
             <div className="order-shipping-info-container">
                 <div className="order-shipping-header">Ship to:</div>
-                <div className="order-shipping-info-name"></div>
-                <div className="order-shipping-info-address"></div>
-                <div className="order-shipping-info-city-state-zipcode"></div>
+                <div className="order-shipping-info-name">Name: {purchases[orderId].first_name} {purchases[orderId].last_name}</div>
+                <div className="order-shipping-info-address">Address: {purchases[orderId].address} {purchases[orderId].address2}</div>
+                <div className="order-shipping-info-city">City: {purchases[orderId].city}</div>
+                <div className="order-shipping-info-state">State: {purchases[orderId].state}</div>
+                <div className="order-shipping-info-zipcode">Zip code: {purchases[orderId].zipCode}</div>
+                <Link to="edit sjipping here" className="order-edit-shipping">Edit Shipping Information</Link>
             </div>
         </div>
     )

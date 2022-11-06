@@ -44,10 +44,12 @@
     padding-left: 10px;
 }
 
+.order-edit-shipping,
 .review-text,
 .order-details-link {
     text-decoration: none;
     color: #06a7e2;
+    font-weight: 600;
 }
 
 .id-order-outer {
@@ -81,4 +83,23 @@
 .id-order-total-price,
 .id-order-item-total {
     font-weight: 600;
+}
+
+.order-shipping-info-container {
+    margin-left: 5%;
+}
+
+.order-shipping-header,
+.order-shipping-info-name,
+.order-shipping-info-address,
+.order-shipping-info-city,
+.order-shipping-info-state,
+.order-shipping-info-zipcode {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.order-shipping-header {
+    font-weight: 600;
+    font-size: 20px;
 }
