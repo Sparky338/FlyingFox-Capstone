@@ -1,8 +1,8 @@
 """create tables for items, images, purchases, purchases_items, reviews, and users
 
-Revision ID: 6ce71aba005b
+Revision ID: 32b0d89245df
 Revises: 
-Create Date: 2022-11-05 11:34:51.542887
+Create Date: 2022-11-05 19:29:02.048931
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '6ce71aba005b'
+revision = '32b0d89245df'
 down_revision = None
 branch_labels = None
 depends_on = None

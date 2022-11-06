@@ -14,13 +14,11 @@ class Purchases_Items(db.Model):
     #relationsips
     purchases = db.relationship("Purchase", back_populates="purchases_items")
     items = db.relationship("Item", back_populates="purchases_items")
-    reviews = db.relationship("Review")
 
     def to_dict(self):
         return {
             'id': self.id,
             'purchase_id': self.purchase_id,
             'item_id': self.item_id,
-            'quantity': self.quantity,
-            'reviews': [r.to_dict() for r in self.reviews]
+            'quantity': self.quantity
         }

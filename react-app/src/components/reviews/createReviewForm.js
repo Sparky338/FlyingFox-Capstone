@@ -24,3 +24,6 @@ const CreateReviewForm = () => {
 }
 
 export default CreateReviewForm;
+// (filterdReviews.filter(review => review[1].purchase_id === purchaseItem[1].purchase_id)[0][1].purchase_id === purchaseItem[1].purchase_id)
+// filterdReviews.filter(review => review[1].purchase_id === purchaseItem[1].purchase_id)[0][1].purchase_id === purchaseItem[1].purchase_id
+// .includes(purchaseItem[1])
