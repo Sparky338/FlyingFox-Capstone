@@ -22,7 +22,7 @@ const OrderById = () => {
 
     const filterdPurchasesItems = Object.entries(purchasesItems).filter(pi => pi[1].purchase_id === +orderId)
     const filterdReviews = Object.entries(reviewsState).filter(review => review[1].user_id === user.id)
-
+// console.log("filtered", )
     return (
         <div className="id-order-outer">
             <div className="id-order-header">ORDER NUMBER: #{orderId}</div>
@@ -54,13 +54,19 @@ const OrderById = () => {
                                         </td>
                                         <td className="id-order-item-total">
                                             {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
+                                            {/* {console.log(purchaseItem[1])} */}
                                         </td>
                                         <td className="id-order-item-review">
-                                            {filterdReviews.map((review, i) => {
-                                                return (
+                                            {/* {filterdReviews.map((review, i) => {
+                                                return ( */}
+                                                {/* {console.log(filterdReviews.map((review, i) => {return(Object.hasOwn(purchaseItem[1], 'item_id'))}))} */}
+                                                {/* {console.log(Object.entries(filterdReviews).find(review => review[1].item_id === purchaseItem[1].item_id))} */}
                                                     <>
-                                                        {(review[1].item_id === purchaseItem[1].item_id) ?
-                                                            <Link to={`/items/${purchaseItem[1].item_id}/review/${review[1].id}/edit`} className="review-text" key={i}>Edit Review</Link>
+                                                        {(filterdReviews[1].item_id === purchaseItem[1].item_id) ?
+                                                            <Link to={`/items/${purchaseItem[1].item_id}/review/${filterdReviews[1].id}/edit`}
+                                                                className="review-text"
+                                                                key={i}
+                                                                >Edit Review</Link>
                                                             :
                                                             <Link to={{pathname: `/items/${purchaseItem[1].item_id}/review`, state: {
                                                                 user_id: user.id,
@@ -72,8 +78,8 @@ const OrderById = () => {
                                                             >Leave Review</Link>
                                                         }
                                                     </>
-                                                )
-                                            })}
+                                                {/* )
+                                            })} */}
 
                                         </td>
                                     </tr>
