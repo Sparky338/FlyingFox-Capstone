@@ -108,6 +108,12 @@ const OrderById = () => {
                     </tfoot>
                 </table>
             </div>
+            <div className="order-shipping-info-container">
+                <div className="order-shipping-header">Ship to:</div>
+                <div className="order-shipping-info-name"></div>
+                <div className="order-shipping-info-address"></div>
+                <div className="order-shipping-info-city-state-zipcode"></div>
+            </div>
         </div>
     )
 }

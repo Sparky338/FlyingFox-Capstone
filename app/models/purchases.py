@@ -24,6 +24,13 @@ class Purchase(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'price': self.price,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            'address': self.address,
+            'address2': self.address2,
+            'city': self.city,
+            'state': self.state,
+            'zipCode': self.zipCode,
             'reviews': [r.to_dict() for r in self.reviews],
             'purchases_items': [pi.to_dict() for pi in self.purchases_items],
         }
