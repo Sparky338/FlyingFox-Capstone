@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from flask_login import current_user, login_required
 from app.models import db, Item, Purchase, Purchases_Items
+from app.forms import EditPurchase
 
 purchase_routes = Blueprint("purchases", __name__)
 
@@ -41,3 +42,14 @@ def add_user_purchases():
         db.session.commit()
     # else:
     #     return {'errors': form.errors}, 400
+
+
+@purchase_routes.route("/<int:id>", methods=["PUT"])
+@login_required
+def add_edit_purchase():
+    """Edit the quantity of a purchased item"""
+    form = EditPurchase()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        
