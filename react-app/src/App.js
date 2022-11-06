@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getAllItems } from './store/items';
-import { getAllReviews } from './store/reviews';
 import { authenticate } from './store/session';
 
 import NavBar from './components/NavBar';
@@ -27,7 +26,6 @@ function App() {
       setLoaded(true);
     })();
     dispatch(getAllItems());
-    dispatch(getAllReviews());
   }, [dispatch]);
 
   if (!loaded) {

@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import { getAllPurchases } from "../../store/purchases";
 import { getAllPurchasesItems } from "../../store/purchasesItems";
 import "./orders.css"
+import { getAllReviews } from "../../store/reviews";
 
 const Orders = () => {
     const dispatch = useDispatch();
     const purchases = useSelector(state => state.purchases);
-    const purchasesItems = useSelector(state => state.purchasesItems);
 
     const formatting_options = {
         style: 'currency',
@@ -20,6 +20,7 @@ const Orders = () => {
     useEffect(() => {
         dispatch(getAllPurchases())
         dispatch(getAllPurchasesItems())
+        dispatch(getAllReviews());
     }, [dispatch])
 
     return (
