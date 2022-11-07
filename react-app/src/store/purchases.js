@@ -110,7 +110,6 @@ export default function purchasesReducer(state = initialState, action) {
             delete newState[action.purchaseId]
             return newState;
         case CLEAR_PURCHASES:
-            console.log("CLEAR_PURCHASES called")
             return initialState
         default:
             return state;

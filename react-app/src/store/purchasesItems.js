@@ -36,7 +36,6 @@ export default function purchasesItemsReducer(state = initialState, action) {
             action.purchasesItems.forEach(purchaseItem => newState[purchaseItem.id] = purchaseItem)
             return newState;
         case CLEAR_PURCHASES_ITEMS:
-            console.log("CLEAR_PURCHASES_ITEMS called")
             return initialState
         default:
             return state;
