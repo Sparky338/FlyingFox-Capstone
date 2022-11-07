@@ -67,8 +67,8 @@ def edit_purchase(id):
         form.populate_obj(purchase)
         db.session.commit()
         return
-    else:
-        return {'errors': form.errors}, 400
+    # else:
+    #     return {'errors': form.errors}, 400
 
 
 @purchase_routes.route('/<int:id>', methods=["DELETE"])
@@ -77,7 +77,7 @@ def delete_purchase(id):
     """
     Delete purchase by id
     """
-    purchase = purchase.query.filter_by(id=id).first()
+    purchase = Purchase.query.filter_by(id=id).first()
     db.session.delete(purchase)
     db.session.commit()
     return {'message': "Deleted Successfully"}
