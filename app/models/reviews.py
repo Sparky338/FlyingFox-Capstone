@@ -11,7 +11,7 @@ class Review(db.Model):
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     review = db.Column(db.String(1000), nullable=False)
-    image_id = db.Column(db.String(255))
+    images = db.Column(db.String(255))
 
     #relationships
     # user = db.relationship("User", back_populates="reviews")
@@ -28,5 +28,6 @@ class Review(db.Model):
             'first_name': self.first_name,
             'last_name': self.last_name,
             'review': self.review,
-            'image': self.image
+            # 'image': self.image
+            'images': [i.to_dict() for i in self.images],
         }
