@@ -18,22 +18,26 @@ def add_user_purchases():
     """Add items from local session cart and shipping information to user purchases"""
     form = CreateShipping()
     form['csrf_token'].data = request.cookies['csrf_token']
-    print("FORM HERE",form.data)
 
     cart_id_list = request.json['cartItemsId']
     cart_qty_list = request.json['cartQuantities']
     cart_total = request.json['sum']
     shipping_info_dict = request.json['shippingInformation']
-    # print("SHIPPING HERE",shipping_info_dict)
     purchaser_id = current_user.id
 
-
-    if form.validate_on_submit():
+    if cart_id_list:
         purchase = Purchase()
 
-        form.populate_obj(purchase)
         purchase.user_id = purchaser_id
         purchase.price = cart_total
+        purchase.first_name = shipping_info_dict['first_name']
+        purchase.last_name = shipping_info_dict['last_name']
+        purchase.address = shipping_info_dict['address']
+        purchase.address2 = shipping_info_dict['address2']
+        purchase.city = shipping_info_dict['city']
+        purchase.state = shipping_info_dict['state']
+        purchase.zipCode = shipping_info_dict['zipCode']
+
 
         db.session.add(purchase)
         db.session.commit()
@@ -46,6 +50,7 @@ def add_user_purchases():
             db.session.add(purchases_items)
 
         db.session.commit()
+        return
     else:
         return {'errors': form.errors}, 400
 
@@ -64,3 +69,15 @@ def edit_purchase(id):
         return
     else:
         return {'errors': form.errors}, 400
+
+
+@purchase_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_purchase(id):
+    """
+    Delete purchase by id
+    """
+    purchase = purchase.query.filter_by(id=id).first()
+    db.session.delete(purchase)
+    db.session.commit()
+    return {'message': "Deleted Successfully"}
