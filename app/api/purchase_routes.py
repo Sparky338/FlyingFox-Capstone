@@ -18,11 +18,13 @@ def add_user_purchases():
     """Add items from local session cart and shipping information to user purchases"""
     form = CreateShipping()
     form['csrf_token'].data = request.cookies['csrf_token']
+    print("FORM HERE",form.data)
 
     cart_id_list = request.json['cartItemsId']
     cart_qty_list = request.json['cartQuantities']
     cart_total = request.json['sum']
     shipping_info_dict = request.json['shippingInformation']
+    # print("SHIPPING HERE",shipping_info_dict)
     purchaser_id = current_user.id
 
 

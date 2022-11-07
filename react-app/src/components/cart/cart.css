@@ -100,7 +100,7 @@ td {
 .cart-checkout {
     border-radius: 5px;
     width: 35%;
-    height: 250px;
+    height: 1100px;
     background-color: #06a7e2;
 }
 
@@ -148,6 +148,44 @@ td {
     padding-left: 30px;
     padding-right: 30px;
     height:40px;
-    margin-top: 50px;
+    margin-top: 30px;
     cursor: pointer;
+}
+
+.checkout-button:hover {
+    background-color: #06a7e2;
+    color: black;
+    border: solid 1px black;
+}
+
+.shipping-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.shipping-form-container,
+.shipping-info-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.cart-shipping-form-input {
+    height: 30px;
+    border-radius: 6px;
+    border: solid 1px #06a7e2;
+    margin-top: 5px;
+    width: 400px;
+    font-size: 22px;
+}
+
+.cart-shipping-form-label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    font-size: 20px;
 }

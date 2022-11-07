@@ -18,70 +18,70 @@ const ShippingInfo = ({first_name, setFirstName, last_name, setLastName, address
 
                         </div>
                     )}
-                    <label className="shipping-form-label">
+                    <label className="cart-shipping-form-label">
                         First Name*
                         <input
-                            className="shipping-form-input"
+                            className="cart-shipping-form-input"
                             type="text"
                             value={first_name}
                             onChange={e => setFirstName(e.target.value)}
                             placeholder="First name"
                         />
                     </label>
-                    <label className="shipping-form-label">
+                    <label className="cart-shipping-form-label">
                         Last Name*
                         <input
-                            className="shipping-form-input"
+                            className="cart-shipping-form-input"
                             type="text"
                             value={last_name}
                             onChange={e => setLastName(e.target.value)}
                             placeholder="Last name"
                         />
                     </label>
-                    <label className="shipping-form-label">
+                    <label className="cart-shipping-form-label">
                         Address*
                         <input
-                            className="shipping-form-input"
+                            className="cart-shipping-form-input"
                             type="text"
                             value={address}
                             onChange={e => setAddress(e.target.value)}
                             placeholder="Address"
                         />
                     </label>
-                    <label className="shipping-form-label">
+                    <label className="cart-shipping-form-label">
                         Address 2
                         <input
-                            className="shipping-form-input"
+                            className="cart-shipping-form-input"
                             type="text"
                             value={address2}
                             onChange={e => setAddress2(e.target.value)}
                             placeholder="Address 2"
                         />
                     </label>
-                    <label className="shipping-form-label">
+                    <label className="cart-shipping-form-label">
                         City*
                         <input
-                            className="shipping-form-input"
+                            className="cart-shipping-form-input"
                             type="text"
                             value={city}
                             onChange={e => setCity(e.target.value)}
                             placeholder="City"
                         />
                     </label>
-                    <label className="shipping-form-label">
+                    <label className="cart-shipping-form-label">
                         State*
                         <input
-                            className="shipping-form-input"
+                            className="cart-shipping-form-input"
                             type="text"
                             value={state}
                             onChange={e => setState(e.target.value)}
                             placeholder="State"
                         />
                     </label>
-                    <label className="shipping-form-label">
+                    <label className="cart-shipping-form-label">
                         ZipCode*
                         <input
-                            className="shipping-form-input"
+                            className="cart-shipping-form-input"
                             type="text"
                             value={zipCode}
                             onChange={e => setZipCode(e.target.value)}
