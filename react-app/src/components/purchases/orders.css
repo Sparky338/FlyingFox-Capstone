@@ -103,3 +103,13 @@
     font-weight: 600;
     font-size: 20px;
 }
+
+.cancel-order-button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #06a7e2;
+    cursor: pointer;
+    padding: 0px;
+}
