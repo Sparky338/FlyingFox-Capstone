@@ -1,13 +1,15 @@
 """create tables for items, images, purchases, purchases_items, reviews, and users
 
 Revision ID: 32b0d89245df
-Revises: 
+Revises:
 Create Date: 2022-11-05 19:29:02.048931
 
 """
 from alembic import op
 import sqlalchemy as sa
-
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 # revision identifiers, used by Alembic.
 revision = '32b0d89245df'
@@ -74,6 +76,13 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
+    if environment == "production":
+        op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE purchases SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE purchases_items SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE images SET SCHEMA {SCHEMA};")
 
 
 def downgrade():
