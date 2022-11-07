@@ -5,6 +5,7 @@ class Item(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     item_name = db.Column(db.String(100), nullable=False)
+    image_id = db.Column(db.Integer, db.ForeignKey("images.id", ondelete="CASCADE"), nullable=True)
     price = db.Column(db.Float, nullable = False)
     description = db.Column(db.String(1000), nullable=False)
     category = db.Column(db.String)
