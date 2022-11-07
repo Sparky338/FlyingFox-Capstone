@@ -42,8 +42,6 @@ export const clearImageAction = () => {
 
 
 // Thunks
-
-// TODO: change get all to get by id
 export const getAllImages = () => async dispatch => {
     const res = await fetch(`/api/images`);
 
