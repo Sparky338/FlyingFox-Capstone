@@ -11,7 +11,7 @@ class Image(db.Model):
 
     #relationships
     items = db.relationship("Item" , back_populates="images")
-    reviews = db.relationship("Review", back_populates="images")
+    reviews = db.relationship("Review")
 
     def to_dict(self):
         return {

@@ -4,6 +4,7 @@ from .items import seed_items, undo_items
 from .purchases import seed_purchases, undo_purchases
 from .reviews import seed_reviews, undo_reviews
 from .purchases_items import seed_purchases_items, undo_purchases_items
+from .images import seed_images, undo_images
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -18,6 +19,7 @@ def seed():
     seed_purchases()
     seed_purchases_items()
     seed_reviews()
+    seed_images()
     # Add other seed functions here
 
 
@@ -29,4 +31,5 @@ def undo():
     undo_purchases()
     undo_purchases_items()
     undo_reviews()
+    undo_images()
     # Add other undo functions here
