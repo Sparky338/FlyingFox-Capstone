@@ -12,5 +12,5 @@ def get_items():
 @item_routes.route("/<int:id>")
 def get_item_by_id(id):
     """Get one item by id"""
-    item = item.query.filter_by(id=id).all()
+    item = Item.query.filter_by(id=id).all()
     return {'item': [i.to_dict() for i in item]}

@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import { getAllPurchases } from "../../store/purchases";
 import { getAllPurchasesItems } from "../../store/purchasesItems";
 import "./orders.css"
+import { getAllReviews } from "../../store/reviews";
 
 const Orders = () => {
     const dispatch = useDispatch();
     const purchases = useSelector(state => state.purchases);
-    const purchasesItems = useSelector(state => state.purchasesItems);
 
     const formatting_options = {
         style: 'currency',
@@ -20,6 +20,7 @@ const Orders = () => {
     useEffect(() => {
         dispatch(getAllPurchases())
         dispatch(getAllPurchasesItems())
+        dispatch(getAllReviews());
     }, [dispatch])
 
     return (
@@ -34,6 +35,7 @@ const Orders = () => {
                             <tr>
                                 <th className="table-header-order" width="10%">Order #</th>
                                 <th className="table-header-item-summary">Item Summary</th>
+                                <th width="15%">&nbsp;</th>
                                 <th width="15%">&nbsp;</th>
                             </tr>
                         </thead>
@@ -50,6 +52,10 @@ const Orders = () => {
                                         <td className="order-details">
                                             <Link to={`/orders/${purchase[1].id}`} className="order-details-link">Order Details</Link>
                                         </td>
+                                        <td className="cancel-order">
+                                            ADD CANCEL ORDER FUNC
+                                        </td>
+
                                     </tr>
                                 )
                             })}

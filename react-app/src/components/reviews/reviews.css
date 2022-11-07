@@ -1,0 +1,68 @@
+.review-form-outer-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-form-header {
+    font-size: 30px;
+    color:white;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.review-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error-handling {
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+.errors-list {
+    font-size: 18px;
+    color:red;
+    list-style: none;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-form-label {
+    margin-bottom: 20px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-form-review {
+    height: 40px;
+    border-radius: 6px;
+    border: solid 1px #06a7e2;
+    margin-top: 5px;
+    width: 400px;
+    font-size: 22px;
+}
+
+.review-text-area {
+    height: 300px
+}
+
+.delete-review-button,
+.review-submit-button {
+    height: 50px;
+    font-size: 22px;
+    width: 400px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}

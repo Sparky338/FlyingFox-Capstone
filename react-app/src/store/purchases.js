@@ -52,7 +52,6 @@ export const getAllPurchases = () => async dispatch => {
 };
 
 export const createPurchase = (cartItemsId, cartQuantities, sum) => async dispatch => {
-console.log("inside the create thunk", cartItemsId, cartQuantities)
     const res = await fetch(`/api/purchases`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -111,7 +110,6 @@ export default function purchasesReducer(state = initialState, action) {
             delete newState[action.purchaseId]
             return newState;
         case CLEAR_PURCHASES:
-            console.log("CLEAR_PURCHASES called")
             return initialState
         default:
             return state;

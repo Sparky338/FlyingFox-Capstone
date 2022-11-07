@@ -1,16 +1,18 @@
 """create tables for items, images, purchases, purchases_items, reviews, and users
 
-Revision ID: 019d659c5c17
-Revises: 
-Create Date: 2022-11-03 19:46:43.946801
+Revision ID: 32b0d89245df
+Revises:
+Create Date: 2022-11-05 19:29:02.048931
 
 """
 from alembic import op
 import sqlalchemy as sa
-
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 # revision identifiers, used by Alembic.
-revision = '019d659c5c17'
+revision = '32b0d89245df'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -56,6 +58,8 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.Column('item_id', sa.Integer(), nullable=False),
     sa.Column('purchase_id', sa.Integer(), nullable=False),
+    sa.Column('first_name', sa.String(length=50), nullable=False),
+    sa.Column('last_name', sa.String(length=50), nullable=False),
     sa.Column('review', sa.String(length=1000), nullable=False),
     sa.ForeignKeyConstraint(['item_id'], ['items.id'], ondelete='CASCADE'),
     sa.ForeignKeyConstraint(['purchase_id'], ['purchases.id'], ondelete='CASCADE'),
@@ -72,6 +76,13 @@ def upgrade():
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
+    if environment == "production":
+        op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE purchases SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE purchases_items SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
+        op.execute(f"ALTER TABLE images SET SCHEMA {SCHEMA};")
 
 
 def downgrade():

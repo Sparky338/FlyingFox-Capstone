@@ -1,16 +1,20 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import ImageGallery from 'react-image-gallery';
 
 import "./items.css"
+import { getItemReviews } from "../../store/reviews";
 
 const ItemById = () => {
-    const history = useHistory()
+    const history = useHistory();
+    const dispatch = useDispatch();
     const { itemId } = useParams();
-    const user = useSelector(state => state.session.user);
     const itemsObj = useSelector(state => state.items);
+    const reviewsObj = useSelector(state => state.reviews);
     const items = Object.values(itemsObj);
-    const itemQty = JSON.parse(localStorage.getItem('itemQty'))
+    const reviews = Object.values(reviewsObj);
+    const itemQty = JSON.parse(localStorage.getItem('itemQty'));
 
     const formatting_options = {
         style: 'currency',
@@ -18,6 +22,10 @@ const ItemById = () => {
         minimumFractionDigits: 2,
     };
     const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
+
+    useEffect(() => {
+        dispatch(getItemReviews(+itemId));
+    }, [dispatch, itemId])
 
     if (!itemId) return null;
     if (!itemsObj) return null;
@@ -29,6 +37,7 @@ const ItemById = () => {
     }
 
     const filteredItem = items.filter(item => item.id === +itemId)
+    const filteredReviews = reviews.filter(review => review.item_id === +itemId)
     const cart = JSON.parse(localStorage.getItem('cart'))
 
     const addToCart = () => {
@@ -64,7 +73,7 @@ const ItemById = () => {
                                     <div className="item-name">{item.item_name}</div>
                                     <div className="price-review">
                                         <div className="price">{dollarFormatter.format(item.price)}</div>
-                                        <div className="review-link">Link to review here</div>
+                                        <div className="review-link">{/*Link to review here*/}</div>
                                     </div>
                                 </div>
                                 <div className="description">{item.description}</div>
@@ -76,13 +85,17 @@ const ItemById = () => {
                                 <div className="horizontal-line"></div>
                                 <div className="review-header">{item.item_name.toUpperCase()} REVIEWS</div>
                             </div>
-                            <div className="review-container">
-                                <div className="review">Review goes here.</div>
-                                <div className="picture-and-name">
-                                    <div className="picture"> image goes here</div>
-                                    <div className="first-last-name"> - firstName LastName goes here </div>
-                                </div>
-                            </div>
+                            {filteredReviews.map((review, i) => {
+                                return (
+                                    <div className="review-container" key={i}>
+                                        <div className="review">{review.review}</div>
+                                        <div className="picture-and-name">
+                                            <div className="picture"> {review.image}</div>
+                                            <div className="first-last-name"> -{review.first_name} {review.last_name} </div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 )

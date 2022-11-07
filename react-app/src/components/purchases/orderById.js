@@ -1,13 +1,17 @@
+
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
 
 import "./orders.css"
 
 const OrderById = () => {
-    const { orderId } = useParams()
-    const items = useSelector(state => state.items)
-    const purchases = useSelector(state => state.purchases)
-    const purchasesItems = useSelector(state => state.purchasesItems)
+    const { orderId } = useParams();
+    const user = useSelector(state => state.session.user);
+    const items = useSelector(state => state.items);
+    const reviewsState = useSelector(state => state.reviews);
+    const purchases = useSelector(state => state.purchases);
+    const purchasesItems = useSelector(state => state.purchasesItems);
 
     const formatting_options = {
         style: 'currency',
@@ -15,6 +19,9 @@ const OrderById = () => {
         minimumFractionDigits: 2,
     };
     const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
+
+    const filterdPurchasesItems = Object.entries(purchasesItems).filter(pi => pi[1].purchase_id === +orderId)
+    const filterdReviews = Object.entries(reviewsState).filter(review => review[1].user_id === user.id)
 
     return (
         <div className="id-order-outer">
@@ -31,25 +38,47 @@ const OrderById = () => {
                         </tr>
                     </thead>
                     <tbody className="table-body">
-                        {Object.entries(purchasesItems).map((purchaseItem, i) => {
-                            return (
-                                <tr className="id-order-item" key={i}>
-                                    <td className="id-order-item-image">
-                                        {items[purchaseItem[1].item_id].images[0]}
-                                    </td>
-                                    <td className="id-order-item-name">
-                                        {items[purchaseItem[1].item_id].item_name}
-                                    </td>
-                                    <td className="id-order-item-qty">
-                                        {purchaseItem[1].quantity}
-                                    </td>
-                                    <td className="id-order-item-total">
-                                        {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
-                                    </td>
-                                    <td className="id-order-item-review">r</td>
-                                </tr>
-                            )
-                        })}
+                        {filterdPurchasesItems.map(
+                            (purchaseItem, i) => {
+                                return (
+                                    <tr className="id-order-item" key={i}>
+                                        <td className="id-order-item-image">
+                                            {items[purchaseItem[1].item_id].images[0]}
+
+                                        </td>
+                                        <td className="id-order-item-name">
+                                            {items[purchaseItem[1].item_id].item_name}
+                                        </td>
+                                        <td className="id-order-item-qty">
+                                            {purchaseItem[1].quantity}
+                                        </td>
+                                        <td className="id-order-item-total">
+                                            {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
+                                        </td>
+                                        <td className="id-order-item-review">
+                                            <>
+                                                {(filterdReviews.filter(review => review[1].item_id === purchaseItem[1].item_id).length) ?
+                                                    <Link to={`/items/${purchaseItem[1].item_id}/review/${filterdReviews.filter(review => review[1].item_id === purchaseItem[1].item_id)[0][1].id}/edit`}
+                                                        className="review-text"
+                                                        key={i}
+                                                    >Edit Review</Link>
+                                                    :
+                                                    <Link to={{
+                                                        pathname: `/items/${purchaseItem[1].item_id}/review`, state: {
+                                                            user_id: user.id,
+                                                            item_id: purchaseItem[1].item_id,
+                                                            purchase_id: purchaseItem[1].purchase_id
+                                                        }
+                                                    }}
+                                                        className="review-text"
+                                                        key={i}
+                                                    >Leave Review</Link>
+                                                }
+                                            </>
+                                        </td>
+                                    </tr>
+                                )
+                            })}
                     </tbody>
                     <tfoot className="id-order-table-footer">
                         <tr className="id-order-table-footer-row">

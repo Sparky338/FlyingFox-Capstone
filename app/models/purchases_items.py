@@ -1,13 +1,15 @@
-from .db import db
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 class Purchases_Items(db.Model):
     __tablename__ = "purchases_items"
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
 
     # this is a single item in a specific purchase id
 
     id = db.Column(db.Integer, primary_key=True)
-    purchase_id = db.Column(db.Integer, db.ForeignKey("purchases.id", ondelete="CASCADE"), nullable=False)
-    item_id = db.Column(db.Integer, db.ForeignKey("items.id", ondelete="CASCADE"), nullable=False)
+    purchase_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("purchases.id", ondelete="CASCADE")), nullable=False)
+    item_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("items.id", ondelete="CASCADE")), nullable=False)
     # quantity of individual items
     quantity = db.Column(db.Integer, nullable=False)
 
