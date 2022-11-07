@@ -53,15 +53,6 @@ export const getAllImages = () => async dispatch => {
     }
 };
 
-export const getItemImages = (itemId) => async dispatch => {
-    const res = await fetch(`/api/images/${itemId}`);
-
-    if (res.ok) {
-        const images = await res.json();
-        dispatch(getImagesAction(images.images));
-    }
-};
-
 export const createImage = (imageData) => async dispatch => {
     // if (!imageData.imageUrl) imageData.imageUrl = ""
 

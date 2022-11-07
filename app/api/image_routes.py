@@ -6,6 +6,13 @@ from flask_login import current_user, login_required
 
 image_routes = Blueprint("images", __name__)
 
+@image_routes.route('')
+def get_all_images():
+    """Get all images"""
+    images = Image.query.all()
+    return {'images': [i.to_dict() for i in images]}
+
+#AWS S3 implementation
 
 # @image_routes.route("", methods=["POST"])
 # @login_required
