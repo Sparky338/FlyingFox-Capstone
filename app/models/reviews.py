@@ -7,9 +7,9 @@ class Review(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id", ondelete="CASCADE")), nullable=False)
-    item_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("items.id", ondelete="CASCADE")), nullable=False)
-    purchase_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("purchases.id", ondelete="CASCADE")), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id"), ondelete="CASCADE"), nullable=False)
+    item_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("items.id"), ondelete="CASCADE"), nullable=False)
+    purchase_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("purchases.id"), ondelete="CASCADE"), nullable=False)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     review = db.Column(db.String(1000), nullable=False)
