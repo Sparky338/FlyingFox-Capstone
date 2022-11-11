@@ -13,13 +13,12 @@ class Review(db.Model):
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
     review = db.Column(db.String(1000), nullable=False)
-    images = db.Column(db.String(255))
 
     #relationships
     # user = db.relationship("User", back_populates="reviews")
     items = db.relationship("Item", back_populates="reviews")
     purchase = db.relationship("Purchase", back_populates="reviews")
-    image = db.relationship("Image", back_populates="reviews")
+    images = db.relationship("Image", back_populates="reviews")
 
     def to_dict(self):
         return {
