@@ -1,8 +1,6 @@
 
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import EditOrderForm from "./editOrderForm";
-
 
 import "./orders.css"
 
@@ -35,7 +33,7 @@ const OrderById = () => {
                             <th className="table-header-item">ITEM</th>
                             <th className="table-header-qty" width="10%">QTY</th>
                             <th className="table-header-total" width="15%">TOTAL</th>
-                            <th width="5%">&nbsp;</th>
+                            <th width="10%">&nbsp;</th>
                             <th width="5%">&nbsp;</th>
                         </tr>
                     </thead>
@@ -45,8 +43,11 @@ const OrderById = () => {
                                 return (
                                     <tr className="id-order-item" key={i}>
                                         <td className="id-order-item-image">
-                                            {items[purchaseItem[1].item_id].images[0]}
-
+                                            <img
+                                                className="item-image-orderId"
+                                                src={items[purchaseItem[1].item_id].images[0].image_url}
+                                                alt={`${items[purchaseItem[1].item_id].item_name} picture`}
+                                            />
                                         </td>
                                         <td className="id-order-item-name">
                                             {items[purchaseItem[1].item_id].item_name}
