@@ -73,6 +73,7 @@ const ItemById = () => {
                             <div className="display-carousel">
                                 <ImageGallery
                                     items={imagesCarousel(item)}
+                                    // items={thumbnailHeight={50px}}
                                     showPlayButton={false}
                                     showFullscreenButton={false}
                                     infinite={false}
