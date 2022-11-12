@@ -16,6 +16,10 @@
     width: 40%;
 }
 
+.image-gallery-icon{
+    border: solid 1px green;
+}
+
 .image-gallery-thumbnail {
     height: 50px;
     width: 50px;
