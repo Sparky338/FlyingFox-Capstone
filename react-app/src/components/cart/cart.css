@@ -3,7 +3,16 @@
     display: flex;
     justify-content: center;
     background-color: white;
-    height: 100vh;
+    /* height: 100vh; */
+    color:black;
+}
+
+.cart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    /* height: 100vh; */
     color:black;
 }
 
@@ -107,8 +116,9 @@ td {
 .cart-checkout {
     border-radius: 5px;
     width: 35%;
-    height: 1100px;
+    height: auto;
     background-color: #06a7e2;
+    margin-bottom: 10px;
 }
 
 .checkout-outer {
@@ -156,6 +166,7 @@ td {
     padding-right: 30px;
     height:40px;
     margin-top: 30px;
+    margin-bottom: 30px;
     cursor: pointer;
 }
 
