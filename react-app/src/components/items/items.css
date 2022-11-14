@@ -9,11 +9,16 @@
 }
 
 .display-carousel {
-    width: 50%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
 }
 
 .item-info-price {
     width: 40%;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .image-gallery{
