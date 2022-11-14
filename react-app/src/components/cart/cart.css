@@ -69,6 +69,13 @@ td {
     vertical-align: top;
 }
 
+.cart-item-image {
+    height: 80px;
+    width: 80px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
 .qty-form {
     display: flex;
 }

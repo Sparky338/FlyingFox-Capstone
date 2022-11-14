@@ -42,8 +42,12 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
             {cartState&& Object.entries(cartState).map((item, i) => {
                 return (
                     <tr className="cart-item" key={i}>
-                        <td className="cart-item-image">
-                            {item[1][0].images[0]}
+                        <td className="cart-item-image-container">
+                            <img
+                                className="cart-item-image"
+                                src={item[1][0].images[0].image_url}
+                                alt={`${item[1][0].item_name} image`}
+                            />
                         </td>
                         <td className="cart-item-name">
                             {item[1][0].item_name}
