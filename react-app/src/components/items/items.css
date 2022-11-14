@@ -10,6 +10,7 @@
 
 .display-carousel {
     width: 60%;
+    height: auto;
     display: flex;
     justify-content: center;
     margin-right: 10px;
@@ -21,16 +22,13 @@
     margin-left: 10px;
 }
 
-.image-gallery{
-    border: solid 1px green;
+.image-gallery {
     max-width: 580px;
 }
 
 .image-gallery-left-nav,
 .image-gallery-right-nav {
-    /* border: solid 1px green; */
     color: #06a7e2;
-
 }
 
 .image-gallery-left-nav[disabled],
@@ -42,10 +40,6 @@
     height: 50px;
     width: 50px;
 }
-
-/* .name-price-review {
-    border: solid green 1px;
-} */
 
 .item-name {
     color: #06a7e2;
@@ -88,7 +82,7 @@
     height: 1px;
     position: absolute;
     left: 0;
-    top: 469px;
+    top: 845px;
     z-index: -1;
 }
 
