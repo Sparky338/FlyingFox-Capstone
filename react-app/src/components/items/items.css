@@ -16,8 +16,21 @@
     width: 40%;
 }
 
-.image-gallery-icon{
+.image-gallery{
     border: solid 1px green;
+    max-width: 580px;
+}
+
+.image-gallery-left-nav,
+.image-gallery-right-nav {
+    /* border: solid 1px green; */
+    color: #06a7e2;
+
+}
+
+.image-gallery-left-nav[disabled],
+.image-gallery-right-nav[disabled] {
+    opacity: 0;
 }
 
 .image-gallery-thumbnail {
