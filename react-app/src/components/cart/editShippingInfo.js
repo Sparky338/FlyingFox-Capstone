@@ -15,8 +15,8 @@ const EditShippingInfo = () => {
     const [last_name, setLastName] = useState(purchases[orderId].last_name || "");
     const [address, setAddress] = useState(purchases[orderId].address || "");
     const [address2, setAddress2] = useState(purchases[orderId].address2 || "");
-    const [city, setCity] = useState(purchases[orderId].state|| "");
-    const [state, setState] = useState(purchases[orderId].city || "");
+    const [city, setCity] = useState(purchases[orderId].city || "");
+    const [state, setState] = useState(purchases[orderId].state || "");
     const [zipCode, setZipCode] = useState(purchases[orderId].zipCode || "");
 
     const [validationErrors, setValidationErrors] = useState([]);
@@ -48,8 +48,8 @@ const EditShippingInfo = () => {
 
         const shippingInformation = {first_name, last_name, address, address2, city, state, zipCode}
 
-        const awaitedEdit = await dispatch(editPurchase(orderId, shippingInformation))
-        console.log(awaitedEdit)
+        await dispatch(editPurchase(orderId, shippingInformation))
+        // console.log(awaitedEdit)
         history.push(`/orders`)
     }
 
