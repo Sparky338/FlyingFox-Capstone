@@ -71,6 +71,7 @@ export const editPurchase = (purchaseId, editPurchaseData) => async dispatch => 
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(editPurchaseData)
     });
+    console.log("res here", res)
 
     if (res.ok) {
         const purchase = await res.json();

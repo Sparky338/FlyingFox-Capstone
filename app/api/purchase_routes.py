@@ -66,9 +66,9 @@ def edit_purchase(id):
         purchase = Purchase.query.filter_by(id=id).first()
         form.populate_obj(purchase)
         db.session.commit()
-        return
-    # else:
-    #     return {'errors': form.errors}, 400
+        return {}
+    else:
+        return {'errors': form.errors}, 400
 
 
 @purchase_routes.route('/<int:id>', methods=["DELETE"])

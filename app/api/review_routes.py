@@ -35,7 +35,7 @@ def create_review():
         db.session.add(review)
         db.session.commit()
 
-        return {'reviews': review.to_dict()}
+        return review.to_dict()
     else:
         return {'errors': form.errors}, 400
 
@@ -54,7 +54,7 @@ def edit_review(id):
         review = Review.query.filter_by(id=id).first()
         form.populate_obj(review)
         db.session.commit()
-        return {'reviews': review.to_dict()}
+        return review.to_dict()
     else:
         return {'errors': form.errors}, 400
 
