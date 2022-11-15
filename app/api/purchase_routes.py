@@ -50,7 +50,7 @@ def add_user_purchases():
             db.session.add(purchases_items)
 
         db.session.commit()
-        return
+        return purchase.to_dict(), purchases_items.to_dict()
     else:
         return {'errors': form.errors}, 400
 
@@ -66,7 +66,7 @@ def edit_purchase(id):
         purchase = Purchase.query.filter_by(id=id).first()
         form.populate_obj(purchase)
         db.session.commit()
-        return {}
+        return purchase.to_dict()
     else:
         return {'errors': form.errors}, 400
 
