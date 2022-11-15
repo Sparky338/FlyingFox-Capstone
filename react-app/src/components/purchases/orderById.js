@@ -80,20 +80,6 @@ const OrderById = () => {
                                                 }
                                             </>
                                         </td>
-                                        {/* <td className="id-order-item-edit">
-                                            <>
-                                                <Link to={{
-                                                        pathname:`/orders/${purchaseItem[1].purchase_id}/items/${purchaseItem[1].item_id}/edit`,
-                                                        state: {
-                                                            item_name: items[purchaseItem[1].item_id].item_name,
-                                                            quantity: purchaseItem[1].quantity,
-                                                            purchase_id: purchaseItem[1].purchase_id
-                                                        }
-                                                    }}
-                                                    className="Edit-order-link"
-                                                >Edit Order</Link>
-                                            </>
-                                        </td> */}
                                     </tr>
                                 )
                             })}
