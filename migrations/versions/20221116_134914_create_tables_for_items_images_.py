@@ -1,8 +1,8 @@
 """create tables for items, images, purchases, purchases_items, reviews, and users
 
-Revision ID: c39be1ef3b59
+Revision ID: ec8322dc6a81
 Revises:
-Create Date: 2022-11-16 13:29:40.301126
+Create Date: 2022-11-16 13:49:14.258559
 
 """
 from alembic import op
@@ -13,7 +13,7 @@ SCHEMA = os.environ.get("SCHEMA")
 
 
 # revision identifiers, used by Alembic.
-revision = 'c39be1ef3b59'
+revision = 'ec8322dc6a81'
 down_revision = None
 branch_labels = None
 depends_on = None

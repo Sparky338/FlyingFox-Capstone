@@ -19,7 +19,7 @@ class Purchase(db.Model):
 
     #relationships
     purchases_items = db.relationship("Purchases_Items", back_populates="purchases", cascade = "all, delete", lazy=False)
-    reviews = db.relationship("Review")
+    reviews = db.relationship("Review", cascade = "all, delete", lazy=False)
 
     def to_dict(self):
         return {
