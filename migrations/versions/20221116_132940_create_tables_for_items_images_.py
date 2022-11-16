@@ -1,8 +1,8 @@
 """create tables for items, images, purchases, purchases_items, reviews, and users
 
-Revision ID: 2eb2c39f5c3e
+Revision ID: c39be1ef3b59
 Revises:
-Create Date: 2022-11-16 09:40:51.103655
+Create Date: 2022-11-16 13:29:40.301126
 
 """
 from alembic import op
@@ -13,7 +13,7 @@ SCHEMA = os.environ.get("SCHEMA")
 
 
 # revision identifiers, used by Alembic.
-revision = '2eb2c39f5c3e'
+revision = 'c39be1ef3b59'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -29,7 +29,6 @@ def upgrade():
     sa.Column('category', sa.String(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
-
     if environment == "production":
         op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
 
@@ -101,7 +100,6 @@ def upgrade():
     )
     if environment == "production":
         op.execute(f"ALTER TABLE images SET SCHEMA {SCHEMA};")
-
     # ### end Alembic commands ###
 
 

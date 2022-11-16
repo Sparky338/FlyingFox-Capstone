@@ -14,7 +14,7 @@ class Purchases_Items(db.Model):
     quantity = db.Column(db.Integer, nullable=False)
 
     #relationsips
-    purchases = db.relationship("Purchase", back_populates="purchases_items", cascade = "all, delete", lazy=False)
+    purchases = db.relationship("Purchase", back_populates="purchases_items")
     items = db.relationship("Item", back_populates="purchases_items")
 
     def to_dict(self):

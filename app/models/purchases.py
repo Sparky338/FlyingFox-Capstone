@@ -18,7 +18,7 @@ class Purchase(db.Model):
     zipCode = db.Column(db.String, nullable=False)
 
     #relationships
-    purchases_items = db.relationship("Purchases_Items", back_populates="purchases")
+    purchases_items = db.relationship("Purchases_Items", back_populates="purchases", cascade = "all, delete", lazy=False)
     reviews = db.relationship("Review")
 
     def to_dict(self):
