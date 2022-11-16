@@ -20,7 +20,6 @@ const Orders = () => {
 
     const handleCancel = async (purchaseId) => {
         // e.preventDefault();
-        console.log(purchaseId)
         let res = window.confirm("Are you sure you want to cancel this order?")
         if (res) {
             await dispatch(deletePurchase(purchaseId))
