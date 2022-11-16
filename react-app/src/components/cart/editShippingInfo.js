@@ -48,8 +48,8 @@ const EditShippingInfo = () => {
 
         const shippingInformation = {first_name, last_name, address, address2, city, state, zipCode}
 
-        await dispatch(editPurchase(purchases[orderId].id, shippingInformation))
-        history.push(`/orders`)
+        const awaitedEdit = await dispatch(editPurchase(purchases[orderId].id, shippingInformation))
+        history.push(`/orders/${awaitedEdit.id}`)
     }
 
     return (
