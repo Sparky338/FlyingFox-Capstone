@@ -78,7 +78,6 @@ def delete_purchase(id):
     Delete purchase by id
     """
     purchase = Purchase.query.filter_by(id=id).first()
-    print("PURCHASE HERE", purchase)
     db.session.delete(purchase)
     db.session.commit()
     return {'message': "Deleted Successfully"}

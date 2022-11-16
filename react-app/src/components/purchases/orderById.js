@@ -56,7 +56,7 @@ const OrderById = () => {
                                             {purchaseItem[1].quantity}
                                         </td>
                                         <td className="id-order-item-total">
-                                            {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
+                                            {dollarFormatter.format(items[purchaseItem[1].item_id].price * purchaseItem[1].quantity)}
                                         </td>
                                         <td className="id-order-item-review">
                                             <>
