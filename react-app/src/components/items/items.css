@@ -1,3 +1,5 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
 .item-outer {
     display: flex;
     flex-direction: row;
@@ -7,16 +9,37 @@
 }
 
 .display-carousel {
-    width: 40vw;
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
 }
 
 .item-info-price {
-    width: 40vw;
+    width: 40%;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
-/* .name-price-review {
-    border: solid green 1px;
-} */
+.image-gallery {
+    max-width: 580px;
+}
+
+.image-gallery-left-nav,
+.image-gallery-right-nav {
+    color: #06a7e2;
+}
+
+.image-gallery-left-nav[disabled],
+.image-gallery-right-nav[disabled] {
+    opacity: 0;
+}
+
+.image-gallery-thumbnail {
+    height: 50px;
+    width: 50px;
+}
 
 .item-name {
     color: #06a7e2;
@@ -59,7 +82,7 @@
     height: 1px;
     position: absolute;
     left: 0;
-    top: 469px;
+    top: 845px;
     z-index: -1;
 }
 

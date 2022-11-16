@@ -51,11 +51,11 @@ export const getAllPurchases = () => async dispatch => {
     }
 };
 
-export const createPurchase = (cartItemsId, cartQuantities, sum) => async dispatch => {
+export const createPurchase = (cartItemsId, cartQuantities, sum, shippingInformation) => async dispatch => {
     const res = await fetch(`/api/purchases`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({cartItemsId, cartQuantities, sum})
+        body: JSON.stringify({cartItemsId, cartQuantities, sum, shippingInformation})
     });
 
     if (res.ok) {
@@ -84,6 +84,7 @@ export const deletePurchase = (purchaseId) => async dispatch => {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' }
     });
+    console.log("delete res here",res)
 
     if (res.ok) {
         const purchase = `${purchaseId}`
@@ -107,6 +108,7 @@ export default function purchasesReducer(state = initialState, action) {
             newState[action.purchase.id] = action.purchase
             return newState;
         case DELETE_PURCHASE:
+            console.log("before delete reducer", newState[action.purchaseId])
             delete newState[action.purchaseId]
             return newState;
         case CLEAR_PURCHASES:

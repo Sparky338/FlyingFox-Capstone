@@ -10,8 +10,8 @@ const CreateReviewForm = () => {
         user_id: data.state.user_id,
         item_id: data.state.item_id,
         purchase_id: data.state.purchase_id,
-        first_name: '',
-        last_name: '',
+        first_name: currentUser.firstName,
+        last_name: currentUser.lastName,
         review: '',
         imageUrl: ''
     };

@@ -44,10 +44,12 @@
     padding-left: 10px;
 }
 
+.order-edit-shipping,
 .review-text,
 .order-details-link {
     text-decoration: none;
     color: #06a7e2;
+    font-weight: 600;
 }
 
 .id-order-outer {
@@ -67,6 +69,13 @@
     align-items: center;
 }
 
+.item-image-orderId {
+    height: 80px;
+    width: 80px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
 .id-order-item-review,
 .id-order-item-qty {
     text-align: center;
@@ -81,4 +90,33 @@
 .id-order-total-price,
 .id-order-item-total {
     font-weight: 600;
+}
+
+.order-shipping-info-container {
+    margin-left: 5%;
+}
+
+.order-shipping-header,
+.order-shipping-info-name,
+.order-shipping-info-address,
+.order-shipping-info-city,
+.order-shipping-info-state,
+.order-shipping-info-zipcode {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.order-shipping-header {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.cancel-order-button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #06a7e2;
+    cursor: pointer;
+    padding: 0px;
 }

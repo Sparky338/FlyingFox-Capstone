@@ -41,14 +41,13 @@ const ReviewForm = ({ storedReview, formType}) => {
 
         const newReview = { ...storedReview, first_name, last_name, review, image_url };
 
-
         if (formType === "Leave a review") {
             const awaitedReview = await dispatch(createReview(newReview))
-            history.push(`/items/${awaitedReview.reviews.item_id}`)
+            history.push(`/items/${awaitedReview.item_id}`)
             if (awaitedReview) alert("Your review was successfully posted!")
         } else if (formType === "Edit Review") {
             const awaitedReview = await dispatch(editReview(storedReview.id, newReview))
-            history.push(`/items/${awaitedReview.reviews.item_id}`)
+            history.push(`/items/${awaitedReview.item_id}`)
             if (awaitedReview) alert("Your review was successfully edited!")
         }
 

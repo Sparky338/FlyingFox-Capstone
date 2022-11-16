@@ -1,0 +1,64 @@
+.shipping-info-outer{
+    width: 80%;
+}
+
+.shipping-form-header {
+    display: flex;
+    justify-content: left;
+    font-size: 30px;
+}
+
+.shipping-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shipping-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:60%;
+}
+
+.outer-error {
+    /* border:solid 1px red; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: left;
+}
+
+.errors-list {
+    font-size: 18px;
+    color:red;
+    list-style: none;
+    margin-bottom: 5px;
+
+}
+
+.shipping-form-label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.shipping-form-input {
+    height: 40px;
+    border-radius: 6px;
+    border: solid 1px #06a7e2;
+    margin-top: 5px;
+    width: 400px;
+    font-size: 22px;
+}
+
+.edit-shipping-submit-button {
+    margin-top: 30px;
+    height: 50px;
+    font-size: 22px;
+    width: 400px;
+    cursor: pointer;
+}

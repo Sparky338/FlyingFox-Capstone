@@ -1,5 +1,6 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 
+
 class Item(db.Model):
     __tablename__ = 'items'
     if environment == "production":
@@ -13,7 +14,7 @@ class Item(db.Model):
 
     #relationships
     images = db.relationship("Image", back_populates="items", cascade = "all, delete", lazy=False)
-    purchases_items = db.relationship("Purchases_Items", back_populates="items")
+    purchases_items = db.relationship("Purchases_Items", back_populates="items", cascade = "all, delete", lazy=False)
     reviews = db.relationship("Review", back_populates="items", cascade = "all, delete", lazy=False)
     # purchases = db.relationship("Purchase", back_populates="items", cascade = "all, delete", lazy=False)
 

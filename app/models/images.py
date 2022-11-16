@@ -12,8 +12,8 @@ class Image(db.Model):
     image_url = db.Column(db.String(255), nullable=False)
 
     #relationships
-    items = db.relationship("Item" , back_populates="images")
-    reviews = db.relationship("Review")
+    items = db.relationship("Item", back_populates="images")
+    reviews = db.relationship("Review", back_populates="images")
 
     def to_dict(self):
         return {
