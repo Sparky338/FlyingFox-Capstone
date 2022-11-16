@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import Checkout from "./checkout";
 import CartTable from "./cartTable";
 import "./cart.css"
-import ShippingInfo from "./shippingInfo";
 
 const Cart = () => {
     // Must be first to render an empty cart
@@ -15,7 +14,7 @@ const Cart = () => {
 
     const [cartState, setCartState] = useState(JSON.parse(localStorage.getItem('cart')) || '')
     const [itemQty, setQtyState] = useState(JSON.parse(localStorage.getItem('itemQty')) || '')
-    
+
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cartState))
         localStorage.setItem('itemQty', JSON.stringify(itemQty))
@@ -70,9 +69,6 @@ const Cart = () => {
                         itemQty={itemQty}
                         setQtyState={setQtyState}
                     />
-                    {/* <div className="shipping-info-container">
-                        <ShippingInfo />
-                    </div> */}
                 </div>
             </div>
         </div>
