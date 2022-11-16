@@ -16,7 +16,7 @@ class Review(db.Model):
 
     #relationships
     # user = db.relationship("User", back_populates="reviews")
-    items = db.relationship("Item", back_populates="reviews", cascade = "all, delete", lazy=False)
+    items = db.relationship("Item", back_populates="reviews")
     purchase = db.relationship("Purchase", back_populates="reviews")
     images = db.relationship("Image", back_populates="reviews", cascade = "all, delete", lazy=False)
 
