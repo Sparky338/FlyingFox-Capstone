@@ -1,22 +1,24 @@
-import os
-environment = os.getenv("FLASK_ENV")
-SCHEMA = os.environ.get("SCHEMA")
+Modifications to migration versions:
 
-if environment == "production":
-        op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
+# import os
+# environment = os.getenv("FLASK_ENV")
+# SCHEMA = os.environ.get("SCHEMA")
+
+# if environment == "production":
+#         op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
 
 
-if environment == "production":
-        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
+# if environment == "production":
+#         op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
 
-if environment == "production":
-        op.execute(f"ALTER TABLE purchases SET SCHEMA {SCHEMA};")
+# if environment == "production":
+#         op.execute(f"ALTER TABLE purchases SET SCHEMA {SCHEMA};")
 
-if environment == "production":
-        op.execute(f"ALTER TABLE purchases_items SET SCHEMA {SCHEMA};")
+# if environment == "production":
+#         op.execute(f"ALTER TABLE purchases_items SET SCHEMA {SCHEMA};")
 
-if environment == "production":
-        op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
+# if environment == "production":
+#         op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
 
-if environment == "production":
-        op.execute(f"ALTER TABLE images SET SCHEMA {SCHEMA};")
+# if environment == "production":
+#         op.execute(f"ALTER TABLE images SET SCHEMA {SCHEMA};")
