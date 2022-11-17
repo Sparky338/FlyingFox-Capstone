@@ -5,7 +5,6 @@ import { createPurchase } from "../../store/purchases";
 import ShippingInfo from "./shippingInfo";
 
 import "./cart.css"
-import { getAllPurchasesItems } from "../../store/purchasesItems";
 
 const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
     const dispatch = useDispatch();
