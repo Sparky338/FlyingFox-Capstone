@@ -95,7 +95,9 @@ const ItemById = () => {
                                 <div className="horizontal-line"></div>
                                 <div className="review-header">{item.item_name.toUpperCase()} REVIEWS</div>
                             </div>
-                            {filteredReviews.map((review, i) => {
+                            {filteredReviews.length === 0 ?
+                                <div className="no-reviews">No reviews yet!</div>:
+                            filteredReviews.map((review, i) => {
                                 return (
                                     <div className="review-container" key={i}>
                                         <div className="review">{review.review}</div>
@@ -105,7 +107,8 @@ const ItemById = () => {
                                         </div>
                                     </div>
                                 )
-                            })}
+                            })
+                            }
                         </div>
                     </div>
                 )

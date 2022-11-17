@@ -1,11 +1,23 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
+.outer-item-div{
+    display: flex;
+    justify-content: center;
+}
+
+.item-by-id {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .item-outer {
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 40px;
-    /* border: solid 1px white; */
 }
 
 .display-carousel {
@@ -77,11 +89,11 @@
 }
 
 .horizontal-line {
-    width: 100%;
+    width: 80%;
     background-color: #06a7e2;
     height: 1px;
     position: absolute;
-    left: 0;
+    left: 10%;
     top: 845px;
     z-index: -1;
 }
@@ -89,11 +101,19 @@
 .review-header {
     color: #06a7e2;
     font-size: 26px;
+    font-weight: 600;
     margin-bottom: 40px;
     background-color: #252525;
     width: 300px;
     display: flex;
     justify-content: center;
+}
+
+.no-reviews {
+    color: #06a7e2;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .review-container {
@@ -103,7 +123,9 @@
 }
 
 .review {
+    text-align: center;
     margin-bottom: 20px;
+    width: 60%;
 }
 
 .picture-and-name {
