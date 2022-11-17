@@ -1,16 +1,22 @@
-
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import { getAllPurchasesItems } from "../../store/purchasesItems";
 
 import "./orders.css"
 
 const OrderById = () => {
+    const dispatch = useDispatch()
     const { orderId } = useParams();
     const user = useSelector(state => state.session.user);
     const items = useSelector(state => state.items);
     const reviewsState = useSelector(state => state.reviews);
     const purchases = useSelector(state => state.purchases);
     const purchasesItems = useSelector(state => state.purchasesItems);
+
+    useEffect(() => {
+        dispatch(getAllPurchasesItems())
+    }, [dispatch])
 
     const formatting_options = {
         style: 'currency',

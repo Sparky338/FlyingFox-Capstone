@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { deletePurchase, getAllPurchases } from "../../store/purchases";
-import { getAllPurchasesItems } from "../../store/purchasesItems";
+import { clearPurchaseItemsAction, getAllPurchasesItems } from "../../store/purchasesItems";
 import "./orders.css"
 import { getAllReviews } from "../../store/reviews";
 
@@ -23,13 +23,15 @@ const Orders = () => {
         let res = window.confirm("Are you sure you want to cancel this order?")
         if (res) {
             await dispatch(deletePurchase(purchaseId))
+            // await dispatch(getAllPurchasesItems())
             history.push("/orders")
         }
     }
 
     useEffect(() => {
         dispatch(getAllPurchases())
-        dispatch(getAllPurchasesItems())
+        // dispatch(getAllPurchasesItems())
+        dispatch(clearPurchaseItemsAction())
         dispatch(getAllReviews());
     }, [dispatch])
 

@@ -5,6 +5,7 @@ import { createPurchase } from "../../store/purchases";
 import ShippingInfo from "./shippingInfo";
 
 import "./cart.css"
+import { getAllPurchasesItems } from "../../store/purchasesItems";
 
 const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
     const dispatch = useDispatch();
@@ -79,7 +80,7 @@ const Checkout = ({ cartState, setCartState, itemQty, setQtyState }) => {
         const cartQuantities = Object.values(itemQuantity) // Array of values lining up with items above
         const shippingInformation = {first_name, last_name, address, address2, city, state, zipCode}
 
-        dispatch(createPurchase(cartItemsId, cartQuantities, sum, shippingInformation))
+        await dispatch(createPurchase(cartItemsId, cartQuantities, sum, shippingInformation))
         localStorage.clear()
         history.push("/checkout")
     }
