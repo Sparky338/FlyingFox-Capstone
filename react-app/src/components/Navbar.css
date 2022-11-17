@@ -8,7 +8,6 @@
     height: 60px;
     background-color: black;
     margin-bottom: 10px;
-    /* border: solid 2px blue; */
 }
 
 .outer-nav{
@@ -17,7 +16,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    /* border: solid 1px blue; */
 }
 
 .nav-bar {
@@ -26,11 +24,9 @@
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    /* border: solid 1px red; */
 }
 
 .nav-bar-links {
-    /* border: solid red 1px; */
     display: flex;
     flex-direction: row;
     justify-content:flex-start;
@@ -78,7 +74,6 @@
     text-decoration: none;
     color: white;
     display: flex;
-    
 }
 
 .session-links-user,

@@ -18,7 +18,16 @@ export const clearPurchaseItemsAction = () => {
 
 //thunk
 export const getAllPurchasesItems = () => async dispatch => {
-    const res = await fetch('/api/purchases_items');
+    const res = await fetch(`/api/purchases_items`);
+
+    if (res.ok) {
+        const purchasesItems = await res.json();
+        dispatch(getPurchasesItemsAction(purchasesItems.purchases_items));
+    }
+};
+
+export const getOrderPurchasesItems = (orderId) => async dispatch => {
+    const res = await fetch(`/api/purchases_items/${orderId}`);
 
     if (res.ok) {
         const purchasesItems = await res.json();

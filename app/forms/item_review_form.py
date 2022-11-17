@@ -5,8 +5,8 @@ from wtforms.validators import DataRequired
 
 class CreateReview(FlaskForm):
     user_id = IntegerField('user_id', validators=[DataRequired()])
-    item_id = IntegerField('user_id', validators=[DataRequired()])
-    purchase_id = IntegerField('user_id', validators=[DataRequired()])
+    item_id = IntegerField('item_id', validators=[DataRequired()])
+    purchase_id = IntegerField('purchase_id', validators=[DataRequired()])
     first_name = StringField('first name', validators=[DataRequired()])
     last_name = StringField('last name', validators=[DataRequired()])
     review = StringField('review', validators=[DataRequired()])

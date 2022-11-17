@@ -54,6 +54,16 @@ const ItemById = () => {
         history.push("/cart")
     }
 
+    const imagesCarousel = (item) => {
+        let images = item.images.map(image => {
+            return {
+                original: image.image_url,
+                thumbnail: image.image_url
+            }
+        });
+        return images
+    }
+
     return (
         <div className="outer-item-div">
             {filteredItem.map((item) => {
@@ -61,12 +71,12 @@ const ItemById = () => {
                     <div className="item-by-id" key={item.id}>
                         <div className="item-outer">
                             <div className="display-carousel">
-                                {/* <ImageGallery
-                                    items=arrayofImages
+                                <ImageGallery
+                                    items={imagesCarousel(item)}
                                     showPlayButton={false}
                                     showFullscreenButton={false}
                                     infinite={false}
-                                /> */}
+                                />
                             </div>
                             <div className="item-info-price">
                                 <div className="name-price-review">

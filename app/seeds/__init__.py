@@ -4,6 +4,7 @@ from .items import seed_items, undo_items
 from .purchases import seed_purchases, undo_purchases
 from .reviews import seed_reviews, undo_reviews
 from .purchases_items import seed_purchases_items, undo_purchases_items
+from .images import seed_images, undo_images
 
 from app.models.db import db, environment, SCHEMA
 
@@ -22,6 +23,7 @@ def seed():
         db.session.execute(f"TRUNCATE table {SCHEMA}.purchases RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.purchases_items RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.reviews RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.images RESTART IDENTITY CASCADE;")
         # Add a truncate command here for every table that will be seeded.
         db.session.commit()
     seed_users()
@@ -29,6 +31,7 @@ def seed():
     seed_purchases()
     seed_purchases_items()
     seed_reviews()
+    seed_images()
     # Add other seed functions here
 
 
@@ -40,4 +43,5 @@ def undo():
     undo_purchases()
     undo_purchases_items()
     undo_reviews()
+    undo_images()
     # Add other undo functions here

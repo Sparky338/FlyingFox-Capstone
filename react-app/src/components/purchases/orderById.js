@@ -1,17 +1,22 @@
-
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-
+import { getOrderPurchasesItems } from "../../store/purchasesItems";
 
 import "./orders.css"
 
 const OrderById = () => {
+    const dispatch = useDispatch()
     const { orderId } = useParams();
     const user = useSelector(state => state.session.user);
     const items = useSelector(state => state.items);
     const reviewsState = useSelector(state => state.reviews);
     const purchases = useSelector(state => state.purchases);
     const purchasesItems = useSelector(state => state.purchasesItems);
+
+    useEffect(() => {
+        dispatch(getOrderPurchasesItems(orderId))
+    }, [dispatch])
 
     const formatting_options = {
         style: 'currency',
@@ -34,6 +39,7 @@ const OrderById = () => {
                             <th className="table-header-item">ITEM</th>
                             <th className="table-header-qty" width="10%">QTY</th>
                             <th className="table-header-total" width="15%">TOTAL</th>
+                            <th width="10%">&nbsp;</th>
                             <th width="5%">&nbsp;</th>
                         </tr>
                     </thead>
@@ -43,8 +49,11 @@ const OrderById = () => {
                                 return (
                                     <tr className="id-order-item" key={i}>
                                         <td className="id-order-item-image">
-                                            {items[purchaseItem[1].item_id].images[0]}
-
+                                            <img
+                                                className="item-image-orderId"
+                                                src={items[purchaseItem[1].item_id].images[0].image_url}
+                                                alt={`${items[purchaseItem[1].item_id].item_name} picture`}
+                                            />
                                         </td>
                                         <td className="id-order-item-name">
                                             {items[purchaseItem[1].item_id].item_name}
@@ -53,7 +62,7 @@ const OrderById = () => {
                                             {purchaseItem[1].quantity}
                                         </td>
                                         <td className="id-order-item-total">
-                                            {dollarFormatter.format(items[purchaseItem[1].id].price * purchaseItem[1].quantity)}
+                                            {dollarFormatter.format(items[purchaseItem[1].item_id].price * purchaseItem[1].quantity)}
                                         </td>
                                         <td className="id-order-item-review">
                                             <>
@@ -64,7 +73,8 @@ const OrderById = () => {
                                                     >Edit Review</Link>
                                                     :
                                                     <Link to={{
-                                                        pathname: `/items/${purchaseItem[1].item_id}/review`, state: {
+                                                        pathname: `/items/${purchaseItem[1].item_id}/review`,
+                                                        state: {
                                                             user_id: user.id,
                                                             item_id: purchaseItem[1].item_id,
                                                             purchase_id: purchaseItem[1].purchase_id
@@ -90,6 +100,15 @@ const OrderById = () => {
                         </tr>
                     </tfoot>
                 </table>
+            </div>
+            <div className="order-shipping-info-container">
+                <div className="order-shipping-header">Ship to:</div>
+                <div className="order-shipping-info-name">Name: {purchases[orderId].first_name} {purchases[orderId].last_name}</div>
+                <div className="order-shipping-info-address">Address: {purchases[orderId].address} {purchases[orderId].address2}</div>
+                <div className="order-shipping-info-city">City: {purchases[orderId].city}</div>
+                <div className="order-shipping-info-state">State: {purchases[orderId].state}</div>
+                <div className="order-shipping-info-zipcode">Zip code: {purchases[orderId].zipCode}</div>
+                <Link to={`/orders/${orderId}/edit`} className="order-edit-shipping">Edit Shipping Information</Link>
             </div>
         </div>
     )

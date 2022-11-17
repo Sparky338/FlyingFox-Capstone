@@ -15,6 +15,8 @@ import Orders from './components/purchases/orders';
 import OrderById from './components/purchases/orderById';
 import CreateReviewForm from './components/reviews/createReviewForm';
 import EditReviewForm from './components/reviews/editReviewForm';
+import EditShippingInfo from './components/cart/editShippingInfo';
+import { getAllImages } from './store/images';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -26,6 +28,7 @@ function App() {
       setLoaded(true);
     })();
     dispatch(getAllItems());
+    dispatch(getAllImages())
   }, [dispatch]);
 
   if (!loaded) {
@@ -56,6 +59,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/checkout'>
           <CheckoutPage />
+        </ProtectedRoute>
+        <ProtectedRoute path='/orders/:orderId/edit'>
+          <EditShippingInfo />
         </ProtectedRoute>
         <ProtectedRoute path='/orders/:orderId'>
           <OrderById />

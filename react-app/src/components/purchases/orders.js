@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { getAllPurchases } from "../../store/purchases";
-import { getAllPurchasesItems } from "../../store/purchasesItems";
+import { Link, useHistory } from "react-router-dom";
+import { deletePurchase, getAllPurchases } from "../../store/purchases";
+import { clearPurchaseItemsAction } from "../../store/purchasesItems";
 import "./orders.css"
 import { getAllReviews } from "../../store/reviews";
 
 const Orders = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const purchases = useSelector(state => state.purchases);
 
     const formatting_options = {
@@ -17,9 +18,17 @@ const Orders = () => {
     };
     const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
 
+    const handleCancel = async (purchaseId) => {
+        let res = window.confirm("Are you sure you want to cancel this order?")
+        if (res) {
+            await dispatch(deletePurchase(purchaseId))
+            await dispatch(clearPurchaseItemsAction())
+            history.push("/orders")
+        }
+    }
+
     useEffect(() => {
         dispatch(getAllPurchases())
-        dispatch(getAllPurchasesItems())
         dispatch(getAllReviews());
     }, [dispatch])
 
@@ -53,7 +62,7 @@ const Orders = () => {
                                             <Link to={`/orders/${purchase[1].id}`} className="order-details-link">Order Details</Link>
                                         </td>
                                         <td className="cancel-order">
-                                            ADD CANCEL ORDER FUNC
+                                            <button className="cancel-order-button" onClick={() => handleCancel(purchase[1].id)} >Cancel Order</button>
                                         </td>
 
                                     </tr>

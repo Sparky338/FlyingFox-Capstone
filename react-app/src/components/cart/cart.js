@@ -14,6 +14,7 @@ const Cart = () => {
 
     const [cartState, setCartState] = useState(JSON.parse(localStorage.getItem('cart')) || '')
     const [itemQty, setQtyState] = useState(JSON.parse(localStorage.getItem('itemQty')) || '')
+
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cartState))
         localStorage.setItem('itemQty', JSON.stringify(itemQty))
@@ -37,10 +38,10 @@ const Cart = () => {
                     </div>
                     <div className="cart-contents">
                         {(Object.entries(itemQty).length === 0) ?
-                        <div className="empty-cart-container">
-                            <div className="empty-cart">Your cart is empty!</div>
-                            <div className="empty-cart cart-categories"> Perhaps you could add something to buy?</div>
-                        </div>:
+                            <div className="empty-cart-container">
+                                <div className="empty-cart">Your cart is empty!</div>
+                                <div className="empty-cart cart-categories"> Perhaps you could add something to buy?</div>
+                            </div> :
                             <table className="full-cart-table" border="0" cellSpacing="0">
                                 <thead className="table-header">
                                     <tr>

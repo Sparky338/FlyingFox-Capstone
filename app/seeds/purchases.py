@@ -3,7 +3,14 @@ from app.models import db, Purchase
 def seed_purchases():
     first_demo = Purchase (
         user_id="1",
-        price="1000.00"
+        price="1000.00",
+        first_name="Demo",
+        last_name="lition",
+        address="123 AppAcademy Way",
+        address2="",
+        city="SanFrancisco",
+        state="CA",
+        zipCode="94105"
     )
 
     db.session.add(first_demo)

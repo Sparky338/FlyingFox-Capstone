@@ -51,11 +51,11 @@ export const getAllPurchases = () => async dispatch => {
     }
 };
 
-export const createPurchase = (cartItemsId, cartQuantities, sum) => async dispatch => {
+export const createPurchase = (cartItemsId, cartQuantities, sum, shippingInformation) => async dispatch => {
     const res = await fetch(`/api/purchases`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({cartItemsId, cartQuantities, sum})
+        body: JSON.stringify({cartItemsId, cartQuantities, sum, shippingInformation})
     });
 
     if (res.ok) {
