@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { getAllPurchasesItems } from "../../store/purchasesItems";
+import { getOrderPurchasesItems } from "../../store/purchasesItems";
 
 import "./orders.css"
 
@@ -15,7 +15,7 @@ const OrderById = () => {
     const purchasesItems = useSelector(state => state.purchasesItems);
 
     useEffect(() => {
-        dispatch(getAllPurchasesItems())
+        dispatch(getOrderPurchasesItems(orderId))
     }, [dispatch])
 
     const formatting_options = {
