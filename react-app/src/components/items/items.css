@@ -112,7 +112,15 @@
     align-items: center;
 }
 
+.picture {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
 .first-last-name {
     font-weight: 600;
     font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
