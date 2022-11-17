@@ -34,6 +34,10 @@
     margin-left: 20px;
 }
 
+.suits-parachutes-dropdown {
+    cursor: pointer;
+}
+
 .dev,
 .suits-parachutes-dropdown {
     font-weight: 400;
