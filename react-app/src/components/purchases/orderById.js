@@ -102,7 +102,7 @@ const OrderById = () => {
                 </table>
             </div>
             <div className="order-shipping-info-container">
-                <div className="order-shipping-header">Ship to:</div>
+                <div className="order-shipping-header">Shipping Address:</div>
                 <div className="order-shipping-info-name">Name: {purchases[orderId].first_name} {purchases[orderId].last_name}</div>
                 <div className="order-shipping-info-address">Address: {purchases[orderId].address} {purchases[orderId].address2}</div>
                 <div className="order-shipping-info-city">City: {purchases[orderId].city}</div>
