@@ -70,7 +70,7 @@ const ItemById = () => {
                 return (
                     <div className="item-by-id" key={item.id}>
                         <div className="item-outer">
-                            <div className="display-carousel">
+                            <div className="item-display-carousel">
                                 <ImageGallery
                                     items={imagesCarousel(item)}
                                     showPlayButton={false}
@@ -102,7 +102,10 @@ const ItemById = () => {
                                     <div className="review-container" key={i}>
                                         <div className="review">{review.review}</div>
                                         <div className="picture-and-name">
+                                            {!review.images[0] ?
+                                            "" :
                                             <img className="picture" src={`${review.images[0].image_url}`} />
+                                            }
                                             <div className="first-last-name"> -{review.first_name} {review.last_name} </div>
                                         </div>
                                     </div>
