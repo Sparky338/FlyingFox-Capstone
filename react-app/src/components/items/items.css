@@ -1,11 +1,24 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
+.outer-item-div{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.item-by-id {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .item-outer {
+    width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 40px;
-    /* border: solid 1px white; */
 }
 
 .display-carousel {
@@ -73,15 +86,16 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    width: 100%;
     margin-top: 40px;
 }
 
 .horizontal-line {
-    width: 100%;
+    width: 80%;
     background-color: #06a7e2;
     height: 1px;
     position: absolute;
-    left: 0;
+    left: 10%;
     top: 845px;
     z-index: -1;
 }
@@ -89,21 +103,33 @@
 .review-header {
     color: #06a7e2;
     font-size: 26px;
+    font-weight: 600;
     margin-bottom: 40px;
     background-color: #252525;
-    width: 300px;
+    padding-left: 20px;
+    padding-right: 20px;
     display: flex;
     justify-content: center;
+}
+
+.no-reviews {
+    color: #06a7e2;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .review-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 .review {
+    text-align: center;
     margin-bottom: 20px;
+    width: 60%;
 }
 
 .picture-and-name {
@@ -112,7 +138,15 @@
     align-items: center;
 }
 
+.picture {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
 .first-last-name {
     font-weight: 600;
     font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
