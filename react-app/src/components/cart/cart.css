@@ -1,7 +1,6 @@
 .cart-outer {
     width: 100%;
     min-height: 100vh;
-    height: 100%;
     display: flex;
     justify-content: center;
     background-color: white;
