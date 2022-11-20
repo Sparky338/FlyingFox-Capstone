@@ -1,20 +1,12 @@
 .cart-outer {
     width: 100%;
+    min-height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     background-color: white;
-    height: 100vh;
     color:black;
 }
-
-/* .cart-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    height: 100vh;
-    color:black;
-} */
 
 .cart-container {
     display: flex;
