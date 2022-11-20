@@ -29,12 +29,6 @@
     margin-right: 10px;
 }
 
-.item-info-price {
-    width: 40%;
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
 .image-gallery {
     max-width: 580px;
 }
@@ -52,6 +46,12 @@
 .image-gallery-thumbnail {
     height: 50px;
     width: 50px;
+}
+
+.item-info-price {
+    width: 40%;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .item-name {
