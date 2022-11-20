@@ -91,12 +91,14 @@
 }
 
 .horizontal-line {
-    width: 80%;
+    width: 100%;
     background-color: #06a7e2;
     height: 1px;
-    position: absolute;
-    left: 10%;
-    top: 845px;
+    position: relative;
+    top: 15px;
+    /* position: absolute; */
+    /* left: 10%;
+    top: 845px; */
     z-index: -1;
 }
 
