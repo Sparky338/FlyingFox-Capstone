@@ -30,12 +30,17 @@
     font-size: 20px;
 }
 
+.errors-handling {
+    padding-left: 0;
+    text-align: left;
+}
+
 .errors-list {
     font-size: 20px;
     color:red;
     list-style: none;
-    margin-bottom: 5px;
-
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .shipping-form-label {

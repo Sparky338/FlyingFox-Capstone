@@ -27,6 +27,7 @@
     color: red;
     display: flex;
     justify-content: center;
+    font-weight: 600;
 }
 
 .errors-list {
