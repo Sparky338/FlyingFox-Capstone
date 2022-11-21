@@ -58,7 +58,7 @@
 
 .id-order-header {
     font-size: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     margin-top: 10px;
 }
 
@@ -69,11 +69,19 @@
     align-items: center;
 }
 
+.full-id-order-table {
+    width: 90%;
+}
+
 .item-image-orderId {
     height: 80px;
     width: 80px;
     margin-left: 30px;
     margin-right: 30px;
+}
+
+.id-order-item-name {
+    font-size: 26px;
 }
 
 .id-order-item-review,
