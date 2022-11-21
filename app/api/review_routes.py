@@ -28,6 +28,8 @@ def create_review():
     form = CreateReview()
     form['csrf_token'].data = request.cookies['csrf_token']
 
+    review_image_url = request.json['image_url']
+
     if form.validate_on_submit():
         review = Review()
         form.populate_obj(review)

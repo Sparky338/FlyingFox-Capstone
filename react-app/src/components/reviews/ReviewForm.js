@@ -50,8 +50,6 @@ const ReviewForm = ({ storedReview, formType}) => {
             history.push(`/items/${awaitedReview.item_id}`)
             if (awaitedReview) alert("Your review was successfully edited!")
         }
-
-        // dispatch(clearReviewAction())
     };
 
     return (

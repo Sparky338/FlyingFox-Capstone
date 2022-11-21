@@ -28,7 +28,7 @@ function App() {
       setLoaded(true);
     })();
     dispatch(getAllItems());
-    dispatch(getAllImages())
+    // dispatch(getAllImages())
   }, [dispatch]);
 
   if (!loaded) {
