@@ -102,9 +102,9 @@ const ItemById = () => {
                                         <div className="review-container" key={i}>
                                             <div className="review">{review.review}</div>
                                             <div className="picture-and-name">
-                                                {!review.images[0] ?
+                                                {!review.image_url ?
                                                     "" :
-                                                    <img className="picture" src={`${review.images[0].image_url}`} />
+                                                    <img className="picture" src={`${review.image_url}`} />
                                                 }
                                                 <div className="first-last-name"> -{review.first_name} {review.last_name} </div>
                                             </div>
