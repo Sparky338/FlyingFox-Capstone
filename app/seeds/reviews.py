@@ -7,7 +7,8 @@ def seed_reviews():
         purchase_id="1",
         first_name="Demo",
         last_name="Lition",
-        review="This is an amazing wingsuit! Helped me so much to learn the basics."
+        review="This is an amazing wingsuit! Helped me so much to learn the basics.",
+        image_url="https://www.rockskymarket.com/9498-thickbox_default/squirrel-sprint-wingsuit-jumpsuits.jpg"
     )
 
     db.session.add(dashreview)
