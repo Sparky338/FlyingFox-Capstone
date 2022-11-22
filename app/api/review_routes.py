@@ -32,7 +32,7 @@ def create_review():
     form = CreateReview()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    review_image = request.json['image_url']
+    # review_image = request.json['image_url']
 
     if form.validate_on_submit():
         if "image" not in request.files:
@@ -57,6 +57,7 @@ def create_review():
 
         review = Review()
         form.populate_obj(review)
+        review.image_url = url
 
         db.session.add(review)
         db.session.commit()
