@@ -17,6 +17,7 @@ const ReviewForm = ({ storedReview, formType}) => {
     const [image, setImage] = useState(storedReview.imageUrl || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
+    const [imageLoading, setImageLoading] = useState(false);
 
     useEffect(() => {
         const errors = [];
@@ -37,6 +38,30 @@ const ReviewForm = ({ storedReview, formType}) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setHasSubmitted(true)
+
+        const formData = new FormData();
+        formData.append("image", image)
+        // aws uploads can be a bit slow—displaying
+        // some sort of loading message is a good idea
+        setImageLoading(true);
+
+        const res = await fetch('/api/images', {
+            method: "POST",
+            body: formData,
+        });
+
+        console.log("image res", res)
+        if (res.ok) {
+            await res.json();
+            setImageLoading(false);
+            // history.push("/images");
+        }
+        else {
+            setImageLoading(false);
+            // a real app would probably use more advanced
+            // error handling
+            console.log("error");
+        }
 
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 

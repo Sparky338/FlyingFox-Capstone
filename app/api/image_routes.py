@@ -36,11 +36,12 @@ def upload_image():
         return upload, 400
 
     url = upload["url"]
+    print('URL HERE', url)
     # flask_login allows us to get the current user from the request
     # New images will only come from reviews because item data is seeded and static.
-    new_image = Image(user=current_user, image_url=url) #review_id=review_id instead of user
-    db.session.add(new_image)
-    db.session.commit()
+    # new_image = Image(user=current_user, image_url=url) #review_id=review_id instead of user
+    # db.session.add(new_image)
+    # db.session.commit()
     return {"url": url}
 
 
