@@ -13,7 +13,8 @@ const ReviewForm = ({ storedReview, formType}) => {
     const [first_name, setFirstName] = useState(storedReview.first_name || "");
     const [last_name, setLastName] = useState(storedReview.last_name || "");
     const [review, setReviewBody] = useState(storedReview.review || "");
-    const [image_url, setImageUrl] = useState(storedReview.imageURL || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
+    const [image_url, setImage] = useState(storedReview.imageUrl || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
+    // const [image_url, setImageUrl] = useState(storedReview.imageURL || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
 
@@ -27,11 +28,11 @@ const ReviewForm = ({ storedReview, formType}) => {
         if (!review) errors.push("Review is required");
         if (review.length < 10) errors.push("Review must be at least 10 characters");
         if (review.length > 1000) errors.push("Review must be less than 1,000 characters");
-        if (image_url && !image_url.endsWith('.jpg') && !image_url.endsWith('.jpeg') && !image_url.endsWith('.png')) {
-            errors.push("Image file must be a jpg, jpeg, or png");
-        }
+        // if (image_url && !image_url.endsWith('.jpg') && !image_url.endsWith('.jpeg') && !image_url.endsWith('.png')) {
+        //     errors.push("Image file must be a jpg, jpeg, or png");
+        // }
         setValidationErrors(errors);
-    }, [first_name, last_name, review, image_url])
+    }, [first_name, last_name, review/*, image_url*/])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -99,6 +100,17 @@ const ReviewForm = ({ storedReview, formType}) => {
                         ></textarea>
                     </label>
                     <label className="review-form-label">
+                        Image
+                        <input
+                            className="review-form-review"
+                            type="file"
+                            accept='image/*'
+                            // value={image_url}
+                            onChange={e => setImage(e.target.value)}
+                            placeholder="Upload an image"
+                        />
+                    </label>
+                    {/* <label className="review-form-label">
                         Image URL
                         <input
                             className="review-form-review"
@@ -107,7 +119,7 @@ const ReviewForm = ({ storedReview, formType}) => {
                             onChange={e => setImageUrl(e.target.value)}
                             placeholder="Input an image URL "
                         />
-                    </label>
+                    </label> */}
                     <input type="submit" className='main-button review-submit-button' value="Post Review" />
                 </form>
             </div>

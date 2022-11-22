@@ -35,12 +35,6 @@ def create_review():
     review_image = request.json['image_url']
 
     if form.validate_on_submit():
-        review = Review()
-        form.populate_obj(review)
-
-        db.session.add(review)
-        db.session.commit()
-
         if "image" not in request.files:
             return {"errors": "image required"}, 400
 
@@ -60,11 +54,13 @@ def create_review():
             return upload, 400
 
         url = upload["url"]
-        # flask_login allows us to get the current user from the request
-        # New images will only come from reviews because item data is seeded and static.
-        new_image = Image(review_id=review_id, image_url=url) #review_id = ??? instead of user
-        db.session.add(new_image)
+
+        review = Review()
+        form.populate_obj(review)
+
+        db.session.add(review)
         db.session.commit()
+
 
         # for image in review_image:
             # image = Image()
