@@ -1,7 +1,8 @@
-from flask import Blueprint, jsonify, request
-from app.models import User, db, Review, Purchase
+from flask import Blueprint, jsonify, request, url_for
+from app.models import User, db, Review, Purchase, Image
 from flask_login import login_required
 from app.forms import CreateReview, EditReview
+from app.api.image_routes import upload_image
 
 review_routes = Blueprint('reviews', __name__)
 
@@ -28,7 +29,7 @@ def create_review():
     form = CreateReview()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    review_image_url = request.json['image_url']
+    review_image = request.json['image_url']
 
     if form.validate_on_submit():
         review = Review()
@@ -36,6 +37,12 @@ def create_review():
 
         db.session.add(review)
         db.session.commit()
+
+        for image in review_image:
+            image = Image()
+            image.review_id = review.id
+            image.image_url = url_for('upload_image', image=image)
+
 
         return review.to_dict()
     else:
