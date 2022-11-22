@@ -67,7 +67,7 @@ export const createReview = (reviewData) => async dispatch => {
 console.log("reviewData", reviewData)
     const res = await fetch(`/api/reviews`, {
         method: 'POST',
-        // headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(reviewData)
     });
 

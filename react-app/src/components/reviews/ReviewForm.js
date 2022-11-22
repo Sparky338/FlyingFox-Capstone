@@ -13,8 +13,8 @@ const ReviewForm = ({ storedReview, formType}) => {
     const [first_name, setFirstName] = useState(storedReview.first_name || "");
     const [last_name, setLastName] = useState(storedReview.last_name || "");
     const [review, setReviewBody] = useState(storedReview.review || "");
-    // const [image_url, setImageUrl] = useState(storedReview.imageURL || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
-    const [image, setImage] = useState(storedReview.imageUrl || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
+    const [image_url, setImageUrl] = useState(storedReview.imageURL || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
+    const [image, setImage] = useState(null);
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
     const [imageLoading, setImageLoading] = useState(false);
@@ -52,8 +52,10 @@ const ReviewForm = ({ storedReview, formType}) => {
 
         console.log("image res", res)
         if (res.ok) {
-            await res.json();
+            const awaitedImageUrl = await res.json(); // URL from S3 bucket {url: "http:// etc..."}
+            setImageUrl(awaitedImageUrl.url)
             setImageLoading(false);
+
             // history.push("/images");
         }
         else {
@@ -65,7 +67,7 @@ const ReviewForm = ({ storedReview, formType}) => {
 
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
-        const newReview = { ...storedReview, first_name, last_name, review, image };
+        const newReview = { ...storedReview, first_name, last_name, review, image_url };
 
         if (formType === "Leave a review") {
             const awaitedReview = await dispatch(createReview(newReview))
