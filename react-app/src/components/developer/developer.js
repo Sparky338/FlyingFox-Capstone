@@ -2,7 +2,12 @@ const Developer = () => {
 
     return (
         <div className="developer-outer">
-            <h1>dev test</h1>
+            <div className="flying-fox-staff">Flying Fox Developer</div>
+            <div className="photo-info-container">
+                <div className="photo-container">
+                    <img src="" alt="Image of Developer, Matt Hutter" />
+                </div>
+            </div>
         </div>
     )
 }
