@@ -32,24 +32,12 @@ def create_review():
     form = CreateReview()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    # review_image = request.json['image_url']
-    print("create review backend route")
-
     if form.validate_on_submit():
-        print("inside form validate")
         review = Review()
         form.populate_obj(review)
 
         db.session.add(review)
         db.session.commit()
-
-
-        # for image in review_image:
-            # image = Image()
-            # image.review_id = review.id
-            # image.image_url =
-        # url_for('upload_image', review_id = review.id, image = review_image)
-
 
         return review.to_dict()
     else:
@@ -70,6 +58,7 @@ def edit_review(id):
         review = Review.query.filter_by(id=id).first()
         form.populate_obj(review)
         db.session.commit()
+        
         return review.to_dict()
     else:
         return {'errors': form.errors}, 400

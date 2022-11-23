@@ -13,7 +13,7 @@ const ReviewForm = ({ storedReview, formType }) => {
     const [first_name, setFirstName] = useState(storedReview.first_name || "");
     const [last_name, setLastName] = useState(storedReview.last_name || "");
     const [review, setReviewBody] = useState(storedReview.review || "");
-    const [imageUrl, setImageUrl] = useState(/*storedReview.imageURL ||*/ ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
+    const [image_url, setImageUrl] = useState(storedReview.image_url || ""); 
     const [image, setImage] = useState(null);
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -51,14 +51,10 @@ const ReviewForm = ({ storedReview, formType }) => {
             body: formData,
         });
 
-        console.log("image res", res)
         if (res.ok) {
             // URL from S3 bucket {url: "http:// etc..."}
             await res.json().then(async (awaitedImage) => {
-                // console.log(awaitedImage)
-                // setImageUrl(awaitedImage.url)
                 setImageLoading(false)
-                // console.log("image", imageUrl)
 
                 const image_url = awaitedImage.url
                 const newReview = { ...storedReview, first_name, last_name, review, image_url };
@@ -137,18 +133,19 @@ const ReviewForm = ({ storedReview, formType }) => {
                             placeholder="Write a review"
                         ></textarea>
                     </label>
-                    
-                    <label className="review-form-label">
-                        Image*
-                        <input
-                            className="review-form-review"
-                            type="file"
-                            accept='image/*'
-                            // value={imageUrl}
-                            onChange={e => setImage(e.target.files[0])}
-                            placeholder="Upload an image"
-                        />
-                    </label>
+                    {formType === "Edit Review" ?
+                        "" :
+                        <label className="review-form-label">
+                            Image*
+                            <input
+                                className="review-form-review"
+                                type="file"
+                                accept='image/*'
+                                onChange={e => setImage(e.target.files[0])}
+                                placeholder="Upload an image"
+                            />
+                        </label>
+                        }
                     <input type="submit" className='main-button review-submit-button' value="Post Review" />
                 </form>
             </div>

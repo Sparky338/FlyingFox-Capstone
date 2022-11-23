@@ -13,7 +13,7 @@ const CreateReviewForm = () => {
         first_name: currentUser.firstName,
         last_name: currentUser.lastName,
         review: '',
-        imageUrl: ''
+        image_url: ''
     };
 
     if (currentUser) {
