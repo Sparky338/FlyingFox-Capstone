@@ -6,14 +6,14 @@ import { createReview, editReview } from '../../store/reviews';
 
 import "./reviews.css";
 
-const ReviewForm = ({ storedReview, formType}) => {
+const ReviewForm = ({ storedReview, formType }) => {
     const history = useHistory();
     const dispatch = useDispatch();
 
     const [first_name, setFirstName] = useState(storedReview.first_name || "");
     const [last_name, setLastName] = useState(storedReview.last_name || "");
     const [review, setReviewBody] = useState(storedReview.review || "");
-    const [image_url, setImageUrl] = useState(storedReview.imageURL || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
+    const [imageUrl, setImageUrl] = useState(storedReview.imageURL || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
     const [image, setImage] = useState(null);
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -67,7 +67,7 @@ const ReviewForm = ({ storedReview, formType}) => {
 
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
-        const newReview = { ...storedReview, first_name, last_name, review, image_url };
+        const newReview = { ...storedReview, first_name, last_name, review, imageUrl };
 
         if (formType === "Leave a review") {
             const awaitedReview = await dispatch(createReview(newReview))
