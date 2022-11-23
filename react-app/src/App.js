@@ -17,6 +17,7 @@ import CreateReviewForm from './components/reviews/createReviewForm';
 import EditReviewForm from './components/reviews/editReviewForm';
 import EditShippingInfo from './components/cart/editShippingInfo';
 import { getAllImages } from './store/images';
+import Developer from './components/developer/developer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -69,6 +70,9 @@ function App() {
         <ProtectedRoute path='/orders'>
           <Orders />
         </ProtectedRoute>
+        <Route path='/developer'>
+          <Developer />
+        </Route>
         {/* <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
