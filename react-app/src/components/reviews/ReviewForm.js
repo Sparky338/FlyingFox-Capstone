@@ -53,11 +53,12 @@ const ReviewForm = ({ storedReview, formType }) => {
 
         console.log("image res", res)
         if (res.ok) {
-            const awaitedImageUrl = await res.json(); // URL from S3 bucket {url: "http:// etc..."}
-            await setImageUrl(awaitedImageUrl.url)
+            const awaitedImageUrl = await res.json().then() // URL from S3 bucket {url: "http:// etc..."}
 
-            await setImageLoading(false);
-
+            setImageUrl(awaitedImageUrl.url)
+            setImageLoading(false);
+// console.log(imageUrl)
+            // const awaitedUrl = awaitedImageUrl.url
             const newReview = { ...storedReview, first_name, last_name, review, imageUrl };
 
             if (formType === "Leave a review" && imageLoading === false) {
