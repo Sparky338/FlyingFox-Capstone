@@ -76,6 +76,7 @@ const ReviewForm = ({ storedReview, formType }) => {
             setImageLoading(false);
             // a real app would probably use more advanced
             // error handling
+            window.alert("An image is required for a review")
             console.log("error");
         }
 
@@ -129,7 +130,7 @@ const ReviewForm = ({ storedReview, formType }) => {
                         ></textarea>
                     </label>
                     <label className="review-form-label">
-                        Image
+                        Image*
                         <input
                             className="review-form-review"
                             type="file"
