@@ -39,6 +39,7 @@ const ReviewForm = ({ storedReview, formType }) => {
         e.preventDefault();
         setImageLoading(true);
         setHasSubmitted(true);
+        if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
         const formData = new FormData();
         formData.append("image", image)
@@ -53,13 +54,22 @@ const ReviewForm = ({ storedReview, formType }) => {
         console.log("image res", res)
         if (res.ok) {
             const awaitedImageUrl = await res.json(); // URL from S3 bucket {url: "http:// etc..."}
-            console.log(awaitedImageUrl)
-            console.log(awaitedImageUrl.url)
+            await setImageUrl(awaitedImageUrl.url)
 
-            setImageUrl(awaitedImageUrl.url)
-            setImageLoading(false);
+            await setImageLoading(false);
 
-            // history.push("/images");
+            const newReview = { ...storedReview, first_name, last_name, review, imageUrl };
+
+            if (formType === "Leave a review" && imageLoading === false) {
+                const awaitedReview = await dispatch(createReview(newReview))
+                console.log("awaited review", awaitedReview)
+                history.push(`/items/${awaitedReview.item_id}`)
+                if (awaitedReview) alert("Your review was successfully posted!")
+            } else if (formType === "Edit Review" && imageLoading === false) {
+                const awaitedReview = await dispatch(editReview(storedReview.id, newReview))
+                history.push(`/items/${awaitedReview.item_id}`)
+                if (awaitedReview) alert("Your review was successfully edited!")
+            }
         }
         else {
             setImageLoading(false);
@@ -68,20 +78,7 @@ const ReviewForm = ({ storedReview, formType }) => {
             console.log("error");
         }
 
-        if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
-        const newReview = { ...storedReview, first_name, last_name, review, imageUrl };
-
-        if (formType === "Leave a review" && !imageLoading) {
-            const awaitedReview = await dispatch(createReview(newReview))
-            console.log("awaited review", awaitedReview)
-            history.push(`/items/${awaitedReview.item_id}`)
-            if (awaitedReview) alert("Your review was successfully posted!")
-        } else if (formType === "Edit Review" && !imageLoading) {
-            const awaitedReview = await dispatch(editReview(storedReview.id, newReview))
-            history.push(`/items/${awaitedReview.item_id}`)
-            if (awaitedReview) alert("Your review was successfully edited!")
-        }
     };
 
     return (
