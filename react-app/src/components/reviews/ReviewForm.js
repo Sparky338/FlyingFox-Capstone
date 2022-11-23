@@ -37,13 +37,13 @@ const ReviewForm = ({ storedReview, formType }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setHasSubmitted(true)
+        setImageLoading(true);
+        setHasSubmitted(true);
 
         const formData = new FormData();
         formData.append("image", image)
         // aws uploads can be a bit slow—displaying
         // some sort of loading message is a good idea
-        setImageLoading(true);
 
         const res = await fetch('/api/images', {
             method: "POST",
@@ -53,6 +53,9 @@ const ReviewForm = ({ storedReview, formType }) => {
         console.log("image res", res)
         if (res.ok) {
             const awaitedImageUrl = await res.json(); // URL from S3 bucket {url: "http:// etc..."}
+            console.log(awaitedImageUrl)
+            console.log(awaitedImageUrl.url)
+
             setImageUrl(awaitedImageUrl.url)
             setImageLoading(false);
 
@@ -69,12 +72,12 @@ const ReviewForm = ({ storedReview, formType }) => {
 
         const newReview = { ...storedReview, first_name, last_name, review, imageUrl };
 
-        if (formType === "Leave a review") {
+        if (formType === "Leave a review" && !imageLoading) {
             const awaitedReview = await dispatch(createReview(newReview))
             console.log("awaited review", awaitedReview)
             history.push(`/items/${awaitedReview.item_id}`)
             if (awaitedReview) alert("Your review was successfully posted!")
-        } else if (formType === "Edit Review") {
+        } else if (formType === "Edit Review" && !imageLoading) {
             const awaitedReview = await dispatch(editReview(storedReview.id, newReview))
             history.push(`/items/${awaitedReview.item_id}`)
             if (awaitedReview) alert("Your review was successfully edited!")
