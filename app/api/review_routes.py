@@ -33,8 +33,10 @@ def create_review():
     form['csrf_token'].data = request.cookies['csrf_token']
 
     # review_image = request.json['image_url']
+    print("create review backend route")
 
     if form.validate_on_submit():
+        print("inside form validate")
         review = Review()
         form.populate_obj(review)
 
