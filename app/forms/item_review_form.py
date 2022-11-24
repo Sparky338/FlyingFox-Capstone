@@ -10,11 +10,10 @@ class CreateReview(FlaskForm):
     first_name = StringField('first name', validators=[DataRequired()])
     last_name = StringField('last name', validators=[DataRequired()])
     review = StringField('review', validators=[DataRequired()])
-    image_url = StringField('image_url')
+    image_url = StringField('image_url', validators=[DataRequired()])
 
 
 class EditReview(FlaskForm):
     first_name = StringField('first name', validators=[DataRequired()])
     last_name = StringField('last name', validators=[DataRequired()])
     review = StringField('review', validators=[DataRequired()])
-    image_url = StringField('image_url')

@@ -6,16 +6,18 @@ import { createReview, editReview } from '../../store/reviews';
 
 import "./reviews.css";
 
-const ReviewForm = ({ storedReview, formType}) => {
+const ReviewForm = ({ storedReview, formType }) => {
     const history = useHistory();
     const dispatch = useDispatch();
 
     const [first_name, setFirstName] = useState(storedReview.first_name || "");
     const [last_name, setLastName] = useState(storedReview.last_name || "");
     const [review, setReviewBody] = useState(storedReview.review || "");
-    const [image_url, setImageUrl] = useState(storedReview.imageURL || ""); // REMOVE URL AFTER REVIEW.IMAGE TO GRAB THE CORRECT INFO
+    // const [image_url, setImageUrl] = useState(storedReview.image_url || "");
+    const [image, setImage] = useState(null);
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
+    const [imageLoading, setImageLoading] = useState(false);
 
     useEffect(() => {
         const errors = [];
@@ -27,31 +29,55 @@ const ReviewForm = ({ storedReview, formType}) => {
         if (!review) errors.push("Review is required");
         if (review.length < 10) errors.push("Review must be at least 10 characters");
         if (review.length > 1000) errors.push("Review must be less than 1,000 characters");
-        if (image_url && !image_url.endsWith('.jpg') && !image_url.endsWith('.jpeg') && !image_url.endsWith('.png')) {
-            errors.push("Image file must be a jpg, jpeg, or png");
-        }
+        // if (imageUrl && !imageUrl.endsWith('.jpg') && !imageUrl.endsWith('.jpeg') && !imageUrl.endsWith('.png')) {
+        //     errors.push("Image file must be a jpg, jpeg, or png");
+        // }
         setValidationErrors(errors);
-    }, [first_name, last_name, review, image_url])
+    }, [first_name, last_name, review])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setHasSubmitted(true)
-
+        setHasSubmitted(true);
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
-        const newReview = { ...storedReview, first_name, last_name, review, image_url };
-
         if (formType === "Leave a review") {
-            const awaitedReview = await dispatch(createReview(newReview))
-            history.push(`/items/${awaitedReview.item_id}`)
-            if (awaitedReview) alert("Your review was successfully posted!")
+            setImageLoading(true);
+
+            const formData = new FormData();
+            formData.append("image", image)
+
+            const res = await fetch('/api/images', {
+                method: "POST",
+                body: formData,
+            });
+
+            if (res.ok) {
+                // URL from S3 bucket {url: "http:// etc..."}
+                await res.json().then(async (awaitedImage) => {
+                    setImageLoading(false)
+
+                    const image_url = awaitedImage.url
+                    const newReview = { ...storedReview, first_name, last_name, review, image_url };
+
+                    if (formType === "Leave a review" && imageLoading === false) {
+                        const awaitedReview = await dispatch(createReview(newReview))
+                        history.push(`/items/${awaitedReview.item_id}`)
+                        if (awaitedReview) alert("Your review was successfully posted!")
+                    }
+                })
+            }
+            else {
+                setImageLoading(false);
+                window.alert("An image is required for a review. Please select a photo of your awesome item!")
+            }
         } else if (formType === "Edit Review") {
+            const newReview = { ...storedReview, first_name, last_name, review };
+
             const awaitedReview = await dispatch(editReview(storedReview.id, newReview))
             history.push(`/items/${awaitedReview.item_id}`)
             if (awaitedReview) alert("Your review was successfully edited!")
         }
 
-        // dispatch(clearReviewAction())
     };
 
     return (
@@ -100,16 +126,19 @@ const ReviewForm = ({ storedReview, formType}) => {
                             placeholder="Write a review"
                         ></textarea>
                     </label>
-                    <label className="review-form-label">
-                        Image URL
-                        <input
-                            className="review-form-review"
-                            type="text"
-                            value={image_url}
-                            onChange={e => setImageUrl(e.target.value)}
-                            placeholder="Input an image URL "
-                        />
-                    </label>
+                    {formType === "Edit Review" ?
+                        "" :
+                        <label className="review-form-label">
+                            Image*
+                            <input
+                                className="review-form-review"
+                                type="file"
+                                accept='image/*'
+                                onChange={e => setImage(e.target.files[0])}
+                                placeholder="Upload an image"
+                            />
+                        </label>
+                    }
                     <input type="submit" className='main-button review-submit-button' value="Post Review" />
                 </form>
             </div>
