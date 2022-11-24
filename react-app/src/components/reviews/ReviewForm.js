@@ -131,11 +131,10 @@ const ReviewForm = ({ storedReview, formType }) => {
                         <label className="review-form-label">
                             Image*
                             <input
-                                className="review-form-review"
+                                className="review-form-image-add"
                                 type="file"
                                 accept='image/*'
                                 onChange={e => setImage(e.target.files[0])}
-                                placeholder="Upload an image"
                             />
                         </label>
                     }
