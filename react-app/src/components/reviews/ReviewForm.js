@@ -13,7 +13,7 @@ const ReviewForm = ({ storedReview, formType }) => {
     const [first_name, setFirstName] = useState(storedReview.first_name || "");
     const [last_name, setLastName] = useState(storedReview.last_name || "");
     const [review, setReviewBody] = useState(storedReview.review || "");
-    const [image_url, setImageUrl] = useState(storedReview.image_url || "");
+    // const [image_url, setImageUrl] = useState(storedReview.image_url || "");
     const [image, setImage] = useState(null);
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -33,21 +33,18 @@ const ReviewForm = ({ storedReview, formType }) => {
         //     errors.push("Image file must be a jpg, jpeg, or png");
         // }
         setValidationErrors(errors);
-    }, [first_name, last_name, review/*, imageUrl*/])
+    }, [first_name, last_name, review])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setImageLoading(true);
         setHasSubmitted(true);
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
         if (formType === "Leave a review") {
-
+            setImageLoading(true);
 
             const formData = new FormData();
             formData.append("image", image)
-            // aws uploads can be a bit slow—displaying
-            // some sort of loading message is a good idea
 
             const res = await fetch('/api/images', {
                 method: "POST",
@@ -72,14 +69,11 @@ const ReviewForm = ({ storedReview, formType }) => {
             }
             else {
                 setImageLoading(false);
-                // a real app would probably use more advanced
-                // error handling
-                window.alert("An image is required for a review")
-                console.log("error");
+                window.alert("An image is required for a review. Please select a photo of your awesome item!")
             }
         } else if (formType === "Edit Review") {
             const newReview = { ...storedReview, first_name, last_name, review };
-            
+
             const awaitedReview = await dispatch(editReview(storedReview.id, newReview))
             history.push(`/items/${awaitedReview.item_id}`)
             if (awaitedReview) alert("Your review was successfully edited!")
