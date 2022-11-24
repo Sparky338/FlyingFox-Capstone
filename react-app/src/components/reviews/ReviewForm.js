@@ -13,7 +13,7 @@ const ReviewForm = ({ storedReview, formType }) => {
     const [first_name, setFirstName] = useState(storedReview.first_name || "");
     const [last_name, setLastName] = useState(storedReview.last_name || "");
     const [review, setReviewBody] = useState(storedReview.review || "");
-    const [image_url, setImageUrl] = useState(storedReview.image_url || ""); 
+    const [image_url, setImageUrl] = useState(storedReview.image_url || "");
     const [image, setImage] = useState(null);
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -41,49 +41,49 @@ const ReviewForm = ({ storedReview, formType }) => {
         setHasSubmitted(true);
         if (validationErrors.length) return alert(`Can't submit, please correct the errors.`)
 
-        const formData = new FormData();
-        formData.append("image", image)
-        // aws uploads can be a bit slow—displaying
-        // some sort of loading message is a good idea
+        if (formType === "Leave a review") {
 
-        const res = await fetch('/api/images', {
-            method: "POST",
-            body: formData,
-        });
 
-        if (res.ok) {
-            // URL from S3 bucket {url: "http:// etc..."}
-            await res.json().then(async (awaitedImage) => {
-                setImageLoading(false)
+            const formData = new FormData();
+            formData.append("image", image)
+            // aws uploads can be a bit slow—displaying
+            // some sort of loading message is a good idea
 
-                const image_url = awaitedImage.url
-                const newReview = { ...storedReview, first_name, last_name, review, image_url };
+            const res = await fetch('/api/images', {
+                method: "POST",
+                body: formData,
+            });
 
-                if (formType === "Leave a review" && imageLoading === false) {
-                    const awaitedReview = await dispatch(createReview(newReview))
-                    console.log("awaited review", awaitedReview)
-                    history.push(`/items/${awaitedReview.item_id}`)
-                    if (awaitedReview) alert("Your review was successfully posted!")
-                } else if (formType === "Edit Review" && imageLoading === false) {
-                    const awaitedReview = await dispatch(editReview(storedReview.id, newReview))
-                    history.push(`/items/${awaitedReview.item_id}`)
-                    if (awaitedReview) alert("Your review was successfully edited!")
-                }
-            })
+            if (res.ok) {
+                // URL from S3 bucket {url: "http:// etc..."}
+                await res.json().then(async (awaitedImage) => {
+                    setImageLoading(false)
 
-            // setImageUrl(awaitedImageUrl.url)
-            // setImageLoading(false);
-// console.log(imageUrl)
-            // const awaitedUrl = awaitedImageUrl.url
+                    const image_url = awaitedImage.url
+                    const newReview = { ...storedReview, first_name, last_name, review, image_url };
+
+                    if (formType === "Leave a review" && imageLoading === false) {
+                        const awaitedReview = await dispatch(createReview(newReview))
+                        console.log("awaited review", awaitedReview)
+                        history.push(`/items/${awaitedReview.item_id}`)
+                        if (awaitedReview) alert("Your review was successfully posted!")
+                    }
+                })
+            }
+            else {
+                setImageLoading(false);
+                // a real app would probably use more advanced
+                // error handling
+                window.alert("An image is required for a review")
+                console.log("error");
+            }
+        } else if (formType === "Edit Review") {
+            const newReview = { ...storedReview, first_name, last_name, review };
+            
+            const awaitedReview = await dispatch(editReview(storedReview.id, newReview))
+            history.push(`/items/${awaitedReview.item_id}`)
+            if (awaitedReview) alert("Your review was successfully edited!")
         }
-        else {
-            setImageLoading(false);
-            // a real app would probably use more advanced
-            // error handling
-            window.alert("An image is required for a review")
-            console.log("error");
-        }
-
 
     };
 
@@ -145,7 +145,7 @@ const ReviewForm = ({ storedReview, formType }) => {
                                 placeholder="Upload an image"
                             />
                         </label>
-                        }
+                    }
                     <input type="submit" className='main-button review-submit-button' value="Post Review" />
                 </form>
             </div>
