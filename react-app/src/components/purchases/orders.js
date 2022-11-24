@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { deletePurchase, getAllPurchases } from "../../store/purchases";
 import { clearPurchaseItemsAction } from "../../store/purchasesItems";
 import "./orders.css"
-import { getAllReviews } from "../../store/reviews";
+import { clearReviewAction, getAllReviews } from "../../store/reviews";
 
 const Orders = () => {
     const dispatch = useDispatch();
@@ -23,6 +23,7 @@ const Orders = () => {
         if (res) {
             await dispatch(deletePurchase(purchaseId))
             await dispatch(clearPurchaseItemsAction())
+            await dispatch(clearReviewAction())
             history.push("/orders")
         }
     }
