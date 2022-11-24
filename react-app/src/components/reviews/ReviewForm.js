@@ -61,7 +61,6 @@ const ReviewForm = ({ storedReview, formType }) => {
 
                     if (formType === "Leave a review" && imageLoading === false) {
                         const awaitedReview = await dispatch(createReview(newReview))
-                        console.log("awaited review", awaitedReview)
                         history.push(`/items/${awaitedReview.item_id}`)
                         if (awaitedReview) alert("Your review was successfully posted!")
                     }

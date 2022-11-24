@@ -52,7 +52,6 @@ export const getAllImages = () => async dispatch => {
 };
 
 export const createImage = (imageData) => async dispatch => {
-    // if (!imageData.imageUrl) imageData.imageUrl = ""
 
     const res = await fetch(`/api/images`, {
         method: 'POST',
