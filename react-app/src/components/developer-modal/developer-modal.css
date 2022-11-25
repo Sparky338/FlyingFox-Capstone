@@ -52,3 +52,18 @@
     font-weight: 600;
     margin-bottom: 5px;
 }
+
+.developer-modal-link {
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    color: #06a7e2;
+    background-color: transparent;
+}
+
+.developer-modal-link:hover {
+    color: white;
+}

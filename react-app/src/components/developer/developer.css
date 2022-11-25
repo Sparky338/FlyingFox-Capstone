@@ -37,3 +37,7 @@
     color: #06a7e2;
     margin-bottom: 5px;
 }
+
+.dev-link:hover {
+    color: white;
+}

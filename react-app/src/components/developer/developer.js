@@ -11,7 +11,7 @@ const Developer = () => {
                     <img src="" alt="Image of Developer, Matt Hutter" />
                 </div>
                 <div className="dev-name-links">
-                    <div className="dev-name">Matt Hutter</div>
+                    {/* <div className="dev-name">Matt Hutter</div> */}
                     <DeveloperModal />
                     <div className="dev-links">
                         <a className="dev-link" href="https://github.com/Sparky338"> GitHub </a>
