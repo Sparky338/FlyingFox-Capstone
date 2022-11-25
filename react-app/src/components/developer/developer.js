@@ -15,6 +15,7 @@ const Developer = () => {
                     <div className="dev-links">
                         <a className="dev-link" target="_blank" href="https://github.com/Sparky338"> GitHub </a>
                         <a className="dev-link" target="_blank" href="https://www.linkedin.com/in/matthew-hutter-2a6620173"> LinkedIn </a>
+                        <a className="dev-link" target="_blank" href="https://github.com/Sparky338/FlyingFox-Capstone"> Flying Fox Repo </a>
                     </div>
                 </div>
             </div>
