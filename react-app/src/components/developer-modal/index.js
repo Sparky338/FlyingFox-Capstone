@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal } from './modal';
-// import SignupForm from './SignupForm';
-// import './SignupForm.css';
+import DeveloperAbout from './developer-about';
+import './developer-modal.css'
 
 function DeveloperModal() {
   const [showModal, setShowModal] = useState(false);
@@ -11,7 +11,7 @@ function DeveloperModal() {
       <button className='developer-modal-link' onClick={() => setShowModal(true)}>Matt Hutter</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          {/* <SignupForm /> */}
+          <DeveloperAbout />
         </Modal>
       )}
     </div>

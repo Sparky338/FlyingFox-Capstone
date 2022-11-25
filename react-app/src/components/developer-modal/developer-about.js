@@ -21,3 +21,5 @@ const DeveloperAbout = () => {
         </div>
     )
 }
+
+export default DeveloperAbout
