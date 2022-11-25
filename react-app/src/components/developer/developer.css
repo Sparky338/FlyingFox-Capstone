@@ -30,6 +30,7 @@
     text-decoration: none;
     color: #06a7e2;
     margin-bottom: 5px;
+    width: fit-content;
 }
 
 .dev-link:hover {
