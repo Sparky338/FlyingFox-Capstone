@@ -18,7 +18,7 @@ const DeveloperAbout = () => {
                     Matt learned to skydive in 2021 and has loved every second of it.
                     He plans on piloting a wingsuit as soon as he gets the minimum required
                     200 jumps, under coaching from some of the best wingsuit pilots in the
-                    Pacific NorthWest.
+                    Pacific NorthWest at Skydive Kapowsin.
                 </div>
             </div>
         </div>
