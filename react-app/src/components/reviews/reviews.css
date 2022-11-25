@@ -59,6 +59,14 @@
     height: 300px
 }
 
+.review-form-image-add {
+    height: 40px;
+    border-radius: 6px;
+    margin-top: 5px;
+    width: 400px;
+    font-size: 22px;
+}
+
 .delete-review-button,
 .review-submit-button {
     height: 50px;

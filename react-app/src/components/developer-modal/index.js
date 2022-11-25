@@ -1,0 +1,21 @@
+import React, { useState } from 'react';
+import { Modal } from './modal';
+import DeveloperAbout from './developer-about';
+import './developer-modal.css'
+
+function DeveloperModal() {
+  const [showModal, setShowModal] = useState(false);
+
+  return (
+    <div className='developer-modal-container'>
+      <button className='developer-modal-link' onClick={() => setShowModal(true)}>Matt Hutter</button>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <DeveloperAbout />
+        </Modal>
+      )}
+    </div>
+  );
+}
+
+export default DeveloperModal;

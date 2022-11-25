@@ -1,0 +1,38 @@
+.developer-outer {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flying-fox-developer {
+    width: 100%;
+    display: flex;
+    align-items:flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 34px;
+}
+
+.photo-container{
+    border: solid 1px #06a7e2;
+    width: 262.5px;
+    height: 262.5px;
+}
+
+.dev-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.dev-link {
+    font-size: 20px;
+    text-decoration: none;
+    color: #06a7e2;
+    margin-bottom: 5px;
+    width: fit-content;
+}
+
+.dev-link:hover {
+    color: white;
+}
