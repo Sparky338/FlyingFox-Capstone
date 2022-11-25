@@ -1,3 +1,4 @@
+import DeveloperModal from "../developer-modal";
 import "./developer.css"
 
 const Developer = () => {
@@ -11,6 +12,7 @@ const Developer = () => {
                 </div>
                 <div className="dev-name-links">
                     <div className="dev-name">Matt Hutter</div>
+                    <DeveloperModal />
                     <div className="dev-links">
                         <a className="dev-link" href="https://github.com/Sparky338"> GitHub </a>
                         <a className="dev-link" href="https://www.linkedin.com/in/matthew-hutter-2a6620173"> LinkedIn </a>
