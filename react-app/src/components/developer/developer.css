@@ -19,16 +19,9 @@
     height: 262.5px;
 }
 
-.dev-name {
-    font-size: 26px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
 .dev-links{
     display: flex;
     flex-direction: column;
-
 }
 
 .dev-link {
