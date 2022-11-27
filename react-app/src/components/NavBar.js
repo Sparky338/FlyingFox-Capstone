@@ -97,7 +97,7 @@ const NavBar = () => {
                     )
                   })}
                 </div>
-                <div className='meet-the-dev title'>Flying Fox Dev</div>
+                <Link to='/developer' className='meet-the-dev title'>Flying Fox Dev</Link>
               </div>
             </div>
             <Link className='dev' to='/developer'>Developer</Link>

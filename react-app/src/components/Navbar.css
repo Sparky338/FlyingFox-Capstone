@@ -62,6 +62,7 @@
     width: 100%;
     background-color: black;
     z-index: 1;
+    height:max-content
 }
 
 .login-link:hover,
@@ -78,6 +79,14 @@
     text-decoration: none;
     color: white;
     display: flex;
+}
+
+.meet-the-dev {
+    text-decoration: none;
+}
+
+.meet-the-dev:hover {
+    color: #428BCA;
 }
 
 .session-links-user,
