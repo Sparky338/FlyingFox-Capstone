@@ -1,20 +1,31 @@
 import "./home.css"
 import ImageGallery from 'react-image-gallery';
+import homepageBannerImages from "../../images/homepageBannerImages";
 
 const HomePage = () => {
+
+    const homeImagesCarousel = () => {
+        let images = homepageBannerImages.map(image => {
+            return {
+                original: image,
+                thumbnail: image
+            }
+        });
+        return images
+    }
 
     return (
         <div className="Home-outer">
             <div className="components-outer">
                 <div className="display-carousel">
-                    {/* <ImageGallery
-                        items=arrayofImages
+                    <ImageGallery
+                        items={homeImagesCarousel()}
                         showPlayButton={false}
                         showFullscreenButton={false}
                         showThumbnails={false}
                         autoPlay={true}
                         slideInterval={5000}
-                        /> */}
+                        />
                 </div>
                 <div className="main-components">
                     <div className="separator"></div>

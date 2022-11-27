@@ -332,41 +332,6 @@ def seed_images():
         image_url="https://squirrel.ws/img/suits/gallery/epicene-pro/gallery/12-EpicenePro-580x620.jpg"
     )
 
-    Frontpage = Image(
-        item_id = "100",
-        image_url = "https://squirrel.ws/img/home-slider/CORVID2_BG.jpg"
-    )
-
-    Frontpage2 = Image(
-        item_id = "100",
-        image_url = "https://squirrel.ws/img/home-slider/atc3-bg.jpg"
-    )
-
-    Frontpage3 = Image(
-        item_id = "100",
-        image_url = "https://squirrel.ws/img/home-slider/freak4-bg.jpg"
-    )
-
-    Frontpage4 = Image(
-        item_id = "100",
-        image_url = "https://squirrel.ws/img/home-slider/DynamicFormations-BG.jpg"
-    )
-
-    Frontpage5 = Image(
-        item_id = "100",
-        image_url = "https://squirrel.ws/img/home-slider/CRUX-HAYDUKE_BG-v2.jpg"
-    )
-
-    Frontpage6 = Image(
-        item_id = "100",
-        image_url = "https://squirrel.ws/img/home-slider/atc3-bg.jpg"
-    )
-
-    Frontpage7 = Image(
-        item_id = "100",
-        image_url = "https://squirrel.ws/img/home-slider/sqrl-film.jpg"
-    )
-
     db.session.add(Dash)
     db.session.add(Dash2)
     db.session.add(Dash3)
@@ -433,13 +398,6 @@ def seed_images():
     db.session.add(Epicenter4)
     db.session.add(Epicenter5)
     db.session.add(Epicenter6)
-    db.session.add(Frontpage)
-    db.session.add(Frontpage2)
-    db.session.add(Frontpage3)
-    db.session.add(Frontpage4)
-    db.session.add(Frontpage5)
-    db.session.add(Frontpage6)
-    db.session.add(Frontpage7)
 
     db.session.commit()
 
