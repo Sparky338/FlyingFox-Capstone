@@ -79,12 +79,14 @@
     text-decoration: none;
     color: white;
     display: flex;
+    width: fit-content;
 }
 
 .meet-the-dev {
     text-decoration: none;
 }
 
+.navbar-item-links:hover,
 .meet-the-dev:hover {
     color: #428BCA;
 }
