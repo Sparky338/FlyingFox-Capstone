@@ -1,5 +1,6 @@
 import DeveloperModal from "../developer-modal";
 import "./developer.css"
+import developerPhoto from "../../images/Developer_Matt_Hutter.jpg"
 
 const Developer = () => {
 
@@ -8,7 +9,7 @@ const Developer = () => {
             <div className="flying-fox-developer">Flying Fox Developer</div>
             <div className="photo-info-container">
                 <div className="photo-container">
-                    <img src="" alt="Developer, Matt Hutter" />
+                    <img src={developerPhoto} alt="Developer, Matt Hutter" />
                 </div>
                 <div className="dev-name-links">
                     <DeveloperModal />
