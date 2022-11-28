@@ -73,6 +73,7 @@
 
 .dropdown-suits-parachutes:hover .suits-parachutes-content {
     display: block;
+    z-index: 1000;
 }
 
 .navbar-item-links {
