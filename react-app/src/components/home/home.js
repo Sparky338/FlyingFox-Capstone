@@ -19,13 +19,14 @@ const HomePage = () => {
             <div className="components-outer">
                 <div className="display-carousel">
                     <ImageGallery
+                        additionalClass="home-image-gallery"
                         items={homeImagesCarousel()}
                         showPlayButton={false}
                         showFullscreenButton={false}
                         showThumbnails={false}
                         autoPlay={true}
                         slideInterval={5000}
-                        />
+                    />
                 </div>
                 <div className="main-components">
                     <div className="separator"></div>

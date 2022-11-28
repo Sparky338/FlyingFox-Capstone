@@ -10,20 +10,14 @@
 }
 
 .display-carousel {
-    /* border: 1px solid blue; */
     width: 100%;
     height: 465px;
 }
 
 
-/* .display-carousel:first-child {
+.home-image-gallery {
     width: 100%;
-    border: solid 1px;
-} */
-/* .homeImageGallery {
-    width: 100%;
-    border: solid 1px;
-} */
+}
 
 .main-components {
     /* border: 1px solid pink; */

@@ -72,6 +72,7 @@ const ItemById = () => {
                         <div className="item-outer">
                             <div className="item-display-carousel">
                                 <ImageGallery
+                                    additionalClass="item-image-gallery"
                                     items={imagesCarousel(item)}
                                     showPlayButton={false}
                                     showFullscreenButton={false}
