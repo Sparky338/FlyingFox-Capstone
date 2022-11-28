@@ -96,9 +96,6 @@
     height: 1px;
     position: relative;
     top: 15px;
-    /* position: absolute; */
-    /* left: 10%;
-    top: 845px; */
     z-index: -1;
 }
 

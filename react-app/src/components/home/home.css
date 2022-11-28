@@ -1,12 +1,9 @@
 .Home-outer {
     display: flex;
-    justify-content: center;
-    width: 80%;
-    border: 1px solid red;
-}
-
-.components-outer {
+    flex-direction: column;
+    align-items: center;
     width: 100%;
+    border: 1px solid red;
 }
 
 .display-carousel {
@@ -14,19 +11,41 @@
     height: 465px;
 }
 
-
 .home-image-gallery {
     width: 100%;
 }
 
+.components-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
 .main-components {
-    /* border: 1px solid pink; */
+    /* border: 1px solid red; */
     height: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .separator {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
     border-bottom: solid 2px #06a7e2;
+    margin-bottom: 40px; */
+    width: 300px;
     margin-bottom: 40px;
+    margin-top: 10px;
+    background-color: #06a7e2;
+    height: 1px;
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
 }
 
 .news-and-ads{

@@ -16,7 +16,6 @@ const HomePage = () => {
 
     return (
         <div className="Home-outer">
-            <div className="components-outer">
                 <div className="display-carousel">
                     <ImageGallery
                         additionalClass="home-image-gallery"
@@ -28,6 +27,7 @@ const HomePage = () => {
                         slideInterval={5000}
                     />
                 </div>
+            <div className="components-outer">
                 <div className="main-components">
                     <div className="separator"></div>
                     <div className="news-and-ads">
