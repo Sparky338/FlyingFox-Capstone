@@ -29,7 +29,7 @@
     margin-right: 10px;
 }
 
-.image-gallery {
+.item-image-gallery {
     max-width: 580px;
 }
 
@@ -96,9 +96,6 @@
     height: 1px;
     position: relative;
     top: 15px;
-    /* position: absolute; */
-    /* left: 10%;
-    top: 845px; */
     z-index: -1;
 }
 

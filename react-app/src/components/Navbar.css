@@ -62,6 +62,7 @@
     width: 100%;
     background-color: black;
     z-index: 1;
+    height:max-content
 }
 
 .login-link:hover,
@@ -72,12 +73,23 @@
 
 .dropdown-suits-parachutes:hover .suits-parachutes-content {
     display: block;
+    z-index: 1000;
 }
 
 .navbar-item-links {
     text-decoration: none;
     color: white;
     display: flex;
+    width: fit-content;
+}
+
+.meet-the-dev {
+    text-decoration: none;
+}
+
+.navbar-item-links:hover,
+.meet-the-dev:hover {
+    color: #428BCA;
 }
 
 .session-links-user,

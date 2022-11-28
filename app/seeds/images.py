@@ -332,11 +332,6 @@ def seed_images():
         image_url="https://squirrel.ws/img/suits/gallery/epicene-pro/gallery/12-EpicenePro-580x620.jpg"
     )
 
-    # Dash_review = Image(
-    #     review_id ="1",
-    #     image_url="https://www.rockskymarket.com/9498-thickbox_default/squirrel-sprint-wingsuit-jumpsuits.jpg"
-    # )
-
     db.session.add(Dash)
     db.session.add(Dash2)
     db.session.add(Dash3)
@@ -403,7 +398,6 @@ def seed_images():
     db.session.add(Epicenter4)
     db.session.add(Epicenter5)
     db.session.add(Epicenter6)
-    # db.session.add(Dash_review)
 
     db.session.commit()
 
