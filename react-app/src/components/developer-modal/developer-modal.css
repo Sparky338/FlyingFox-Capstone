@@ -36,8 +36,12 @@
 .modal-image-container {
     height: 200px;
     width: 200px;
-    border:solid red 1px;
     margin: 10px;
+}
+
+.modal-developer-photo {
+    height: 200px;
+    width: 200px;
 }
 
 .modal-dev-name {
