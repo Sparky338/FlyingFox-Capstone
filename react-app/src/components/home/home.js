@@ -41,7 +41,7 @@ const HomePage = () => {
                             <div className="news-articles"></div>
                         </div>
                         <div className="ads-container-right">
-                            <div className="ads-heading">Featured products</div>
+                            <div className="ads-heading title">FEATURED PRODUCTS</div>
                             <div className="ads-for-items">
                                 <div className="ad-container">
                                     <Link to="/items/12" className="ad-item-link">
