@@ -30,21 +30,18 @@
     flex-direction: column;
 }
 
-.separator {
-    /* display: flex;
+.separator-container {
+    width: 100%;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    border-bottom: solid 2px #06a7e2;
-    margin-bottom: 40px; */
+}
+
+.separator {
     width: 300px;
     margin-bottom: 40px;
     margin-top: 10px;
     background-color: #06a7e2;
     height: 1px;
-    /* position: relative; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: -1;
 }
 

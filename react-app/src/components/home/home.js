@@ -16,20 +16,22 @@ const HomePage = () => {
 
     return (
         <div className="Home-outer">
-                <div className="display-carousel">
-                    <ImageGallery
-                        additionalClass="home-image-gallery"
-                        items={homeImagesCarousel()}
-                        showPlayButton={false}
-                        showFullscreenButton={false}
-                        showThumbnails={false}
-                        autoPlay={true}
-                        slideInterval={5000}
-                    />
-                </div>
+            <div className="display-carousel">
+                <ImageGallery
+                    additionalClass="home-image-gallery"
+                    items={homeImagesCarousel()}
+                    showPlayButton={false}
+                    showFullscreenButton={false}
+                    showThumbnails={false}
+                    autoPlay={true}
+                    slideInterval={5000}
+                />
+            </div>
             <div className="components-outer">
                 <div className="main-components">
-                    <div className="separator"></div>
+                    <div className="separator-container">
+                        <div className="separator"></div>
+                    </div>
                     <div className="news-and-ads">
                         <div className="news-container-left">
                             <div className="news-heading title">NEWS</div>
