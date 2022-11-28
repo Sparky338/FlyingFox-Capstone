@@ -63,6 +63,10 @@
     height: 940px;
 }
 
+.ad-item-link {
+    text-decoration: none;
+}
+
 .ad-container,
 .ad-image {
     height: 222px;
@@ -70,7 +74,6 @@
 }
 
 .ad-item-name {
-    text-decoration: none;
     color: #06a7e2;
     font-size: 26px;
 }

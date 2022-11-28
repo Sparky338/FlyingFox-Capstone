@@ -44,7 +44,7 @@ const HomePage = () => {
                             <div className="ads-heading">Featured products</div>
                             <div className="ads-for-items">
                                 <div className="ad-container">
-                                    <Link to="/items/3">
+                                    <Link to="/items/3" className="ad-item-link">
                                         <img src={items[3]?.images[3].image_url} className="ad-image" />
                                         <div className="ad-item-name">{items[3]?.item_name}</div>
                                     </Link>
