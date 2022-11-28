@@ -8,7 +8,7 @@ const Developer = () => {
             <div className="flying-fox-developer">Flying Fox Developer</div>
             <div className="photo-info-container">
                 <div className="photo-container">
-                    <img src="" alt="Image of Developer, Matt Hutter" />
+                    <img src="" alt="Developer, Matt Hutter" />
                 </div>
                 <div className="dev-name-links">
                     <DeveloperModal />

@@ -105,7 +105,7 @@ const ItemById = () => {
                                             <div className="picture-and-name">
                                                 {!review.image_url ?
                                                     "" :
-                                                    <img className="picture" src={`${review.image_url}`} />
+                                                    <img className="picture" src={`${review.image_url}`} alt="review" />
                                                 }
                                                 <div className="first-last-name"> -{review.first_name} {review.last_name} </div>
                                             </div>

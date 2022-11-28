@@ -52,7 +52,7 @@ const OrderById = () => {
                                             <img
                                                 className="item-image-orderId"
                                                 src={items[purchaseItem[1].item_id].images[0].image_url}
-                                                alt={`${items[purchaseItem[1].item_id].item_name} picture`}
+                                                alt={`${items[purchaseItem[1].item_id].item_name}`}
                                             />
                                         </td>
                                         <td className="id-order-item-name">
