@@ -45,26 +45,26 @@ const HomePage = () => {
                             <div className="ads-for-items">
                                 <div className="ad-container">
                                     <Link to="/items/12" className="ad-item-link">
-                                        <img src={items[12]?.images[3].image_url} className="ad-image" />
                                         <div className="ad-item-name">{items[12]?.item_name}</div>
+                                        <img src={items[12]?.images[3].image_url} className="ad-image" />
                                     </Link>
                                 </div>
                                 <div className="ad-container">
                                     <Link to="/items/3" className="ad-item-link">
-                                        <img src={items[3]?.images[3].image_url} className="ad-image" />
                                         <div className="ad-item-name">{items[3]?.item_name}</div>
+                                        <img src={items[3]?.images[3].image_url} className="ad-image" />
                                     </Link>
                                 </div>
                                 <div className="ad-container">
                                     <Link to="/items/10" className="ad-item-link">
-                                        <img src={items[10]?.images[2].image_url} className="ad-image" />
                                         <div className="ad-item-name">{items[10]?.item_name}</div>
+                                        <img src={items[10]?.images[2].image_url} className="ad-image" />
                                     </Link>
                                 </div>
                                 <div className="ad-container">
                                     <Link to="/items/8" className="ad-item-link">
-                                        <img src={items[8]?.images[2].image_url} className="ad-image" />
                                         <div className="ad-item-name">{items[8]?.item_name}</div>
+                                        <img src={items[8]?.images[2].image_url} className="ad-image" />
                                     </Link>
                                 </div>
                             </div>
