@@ -69,6 +69,7 @@
     flex-wrap: wrap;
     justify-content: left;
     align-items: center;
+    max-width: 700px;
 }
 
 .ad-item-link {
