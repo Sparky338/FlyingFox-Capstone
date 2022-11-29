@@ -33,10 +33,21 @@
     justify-content: center;
 }
 
+.logo-separator {
+    display: flex;
+    position:absolute;
+    height: 40px;
+    width: 40px;
+
+}
+
 .separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 300px;
-    margin-bottom: 40px;
-    margin-top: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
     background-color: #06a7e2;
     height: 1px;
     z-index: -1;
@@ -61,6 +72,7 @@
 .ads-container-right {
     width: 50%;
     height: 940px;
+    margin-left: 25px;
 }
 
 .ads-for-items {

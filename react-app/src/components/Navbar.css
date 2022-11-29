@@ -26,6 +26,13 @@
     width: 80%;
 }
 
+.Flying-Fox-logo {
+    width:110px;
+    height:90px;
+    position: relative;
+    top: 7.5px;
+}
+
 .nav-bar-links {
     display: flex;
     flex-direction: row;

@@ -1,8 +1,9 @@
-import "./home.css"
 import ImageGallery from 'react-image-gallery';
-import homepageBannerImages from "../../images/homepageBannerImages";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import homepageBannerImages from "../../images/homepageBannerImages";
+import flyingFoxLogo from '../../images/Flying_Fox_Logo.png'
+import "./home.css"
 
 const HomePage = () => {
     const items = useSelector(state => state.items)
@@ -33,6 +34,7 @@ const HomePage = () => {
             <div className="components-outer">
                 <div className="main-components">
                     <div className="separator-container">
+                        <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-separator'/>
                         <div className="separator"></div>
                     </div>
                     <div className="news-and-ads">

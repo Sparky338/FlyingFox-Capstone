@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
+import flyingFoxLogo from '../images/Flying_Fox_Logo.png'
 
 import "./Navbar.css"
 
@@ -52,14 +53,11 @@ const NavBar = () => {
               to='/'
               exact={true}
               activeClassName='active'>
-              {/* <img
+              <img
                 className='Flying-Fox-logo'
-                src={logo} //named import
+                src={flyingFoxLogo}
                 alt='Flying Fox logo'
-                width={"80px"}
-                height={'80px'}
-              /> */}
-              Home
+              />
             </NavLink>
           </div>
 
