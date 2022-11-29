@@ -21,10 +21,10 @@
 }
 
 .main-components {
-    height: 1000px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .separator-container {
@@ -56,12 +56,10 @@
 .news-and-ads{
     display: flex;
     flex-direction: row;
-    height: 940px;
 }
 
 .news-container-left {
     width: 50%;
-    height: 940px;
 }
 
 .ads-heading,
@@ -71,7 +69,6 @@
 
 .ads-container-right {
     width: 50%;
-    height: 940px;
     margin-left: 25px;
 }
 

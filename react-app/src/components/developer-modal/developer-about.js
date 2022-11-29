@@ -7,7 +7,7 @@ const DeveloperAbout = () => {
     return (
         <div className="modal-container-dev">
             <div className="modal-image-container">
-                <img src={developerPhoto} alt="Image of Developer, Matt Hutter" className="modal-developer-photo" />
+                <img src={developerPhoto} alt="Developer, Matt Hutter" className="modal-developer-photo" />
             </div>
             <div className="modal-dev-about-container">
                 <div className="modal-dev-name">Matt Hutter</div>

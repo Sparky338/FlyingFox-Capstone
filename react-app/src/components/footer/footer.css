@@ -1,0 +1,77 @@
+body {
+    position: relative;
+    display: block;
+    min-height: 100vh;
+}
+
+body::after {
+    content: "";
+    display: block;
+    height: 50px;
+}
+
+footer {
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    border-top: #06a7e2 1px solid;
+    border-bottom: #06a7e2 2px solid;
+    width: 100%;
+}
+
+.Flying-Fox-repo-footer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 15%
+}
+
+.repo-link-footer {
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
+    margin-right: 5px;
+}
+
+.dev-footer-container {
+    width: 80%;
+}
+
+.Footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 81%;
+}
+
+.logo-footer {
+    height: 30px;
+    width: 30px;
+}
+
+.dev-name-footer {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.dev-link-footer {
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
+    margin-right: 5px;
+    border-left: solid 1px white;
+}
+
+.repo-link-footer:hover,
+.dev-link-footer:hover {
+    color: #06a7e2;
+}
