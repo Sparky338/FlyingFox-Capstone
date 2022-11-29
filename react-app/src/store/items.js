@@ -35,8 +35,10 @@ export default function itemsReducer(state = initialState, action) {
     switch (action.type) {
         case GET_ITEMS:
             action.items.forEach((item) =>
+                (item.images.sort((a,b) => a.id - b.id),
+                newState[item.id] = item))
                 // item.images.sort((a,b) => a.id - b.id)
-                (newState[item.id] = item))
+                // console.log(item.images)
 
             // const sortedState = [...newState].sort((a,b) => a.id.images.id - b.id.images.id)
             // console.log("SORTED STATE", sortedState)
