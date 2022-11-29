@@ -46,7 +46,7 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
                             <img
                                 className="cart-item-image"
                                 src={item[1][0].images[0].image_url}
-                                alt={`${item[1][0].item_name} image`}
+                                alt={`${item[1][0].item_name}`}
                             />
                         </td>
                         <td className="cart-item-name">
