@@ -8,9 +8,6 @@ const Developer = () => {
         <div className="developer-outer">
             <div className="flying-fox-developer">Flying Fox Developer</div>
             <div className="photo-info-container">
-                <div className="photo-container">
-                    <img src={developerPhoto} alt="Developer, Matt Hutter" className="developer-photo" />
-                </div>
                 <div className="dev-name-links">
                     <DeveloperModal />
                     <div className="dev-links">

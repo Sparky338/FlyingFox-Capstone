@@ -22,10 +22,20 @@
 #modal-content {
     position: absolute;
     background-color: black;
-    height: 250px;
+    height: fit-content;
     width: 800px;
     border: 2px solid white;
     border-radius: 10px;
+}
+
+.developer-photo {
+    border: #06a7e2 solid 1px;
+    width: 262.5px;
+    height: 262.5px;
+}
+
+.name-modal-link {
+    display: flex;
 }
 
 .modal-container-dev {
