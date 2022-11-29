@@ -56,13 +56,15 @@ const OrderById = () => {
                                             />
                                         </td>
                                         <td className="id-order-item-name">
-                                            {items[purchaseItem[1].item_id].item_name}
+                                            <Link to={`/items/${purchaseItem[1].item_id}`} className="id-order-item-name-link">
+                                                {items[purchaseItem[1].item_id].item_name}
+                                            </Link>
                                         </td>
                                         <td className="id-order-item-qty">
                                             {purchaseItem[1].quantity}
                                         </td>
                                         <td className="id-order-item-total">
-                                            {dollarFormatter.format(items[purchaseItem[1].item_id].price * purchaseItem[1].quantity)}
+                                            {dollarFormatter.format(items[purchaseItem[1]?.item_id].price * purchaseItem[1].quantity)}
                                         </td>
                                         <td className="id-order-item-review">
                                             <>
@@ -95,7 +97,7 @@ const OrderById = () => {
                             <td></td>
                             <td></td>
                             <td className="id-order-total">ORDER TOTAL:</td>
-                            <td className="id-order-total-price">{dollarFormatter.format(purchases[orderId].price)}</td>
+                            <td className="id-order-total-price">{dollarFormatter.format(purchases[orderId]?.price)}</td>
                             <td></td>
                         </tr>
                     </tfoot>
