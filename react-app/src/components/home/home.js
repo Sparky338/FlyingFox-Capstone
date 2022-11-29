@@ -34,7 +34,7 @@ const HomePage = () => {
             <div className="components-outer">
                 <div className="main-components">
                     <div className="separator-container">
-                        <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-separator'/>
+                        <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-separator' />
                         <div className="separator"></div>
                     </div>
                     <div className="news-and-ads">
@@ -46,28 +46,24 @@ const HomePage = () => {
                             <div className="ads-heading title">FEATURED PRODUCTS</div>
                             <div className="ads-for-items">
                                 <div className="ad-container">
-                                        <div>ITEM NAME:{items[12]?.item_name}, ITEM DESC: {items[12]?.description}, ITEM IMAGE ID: {items[12]?.images[3].id}</div>
                                     <Link to="/items/12" className="ad-item-link">
                                         <div className="ad-item-name">{items[12]?.item_name}</div>
                                         <img src={items[12]?.images[3].image_url} alt={`${items[12]?.item_name}`} className="ad-image" />
                                     </Link>
                                 </div>
                                 <div className="ad-container">
-                                        <div>ITEM NAME:{items[3]?.item_name}, ITEM DESC: {items[3]?.description}, ITEM IMAGE ID: {items[3]?.images[3].id}</div>
                                     <Link to="/items/3" className="ad-item-link">
                                         <div className="ad-item-name">{items[3]?.item_name}</div>
                                         <img src={items[3]?.images[3].image_url} alt={`${items[3]?.item_name}`} className="ad-image" />
                                     </Link>
                                 </div>
                                 <div className="ad-container">
-                                        <div>ITEM NAME:{items[10]?.item_name}, ITEM DESC: {items[10]?.description}, ITEM IMAGE ID: {items[10]?.images[2].id}</div>
                                     <Link to="/items/10" className="ad-item-link">
                                         <div className="ad-item-name">{items[10]?.item_name}</div>
                                         <img src={items[10]?.images[2].image_url} alt={`${items[10]?.item_name}`} className="ad-image" />
                                     </Link>
                                 </div>
                                 <div className="ad-container">
-                                        <div>ITEM NAME:{items[8]?.item_name}, ITEM DESC: {items[8]?.description}, ITEM IMAGE ID: {items[8]?.images[2].id}</div>
                                     <Link to="/items/8" className="ad-item-link">
                                         <div className="ad-item-name">{items[8]?.item_name}</div>
                                         <img src={items[8]?.images[2].image_url} alt={`${items[8]?.item_name}`} className="ad-image" />
