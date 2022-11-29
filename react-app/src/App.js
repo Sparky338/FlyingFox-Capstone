@@ -16,7 +16,6 @@ import OrderById from './components/purchases/orderById';
 import CreateReviewForm from './components/reviews/createReviewForm';
 import EditReviewForm from './components/reviews/editReviewForm';
 import EditShippingInfo from './components/cart/editShippingInfo';
-import { getAllImages } from './store/images';
 import Developer from './components/developer/developer';
 
 function App() {
@@ -29,7 +28,6 @@ function App() {
       setLoaded(true);
     })();
     dispatch(getAllItems());
-    // dispatch(getAllImages())
   }, [dispatch]);
 
   if (!loaded) {
