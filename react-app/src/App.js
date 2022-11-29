@@ -17,6 +17,7 @@ import CreateReviewForm from './components/reviews/createReviewForm';
 import EditReviewForm from './components/reviews/editReviewForm';
 import EditShippingInfo from './components/cart/editShippingInfo';
 import Developer from './components/developer/developer';
+import Footer from './components/footer/footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -78,7 +79,7 @@ function App() {
           <User />
         </ProtectedRoute>  */}
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   );
 }
