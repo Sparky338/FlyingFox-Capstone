@@ -20,18 +20,29 @@ footer {
 .footer-container {
     display: flex;
     flex-direction: row;
-    /* justify-content: center;
-    align-content: center; */
+    justify-content: center;
+    align-content: center;
     border-top: #06a7e2 1px solid;
     border-bottom: #06a7e2 1px solid;
     width: 100%;
+}
+
+.Flying-Fox-repo-footer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width:15%
+}
+
+.dev-footer-container{
+    width: 80%
 }
 
 .Footer-content {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border: solid 1px red;
+    align-items: center;
     /* width: 100%; */
 }
 

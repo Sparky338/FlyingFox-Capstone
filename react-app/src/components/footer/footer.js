@@ -9,9 +9,10 @@ const Footer = () => {
                 <div className="Flying-Fox-repo-footer">
                     <a className="dev-link-footer" target="_blank" href="https://github.com/Sparky338/FlyingFox-Capstone"> Flying Fox Repo </a>
                 </div>
-                <div className='Footer-content'>
-                    <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-footer' />
-                    {/* <div className="Dev-info-footer"> */}
+                <div className='dev-footer-container'>
+                    <div className='Footer-content'>
+                        <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-footer' />
+                        {/* <div className="Dev-info-footer"> */}
                         <div className="dev-name-footer">
                             Matthew Hutter
                         </div>
@@ -19,8 +20,9 @@ const Footer = () => {
                             <a className="dev-link-footer" target="_blank" href="https://github.com/Sparky338"> GitHub </a>
                             <a className="dev-link-footer" target="_blank" href="https://www.linkedin.com/in/matthew-hutter-2a6620173"> LinkedIn </a>
                         </div>
-                    {/* </div> */}
-                    <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-footer' />
+                        {/* </div> */}
+                        <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-footer' />
+                    </div>
                 </div>
             </div>
         </footer>
