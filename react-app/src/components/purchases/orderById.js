@@ -16,7 +16,7 @@ const OrderById = () => {
 
     useEffect(() => {
         dispatch(getOrderPurchasesItems(orderId))
-    }, [dispatch])
+    }, [dispatch, orderId])
 
     const formatting_options = {
         style: 'currency',

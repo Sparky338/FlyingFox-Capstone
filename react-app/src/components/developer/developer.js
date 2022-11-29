@@ -1,6 +1,5 @@
 import DeveloperModal from "../developer-modal";
 import "./developer.css"
-import developerPhoto from "../../images/Developer_Matt_Hutter.jpg"
 
 const Developer = () => {
 
@@ -11,9 +10,24 @@ const Developer = () => {
                 <div className="dev-name-links">
                     <DeveloperModal />
                     <div className="dev-links">
-                        <a className="dev-link" target="_blank" href="https://github.com/Sparky338"> GitHub </a>
-                        <a className="dev-link" target="_blank" href="https://www.linkedin.com/in/matthew-hutter-2a6620173"> LinkedIn </a>
-                        <a className="dev-link" target="_blank" href="https://github.com/Sparky338/FlyingFox-Capstone"> Flying Fox Repo </a>
+                        <a className="dev-link"
+                           target="_blank"
+                           rel="noreferrer"
+                           href="https://github.com/Sparky338">
+                           GitHub
+                        </a>
+                        <a className="dev-link"
+                           target="_blank"
+                           rel="noreferrer"
+                           href="https://www.linkedin.com/in/matthew-hutter-2a6620173">
+                           LinkedIn
+                        </a>
+                        <a className="dev-link"
+                           target="_blank"
+                           rel="noreferrer"
+                           href="https://github.com/Sparky338/FlyingFox-Capstone">
+                           Flying Fox Repo
+                        </a>
                     </div>
                 </div>
             </div>
