@@ -1,11 +1,13 @@
 import './developer-modal.css'
+import developerPhoto from "../../images/Developer_Matt_Hutter.jpg"
+
 
 const DeveloperAbout = () => {
 
     return (
         <div className="modal-container-dev">
             <div className="modal-image-container">
-                <img src="" alt="Image of Developer, Matt Hutter" />
+                <img src={developerPhoto} alt="Image of Developer, Matt Hutter" className="modal-developer-photo" />
             </div>
             <div className="modal-dev-about-container">
                 <div className="modal-dev-name">Matt Hutter</div>
