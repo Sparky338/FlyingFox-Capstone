@@ -24,7 +24,6 @@ const EditReviewForm = () => {
             history.push("/orders")
             alert("Your review has been deleted.")
         }
-
     }
 
     if (currentUser.id === reviewerId) {

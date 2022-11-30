@@ -24,14 +24,19 @@ Flying Fox jumps into human flight, providing a place to look at and purchase wi
 
 ## Screenshots:
 Home Page
+![FlyingFox-home-page](./react-app/src/images/readme-assets/Homepage.png)
 
 Login and Signup
+![FlyingFox-login-signup-page](./react-app/src/images/readme-assets/loginAndSignUp.png)
 
 Item page
+![FlyingFox-item-page](./react-app/src/images/readme-assets/itemPage.png)
 
 Cart
+![FlyingFox-cart-page](./react-app/src/images/readme-assets/cart.png)
 
 Order Page
+![FlyingFox-order-page](./react-app/src/images/readme-assets/orderById.png)
 
 ## Future Implementation Goals:
 
@@ -54,7 +59,7 @@ pipenv install -r requirements.txt
 
 3. Create a **.env** file based on the example with proper settings for your
    development environment
-   
+
 4. Make sure the SQLite3 database connection URL is in the **.env** file
 
 5. Get into your pipenv, migrate your database, seed your database, and run your Flask app
@@ -74,13 +79,13 @@ pipenv install -r requirements.txt
    ```bash
    flask run
    ```
-   
+
 6. To run the React App in development, in a new terminal, get into react-app and start it
-     
+
    ```bash
    cd react-app
    ```
-   
+
    ```bash
    npm start
    ```
