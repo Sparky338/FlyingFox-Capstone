@@ -56,7 +56,7 @@ const OrderById = () => {
                                             />
                                         </td>
                                         <td className="id-order-item-name">
-                                            <Link to={`/items/${purchaseItem[1].item_id}`} className="id-order-item-name-link">
+                                            <Link to={`/items/${purchaseItem[1].item_id}`} className="id-order-item-name-link" onClick={() => window.scrollTo(0, 0)}>
                                                 {items[purchaseItem[1].item_id].item_name}
                                             </Link>
                                         </td>
@@ -72,6 +72,7 @@ const OrderById = () => {
                                                     <Link to={`/items/${purchaseItem[1].item_id}/review/${filterdReviews.filter(review => review[1].item_id === purchaseItem[1].item_id)[0][1].id}/edit`}
                                                         className="review-text"
                                                         key={i}
+                                                        onClick={() => window.scrollTo(0, 0)}
                                                     >Edit Review</Link>
                                                     :
                                                     <Link to={{
@@ -84,6 +85,7 @@ const OrderById = () => {
                                                     }}
                                                         className="review-text"
                                                         key={i}
+                                                        onClick={() => window.scrollTo(0, 0)}
                                                     >Leave Review</Link>
                                                 }
                                             </>
@@ -110,7 +112,7 @@ const OrderById = () => {
                 <div className="order-shipping-info-city">City: {purchases[orderId].city}</div>
                 <div className="order-shipping-info-state">State: {purchases[orderId].state}</div>
                 <div className="order-shipping-info-zipcode">Zip code: {purchases[orderId].zipCode}</div>
-                <Link to={`/orders/${orderId}/edit`} className="order-edit-shipping">Edit Shipping Information</Link>
+                <Link to={`/orders/${orderId}/edit`} className="order-edit-shipping" onClick={() => window.scrollTo(0, 0)}>Edit Shipping Information</Link>
             </div>
         </div>
     )

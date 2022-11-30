@@ -60,7 +60,7 @@ const Orders = () => {
                                             {dollarFormatter.format(purchase[1].price)}
                                         </td>
                                         <td className="order-details">
-                                            <Link to={`/orders/${purchase[1].id}`} className="order-details-link">Order Details</Link>
+                                            <Link to={`/orders/${purchase[1].id}`} className="order-details-link" onClick={() => window.scrollTo(0, 0)}>Order Details</Link>
                                         </td>
                                         <td className="cancel-order">
                                             <button className="cancel-order-button" onClick={() => handleCancel(purchase[1].id)} >Cancel Order</button>
