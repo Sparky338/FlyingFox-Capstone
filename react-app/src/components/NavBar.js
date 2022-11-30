@@ -18,13 +18,13 @@ const NavBar = () => {
       <div className='session-links-outer'>
         <div className='session-links-user'>
           <div className='orders-link-container'>
-            <Link to='/orders' className='orders-link'>MY ORDERS</Link>
+            <Link to='/orders' className='orders-link' onClick={() => window.scrollTo(0, 0)}>MY ORDERS</Link>
           </div>
           <div className='logout-user'>
             <LogoutButton />
           </div>
           <div className='shopping-cart'>
-            <Link to='/cart' className='shopping-cart-link'>{cartIcon}</Link>
+            <Link to='/cart' className='shopping-cart-link' onClick={() => window.scrollTo(0, 0)}>{cartIcon}</Link>
           </div>
         </div>
       </div>
@@ -33,10 +33,10 @@ const NavBar = () => {
       <div className='session-links-outer'>
         <div className='session-links-no-user'>
           <div className='login-container'>
-            <Link to='/login' className='login-link'>LOGIN</Link>
+            <Link to='/login' className='login-link' onClick={() => window.scrollTo(0, 0)}>LOGIN</Link>
           </div>
           <div className='shopping-cart'>
-            <Link to='/cart' className='shopping-cart-link'>{cartIcon}</Link>
+            <Link to='/cart' className='shopping-cart-link' onClick={() => window.scrollTo(0, 0)}>{cartIcon}</Link>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ const NavBar = () => {
                   <div className='wingsuits-category title'>Wingsuits</div>
                   {Object.entries(itemsState).filter(item => item[1].category === "Wingsuit").map((item, i) => {
                     return (
-                      <Link to={`/items/${item[1].id}`} key={i} className="wingsuit-links navbar-item-links">
+                      <Link to={`/items/${item[1].id}`} key={i} className="wingsuit-links navbar-item-links" onClick={() => window.scrollTo(0, 0)}>
                         {(item[1].item_name)}
                       </Link>
                     )
@@ -79,7 +79,7 @@ const NavBar = () => {
                   <div className='tracking-suits-category title'>Tracking Suits</div>
                   {Object.entries(itemsState).filter(item => item[1].category === "Tracking suit").map((item, i) => {
                     return (
-                      <Link to={`/items/${item[1].id}`} key={i} className="tracking-suits-links navbar-item-links">
+                      <Link to={`/items/${item[1].id}`} key={i} className="tracking-suits-links navbar-item-links" onClick={() => window.scrollTo(0, 0)}>
                         {(item[1].item_name)}
                       </Link>
                     )
@@ -89,16 +89,16 @@ const NavBar = () => {
                   <div className='parachutes-category title'>Parachutes</div>
                   {Object.entries(itemsState).filter(item => item[1].category === "Parachute").map((item, i) => {
                     return (
-                      <Link to={`/items/${item[1].id}`} key={i} className="parachute-links navbar-item-links">
+                      <Link to={`/items/${item[1].id}`} key={i} className="parachute-links navbar-item-links" onClick={() => window.scrollTo(0, 0)}>
                         {(item[1].item_name)}
                       </Link>
                     )
                   })}
                 </div>
-                <Link to='/developer' className='meet-the-dev title'>Flying Fox Dev</Link>
+                <Link to='/developer' className='meet-the-dev title' onClick={() => window.scrollTo(0, 0)}>Flying Fox Dev</Link>
               </div>
             </div>
-            <Link className='dev' to='/developer'>Developer</Link>
+            <Link className='dev' to='/developer' onClick={() => window.scrollTo(0, 0)}>Developer</Link>
           </div>
           {sessionLinks}
         </nav>
