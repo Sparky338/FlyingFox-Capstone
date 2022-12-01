@@ -67,7 +67,7 @@ const NavBar = () => {
               <div className='suits-parachutes-content'>
                 <div className='dropdown-links-container'>
                   <div className='wingsuit-links-container'>
-                    <div className='wingsuits-category title'>Wingsuits</div>
+                    <div className='wingsuits-category title Navbar-title'>Wingsuits</div>
                     {Object.entries(itemsState).filter(item => item[1].category === "Wingsuit").map((item, i) => {
                       return (
                         <Link to={`/items/${item[1].id}`} key={i} className="wingsuit-links navbar-item-links" >
@@ -77,7 +77,7 @@ const NavBar = () => {
                     })}
                   </div>
                   <div className='tracking-suits-links-container'>
-                    <div className='tracking-suits-category title'>Tracking Suits</div>
+                    <div className='tracking-suits-category title Navbar-title'>Tracking Suits</div>
                     {Object.entries(itemsState).filter(item => item[1].category === "Tracking suit").map((item, i) => {
                       return (
                         <Link to={`/items/${item[1].id}`} key={i} className="tracking-suits-links navbar-item-links" >
@@ -87,7 +87,7 @@ const NavBar = () => {
                     })}
                   </div>
                   <div className='parachutes-links-container'>
-                    <div className='parachutes-category title'>Parachutes</div>
+                    <div className='parachutes-category title Navbar-title'>Parachutes</div>
                     {Object.entries(itemsState).filter(item => item[1].category === "Parachute").map((item, i) => {
                       return (
                         <Link to={`/items/${item[1].id}`} key={i} className="parachute-links navbar-item-links" >
@@ -96,7 +96,7 @@ const NavBar = () => {
                       )
                     })}
                   </div>
-                  <Link to='/developer' className='meet-the-dev title' >Flying Fox Dev</Link>
+                  <Link to='/developer' className='meet-the-dev title Navbar-title' >Flying Fox Dev</Link>
                 </div>
               </div>
             </div>

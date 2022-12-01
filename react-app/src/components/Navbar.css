@@ -10,7 +10,7 @@
     padding-bottom: 10px;
 }
 
-.outer-nav{
+.outer-nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -28,8 +28,8 @@
 }
 
 .Flying-Fox-logo {
-    width:110px;
-    height:90px;
+    width: 110px;
+    height: 90px;
     position: relative;
     top: 7.5px;
     z-index: 5000;
@@ -38,7 +38,7 @@
 .nav-bar-links {
     display: flex;
     flex-direction: row;
-    justify-content:flex-start;
+    justify-content: flex-start;
     width: 100%;
     margin-left: 20px;
 }
@@ -80,7 +80,7 @@
 .login-link:hover,
 .dev:hover,
 .suits-parachutes-dropdown-text:hover {
-    color:#06a7e2;
+    color: #06a7e2;
 }
 
 .dropdown-suits-parachutes:hover .suits-parachutes-content {
@@ -90,13 +90,18 @@
     border-bottom: #06a7e2 1px solid;
 }
 
-.dropdown-links-container{
+.dropdown-links-container {
     display: flex;
     flex-direction: row;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     padding-top: 40px;
     border-top: rgb(33, 33, 33) solid 1px;
     margin-bottom: 20px;
+}
+
+.Navbar-title {
+    font-size: 20px;
+    font-weight: 200;
 }
 
 .navbar-item-links {
