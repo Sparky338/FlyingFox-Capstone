@@ -24,7 +24,6 @@ const Cart = () => {
         document.body.classList.add('bg-white');
 
         return function cleanup() {
-            console.log("cleanup ran")
             document.body.classList.remove('bg-white');
         }
     }, [])
