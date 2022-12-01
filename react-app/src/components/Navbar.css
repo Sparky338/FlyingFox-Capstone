@@ -56,6 +56,10 @@
     margin-top: 20px;
 }
 
+.session-links-outer {
+    margin-top: 20px;
+}
+
 .dev {
     text-decoration: none;
     color: white;
@@ -76,6 +80,8 @@
     height: max-content;
 }
 
+.orders-link:hover,
+.logout-link:hover,
 .login-link:hover,
 .dev:hover,
 .suits-parachutes-dropdown-text:hover {
