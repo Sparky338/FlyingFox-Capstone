@@ -61,7 +61,7 @@ def seed_reviews():
         purchase_id="7",
         first_name="Nikko",
         last_name="Mamallo",
-        review="A great suit to tech new pilots. I got five in different sizes to help make it more accessible to new jumpers.",
+        review="A great suit to teach new pilots. I got five in different sizes to help make it more accessible to new jumpers.",
         image_url="https://www.rockskymarket.com/9498-thickbox_default/squirrel-sprint-wingsuit-jumpsuits.jpg"
     )
     firstCrystal = Review (
@@ -71,7 +71,7 @@ def seed_reviews():
         first_name="Crystal",
         last_name="Hadel",
         review=" It fits like a glove with the perfect amount of tension when I point my toes. Arm length is perfect and great fit on the torso.",
-        image_url="https://squirrel.ws/img/suits/gallery/atc/gallery/ATC-7@2x.jpg"
+        image_url="https://squirrel.ws/img/review_photos/388/388_thumb.jpg"
     )
     firstAndy = Review (
         user_id="9",
@@ -127,6 +127,7 @@ def seed_reviews():
         review="I love flying the Mutant. Such a great flight that can be had and can keep up with the wingsuiters too!",
         image_url="https://squirrel.ws/img/suits/gallery/mutation/gallery/7-Mutation-580x620@2x.jpg"
     )
+    
 
 
     db.session.add(dashreview)
