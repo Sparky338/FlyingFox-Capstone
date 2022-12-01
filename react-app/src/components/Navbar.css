@@ -102,6 +102,11 @@
 .Navbar-title {
     font-size: 20px;
     font-weight: 200;
+    margin-bottom: 5px;
+}
+
+.parachutes-category {
+    margin-top: 15px;
 }
 
 .navbar-item-links {
