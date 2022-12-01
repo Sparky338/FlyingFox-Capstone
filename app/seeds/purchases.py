@@ -125,8 +125,8 @@ def seed_purchases():
     first_corinne = Purchase (
         user_id="6",
         price="1100.00",
-        first_name="Julie",
-        last_name="Lynn",
+        first_name="Corinne",
+        last_name="Bennett",
         address="321 BASE Blvd",
         address2="apt 3",
         city="Moab",
