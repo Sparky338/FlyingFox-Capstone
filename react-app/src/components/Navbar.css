@@ -53,6 +53,7 @@
     font-size: 20px;
     margin-left: 5px;
     margin-right: 20px;
+    margin-top: 20px;
 }
 
 .dev {
@@ -85,16 +86,17 @@
 .dropdown-suits-parachutes:hover .suits-parachutes-content {
     display: block;
     z-index: 1000;
-    padding-top: 40px;
-    /* border-top: rgb(30, 30, 30) solid 1px; */
+    padding-top: 19px;
     border-bottom: #06a7e2 1px solid;
 }
 
 .dropdown-links-container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    position: static;
+    justify-content:space-evenly;
+    padding-top: 40px;
+    border-top: rgb(33, 33, 33) solid 1px;
+    margin-bottom: 20px;
 }
 
 .navbar-item-links {
