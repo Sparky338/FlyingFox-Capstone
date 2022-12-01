@@ -7,9 +7,9 @@ const CheckoutPage = () => {
         <div className="checkout-outer">
             <div className="successful-checkout">Your purchase has been completed!</div>
             <div className="redirection-options">Would you like to keep
-                <Link to="/" className="home-link" onClick={() => window.scrollTo(0, 0)}> browsing</Link>?
+                <Link to="/" className="home-link" > browsing</Link>?
                 Or maybe you'd like to see your
-                <Link to="/orders" className="order-link" onClick={() => window.scrollTo(0, 0)}> Orders</Link>?
+                <Link to="/orders" className="order-link" > Orders</Link>?
             </div>
         </div>
     )
