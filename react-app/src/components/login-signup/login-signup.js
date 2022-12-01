@@ -1,8 +1,16 @@
+import { useEffect } from "react"
 import LoginForm from "../auth/LoginForm"
 import SignUpForm from "../auth/SignUpForm"
 import "./login-signup.css"
 
 const LoginSignup = () => {
+    useEffect(() => {
+        document.body.classList.add('bg-white');
+
+        return function cleanup() {
+            document.body.classList.remove('bg-white');
+        }
+    }, [])
 
     return (
         <div className="login-signup-outer">

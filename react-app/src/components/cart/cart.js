@@ -20,6 +20,14 @@ const Cart = () => {
         localStorage.setItem('itemQty', JSON.stringify(itemQty))
     }, [itemQty, cartState])
 
+    useEffect(() => {
+        document.body.classList.add('bg-white');
+
+        return function cleanup() {
+            document.body.classList.remove('bg-white');
+        }
+    }, [])
+
     return (
         <div className="cart-outer">
             <div className="cart-container">
