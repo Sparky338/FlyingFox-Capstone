@@ -63,7 +63,7 @@ const NavBar = () => {
 
           <div className='nav-bar-links'>
             <div className='dropdown-suits-parachutes'>
-              <div className='suits-parachutes-dropdown'>Suits & Parachutes</div>
+              <div className='suits-parachutes-dropdown-text'>Suits & Parachutes</div>
               <div className='suits-parachutes-content'>
                 <div className='wingsuit-links-container'>
                   <div className='wingsuits-category title'>Wingsuits</div>
