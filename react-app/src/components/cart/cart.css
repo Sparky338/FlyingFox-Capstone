@@ -1,9 +1,11 @@
+.bg-white {
+    background-color: white;
+}
+
 .cart-outer {
     width: 100%;
-    min-height: 100vh;
     display: flex;
     justify-content: center;
-    background-color: white;
     color:black;
 }
 

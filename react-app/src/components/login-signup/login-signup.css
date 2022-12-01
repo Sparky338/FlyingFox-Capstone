@@ -1,8 +1,10 @@
+.bg-white {
+    background-color: white;
+}
+
 .login-signup-outer {
     width: 100%;
-    background-color: white;
     color:black;
-    height: 100vh; /*change to match height of forms?*/
     display: flex;
     justify-content: center;
 }
