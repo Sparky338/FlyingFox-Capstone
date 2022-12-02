@@ -72,6 +72,7 @@ function App() {
         <ProtectedRoute path='/orders'>
           <Orders />
         </ProtectedRoute>
+        {/* <Route path={`/${}`} */}
         <Route path='/developer'>
           <Developer />
         </Route>
