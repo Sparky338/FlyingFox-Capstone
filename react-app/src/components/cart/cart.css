@@ -78,6 +78,15 @@ td {
     margin-right: 30px;
 }
 
+.cart-item-name-link {
+    text-decoration: none;
+    color: black;
+}
+
+.cart-item-name-link:hover {
+    color: #06a7e2;
+}
+
 .qty-form {
     display: flex;
 }

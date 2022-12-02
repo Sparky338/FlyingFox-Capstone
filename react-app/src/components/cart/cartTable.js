@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./cart.css"
 
 const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
@@ -50,9 +51,9 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
                             />
                         </td>
                         <td className="cart-item-name">
-                        {/* <Link to={`/items/${item[1][0].item_id}`} className="id-order-item-name-link" > */}
+                        <Link to={`/items/${item[1][0].id}`} className="cart-item-name-link" >
                             {item[1][0].item_name}
-                        {/* </Link> */}
+                        </Link>
                         </td>
                         <td className="cart-item-qty">
                             <form className="qty-form">
