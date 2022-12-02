@@ -37,7 +37,8 @@ const ItemById = () => {
     }
 
     const filteredItem = items.filter(item => item.id === +itemId)
-    const filteredReviews = reviews.filter(review => review.item_id === +itemId)
+    const sortedFilteredReviews = reviews.filter(review => review.item_id === +itemId).sort((a, b) => b.id - a.id)
+
     const cart = JSON.parse(localStorage.getItem('cart'))
 
     const addToCart = () => {
@@ -96,9 +97,9 @@ const ItemById = () => {
                             <div className="review-header-container">
                                 <div className="review-header">{item.item_name.toUpperCase()} REVIEWS</div>
                             </div>
-                            {filteredReviews.length === 0 ?
+                            {sortedFilteredReviews.length === 0 ?
                                 <div className="no-reviews">No reviews yet!</div> :
-                                filteredReviews.map((review, i) => {
+                                sortedFilteredReviews.map((review, i) => {
                                     return (
                                         <div className="review-container" key={i}>
                                             <div className="review">{review.review}</div>
