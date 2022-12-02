@@ -24,6 +24,7 @@ const Orders = () => {
             await dispatch(deletePurchase(purchaseId))
             await dispatch(clearPurchaseItemsAction())
             await dispatch(clearReviewAction())
+            await dispatch(getAllReviews())
             history.push("/orders")
         }
     }
