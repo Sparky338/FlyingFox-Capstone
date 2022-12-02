@@ -69,7 +69,7 @@ const OrderById = () => {
                                         <td className="id-order-item-review">
                                             <>
                                                 {(filterdReviews.filter(review => review[1].item_id === purchaseItem[1].item_id).length) ?
-                                                    <Link to={`/items/${purchaseItem[1].item_id}/review/${filterdReviews.filter(review => review[1].item_id === purchaseItem[1].item_id)[0][1].id}/edit`}
+                                                    <Link to={`/review/${filterdReviews.filter(review => review[1].item_id === purchaseItem[1].item_id)[0][1].id}/edit`}
                                                         className="review-text"
                                                         key={i}
 
