@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom"
 import { editPurchase } from "../../store/purchases";
+import { errorRedirect } from "../utility/error-redirect";
 
 import "./editShipping.css"
 
@@ -11,13 +12,13 @@ const EditShippingInfo = () => {
     const purchases = useSelector(state => state.purchases)
     const {orderId} = useParams()
 
-    const [first_name, setFirstName] = useState(purchases[orderId].first_name || "");
-    const [last_name, setLastName] = useState(purchases[orderId].last_name || "");
-    const [address, setAddress] = useState(purchases[orderId].address || "");
-    const [address2, setAddress2] = useState(purchases[orderId].address2 || "");
-    const [city, setCity] = useState(purchases[orderId].city || "");
-    const [state, setState] = useState(purchases[orderId].state || "");
-    const [zipCode, setZipCode] = useState(purchases[orderId].zipCode || "");
+    const [first_name, setFirstName] = useState(purchases[orderId]?.first_name || "");
+    const [last_name, setLastName] = useState(purchases[orderId]?.last_name || "");
+    const [address, setAddress] = useState(purchases[orderId]?.address || "");
+    const [address2, setAddress2] = useState(purchases[orderId]?.address2 || "");
+    const [city, setCity] = useState(purchases[orderId]?.city || "");
+    const [state, setState] = useState(purchases[orderId]?.state || "");
+    const [zipCode, setZipCode] = useState(purchases[orderId]?.zipCode || "");
 
     const [validationErrors, setValidationErrors] = useState([]);
     const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -39,6 +40,10 @@ const EditShippingInfo = () => {
 
         setValidationErrors(errors);
     }, [first_name, last_name, address, city, state, zipCode])
+
+    let error;
+    if (purchases) error = errorRedirect(purchases, +orderId)
+    if (error) return error
 
     const handleEdit = async (e) => {
         e.preventDefault();

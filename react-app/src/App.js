@@ -19,6 +19,7 @@ import EditShippingInfo from './components/cart/editShippingInfo';
 import Developer from './components/developer/developer';
 import Footer from './components/footer/footer';
 import ScrollToTop from './components/ScrollToTop';
+import Page404 from './components/404-page/404';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -47,7 +48,7 @@ function App() {
         <Route path='/login' exact={true}>
           <LoginSignup />
         </Route>
-        <Route path='/items/:itemId/review/:reviewId/edit'>
+        <Route path='/review/:reviewId/edit'>
           <EditReviewForm />
         </Route>
         <Route path='/items/:itemId/review'>
@@ -73,6 +74,9 @@ function App() {
         </ProtectedRoute>
         <Route path='/developer'>
           <Developer />
+        </Route>
+        <Route path='*'>
+          <Page404 />
         </Route>
       </Switch>
       <Footer />
