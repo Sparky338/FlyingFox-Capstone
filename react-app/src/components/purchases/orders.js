@@ -22,8 +22,8 @@ const Orders = () => {
         let res = window.confirm("Are you sure you want to cancel this order?")
         if (res) {
             await dispatch(deletePurchase(purchaseId))
-            await dispatch(clearPurchaseItemsAction())
             await dispatch(clearReviewAction())
+            await dispatch(clearPurchaseItemsAction())
             await dispatch(getAllReviews())
             history.push("/orders")
         }
