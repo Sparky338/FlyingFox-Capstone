@@ -5,6 +5,7 @@ import ImageGallery from 'react-image-gallery';
 
 import "./items.css"
 import { getItemReviews } from "../../store/reviews";
+import { errorRedirect } from "../utility/error-redirect";
 
 const ItemById = () => {
     const history = useHistory();
@@ -35,6 +36,10 @@ const ItemById = () => {
     if (!localStorage.getItem('itemQty')) {
         localStorage.setItem('itemQty', "{}");
     }
+
+    let error;
+    if (itemsObj) error = errorRedirect(itemsObj, +itemId)
+    if (error) return error
 
     const filteredItem = items.filter(item => item.id === +itemId)
     const sortedFilteredReviews = reviews.filter(review => review.item_id === +itemId).sort((a, b) => b.id - a.id)
