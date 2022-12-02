@@ -1,10 +1,17 @@
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import { errorRedirect } from "../utility/error-redirect";
 import ReviewForm from "./ReviewForm";
 
 const CreateReviewForm = () => {
     const currentUser = useSelector(state => state.session.user);
+    const items = useSelector(state => state.items)
+    const {itemId} = useParams()
     let data = useLocation()
+
+    let error;
+    if (items) error = errorRedirect(items, +itemId)
+    if (error) return error
 
     const review = {
         user_id: data.state.user_id,
