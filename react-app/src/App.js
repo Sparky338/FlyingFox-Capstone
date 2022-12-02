@@ -75,9 +75,11 @@ function App() {
         <Route path='/developer'>
           <Developer />
         </Route>
+        <Route path='/*'>
+          <Page404 />
+        </Route>
       </Switch>
       <Footer />
-      <Page404 />
     </BrowserRouter>
   );
 }
