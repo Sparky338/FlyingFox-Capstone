@@ -75,7 +75,7 @@ function App() {
         <Route path='/developer'>
           <Developer />
         </Route>
-        <Route path='/*'>
+        <Route path='*'>
           <Page404 />
         </Route>
       </Switch>
