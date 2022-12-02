@@ -10,6 +10,7 @@ const Orders = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const purchases = useSelector(state => state.purchases);
+    const items = useSelector(state => state.items);
 
     const formatting_options = {
         style: 'currency',
@@ -58,7 +59,8 @@ const Orders = () => {
                                             {purchase[1].id}
                                         </td>
                                         <td className="order-item-summary">
-                                            {dollarFormatter.format(purchase[1].price)}
+                                            {/* {dollarFormatter.format(purchase[1].price)} */}
+                                            {purchase[1].purchases_items.map((el, r) => <tr>{items[el.item_id].item_name}</tr>)}
                                         </td>
                                         <td className="order-details">
                                             <Link to={`/orders/${purchase[1].id}`} className="order-details-link" >Order Details</Link>
