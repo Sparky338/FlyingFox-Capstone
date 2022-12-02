@@ -50,7 +50,9 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
                             />
                         </td>
                         <td className="cart-item-name">
+                        {/* <Link to={`/items/${item[1][0].item_id}`} className="id-order-item-name-link" > */}
                             {item[1][0].item_name}
+                        {/* </Link> */}
                         </td>
                         <td className="cart-item-qty">
                             <form className="qty-form">
