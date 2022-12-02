@@ -18,6 +18,7 @@ import EditReviewForm from './components/reviews/editReviewForm';
 import EditShippingInfo from './components/cart/editShippingInfo';
 import Developer from './components/developer/developer';
 import Footer from './components/footer/footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <NavBar />
       <Switch>
         <Route path='/' exact={true} >
