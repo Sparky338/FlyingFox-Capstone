@@ -19,6 +19,7 @@ import EditShippingInfo from './components/cart/editShippingInfo';
 import Developer from './components/developer/developer';
 import Footer from './components/footer/footer';
 import ScrollToTop from './components/ScrollToTop';
+import Page404 from './components/404-page/404';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -76,6 +77,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+      <Page404 />
     </BrowserRouter>
   );
 }
