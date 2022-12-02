@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getOrderPurchasesItems } from "../../store/purchasesItems";
+import { errorRedirect } from "../utility/error-redirect";
 
 import "./orders.css"
 
@@ -24,6 +25,10 @@ const OrderById = () => {
         minimumFractionDigits: 2,
     };
     const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
+
+    let error;
+    if (purchases) error = errorRedirect(purchases, +orderId)
+    if (error) return error
 
     const filterdPurchasesItems = Object.entries(purchasesItems).filter(pi => pi[1].purchase_id === +orderId)
     const filterdReviews = Object.entries(reviewsState).filter(review => review[1].user_id === user.id)
