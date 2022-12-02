@@ -14,7 +14,7 @@ const Page404 = () => {
             </div>
             <div className='error-text'>
                 <div className='line-one-error'>
-                    404: Shit, sorry! This page is lost in the wilderness.
+                    404: Chute, sorry! This page is lost in the wilderness.
                 </div>
                 <div className='line-two-error'>
                     Please go back to our <Link to="/" className='error-page-link'>home page.</Link>
