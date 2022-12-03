@@ -20,6 +20,7 @@ import Developer from './components/developer/developer';
 import Footer from './components/footer/footer';
 import ScrollToTop from './components/ScrollToTop';
 import Page404 from './components/404-page/404';
+import Categories from './components/categories/categories';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -57,6 +58,9 @@ function App() {
         <Route path="/items/:itemId">
           <ItemById />
         </Route>
+        <Route path={`/items/:category`}>
+          <Categories />
+        </Route>
         <ProtectedRoute path='/cart' exact={true}>
           <Cart />
         </ProtectedRoute>
@@ -72,7 +76,6 @@ function App() {
         <ProtectedRoute path='/orders'>
           <Orders />
         </ProtectedRoute>
-        {/* <Route path={`/${}`} */}
         <Route path='/developer'>
           <Developer />
         </Route>
