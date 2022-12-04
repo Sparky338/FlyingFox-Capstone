@@ -120,6 +120,11 @@
     font-size: 20px;
     font-weight: 200;
     margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.Navbar-title:hover {
+    color:#428BCA
 }
 
 .track-suit-parachute-container {

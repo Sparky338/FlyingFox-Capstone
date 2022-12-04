@@ -58,7 +58,7 @@ function App() {
         <Route path="/items/:itemId">
           <ItemById />
         </Route>
-        <Route path={`/items/:category`}>
+        <Route path={`/items/:categoryName`}>
           <Categories />
         </Route>
         <ProtectedRoute path='/cart' exact={true}>

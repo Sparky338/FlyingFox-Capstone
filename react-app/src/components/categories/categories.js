@@ -4,16 +4,16 @@ import { useParams } from "react-router-dom"
 import { errorRedirect } from "../utility/error-redirect"
 
 const Categories = () => {
-    const {category} = useParams()
+    const {categoryName} = useParams()
     const itemsObj = useSelector(state => state.items)
     const items = Object.values(itemsObj);
 
     useEffect(() => {
-        const categoryItems = items.filter(item => item.category === category)
+        const categoryItems = items.filter(item => item.category === categoryName)
     })
 
     let error;
-    if (itemsObj) error = errorRedirect(itemsObj, category)
+    if (itemsObj) error = errorRedirect(itemsObj, categoryName)
     if (error) return error
 
     return (
