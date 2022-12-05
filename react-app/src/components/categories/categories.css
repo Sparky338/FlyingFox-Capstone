@@ -24,7 +24,7 @@
 
 .category-item-text {
     margin-left: 4%;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .category-item-name {
@@ -38,5 +38,6 @@
 .category-item-image {
     width: 400px;
     margin: 20px;
+    margin-top: 10px;
     border-radius: 3px;
 }
