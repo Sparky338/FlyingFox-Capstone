@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
-import { errorRedirect } from "../utility/error-redirect"
+import { categoryErrorRedirect, errorRedirect } from "../utility/error-redirect"
 
 const Categories = () => {
     const {categoryName} = useParams();
@@ -16,9 +16,13 @@ const Categories = () => {
         setCategoryItems(categoryItems)
     }, [categoryName])
 
-    // let error;
-    // if (itemsObj) error = errorRedirect(itemsObj, categoryName)
-    // if (error) return error
+    console.log("items",itemsObj)
+    console.log("cat name",categoryName)
+
+
+    let error;
+    if (itemsObj) error = categoryErrorRedirect(itemsObj, categoryName)
+    if (error) return error
 
     return (
         <div className="category-container">

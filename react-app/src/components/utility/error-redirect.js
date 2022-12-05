@@ -5,3 +5,9 @@ export const errorRedirect = (obj, id) => {
     if (!obj[id]) return (<Page404 />)
     return
 }
+
+export const categoryErrorRedirect = (obj, name) => {
+    if (typeof name !== 'string') return (<Page404 />)
+    // if (!obj[name]) return (<Page404 />)
+    return
+}
