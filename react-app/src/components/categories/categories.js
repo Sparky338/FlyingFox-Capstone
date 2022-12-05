@@ -24,10 +24,11 @@ const Categories = () => {
     }, [categoryName])
 
     if (!itemsObj) return null;
+    if (!items) return null
     if (!categoryName) return null;
     if (!categoryItems) return null;
 
-
+    // 404s or refresh to the page. Will need help figuring out where.
     let error;
     if (categoryItems) error = categoryErrorRedirect(categoryItems, categoryName)
     if (error) return error
