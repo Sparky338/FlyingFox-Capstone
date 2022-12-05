@@ -1,0 +1,42 @@
+.category-container {
+    width: 80%
+}
+
+.category-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-item-card-container {
+    border: solid 1px #06a7e2;
+    border-radius: 3px;
+    background-color: black;
+    margin-right: 30px;
+    margin-top: 30px;
+}
+
+.category-item-link {
+    text-decoration: none;
+    color: #06a7e2;
+}
+
+.category-item-text {
+    margin-left: 4%;
+    margin-top: 5px;
+}
+
+.category-item-name {
+    font-size: 26px;
+}
+
+.category-item-price {
+    font-size: 24px;
+}
+
+.category-item-image {
+    width: 400px;
+    margin: 20px;
+    border-radius: 3px;
+}

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { categoryErrorRedirect } from "../utility/error-redirect"
+import "./categories.css"
 
 const Categories = () => {
     const { categoryName } = useParams();
@@ -35,13 +36,19 @@ const Categories = () => {
 
     return (
         <div className="category-container">
-            <div className="category-card">
+            <div className="category-cards">
                 {categoryItems.map((item, i) => {
                     return (
                         <div className="category-item-card-container" key={i}>
-                            <div className="category-item-name"> {item.item_name} </div>
-                            <div className="category-item-price"> {dollarFormatter.format(item.price)} </div>
-                            <img src={item.images[0].image_url} className="category-item-image" alt={`${item.item_name}`}/>
+                            <Link to={`/items/${item.id}`} className="category-item-link">
+                                <div className="inner-category-item-card-container">
+                                    <div className="category-item-text">
+                                        <div className="category-item-name"> {item.item_name} </div>
+                                        <div className="category-item-price"> {dollarFormatter.format(item.price)} </div>
+                                    </div>
+                                    <img src={item.images[0].image_url} className="category-item-image" alt={`${item.item_name}`} />
+                                </div>
+                            </Link>
                         </div>
                     )
                 })}
