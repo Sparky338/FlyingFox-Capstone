@@ -115,12 +115,16 @@
     left: 15%;
 }
 
-
 .Navbar-title {
     font-size: 20px;
     font-weight: 200;
     margin-bottom: 5px;
     text-decoration: none;
+}
+
+.link-container {
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .Navbar-title:hover {
@@ -145,6 +149,7 @@
 
 .meet-the-dev {
     text-decoration: none;
+    margin-top: 5px;
 }
 
 .navbar-item-links:hover,

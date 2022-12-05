@@ -67,7 +67,9 @@ const NavBar = () => {
               <div className='suits-parachutes-content'>
                 <div className='dropdown-links-container'>
                   <div className='wingsuit-links-container'>
-                    <Link to={`/category/wingsuit`} className='wingsuits-category title Navbar-title'>Wingsuits</Link>
+                    <div className='link-container'>
+                      <Link to={`/category/wingsuit`} className='wingsuits-category title Navbar-title'>Wingsuits</Link>
+                    </div>
                     {Object.entries(itemsState).filter(item => item[1].category === "Wingsuit").map((item, i) => {
                       return (
                         <Link to={`/items/${item[1].id}`} key={i} className="wingsuit-links navbar-item-links" >
@@ -78,7 +80,9 @@ const NavBar = () => {
                   </div>
                   <div className='track-suit-parachute-container'>
                     <div className='tracking-suits-links-container'>
-                      <Link to={`/category/tracking suit`} className='tracking-suits-category title Navbar-title'>Tracking Suits</Link>
+                      <div className='link-container'>
+                        <Link to={`/category/tracking suit`} className='tracking-suits-category title Navbar-title'>Tracking Suits</Link>
+                      </div>
                       {Object.entries(itemsState).filter(item => item[1].category === "Tracking suit").map((item, i) => {
                         return (
                           <Link to={`/items/${item[1].id}`} key={i} className="tracking-suits-links navbar-item-links" >
@@ -88,7 +92,9 @@ const NavBar = () => {
                       })}
                     </div>
                     <div className='parachutes-links-container'>
-                      <Link to={`/category/parachute`} className='parachutes-category title Navbar-title'>Parachutes</Link>
+                      <div className='link-container'>
+                        <Link to={`/category/parachute`} className='parachutes-category title Navbar-title'>Parachutes</Link>
+                      </div>
                       {Object.entries(itemsState).filter(item => item[1].category === "Parachute").map((item, i) => {
                         return (
                           <Link to={`/items/${item[1].id}`} key={i} className="parachute-links navbar-item-links" >
