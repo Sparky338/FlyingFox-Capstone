@@ -16,7 +16,7 @@ const Categories = () => {
         setCategoryItems(categoryItems)
     }, [categoryName])
 
-    console.log("items",itemsObj)
+    console.log("items",itemsObj.category)
     console.log("cat name",categoryName)
 
 
