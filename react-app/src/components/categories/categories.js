@@ -16,12 +16,12 @@ const Categories = () => {
         setCategoryItems(categoryItems)
     }, [categoryName])
 
-    console.log("items",itemsObj.category)
+    console.log("items category",itemsObj[1])
     console.log("cat name",categoryName)
 
 
     let error;
-    if (itemsObj) error = categoryErrorRedirect(itemsObj, categoryName)
+    if (itemsObj) error = categoryErrorRedirect(categoryItems, categoryName)
     if (error) return error
 
     return (

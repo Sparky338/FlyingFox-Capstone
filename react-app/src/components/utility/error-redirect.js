@@ -8,6 +8,6 @@ export const errorRedirect = (obj, id) => {
 
 export const categoryErrorRedirect = (obj, name) => {
     if (typeof name !== 'string') return (<Page404 />)
-    if (!obj.category === name) return (<Page404 />)
+    if (!obj[1]) return (<Page404 />)
     return
 }
