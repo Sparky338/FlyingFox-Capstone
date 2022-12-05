@@ -21,15 +21,14 @@ const Categories = () => {
     useEffect(() => {
         const categoryItems = items.filter(item => item.category.toLowerCase() === categoryName)
 
-        setCategoryItems(categoryItems)
+        setCategoryItems(categoryItems);
     }, [categoryName])
 
     if (!itemsObj) return null;
-    if (!items) return null
+    if (items.length <= 0) return null;
     if (!categoryName) return null;
     if (!categoryItems) return null;
 
-    // 404s or refresh to the page. Will need help figuring out where.
     let error;
     if (categoryItems) error = categoryErrorRedirect(categoryItems, categoryName)
     if (error) return error

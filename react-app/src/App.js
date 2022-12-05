@@ -29,9 +29,9 @@ function App() {
   useEffect(() => {
     (async () => {
       await dispatch(authenticate());
+      await dispatch(getAllItems());
       setLoaded(true);
     })();
-    dispatch(getAllItems());
   }, [dispatch]);
 
   if (!loaded) {
