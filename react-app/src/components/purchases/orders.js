@@ -3,21 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { deletePurchase, getAllPurchases } from "../../store/purchases";
 import { clearPurchaseItemsAction } from "../../store/purchasesItems";
-import "./orders.css"
 import { clearReviewAction, getAllReviews } from "../../store/reviews";
+import "./orders.css"
 
 const Orders = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const purchases = useSelector(state => state.purchases);
     const items = useSelector(state => state.items);
-
-    const formatting_options = {
-        style: 'currency',
-        currency: 'USD',
-        minimumFractionDigits: 2,
-    };
-    const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
 
     const handleCancel = async (purchaseId) => {
         let res = window.confirm("Are you sure you want to cancel this order?")
@@ -59,7 +52,6 @@ const Orders = () => {
                                             {purchase[1].id}
                                         </td>
                                         <td className="order-item-summary">
-                                            {/* {dollarFormatter.format(purchase[1].price)} */}
                                             {purchase[1].purchases_items.map((el, r) => <tr>{items[el.item_id].item_name}</tr>)}
                                         </td>
                                         <td className="order-details">
