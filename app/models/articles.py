@@ -13,9 +13,6 @@ class Article(db.Model):
     image_url = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.String(50), nullable=False, default=date_str)
 
-    #relationships
-    # images = db.relationship("Image", back_populates="items", cascade = "all, delete", lazy=False)
-
     def to_dict(self):
         return {
             'id': self.id,
