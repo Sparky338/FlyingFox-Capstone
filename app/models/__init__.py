@@ -5,3 +5,4 @@ from .items import Item
 from .purchases import Purchase
 from .reviews import Review
 from .purchases_items import Purchases_Items
+from.articles import Article
