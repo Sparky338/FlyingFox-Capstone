@@ -56,3 +56,14 @@ def edit_article(id):
         return article.to_dict()
     else:
         return {'errors': form.errors}, 400
+
+@article_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_article(id):
+    """
+    Delete article by id
+    """
+    article = Article.query.filter_by(id=id).first()
+    db.session.delete(article)
+    db.session.commit()
+    return {'message': "Deleted Successfully"}
