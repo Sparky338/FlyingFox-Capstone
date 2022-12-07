@@ -13,3 +13,4 @@ class CreateArticle(FlaskForm):
 class EditArticle(FlaskForm):
     article_title = StringField('article title', validators=[DataRequired()])
     article = StringField('article', validators=[DataRequired()])
+    image_url = StringField('image')
