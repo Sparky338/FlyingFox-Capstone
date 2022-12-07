@@ -49,7 +49,7 @@ def create_review():
 @login_required
 def edit_review(id):
     """
-    Update item by Id
+    Update review by Id
     """
     form = EditReview()
     form['csrf_token'].data = request.cookies['csrf_token']
@@ -58,7 +58,7 @@ def edit_review(id):
         review = Review.query.filter_by(id=id).first()
         form.populate_obj(review)
         db.session.commit()
-        
+
         return review.to_dict()
     else:
         return {'errors': form.errors}, 400
@@ -68,7 +68,7 @@ def edit_review(id):
 @login_required
 def delete_review(id):
     """
-    Delete item by id
+    Delete review by id
     """
     review = Review.query.filter_by(id=id).first()
     db.session.delete(review)
