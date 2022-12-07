@@ -27,4 +27,16 @@ def get_article_by_id(id):
 @login_required
 def create_article():
     """Create an article"""
-    
+    form = CreateArticle()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        article = Article()
+        form.populate_obj(article)
+
+        db.session.add(article)
+        db.session.commit()
+
+        return article.to_dict()
+    else:
+        return {'errors': form.errors}, 400
