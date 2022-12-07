@@ -16,3 +16,15 @@ def get_4_articles():
     """Get 4 articles"""
     articles = Article.query.all().limit(4)
     return {'articles':[a.to_dict() for a in articles]}
+
+@article_routes("/<int:id")
+def get_article_by_id(id):
+    """Get an article by the article's id"""
+    articles = Article.query.filter_by(article_id=id)
+    return {'articles':[a.to_dict() for a in articles]}
+
+@article_routes("POST")
+@login_required
+def create_article():
+    """Create an article"""
+    
