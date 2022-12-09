@@ -5,6 +5,7 @@ from .purchases import seed_purchases, undo_purchases
 from .reviews import seed_reviews, undo_reviews
 from .purchases_items import seed_purchases_items, undo_purchases_items
 from .images import seed_images, undo_images
+from .articles import seed_articles, undo_articles
 
 from app.models.db import db, environment, SCHEMA
 
@@ -18,6 +19,7 @@ seed_commands = AppGroup('seed')
 def seed():
     if environment == 'production':
         # Before seeding, truncate all tables prefixed with schema name
+        db.session.execute(f"TRUNCATE table {SCHEMA}.articles RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.images RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.reviews RESTART IDENTITY CASCADE;")
         db.session.execute(f"TRUNCATE table {SCHEMA}.purchases_items RESTART IDENTITY CASCADE;")
@@ -32,12 +34,14 @@ def seed():
     seed_purchases_items()
     seed_reviews()
     seed_images()
+    seed_articles()
     # Add other seed functions here
 
 
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
+    undo_articles()
     undo_images()
     undo_reviews()
     undo_purchases_items()
