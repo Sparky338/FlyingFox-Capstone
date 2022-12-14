@@ -11,13 +11,15 @@ const HomepageArticles = () => {
             <div className="article-picture-content">
                 <Link to="/news/" className="article-picture-container">
                     <img src={`https://squirrel.ws/img/news_photos/178/2022-us-nationals-556x556.jpg`}
-                         alt="article"
-                         className="article-picture"
+                        alt="article"
+                        className="article-picture"
                     />
                 </Link>
                 <div className="article-content">have a bit of content that eventually cuts off</div>
             </div>
-            <Link to="/news">Read More <i class="fa-solid fa-angles-right"></i></Link>
+            <div className="more-articles-container">
+                <Link to="/news" className="more-articles">Read More <i class="fa-solid fa-angles-right"></i></Link>
+            </div>
         </div>
     )
 }

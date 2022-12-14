@@ -35,7 +35,7 @@
 
 .logo-separator {
     display: flex;
-    position:absolute;
+    position: absolute;
     height: 40px;
     width: 40px;
 
@@ -53,7 +53,7 @@
     z-index: -1;
 }
 
-.news-and-ads{
+.news-and-ads {
     display: flex;
     flex-direction: row;
 }
@@ -62,20 +62,37 @@
     width: 50%;
 }
 
+.homepage-articles-container {
+    margin-bottom: 10px;
+}
+
 .article-date {
     font-size: 12px;
 }
 
 .article-title-container {
-   margin-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.more-articles-container{
+    width: 82%;
+    display: flex;
+    justify-content: center;
+}
+
+.more-articles {
+    text-decoration: none;
+    color: #06a7e2;
+
 }
 
 .article-title {
-   text-decoration: none;
-   color: #06a7e2;
-   font-size: 26px;
+    text-decoration: none;
+    color: #06a7e2;
+    font-size: 26px;
 }
 
+.more-articles:hover,
 .article-title:hover {
     color: white;
 }
