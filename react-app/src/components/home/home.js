@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import homepageBannerImages from "../../images/homepageBannerImages";
 import flyingFoxLogo from '../../images/Flying_Fox_Logo.png'
 import "./home.css"
+import HomepageArticles from '../articles/homepageArticles';
 
 const HomePage = () => {
     const items = useSelector(state => state.items)
@@ -40,7 +41,9 @@ const HomePage = () => {
                     <div className="news-and-ads">
                         <div className="news-container-left">
                             <div className="news-heading title">NEWS</div>
-                            <div className="news-articles"></div>
+                            <div className="news-articles">
+                                <HomepageArticles />
+                            </div>
                         </div>
                         <div className="ads-container-right">
                             <div className="ads-heading title">FEATURED PRODUCTS</div>
