@@ -66,6 +66,10 @@
     font-size: 12px;
 }
 
+.article-title-container {
+   margin-bottom: 5px;
+}
+
 .article-title {
    text-decoration: none;
    color: #06a7e2;
@@ -74,6 +78,14 @@
 
 .article-title:hover {
     color: white;
+}
+
+.article-picture-content {
+    display: flex;
+}
+
+.article-content {
+    margin-left: 5px;
 }
 
 .article-picture {
