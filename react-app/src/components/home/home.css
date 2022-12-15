@@ -74,13 +74,13 @@
     margin-bottom: 5px;
 }
 
-.more-articles-container{
+.full-articles-container{
     width: 82%;
     display: flex;
     justify-content: center;
 }
 
-.more-articles {
+.full-articles {
     text-decoration: none;
     color: #06a7e2;
 
@@ -92,7 +92,7 @@
     font-size: 26px;
 }
 
-.more-articles:hover,
+.full-articles:hover,
 .article-title:hover {
     color: white;
 }
