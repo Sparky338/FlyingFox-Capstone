@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getAllItems } from './store/items';
 import { authenticate } from './store/session';
+import { getAllArticles } from './store/articles';
 
 import NavBar from './components/NavBar';
 import HomePage from './components/home/home';
@@ -30,6 +31,7 @@ function App() {
     (async () => {
       await dispatch(authenticate());
       await dispatch(getAllItems());
+      await dispatch(getAllArticles());
       setLoaded(true);
     })();
   }, [dispatch]);
