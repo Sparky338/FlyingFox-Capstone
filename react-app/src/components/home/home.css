@@ -103,6 +103,12 @@
 
 .article-content {
     margin-left: 5px;
+    display: block;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 140px;
+    max-width: 70%;
 }
 
 .article-picture {
