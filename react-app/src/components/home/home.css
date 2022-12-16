@@ -75,7 +75,7 @@
 }
 
 .full-articles-container{
-    width: 82%;
+    width: 395px;
     display: flex;
     justify-content: center;
 }
@@ -107,8 +107,9 @@
     text-overflow: ellipsis;
     word-wrap: break-word;
     overflow: hidden;
-    max-height: 140px;
+    max-height: 128px;
     max-width: 70%;
+    white-space:normal;
 }
 
 .article-picture {
