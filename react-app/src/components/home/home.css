@@ -74,7 +74,7 @@
     margin-bottom: 5px;
 }
 
-.full-articles-container{
+.full-articles-container {
     width: 395px;
     display: flex;
     justify-content: center;
@@ -102,14 +102,14 @@
 }
 
 .article-content {
-    margin-left: 5px;
-    display: block;
-    text-overflow: ellipsis;
-    word-wrap: break-word;
+    margin-left: 10px;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
     overflow: hidden;
+    text-overflow: ellipsis;
     max-height: 128px;
     max-width: 70%;
-    white-space:normal;
 }
 
 .article-picture {
