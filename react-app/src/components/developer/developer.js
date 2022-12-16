@@ -28,6 +28,12 @@ const Developer = () => {
                            href="https://github.com/Sparky338/FlyingFox-Capstone">
                            Flying Fox Repo
                         </a>
+                        <a className="dev-link"
+                           target="_blank"
+                           rel="noreferrer"
+                           href="https://sparky338.github.io/">
+                           Profile
+                        </a>
                     </div>
                 </div>
             </div>

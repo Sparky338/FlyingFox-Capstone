@@ -204,5 +204,5 @@ def seed_purchases():
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
 def undo_purchases():
-    db.session.execute('TRUNCATE items RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE purchases RESTART IDENTITY CASCADE;')
     db.session.commit()

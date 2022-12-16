@@ -127,7 +127,7 @@ def seed_reviews():
         review="I love flying the Mutant. Such a great flight that can be had and can keep up with the wingsuiters too!",
         image_url="https://squirrel.ws/img/suits/gallery/mutation/gallery/7-Mutation-580x620@2x.jpg"
     )
-    
+
 
 
     db.session.add(dashreview)
@@ -154,5 +154,5 @@ def seed_reviews():
 # resets the auto incrementing primary key, CASCADE deletes any
 # dependent entities
 def undo_reviews():
-    db.session.execute('TRUNCATE items RESTART IDENTITY CASCADE;')
+    db.session.execute('TRUNCATE reviews RESTART IDENTITY CASCADE;')
     db.session.commit()

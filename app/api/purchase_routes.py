@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_login import current_user, login_required
-from app.models import db, Item, Purchase, Purchases_Items
+from app.models import db, Purchase, Purchases_Items
 from app.forms import CreateShipping, EditShipping
 
 purchase_routes = Blueprint("purchases", __name__)

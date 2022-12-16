@@ -35,7 +35,7 @@
 
 .logo-separator {
     display: flex;
-    position:absolute;
+    position: absolute;
     height: 40px;
     width: 40px;
 
@@ -53,13 +53,74 @@
     z-index: -1;
 }
 
-.news-and-ads{
+.news-and-ads {
     display: flex;
     flex-direction: row;
 }
 
 .news-container-left {
     width: 50%;
+}
+
+.homepage-articles-outer {
+    margin-top: 10px;
+}
+
+.homepage-articles-container {
+    margin-bottom: 10px;
+}
+
+.article-date {
+    font-size: 12px;
+}
+
+.article-title-container {
+    margin-bottom: 5px;
+}
+
+.full-articles-container {
+    width: 395px;
+    display: flex;
+    justify-content: center;
+}
+
+.full-articles {
+    text-decoration: none;
+    color: #06a7e2;
+
+}
+
+.article-title {
+    text-decoration: none;
+    color: #06a7e2;
+    font-size: 26px;
+}
+
+.full-articles:hover,
+.article-title:hover {
+    color: white;
+}
+
+.article-picture-content {
+    display: flex;
+}
+
+.article-content {
+    margin-left: 10px;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 137px;
+    max-width: 70%;
+    line-height: 1.2em;
+}
+
+.article-picture {
+    border: solid 1px #06a7e2;
+    height: 140px;
+    width: 140px;
 }
 
 .ads-heading,

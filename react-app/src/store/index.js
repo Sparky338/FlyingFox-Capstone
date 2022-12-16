@@ -1,5 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
+import articlesReducer from './articles';
+import imagesReducer from './images';
 import itemsReducer from './items';
 import purchasesReducer from './purchases';
 import purchasesItemsReducer from './purchasesItems';
@@ -12,6 +14,8 @@ const rootReducer = combineReducers({
   purchases:purchasesReducer,
   purchasesItems:purchasesItemsReducer,
   reviews:reviewsReducer,
+  images:imagesReducer,
+  articles:articlesReducer,
 });
 
 
