@@ -72,13 +72,6 @@
 
 .article-date {
     font-size: 12px;
-    /* border: solid 1px red; */
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    text-overflow:ellipsis;
-    width: 85px;
 }
 
 .article-title-container {
