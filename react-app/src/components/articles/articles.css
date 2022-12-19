@@ -120,7 +120,5 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* max-height: 137px;
-    max-width: 70%;
-    line-height: 1.2em; */
+    line-height: 1.4em;
 }
