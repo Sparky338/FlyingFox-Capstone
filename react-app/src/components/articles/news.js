@@ -28,10 +28,10 @@ const NewsPage = () => {
                     <div className="news-search-archive-latest-container">
                         <div className="news-search-archive-column">
                             <div className="news-search">
-                                search placeholder
+                                {/* search placeholder */}
                             </div>
                             <div className="news-archive">
-                                NEWS ARCHIVE placeholder
+                                {/* NEWS ARCHIVE placeholder */}
                             </div>
                         </div>
                         <div className="latest-news-column">
