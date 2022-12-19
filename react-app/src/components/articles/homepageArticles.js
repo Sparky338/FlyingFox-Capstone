@@ -8,7 +8,7 @@ const HomepageArticles = () => {
 
     return (
         <div className="homepage-articles-outer">
-            {reversedArticles.slice(0,4).map((article, i) => {
+            {reversedArticles.slice(0, 4).map((article, i) => {
                 return (
                     <div className="homepage-articles-container" key={i}>
                         <div className="article-date">{article[1].created_at.split(" ")[0]}</div>
@@ -30,6 +30,9 @@ const HomepageArticles = () => {
                     </div>
                 )
             })}
+            <div className="homepage-news-container">
+                <Link to="/news" className="login-signup-button homepage-news">READ ALL THE NEWS</Link>
+            </div>
         </div>
     )
 }
