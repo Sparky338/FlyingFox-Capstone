@@ -22,9 +22,9 @@ const NewsPage = () => {
                     <span className="spanright">{' > '}</span> News
                 </div>
             </div>
+            <div className="news-header">NEWS</div>
             <div className="news-body-container">
                 <div className="news-body-outer">
-                    <div className="news-header">NEWS</div>
                     <div className="news-search-archive-latest-container">
                         <div className="news-search-archive-column">
                             <div className="news-search">

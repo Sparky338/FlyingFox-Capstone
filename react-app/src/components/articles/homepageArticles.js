@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const HomepageArticles = () => {
     const articlesObj = useSelector(state => state.articles);
-    const reversedArticles = Object.entries(articlesObj).reverse()
+    const reversedArticles = Object.entries(articlesObj).reverse();
 
 
     return (

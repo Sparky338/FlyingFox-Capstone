@@ -30,6 +30,12 @@
     color: #06a7e2;
 }
 
+.news-header {
+    position: relative;
+    left: 10%;
+    font-size: 28px;
+}
+
 .news-body-container {
     width: 100%;
     display: flex;
@@ -51,6 +57,18 @@
 .news-search-archive-column {
     display: flex;
     flex-direction: column;
-    /* width: %; */
+    width: 20%;
     border: solid 1px red;
+}
+
+.latest-news-column {
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+}
+
+.latest-news-cards {
+    display: flex;
+    flex-direction: row;
+    /* max-width: 50%; */
 }
