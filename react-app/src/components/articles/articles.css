@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     height: 40px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .banner-header {
@@ -29,3 +29,5 @@
 .spanright {
     color: #06a7e2;
 }
+
+
