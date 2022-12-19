@@ -1,0 +1,31 @@
+.Newspage-outer {
+    color: black;
+    width: 100%;
+}
+
+.banner-header-container {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-size: 14px;
+}
+
+.banner-header {
+    color: white;
+    width:80%;
+}
+
+.banner-header-link {
+    text-decoration: none;
+    color: #06a7e2;
+}
+
+.banner-header-link:hover {
+    color: white;
+}
+
+.spanright {
+    color: #06a7e2;
+}

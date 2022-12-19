@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import "./articles.css"
+
 const NewsPage = () => {
 
     useEffect(() => {
@@ -13,8 +15,10 @@ const NewsPage = () => {
 
     return (
         <div className="Newspage-outer">
-            <div className="banner-header">
-            <Link to="/">FlyingFox</Link> {'>'} News
+            <div className="banner-header-container">
+                <div className="banner-header">
+                    <Link to="/" className="banner-header-link">FlyingFox</Link> <span className="spanright">{'>'}</span> News
+                </div>
             </div>
 
         </div>
