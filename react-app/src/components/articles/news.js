@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import NewsArticles from "./newsArticles";
 
 import "./articles.css"
-import HomepageArticles from "./homepageArticles";
 
 const NewsPage = () => {
 
@@ -39,7 +39,7 @@ const NewsPage = () => {
                                 LATEST NEWS
                             </div>
                             <div className="latest-news-cards">
-                                <HomepageArticles />
+                                <NewsArticles />
                             </div>
                         </div>
                     </div>
