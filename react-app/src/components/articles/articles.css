@@ -30,4 +30,27 @@
     color: #06a7e2;
 }
 
+.news-body-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
+}
+
+.news-body-outer {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.news-search-archive-latest-container {
+    display: flex;
+
+}
+
+.news-search-archive-column {
+    display: flex;
+    flex-direction: column;
+    /* width: %; */
+    border: solid 1px red;
+}

@@ -23,22 +23,24 @@ const NewsPage = () => {
                 </div>
             </div>
             <div className="news-body-container">
-                <div className="news-header">NEWS</div>
-                <div className="news-search-archive-latest-container">
-                    <div className="news-search-archive-column">
-                        <div className="news-search">
-                            search placeholder
+                <div className="news-body-outer">
+                    <div className="news-header">NEWS</div>
+                    <div className="news-search-archive-latest-container">
+                        <div className="news-search-archive-column">
+                            <div className="news-search">
+                                search placeholder
+                            </div>
+                            <div className="news-archive">
+                                NEWS ARCHIVE placeholder
+                            </div>
                         </div>
-                        <div className="news-archive">
-                            NEWS ARCHIVE placeholder
-                        </div>
-                    </div>
-                    <div className="latest-news-column">
-                        <div className="latest-news-header">
-                            LATEST NEWS
-                        </div>
-                        <div className="latest-news-cards">
-                            <HomepageArticles />
+                        <div className="latest-news-column">
+                            <div className="latest-news-header">
+                                LATEST NEWS
+                            </div>
+                            <div className="latest-news-cards">
+                                <HomepageArticles />
+                            </div>
                         </div>
                     </div>
                 </div>
