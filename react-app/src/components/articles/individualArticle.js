@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import flyingFoxLogo from '../../images/Flying_Fox_Logo.png'
 
 import "./articles.css"
 
@@ -53,10 +54,13 @@ const IndividualAricle = () => {
                                             </div>
                                             <div className="individual-article-article">{article.article}</div>
                                         </div>
+                                        <div className="separator-container">
+                                            <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-separator' />
+                                            <div className="separator"></div>
+                                        </div>
                                     </div>
                                 )
                             })}
-
                         </div>
                     </div>
                 </div>
