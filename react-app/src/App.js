@@ -22,6 +22,7 @@ import Footer from './components/footer/footer';
 import ScrollToTop from './components/ScrollToTop';
 import Page404 from './components/404-page/404';
 import Categories from './components/categories/categories';
+import NewsPage from './components/articles/news';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -80,6 +81,9 @@ function App() {
         </ProtectedRoute>
         <Route path='/developer'>
           <Developer />
+        </Route>
+        <Route path='/news'>
+          <NewsPage />
         </Route>
         <Route path='*'>
           <Page404 />
