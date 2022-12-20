@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const NewsArticles = () => {
+const NewsArticles = () => { //HOC for news page
     const articlesObj = useSelector(state => state.articles);
     const reversedArticles = Object.entries(articlesObj).reverse();
 

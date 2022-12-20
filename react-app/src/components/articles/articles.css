@@ -1,3 +1,4 @@
+/* News articles */
 .Newspage-outer {
     color: black;
     width: 100%;
@@ -143,4 +144,9 @@
     line-height: 1.4em;
     max-width: 414px;
     max-height: 414px;
+}
+
+/* Individual Articles */
+.individual-outer {
+    color: black;
 }
