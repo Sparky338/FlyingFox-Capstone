@@ -6,7 +6,7 @@ import "./articles.css"
 
 const IndividualAricle = () => {
 
-    const {articleId} = useParams();
+    const { articleId } = useParams();
     const articlesObj = useSelector(state => state.articles);
     const articles = Object.values(articlesObj);
 
@@ -18,9 +18,7 @@ const IndividualAricle = () => {
         }
     }, [])
 
-    // if (!articleId) return null;
-
-    console.log(articleId)
+    const filteredArticle = articles.filter(article => article.id === +articleId)
 
     return (
         <div className="individual-outer">
@@ -43,7 +41,15 @@ const IndividualAricle = () => {
                             </div>
                         </div>
                         <div className="individual-news-column">
-                            
+                            {filteredArticle.map((article) => {
+                                return (
+                                    <div className="individual-article-display" key={article.id}>
+                                        <div className="individual-article-outer">
+                                            <div className="individual-article-date">{article.created_at} TEST</div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
 
                         </div>
                     </div>

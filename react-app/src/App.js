@@ -83,7 +83,7 @@ function App() {
         <Route path='/developer'>
           <Developer />
         </Route>
-        <Route path='/news/:newsId'>
+        <Route path='/news/:articleId'>
           <IndividualAricle />
         </Route>
         <Route path='/news'>
