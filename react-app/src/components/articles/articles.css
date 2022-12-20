@@ -101,13 +101,22 @@
     display: block;
 }
 
-.news-article-link {
-    text-decoration: none;
-    color: black;
-}
-
 .news-article-link-container {
     padding: 5px;
+    height: 100%;
+}
+
+.news-article-link {
+    text-decoration: none;
+
+}
+
+.news-article-link-text {
+    border:#06A7E2 solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .news-article-picture {
