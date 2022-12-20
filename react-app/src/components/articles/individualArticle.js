@@ -58,14 +58,18 @@ const IndividualAricle = () => {
                                             <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-separator' />
                                             <div className="separator"></div>
                                         </div>
-                                        <div className="previous-next-article-container">
-                                            <div className="previous-article-container">
-                                            
-                                            </div>
-                                        </div>
                                     </div>
                                 )
                             })}
+                            <div className="previous-next-article-container">
+
+                                <div className="previous-article-container">
+                                    <Link to={`/news/${articleId - 1}`} className="previous-article-link">
+                                        <i class="fa-solid fa-angles-left"></i> Previous Article
+                                    </Link>
+                                    <img src={`${articlesObj[articleId -1].image_url}`} />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
