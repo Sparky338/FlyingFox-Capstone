@@ -1,9 +1,14 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useParams } from "react-router-dom";
 
 import "./articles.css"
 
 const IndividualAricle = () => {
+
+    const {articleId} = useParams();
+    const articlesObj = useSelector(state => state.articles);
+    const articles = Object.values(articlesObj);
 
     useEffect(() => {
         document.body.classList.add('bg-white');
@@ -12,6 +17,10 @@ const IndividualAricle = () => {
             document.body.classList.remove('bg-white');
         }
     }, [])
+
+    // if (!articleId) return null;
+
+    console.log(articleId)
 
     return (
         <div className="individual-outer">
