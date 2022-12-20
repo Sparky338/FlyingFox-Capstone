@@ -25,7 +25,8 @@ const IndividualAricle = () => {
             <div className="banner-header-container">
                 <div className="banner-header">
                     <Link to="/" className="banner-header-link">FlyingFox</Link>
-                    <span className="spanright">{' > '}</span> News
+                    <span className="spanright">{' > '}</span>
+                    <Link to="/news" className="banner-header-link">News</Link>
                 </div>
             </div>
             <div className="news-header">NEWS</div>
