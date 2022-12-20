@@ -58,6 +58,11 @@ const IndividualAricle = () => {
                                             <img src={flyingFoxLogo} alt="Flying Fox Logo" className='logo-separator' />
                                             <div className="separator"></div>
                                         </div>
+                                        <div className="previous-next-article-container">
+                                            <div className="previous-article-container">
+                                            
+                                            </div>
+                                        </div>
                                     </div>
                                 )
                             })}
