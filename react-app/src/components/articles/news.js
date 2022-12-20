@@ -1,14 +1,10 @@
 import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NewsArticles from "./newsArticles";
 
 import "./articles.css"
-import IndividualAricle from "./individualArticle";
 
 const NewsPage = () => {
-
-    const {articleId} = useParams();
-    console.log(articleId)
 
     useEffect(() => {
         document.body.classList.add('bg-white');
@@ -42,15 +38,9 @@ const NewsPage = () => {
                             <div className="latest-news-header">
                                 LATEST NEWS
                             </div>
-                            {articleId === undefined ?
                             <div className="latest-news-cards">
                                 <NewsArticles />
                             </div>
-                            :
-                            <div className="individual-article">
-                                <IndividualAricle />
-                            </div>
-                            }
                         </div>
                     </div>
                 </div>

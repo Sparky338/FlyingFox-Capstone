@@ -83,9 +83,9 @@ function App() {
         <Route path='/developer'>
           <Developer />
         </Route>
-        {/* <Route path='/news/:newsId'>
+        <Route path='/news/:newsId'>
           <IndividualAricle />
-        </Route> */}
+        </Route>
         <Route path='/news'>
           <NewsPage />
         </Route>
