@@ -45,7 +45,12 @@ const IndividualAricle = () => {
                                 return (
                                     <div className="individual-article-display" key={article.id}>
                                         <div className="individual-article-outer">
-                                            <div className="individual-article-date">{article.created_at} TEST</div>
+                                            <div className="individual-article-date">{article.created_at.split(" ")[0]}</div>
+                                            <div className="individual-article-title">{article.article_title}</div>
+                                            <div className="individual-article-image">
+                                                <img src={`${article.image_url}`} alt="article" className="individual-article-img" />
+                                            </div>
+                                            <div className="individual-article-article">{article.article}</div>
                                         </div>
                                     </div>
                                 )
