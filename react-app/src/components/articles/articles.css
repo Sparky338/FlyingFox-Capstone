@@ -153,3 +153,27 @@
 .individual-outer {
     color: black;
 }
+
+.individual-article-date {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.individual-article-title {
+    color: #06A7E2;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.individual-article-image {
+    margin-bottom: 20px;
+}
+
+.individual-article-img {
+    max-width: 100%;
+}
+
+.individual-article-article {
+    font-size: 20px;
+    font-weight: 200;
+}
