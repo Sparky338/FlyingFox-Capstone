@@ -94,10 +94,10 @@
 .news-articles-container .news-article-link {
     background-color: rgba(6, 167, 226, 0.5);
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: -7px;
+    left: -7px;
+    right: -7px;
+    bottom: -7px;
     display: none;
 }
 
