@@ -91,6 +91,7 @@
     position: relative;
 }
 
+.next-article-container .next-article-link-overlay,
 .previous-article-container .previous-article-link-overlay,
 .news-articles-container .news-article-link {
     background-color: rgba(6, 167, 226, 0.5);
@@ -102,6 +103,7 @@
     display: none;
 }
 
+.next-article-container:hover .next-article-link-overlay,
 .previous-article-container:hover .previous-article-link-overlay,
 .news-articles-container:hover .news-article-link {
     display: flex;
@@ -113,6 +115,8 @@
     padding: 5px;
 }
 
+
+.next-article-link-overlay,
 .previous-article-link-overlay,
 .news-article-link {
     text-decoration: none;
