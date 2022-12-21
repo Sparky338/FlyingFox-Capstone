@@ -178,3 +178,31 @@
     font-size: 20px;
     font-weight: 200;
 }
+
+/* previous and next article */
+.previous-article-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.previous-article-link {
+    color: #06A7E2;
+    text-decoration: none;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.previous-article-image {
+    max-width: 260px;
+    margin-bottom: 10px;
+}
+
+.previous-article-date {
+    color: #06A7E2;
+    font-size: 12px;
+}
+
+.previous-article-title {
+    color: #06A7E2;
+    font-size: 20px;
+}
