@@ -193,6 +193,12 @@
     justify-content: space-between;
 }
 
+.next-article-link-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .next-article-container,
 .previous-article-container {
     display: flex;
@@ -200,6 +206,12 @@
     max-width: 260px;
     position: relative;
     margin-top: 5px;
+}
+
+.next-article-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .next-article-link,
