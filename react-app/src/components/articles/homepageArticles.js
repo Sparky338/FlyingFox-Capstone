@@ -12,6 +12,7 @@ const HomepageArticles = () => { //HOC for articles on homepage
                 return (
                     <div className="homepage-articles-container" key={i}>
                         <div className="article-date">{article[1].created_at.split(" ")[0]}</div>
+                        {article[1].created_at}
                         <div className="article-title-container">
                             <Link to={`/news/${article[0]}`} className="article-title">{article[1].article_title}</Link>
                         </div>

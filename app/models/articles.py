@@ -1,4 +1,4 @@
-from .db import db, environment, SCHEMA, add_prefix_for_prod, date_str
+from .db import db, environment, SCHEMA, add_prefix_for_prod, date
 
 
 class Article(db.Model):
@@ -10,7 +10,7 @@ class Article(db.Model):
     article_title = db.Column(db.String(255), nullable=False)
     article = db.Column(db.String(4000), nullable=False)
     image_url = db.Column(db.String(255), nullable=False)
-    created_at = db.Column(db.String(50), nullable=False, default=date_str)
+    created_at = db.Column(db.String(50), nullable=False, default=date)
 
     def to_dict(self):
         return {

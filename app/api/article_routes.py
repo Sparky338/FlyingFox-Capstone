@@ -42,29 +42,29 @@ def get_articles():
 #     else:
 #         return {'errors': form.errors}, 400
 
-@article_routes.route('/<int:id>', methods=["PUT"])
-@login_required
-def edit_article(id):
-    """Update article by Id"""
-    form = EditArticle()
-    form['csrf_token'].data = request.cookies['csrf_token']
+# @article_routes.route('/<int:id>', methods=["PUT"])
+# @login_required
+# def edit_article(id):
+#     """Update article by Id"""
+#     form = EditArticle()
+#     form['csrf_token'].data = request.cookies['csrf_token']
 
-    if form.validate_on_submit():
-        article = Article.query.filter_by(id=id).first()
-        form.populate_obj(article)
-        db.session.commit()
+#     if form.validate_on_submit():
+#         article = Article.query.filter_by(id=id).first()
+#         form.populate_obj(article)
+#         db.session.commit()
 
-        return article.to_dict()
-    else:
-        return {'errors': form.errors}, 400
+#         return article.to_dict()
+#     else:
+#         return {'errors': form.errors}, 400
 
-@article_routes.route('/<int:id>', methods=["DELETE"])
-@login_required
-def delete_article(id):
-    """
-    Delete article by id
-    """
-    article = Article.query.filter_by(id=id).first()
-    db.session.delete(article)
-    db.session.commit()
-    return {'message': "Deleted Successfully"}
+# @article_routes.route('/<int:id>', methods=["DELETE"])
+# @login_required
+# def delete_article(id):
+#     """
+#     Delete article by id
+#     """
+#     article = Article.query.filter_by(id=id).first()
+#     db.session.delete(article)
+#     db.session.commit()
+#     return {'message': "Deleted Successfully"}

@@ -8,6 +8,7 @@ SCHEMA = os.environ.get('SCHEMA')
 
 
 date_str = str(datetime.now())
+date = datetime.now().strftime('%m/%d/%Y')
 db = SQLAlchemy()
 
 # add function to add a prefix to table names in production environment only
