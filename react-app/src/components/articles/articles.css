@@ -91,6 +91,7 @@
     position: relative;
 }
 
+.previous-article-container .previous-article-link-overlay,
 .news-articles-container .news-article-link {
     background-color: rgba(6, 167, 226, 0.5);
     position: absolute;
@@ -101,6 +102,7 @@
     display: none;
 }
 
+.previous-article-container:hover .previous-article-link-overlay,
 .news-articles-container:hover .news-article-link {
     display: flex;
     justify-content: center;
@@ -183,6 +185,8 @@
 .previous-article-container {
     display: flex;
     flex-direction: column;
+    max-width: 260px;
+    position: relative;
 }
 
 .previous-article-link {

@@ -63,16 +63,22 @@ const IndividualAricle = () => {
                             })}
                             <div className="previous-next-article-container">
                                 {!articlesObj[articleId - 1] ?
-                                <div className="No-previous-article"></div>
-                                :
-                                <div className="previous-article-container">
-                                    <Link to={`/news/${articleId - 1}`} className="previous-article-link">
-                                        <i class="fa-solid fa-angles-left"></i> Previous Article
-                                    </Link>
-                                    <img src={`${articlesObj[articleId - 1].image_url}`} alt="Previous Article" className="previous-article-image" />
-                                    <div className="previous-article-date">{articlesObj[articleId - 1].created_at.split(" ")[0]}</div>
-                                    <div className="previous-article-title">{articlesObj[articleId - 1].article_title}</div>
-                                </div>
+                                    <div className="No-previous-article"></div>
+                                    :
+                                    <div className="previous-article-container">
+                                        <Link to={`/news/${articleId - 1}`} className="previous-article-link">
+                                            <i class="fa-solid fa-angles-left"></i> Previous Article
+                                        </Link>
+                                        <img src={`${articlesObj[articleId - 1].image_url}`} alt="Previous Article" className="previous-article-image" />
+                                        <div className="previous-article-date">{articlesObj[articleId - 1].created_at.split(" ")[0]}</div>
+                                        <div className="previous-article-title">{articlesObj[articleId - 1].article_title}</div>
+
+                                        <div className="previous-article-link-overlay-container">
+                                            <Link to={`/news/${articleId - 1}`} className="previous-article-link-overlay">
+                                                <span className="news-article-link-text login-signup-button">READ ARTICLE</span>
+                                            </Link>
+                                        </div>
+                                    </div>
                                 }
                             </div>
                         </div>
