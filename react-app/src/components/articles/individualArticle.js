@@ -84,6 +84,28 @@ const IndividualAricle = () => {
                                         </div>
                                     </div>
                                 }
+                                {!articlesObj[articleId + 1] ?
+                                    <div className="No-next-article">test</div>
+                                    :
+                                    <div className="next-article-link-container">
+                                        <Link to={`/news/${articleId + 1}`} className="next-article-link">
+                                            <i class="fa-solid fa-angles-right"></i> next Article
+                                        </Link>
+                                        <div className="next-article-container">
+                                            <div className="next-article-image-container">
+                                                <img src={`${articlesObj[articleId + 1].image_url}`} alt="next Article" className="next-article-image" />
+                                            </div>
+                                            <div className="next-article-date">{articlesObj[articleId + 1].created_at.split(" ")[0]}</div>
+                                            <div className="next-article-title">{articlesObj[articleId + 1].article_title}</div>
+
+                                            <div className="next-article-link-overlay-container">
+                                                <Link to={`/news/${articleId + 1}`} className="next-article-link-overlay">
+                                                    <span className="news-article-link-text login-signup-button">READ ARTICLE</span>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
