@@ -113,6 +113,7 @@
     padding: 5px;
 }
 
+.previous-article-link-overlay,
 .news-article-link {
     text-decoration: none;
 }
@@ -193,7 +194,10 @@
     color: #06A7E2;
     text-decoration: none;
     font-size: 26px;
-    margin-bottom: 10px;
+}
+
+.previous-article-container {
+    margin-top: 5px;
 }
 
 .previous-article-image {
