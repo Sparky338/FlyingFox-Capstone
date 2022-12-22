@@ -184,6 +184,7 @@
 .individual-article-article {
     font-size: 20px;
     font-weight: 200;
+    white-space: pre-line;
 }
 
 /* previous and next article */
