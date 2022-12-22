@@ -7,7 +7,7 @@ def seed_articles():
 
         Congrats Chris and Luke, we love you guys!
 
-        Eight out of the top ten pilots flew Flying Fox. Full results: https://skyderby.ru/competition_series/1""",
+        Eight out of the top ten pilots flew Flying Fox.""",
         image_url="https://squirrel.ws/img/news_photos/168/gallery/1-chris-and-luke-win-2021-australian-nations-872x530.jpg",
         created_at = "03/22/2021"
     )
@@ -17,8 +17,7 @@ def seed_articles():
 
         Dennis Ohlsen - CR+
         Ulf Munkedal - CR+
-        Kristian Sommer - CR+
-        https://skyderby.ru/events/239""",
+        Kristian Sommer - CR+""",
         image_url="https://squirrel.ws/img/news_photos/169/gallery/2021-sqrl-pilots-sweet-danish-champs-872x530.jpg",
         created_at = "07/12/2021"
     )
@@ -28,10 +27,7 @@ def seed_articles():
         Nicholas Yu
         Benoit Sauriol
         John Swallow
-        (All flying CR+)
-
-        https://www.intimescoring.com/Results/EventResults?dbid=22&mid=26&smid=0&mdcid=127&dseid=0
-        https://www.skyderby.ru/events/248""",
+        (All flying CR+)""",
         image_url="https://squirrel.ws/img/news_photos/170/gallery/2021-canadian-nationals-872x530.jpg",
         created_at = "07/29/2021"
     )
@@ -46,7 +42,7 @@ def seed_articles():
     )
     article_sub_one = Article(
         article_title="Fabio, Stefan, Daniel, win German Championships Open",
-        article="""Congrats to Fabio Neujahr, the new 2021 German Champion. He was joined on the podium by Stefan Gilbert, and Daniel Ossio, who took 2nd and 3rd overall. All were flying the CR+. Fabio writes, “I won the open class with my CR+ 2020 version. Stefan Gilbert scored second with his CR+ 2021 Version. It was only my 3rd wingsuit competition, and the first one I’ve done in a performance suit after winning the Advanced class at wings over Marl in 2019 and the TonySuit performance cup in 2020.” Awesome work Fabio, and thanks for your support! Full results can be seen here. https://skyderby.ru/events/298
+        article="""Congrats to Fabio Neujahr, the new 2021 German Champion. He was joined on the podium by Stefan Gilbert, and Daniel Ossio, who took 2nd and 3rd overall. All were flying the CR+. Fabio writes, “I won the open class with my CR+ 2020 version. Stefan Gilbert scored second with his CR+ 2021 Version. It was only my 3rd wingsuit competition, and the first one I’ve done in a performance suit after winning the Advanced class at wings over Marl in 2019 and the TonySuit performance cup in 2020.” Awesome work Fabio, and thanks for your support!
         Photo attached is of the German National ranking, credit: @t.virus47""",
         image_url="https://squirrel.ws/img/news_photos/173/gallery/1-german-nationals-872x530.jpg",
         created_at = "09/22/2021"
@@ -61,7 +57,7 @@ def seed_articles():
     )
     article_two = Article(
         article_title="US Nationals Sweep, New World Records",
-        article="""Congrats to our friend Alexey Galda who took gold, and was joined on the podium by Chris Geiler and Joe Ridler. All top five pilots flew Flying Fox. Two new world records were set during the event: the new speed record was set by Chris Geiler, and time was set by Alexey Galda. It’s an honor for us that so many of the world’s top pilots continue to choose Flying Fox. Thank you for your support! Full results here: https://skyderby.ru/events/312
+        article="""Congrats to our friend Alexey Galda who took gold, and was joined on the podium by Chris Geiler and Joe Ridler. All top five pilots flew Flying Fox. Two new world records were set during the event: the new speed record was set by Chris Geiler, and time was set by Alexey Galda. It’s an honor for us that so many of the world’s top pilots continue to choose Flying Fox. Thank you for your support!
         Cheers, from all the Team.""",
         image_url="https://squirrel.ws/img/news_photos/175/gallery/1-2021-us-nationals-sweep-872x530.jpg",
         created_at = "11/01/2021"
@@ -74,8 +70,7 @@ def seed_articles():
     )
     article_four = Article(
         article_title="Flying Fox Pilots Sweep US Nats Podium Again",
-        article="""2022 marks the third year in a row that Flying Fox pilots have swept the podium. Chris Geiler, Alexey Galda, and Joe Ridler all flew the CR+. Alexey (Silver) and Chris (Gold) battled it out in the time and distance categories but Chris ultimately took first overall. Joe Ridler, who was only able to make a handful of training jumps on his new suit before the event, performed exceptionally to take Bronze. All of the top 5 pilots flew Flying Fox. It’s an honor that so many of the world’s best pilots continue to choose Flying Fox, year after year. Thank you for your trust and support!
-        Full Results Here: https://www.skyderby.ru/events/372""",
+        article="""2022 marks the third year in a row that Flying Fox pilots have swept the podium. Chris Geiler, Alexey Galda, and Joe Ridler all flew the CR+. Alexey (Silver) and Chris (Gold) battled it out in the time and distance categories but Chris ultimately took first overall. Joe Ridler, who was only able to make a handful of training jumps on his new suit before the event, performed exceptionally to take Bronze. All of the top 5 pilots flew Flying Fox. It’s an honor that so many of the world’s best pilots continue to choose Flying Fox, year after year. Thank you for your trust and support!""",
         image_url="https://squirrel.ws/img/news_photos/178/gallery/1-2022-us-nationals-1744x1060.jpg",
         created_at = "09/30/2022"
     )
@@ -84,8 +79,7 @@ def seed_articles():
         article="""Our most heartfelt congratulations to Chris Geiler, new World Champion. He was joined on the podium by Alexey Galda (Silver) and Luke Rogers (Bronze). Joe Ridler and Jason Dodunski rounded out the top 5. Team USA took Gold in the Nations category. All 5 top pilots flew Flying Fox. 15 out of the top 16 pilots flew Flying Fox. And every pilot on the Nations podium flew Flying Fox.
         This was the first year that the FAI awarded medals for individual tasks, which meant that Chris, Alexey, and Luke went home with a lot of metal hanging from their necks. Chris took home five FAI medals: Overall Gold, Nations Gold (USA), and Silver medals in Distance, Time, and Speed. Luke and Alexey also picked up Gold medals for Distance and Time, respectively, in addition to their overall podium and nations category medals.
         No FAI world event is free of drama, and 2022 was no exception. After Alexey Galda revealed his 3D printed gripper extensions shortly before the event, it set off a scramble amongst a few pilots to replicate the addition to their suits in order to compete in time and distance. The gripper extensions reduced sink rate enough to make a significant improvement to time and distance scores, while reducing the speed score – an obvious tradeoff for the overall title. An informal poll at the event indicated that rigid wing extensions are not favored by competitors and may be banned or restricted in future. We’re excited to see the level of flying increasing so significantly as well as the innovations being explored by pilots in our sport.
-        A huge thanks to everyone who gave their time and energy to participate in this highest level event, and to all of the pilots who flew Flying Fox. It is a tremendous honor for us to be able to support virtually all of the world’s top pilots.
-        Full results at: http://results.worldskydiving.org/FrontEnd/ResultSet/318""",
+        A huge thanks to everyone who gave their time and energy to participate in this highest level event, and to all of the pilots who flew Flying Fox. It is a tremendous honor for us to be able to support virtually all of the world’s top pilots.""",
         image_url="https://squirrel.ws/img/news_photos/184/gallery/4-2022-World-Championships-1744x1060.jpg",
         created_at = "10/19/2022"
     )
