@@ -66,7 +66,7 @@ def seed_articles():
         article_title="US Nationals Sweep, New World Records",
         article="""Congrats to our friend Alexey Galda who took gold, and was joined on the podium by Chris Geiler and Joe Ridler. All top five pilots flew Flying Fox. Two new world records were set during the event: the new speed record was set by Chris Geiler, and time was set by Alexey Galda. It’s an honor for us that so many of the world’s top pilots continue to choose Flying Fox. Thank you for your support!
 
-        Cheers, from all the Team.""",
+        Cheers, from all the Flying Fox Team.""",
         image_url="https://squirrel.ws/img/news_photos/175/gallery/1-2021-us-nationals-sweep-872x530.jpg",
         created_at = "11/01/2021"
     )
