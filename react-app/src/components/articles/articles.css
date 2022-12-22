@@ -194,9 +194,10 @@
 }
 
 .next-article-link-container {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-end; */
+    text-align: right;
 }
 
 .next-article-container,
@@ -209,9 +210,10 @@
 }
 
 .next-article-container {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items:flex-end; */
+    text-align: right;
 }
 
 .next-article-link,
