@@ -47,7 +47,7 @@ const IndividualAricle = () => {
                                 return (
                                     <div className="individual-article-display" key={article.id}>
                                         <div className="individual-article-outer">
-                                            <div className="individual-article-date">{article.created_at.split(" ")[0]}</div>
+                                            <div className="individual-article-date">{article.created_at}</div>
                                             <div className="individual-article-title">{article.article_title}</div>
                                             <div className="individual-article-image">
                                                 <img src={`${article.image_url}`} alt="article" className="individual-article-img" />
@@ -73,7 +73,7 @@ const IndividualAricle = () => {
                                             <div className="previous-article-image-container">
                                                 <img src={`${articlesObj[+articleId - 1].image_url}`} alt="Previous Article" className="previous-article-image" />
                                             </div>
-                                            <div className="previous-article-date">{articlesObj[+articleId - 1].created_at.split(" ")[0]}</div>
+                                            <div className="previous-article-date">{articlesObj[+articleId - 1].created_at}</div>
                                             <div className="previous-article-title">{articlesObj[+articleId - 1].article_title}</div>
 
                                             <div className="previous-article-link-overlay-container">
@@ -95,7 +95,7 @@ const IndividualAricle = () => {
                                             <div className="next-article-image-container">
                                                 <img src={`${articlesObj[+articleId + 1].image_url}`} alt="next Article" className="next-article-image" />
                                             </div>
-                                            <div className="next-article-date">{articlesObj[+articleId + 1].created_at.split(" ")[0]}</div>
+                                            <div className="next-article-date">{articlesObj[+articleId + 1].created_at}</div>
                                             <div className="next-article-title">{articlesObj[+articleId + 1].article_title}</div>
 
                                             <div className="next-article-link-overlay-container">

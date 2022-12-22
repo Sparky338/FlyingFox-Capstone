@@ -11,7 +11,7 @@ const HomepageArticles = () => { //HOC for articles on homepage
             {reversedArticles.slice(0, 4).map((article, i) => {
                 return (
                     <div className="homepage-articles-container" key={i}>
-                        <div className="article-date">{article[1].created_at.split(" ")[0]}</div>
+                        <div className="article-date">{article[1].created_at}</div>
                         <div className="article-title-container">
                             <Link to={`/news/${article[0]}`} className="article-title">{article[1].article_title}</Link>
                         </div>

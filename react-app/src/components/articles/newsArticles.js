@@ -15,7 +15,7 @@ const NewsArticles = () => { //HOC for news page
                             alt="article"
                             className="news-article-picture"
                         />
-                        <div className="news-article-date">{article[1].created_at.split(" ")[0]}</div>
+                        <div className="news-article-date">{article[1].created_at}</div>
                         <div className="news-article-title">{article[1].article_title}</div>
                         <div className="news-article-content">{article[1].article}</div>
 
