@@ -43,6 +43,12 @@ Cart
 Order Page
 ![FlyingFox-order-page](./react-app/src/images/readme-assets/orderById.png)
 
+News
+![FlyingFox-news-page](./react-app/src/images/readme-assets/News.png)
+
+News
+![FlyingFox-news-article](./react-app/src/images/readme-assets/individualArticle.png)
+
 ## Getting Started
 
 1. Clone this repository.
