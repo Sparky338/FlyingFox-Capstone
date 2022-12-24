@@ -46,7 +46,7 @@ Order Page
 News
 ![FlyingFox-news-page](./react-app/src/images/readme-assets/News.png)
 
-News
+News Article
 ![FlyingFox-news-article](./react-app/src/images/readme-assets/individualArticle.png)
 
 ## Getting Started
@@ -95,3 +95,12 @@ pipenv install -r requirements.txt
    ```bash
    npm start
    ```
+
+## Contact Information
+[GitHub](http://github.com/Sparky338)
+
+[LinkedIn](www.linkedin.com/in/matt-hutter-2a6620173)
+
+[Portfolio](https://sparky338.github.io/)
+
+[Email](matthewjhutter@gmail.com)
