@@ -101,6 +101,7 @@ def seed_purchases_items():
         item_id="12",
         quantity="1"
     )
+    
 
 
     db.session.add(first_demo)
