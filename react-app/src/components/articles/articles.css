@@ -175,6 +175,9 @@
 
 .individual-article-image {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .individual-article-img {

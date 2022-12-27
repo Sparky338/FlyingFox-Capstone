@@ -177,24 +177,37 @@ def seed_purchases():
         state="AZ",
         zipCode="85131"
     )
+    final_demo = Purchase (
+        user_id="1",
+        price="2400.00",
+        first_name="Demo",
+        last_name="lition",
+        address="123 AppAcademy Way",
+        address2="",
+        city="SanFrancisco",
+        state="CA",
+        zipCode="94105"
+    )
+
 
 
     db.session.add(first_demo)
-    db.session.add(second_demo)
-    db.session.add(third_demo)
     db.session.add(first_nikko)
-    db.session.add(second_nikko)
-    db.session.add(third_nikko)
+    db.session.add(second_demo)
     db.session.add(first_crystal)
+    db.session.add(second_nikko)
+    db.session.add(third_demo)
     db.session.add(first_Andy)
     db.session.add(first_christian)
     db.session.add(first_Julie)
     db.session.add(first_corinne)
     db.session.add(second_Julie)
+    db.session.add(third_nikko)
     db.session.add(second_Andy)
     db.session.add(first_Keri)
     db.session.add(first_bobbie)
     db.session.add(first_Marnie)
+    db.session.add(final_demo)
 
     db.session.commit()
 
