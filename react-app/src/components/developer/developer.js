@@ -19,7 +19,7 @@ const Developer = () => {
                         <a className="dev-link"
                            target="_blank"
                            rel="noreferrer"
-                           href="https://www.linkedin.com/in/matthew-hutter-2a6620173">
+                           href="https://www.linkedin.com/in/matt-hutter-2a6620173">
                            LinkedIn
                         </a>
                         <a className="dev-link"
