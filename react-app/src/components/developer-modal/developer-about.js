@@ -15,12 +15,13 @@ const DeveloperAbout = () => {
                 <div className="modal-dev-about">
                     Matt is responsible for coding the Flying Fox page you're currently on.
                     Matt began coding in the early 2000s for middle school and
-                    high school projects using HTML. Since then, he has upgraded his skills
-                    to code in Javascript, Python, and React/Redux while attending AppAcademy.
-                    Matt learned to skydive in 2021 and has loved every second of it.
-                    He plans on piloting a wingsuit as soon as he gets the minimum required
-                    200 jumps, under coaching from some of the best wingsuit pilots in the
-                    Pacific NorthWest at Skydive Kapowsin.
+                    high school projects using HTML and CSS. Since then, he has upgraded his skills
+                    to code in Javascript, Typescript, Python, Pandas, Flask, and
+                    React/Redux while attending AppAcademy and beyond with mentorship.
+                    Matt learned to skydive in May 2021 and has loved every second of it.
+                    He currently pilots a Swift 3 wingsuit, after receiving coaching
+                    from some of the best wingsuit pilots in the Pacific Northwest at
+                    Skydive Kapowsin.
                 </div>
             </div>
         </div>
