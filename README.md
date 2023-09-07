@@ -99,8 +99,8 @@ pipenv install -r requirements.txt
 ## Contact Information
 [GitHub](http://github.com/Sparky338)
 
-[LinkedIn](www.linkedin.com/in/matt-hutter-2a6620173)
+[LinkedIn](https://www.linkedin.com/in/matt-hutter-2a6620173)
 
 [Portfolio](https://sparky338.github.io/)
 
-[Email](matthewjhutter@gmail.com)
+[matthewjhutter@gmail.com](mailto: matthewjhutter@gmail.com)
