@@ -24,7 +24,7 @@ python-dateutil
 python-dotenv
 python-editor
 six
-sqlalchemy==1.4.19
+sqlalchemy==1.4.51
 werkzeug
 wtforms
 boto3
