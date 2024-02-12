@@ -274,27 +274,27 @@ def seed_images():
 
     Haymaker = Image(
         item_id ="11",
-        image_url="https://squirrel.ws/img/suits/gallery/hayduke2/gallery/2-HAYDUKE2-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/cf13e5ffa2214e0e9279765cffadd9f92783a63b-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Haymaker2 = Image(
         item_id ="11",
-        image_url="https://squirrel.ws/img/suits/gallery/hayduke2/gallery/3-HAYDUKE2-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/22f734f6cae24d02ccf911f9e2dde00b78480646-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Haymaker3 = Image(
         item_id ="11",
-        image_url="https://squirrel.ws/img/suits/gallery/hayduke2/gallery/4-HAYDUKE2-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/e3f20c6d9841e79e614d448e0c864b60981fedf2-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Haymaker4 = Image(
         item_id ="11",
-        image_url="https://squirrel.ws/img/suits/gallery/hayduke2/gallery/6-HAYDUKE2-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/bc90da5b26d4b64b60693d9eb46bd0eff3f2451c-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Haymaker5 = Image(
         item_id ="11",
-        image_url="https://squirrel.ws/img/suits/gallery/hayduke2/gallery/8-HAYDUKE2-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/f54887f6e34883e9efed1afa742b057aebb36017-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Epicenter = Image(
