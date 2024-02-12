@@ -38,77 +38,77 @@ def seed_images():
 
     BTC = Image(
         item_id ="3",
-        image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/3-ATC3-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/cfb8ea029b653a171a6cfb87de6dd5af8c9c5b14-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     BTC2 = Image(
         item_id ="3",
-        image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/6-ATC3-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/ead619b71d2833b40ec3cb1a39117ac47c8de487-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
-    BTC3 = Image(
-        item_id ="3",
-        image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/7-ATC3-580x620.jpg"
-    )
+    # BTC3 = Image(
+    #     item_id ="3",
+    #     image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/7-ATC3-580x620.jpg"
+    # )
 
-    BTC4 = Image(
-        item_id ="3",
-        image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/8-ATC3-580x620.jpg"
-    )
+    # BTC4 = Image(
+    #     item_id ="3",
+    #     image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/8-ATC3-580x620.jpg"
+    # )
 
-    BTC5 = Image(
-        item_id ="3",
-        image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/11-ATC3-580x620.jpg"
-    )
+    # BTC5 = Image(
+    #     item_id ="3",
+    #     image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/11-ATC3-580x620.jpg"
+    # )
 
-    BTC6 = Image(
-        item_id ="3",
-        image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/12-ATC3-580x620.jpg"
-    )
+    # BTC6 = Image(
+    #     item_id ="3",
+    #     image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/12-ATC3-580x620.jpg"
+    # )
 
     Prince = Image(
         item_id ="4",
-        image_url="https://squirrel.ws/img/suits/gallery/low-ki/gallery/5-LOWKI-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/6174fdb77a69c05f87430c4c2919544cc871457b-580x620.jpg?w=580&h=620&auto=format"
     )
 
     Prince2 = Image(
         item_id ="4",
-        image_url="https://squirrel.ws/img/suits/gallery/low-ki/gallery/3-LOWKI-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/0c18b51188e22b41a4eb1a27ad12efebf78d8fc2-580x620.jpg?w=580&h=620&auto=format"
     )
 
     Prince3 = Image(
         item_id ="4",
-        image_url="https://squirrel.ws/img/suits/gallery/low-ki/gallery/7-LOWKI-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/63b28ffac48b4e238cbcdf2c45b56d4cfea51f77-580x620.jpg?w=580&h=620&auto=format"
     )
 
     Prince4 = Image(
         item_id ="4",
-        image_url="https://squirrel.ws/img/suits/gallery/low-ki/gallery/9-LOWKI-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/b6a5e026e3228f7631a82f2f13e19d0853b070a1-580x620.jpg?w=580&h=620&auto=format"
     )
 
     Sideshow = Image(
         item_id ="5",
-        image_url="https://squirrel.ws/img/suits/gallery/freak4/gallery/4-Freak4-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/cf6426ccf589e54551a68836548b17e537198425-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Sideshow2 = Image(
         item_id ="5",
-        image_url="https://squirrel.ws/img/suits/gallery/freak4/gallery/5-Freak4-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/d3a627bfbe71f6017602b90a30035feb7f541e30-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Sideshow3 = Image(
         item_id ="5",
-        image_url="https://squirrel.ws/img/suits/gallery/freak4/gallery/7-Freak4-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/6923f29b7bc8cf9c00ed9fbb2b6f99cfb0164260-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Sideshow4 = Image(
         item_id ="5",
-        image_url="https://squirrel.ws/img/suits/gallery/freak4/gallery/9-Freak4-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/4c06676c266b86067aaf8f685c502e9d350558cb-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Sideshow5 = Image(
         item_id ="5",
-        image_url="https://squirrel.ws/img/suits/gallery/freak4/gallery/11-Freak4-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/46426d4a170caaa0fc5a574eacd80f14db8d9c22-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Beast = Image(
