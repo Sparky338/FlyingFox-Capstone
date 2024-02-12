@@ -15,7 +15,7 @@ Flask-SQLAlchemy = "==2.5.1"
 Flask-WTF = "==0.15.1"
 Jinja2 = "==3.0.1"
 MarkupSafe = "==2.0.1"
-SQLAlchemy = "==1.4.19"
+SQLAlchemy = "==1.4.51"
 Werkzeug = "==2.0.1"
 WTForms = "==2.3.3"
 Flask-Migrate = "==3.0.1"
@@ -26,7 +26,6 @@ python-editor = "==1.0.4"
 greenlet = "==1.1.0"
 Mako = "==1.1.4"
 boto3 = "==1.25.1"
-
 
 [dev-packages]
 
