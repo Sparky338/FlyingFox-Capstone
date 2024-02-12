@@ -113,47 +113,47 @@ def seed_images():
 
     Beast = Image(
         item_id ="6",
-        image_url="https://squirrel.ws/img/suits/gallery/creature/gallery/2-CREATURE-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/54bfb5d9e90c6d1a4e527924d660d433ce295025-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Beast2 = Image(
         item_id ="6",
-        image_url="https://squirrel.ws/img/suits/gallery/creature/gallery/4-CREATURE-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/1f3f91d1f83e46bb676664615f111da62cbd1b3c-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Beast3 = Image(
         item_id ="6",
-        image_url="https://squirrel.ws/img/suits/gallery/creature/gallery/5-CREATURE-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/c5b2a7acef6805a50ba0f1faebc31aa78a6bc7d5-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Beast4 = Image(
         item_id ="6",
-        image_url="https://squirrel.ws/img/suits/gallery/creature/gallery/9-CREATURE-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/24320541f02987711c5e5fcb92c528c298eaeb05-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Beast5 = Image(
         item_id ="6",
-        image_url="https://squirrel.ws/img/suits/gallery/creature/gallery/11-CREATURE-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/a62052a264b95c0a0f87fe43dfcac456a333ff3a-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Beast6 = Image(
         item_id ="6",
-        image_url="https://squirrel.ws/img/suits/gallery/creature/gallery/16-CREATURE-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/cb65c5665795faf581f3698538abe625592fd6c6-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Beast7 = Image(
         item_id ="6",
-        image_url="https://squirrel.ws/img/suits/gallery/creature/gallery/19-CREATURE-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/dd9932889f1f427032abaa2538e9cb217e29771b-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Beast8 = Image(
         item_id ="6",
-        image_url="https://squirrel.ws/img/suits/gallery/creature/gallery/21-CREATURE-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/01ae123c4a8d8c5dd603f5d6397571437b815b50-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Beast9 = Image(
         item_id ="6",
-        image_url="https://squirrel.ws/img/suits/gallery/creature/gallery/22-CREATURE-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/4b411d7d3473dc10d287da79b32ec63b7b80fbdc-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Racer = Image(
