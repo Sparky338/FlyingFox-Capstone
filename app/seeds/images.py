@@ -244,32 +244,32 @@ def seed_images():
 
     SFG = Image(
         item_id ="10",
-        image_url="https://squirrel.ws/img/suits/gallery/etmd/gallery/2-ETMD-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/c94cb4f03e87006307489662e23871a7f826ddde-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     SFG2 = Image(
         item_id ="10",
-        image_url="https://squirrel.ws/img/suits/gallery/etmd/gallery/3-ETMD-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/a98d534c0ac701b53f5031b6ffa1958655e8a5f6-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     SFG3 = Image(
         item_id ="10",
-        image_url="https://squirrel.ws/img/suits/gallery/etmd/gallery/4-ETMD-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/120d803930f233e7d28083371cc4bfd4ea49759d-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     SFG4 = Image(
         item_id ="10",
-        image_url="https://squirrel.ws/img/suits/gallery/etmd/gallery/5-ETMD-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/ff18a524cc3ead51f9de27029a3734dc9fa429ea-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     SFG5 = Image(
         item_id ="10",
-        image_url="https://squirrel.ws/img/suits/gallery/etmd/gallery/8-ETMD-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/2fb5879f01f1e276633e737217f7a2f41636839b-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     SFG6 = Image(
         item_id ="10",
-        image_url="https://squirrel.ws/img/suits/gallery/etmd/gallery/9-ETMD-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/77d76389d7aa07a8fc33148e37e3483adc7f0704-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Haymaker = Image(
