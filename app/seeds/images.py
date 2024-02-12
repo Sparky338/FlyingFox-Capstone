@@ -46,10 +46,10 @@ def seed_images():
         image_url="https://cdn.sanity.io/images/m2koza6e/production/ead619b71d2833b40ec3cb1a39117ac47c8de487-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
-    # BTC3 = Image(
-    #     item_id ="3",
-    #     image_url="https://squirrel.ws/img/suits/gallery/atc3/gallery/7-ATC3-580x620.jpg"
-    # )
+    BTC3 = Image(
+        item_id ="3",
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/a62ab285867ab958a1136409bc9f69e6abaa92ad-1160x1240.jpg?w=1160&h=1240&auto=format"
+    )
 
     # BTC4 = Image(
     #     item_id ="3",
@@ -299,32 +299,32 @@ def seed_images():
 
     Epicenter = Image(
         item_id ="12",
-        image_url="https://squirrel.ws/img/suits/gallery/epicene-pro/gallery/02-1-EpicenePro-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/e00d3b8da3a34ade41ea7230bf05c9072d122735-1160x1238.jpg?w=1160&h=1238&auto=format"
     )
 
     Epicenter2 = Image(
         item_id ="12",
-        image_url="https://squirrel.ws/img/suits/gallery/epicene-pro/gallery/11-EpicenePro-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/390270acb45e94e30a980aea87006b9cc3cc6f76-1160x1239.jpg?w=1160&h=1239&auto=format"
     )
 
     Epicenter3 = Image(
         item_id ="12",
-        image_url="https://squirrel.ws/img/suits/gallery/epicene-pro/gallery/04-EpicenePro-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/a78b42aa6274a73bfb032cf1e1b14a3a24438c2b-1160x1239.jpg?w=1160&h=1239&auto=format"
     )
 
     Epicenter4 = Image(
         item_id ="12",
-        image_url="https://squirrel.ws/img/suits/gallery/epicene-pro/gallery/05-EpicenePro-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/fc51bfcc83e57609327eca270534d896f972d4e4-1159x1239.jpg?w=1159&h=1239&auto=format"
     )
 
     Epicenter5 = Image(
         item_id ="12",
-        image_url="https://squirrel.ws/img/suits/gallery/epicene-pro/gallery/08-EpicenePro-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/6f1737ee9d0a8d8b386c798887d85585b63311e1-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Epicenter6 = Image(
         item_id ="12",
-        image_url="https://squirrel.ws/img/suits/gallery/epicene-pro/gallery/12-EpicenePro-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/325981b8d8c9073a83e05f4c46f22a2268b79073-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     db.session.add(Dash)
@@ -334,13 +334,13 @@ def seed_images():
     db.session.add(River2)
     db.session.add(River3)
     db.session.add(River4)
-    db.session.add(River5)
+    # db.session.add(River5)
     db.session.add(BTC)
     db.session.add(BTC2)
     db.session.add(BTC3)
-    db.session.add(BTC4)
-    db.session.add(BTC5)
-    db.session.add(BTC6)
+    # db.session.add(BTC4)
+    # db.session.add(BTC5)
+    # db.session.add(BTC6)
     db.session.add(Prince)
     db.session.add(Prince2)
     db.session.add(Prince3)
@@ -365,11 +365,11 @@ def seed_images():
     db.session.add(Daiko)
     db.session.add(Daiko2)
     db.session.add(Daiko3)
-    db.session.add(Daiko4)
-    db.session.add(Daiko5)
-    db.session.add(Daiko6)
-    db.session.add(Daiko7)
-    db.session.add(Daiko8)
+    # db.session.add(Daiko4)
+    # db.session.add(Daiko5)
+    # db.session.add(Daiko6)
+    # db.session.add(Daiko7)
+    # db.session.add(Daiko8)
     db.session.add(Mutant)
     db.session.add(Mutant2)
     db.session.add(Mutant3)
