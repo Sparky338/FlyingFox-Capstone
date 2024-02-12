@@ -57,13 +57,13 @@ const HomePage = () => {
                                 <div className="ad-container">
                                     <Link to="/items/3" className="ad-item-link" >
                                         <div className="ad-item-name">{items[3]?.item_name}</div>
-                                        <img src={items[3]?.images[3].image_url} alt={`${items[3]?.item_name}`} className="ad-image" />
+                                        <img src={items[3]?.images[1].image_url} alt={`${items[3]?.item_name}`} className="ad-image" />
                                     </Link>
                                 </div>
                                 <div className="ad-container">
                                     <Link to="/items/10" className="ad-item-link" >
                                         <div className="ad-item-name">{items[10]?.item_name}</div>
-                                        <img src={items[10]?.images[2].image_url} alt={`${items[10]?.item_name}`} className="ad-image" />
+                                        <img src={items[10]?.images[1].image_url} alt={`${items[10]?.item_name}`} className="ad-image" />
                                     </Link>
                                 </div>
                                 <div className="ad-container">
