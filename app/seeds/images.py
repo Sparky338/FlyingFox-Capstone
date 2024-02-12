@@ -3,42 +3,37 @@ from app.models import db, Image
 def seed_images():
     Dash = Image(
         item_id ="1",
-        image_url="https://squirrel.ws/img/suits/gallery/sprint/gallery/Sprint2.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/becde89736f3a2666ed35c015b055412e50b6e8c-1159x1240.jpg?w=1159&h=1240&auto=format"
     )
 
     Dash2 = Image(
         item_id ="1",
-        image_url="https://squirrel.ws/img/suits/gallery/sprint/gallery/Sprint4.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/2a961ad63f7be04550a45572eb8d9f04e76f1e0b-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Dash3 = Image(
         item_id ="1",
-        image_url="https://squirrel.ws/img/suits/gallery/sprint/gallery/Sprint5.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/b328b1a57c149d864150fa25ff9b8502afbe684a-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     River = Image(
         item_id ="2",
-        image_url="https://squirrel.ws/img/suits/gallery/swift4/gallery/02-Swift4-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/2db5a6930ce1acb375558276a5f7d444b2e555b2-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     River2 = Image(
         item_id ="2",
-        image_url="https://squirrel.ws/img/suits/gallery/swift4/gallery/03-Swift4-v2-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/0d2472bcb42bf893e1d7dcd6b654f197fd9d676c-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     River3 = Image(
         item_id ="2",
-        image_url="https://squirrel.ws/img/suits/gallery/swift4/gallery/08-Swift4-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/0b6fd5df539941c0826cf87813d89996399fd71f-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     River4 = Image(
         item_id ="2",
-        image_url="https://squirrel.ws/img/suits/gallery/swift4/gallery/09-Swift4-580x620.jpg"
-    )
-
-    River5 = Image(
-        item_id ="2",
-        image_url="https://squirrel.ws/img/suits/gallery/swift4/gallery/10-Swift4-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/51c6901f4675825af3a084bb5eb21e53bde1c0f3-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     BTC = Image(
