@@ -158,59 +158,59 @@ def seed_images():
 
     Racer = Image(
         item_id ="7",
-        image_url="https://squirrel.ws/img/suits/gallery/c-race/gallery/7-C-Race-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/1e3fa6e6d09eaa54bc5dc25fa24c467eb981c2be-580x620.jpg?w=580&h=620&auto=format"
     )
 
     Racer2 = Image(
         item_id ="7",
-        image_url="https://squirrel.ws/img/suits/gallery/c-race/gallery/8-C-Race-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/b1ccdb6c1ea54f7be5a77352e98a7d1f5b29d016-580x620.jpg?w=580&h=620&auto=format"
     )
 
     Racer3 = Image(
         item_id ="7",
-        image_url="https://squirrel.ws/img/suits/gallery/c-race/gallery/9-C-Race-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/a6558fdc1a8e45f6126ae25dab9a8448e19fa7d3-580x620.jpg?w=580&h=620&auto=format"
     )
 
     Daiko = Image(
         item_id ="8",
-        image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/02-Sumo3-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/cbcf9cd0d7fcccb7f24425b91f39a3237819a79f-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Daiko2 = Image(
         item_id ="8",
-        image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/03-Sumo3-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/1f0288ac203a1cdf61a39923d62a3b9a66ce2375-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Daiko3 = Image(
         item_id ="8",
-        image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/04-Sumo3-580x620.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/5a0b0531089d949dd9f8f3c001fbadaed9e547e5-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
 
-    Daiko4 = Image(
-        item_id ="8",
-        image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/05-Sumo3-580x620.jpg"
-    )
+    # Daiko4 = Image(
+    #     item_id ="8",
+    #     image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/05-Sumo3-580x620.jpg"
+    # )
 
-    Daiko5 = Image(
-        item_id ="8",
-        image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/06-Sumo3-580x620.jpg"
-    )
+    # Daiko5 = Image(
+    #     item_id ="8",
+    #     image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/06-Sumo3-580x620.jpg"
+    # )
 
-    Daiko6 = Image(
-        item_id ="8",
-        image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/08-Sumo3-580x620.jpg"
-    )
+    # Daiko6 = Image(
+    #     item_id ="8",
+    #     image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/08-Sumo3-580x620.jpg"
+    # )
 
-    Daiko7 = Image(
-        item_id ="8",
-        image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/09-Sumo3-580x620.jpg"
-    )
+    # Daiko7 = Image(
+    #     item_id ="8",
+    #     image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/09-Sumo3-580x620.jpg"
+    # )
 
-    Daiko8 = Image(
-        item_id ="8",
-        image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/10-Sumo3-580x620.jpg"
-    )
+    # Daiko8 = Image(
+    #     item_id ="8",
+    #     image_url="https://squirrel.ws/img/suits/gallery/sumo3/gallery/10-Sumo3-580x620.jpg"
+    # )
 
     Mutant = Image(
         item_id ="9",

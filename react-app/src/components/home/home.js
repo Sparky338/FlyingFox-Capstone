@@ -69,7 +69,7 @@ const HomePage = () => {
                                 <div className="ad-container">
                                     <Link to="/items/8" className="ad-item-link" >
                                         <div className="ad-item-name">{items[8]?.item_name}</div>
-                                        <img src={items[8]?.images[2].image_url} alt={`${items[8]?.item_name}`} className="ad-image" />
+                                        <img src={items[8]?.images[1].image_url} alt={`${items[8]?.item_name}`} className="ad-image" />
                                     </Link>
                                 </div>
                             </div>
