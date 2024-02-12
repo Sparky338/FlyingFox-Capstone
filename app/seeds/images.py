@@ -214,32 +214,32 @@ def seed_images():
 
     Mutant = Image(
         item_id ="9",
-        image_url="https://squirrel.ws/img/suits/gallery/mutation2/gallery/04-Mutation2-640x480.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/3bc4b6321c48380838be285a5454d2a8df14c586-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Mutant2 = Image(
         item_id ="9",
-        image_url="https://squirrel.ws/img/suits/gallery/mutation2/gallery/05-Mutation2-640x480.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/6104b1695fa5ca31487afda63f6e13002a6de7f8-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Mutant3 = Image(
         item_id ="9",
-        image_url="https://squirrel.ws/img/suits/gallery/mutation2/gallery/06-Mutation2-640x480.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/aae6e01d41ec4e715784d9c39b9da4a9f0be7699-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Mutant4 = Image(
         item_id ="9",
-        image_url="https://squirrel.ws/img/suits/gallery/mutation2/gallery/07-Mutation2-640x480.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/091b3dbf3528e62dfebe1c37cdab30b7ec3d042f-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Mutant5 = Image(
         item_id ="9",
-        image_url="https://squirrel.ws/img/suits/gallery/mutation2/gallery/08-Mutation2-640x480.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/31ef347ed393f8163002032822cc4e800883bd9c-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     Mutant6 = Image(
         item_id ="9",
-        image_url="https://squirrel.ws/img/suits/gallery/mutation2/gallery/09-Mutation2-640x480.jpg"
+        image_url="https://cdn.sanity.io/images/m2koza6e/production/1a5e1352b8b0893f53ebc3b0cd7c4a9323635f36-1160x1240.jpg?w=1160&h=1240&auto=format"
     )
 
     SFG = Image(
