@@ -1,3 +1,9 @@
+/* Homepage Articles */
+
+.article-picture {
+    object-fit: cover;
+}
+
 /* News articles */
 .individual-outer,
 .Newspage-outer {
@@ -198,9 +204,6 @@
 }
 
 .next-article-link-container {
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-end; */
     text-align: right;
 }
 
@@ -214,9 +217,6 @@
 }
 
 .next-article-container {
-    /* display: flex;
-    flex-direction: column;
-    align-items:flex-end; */
     text-align: right;
 }
 
