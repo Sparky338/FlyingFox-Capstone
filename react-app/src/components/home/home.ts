@@ -1,6 +1,7 @@
 import ImageGallery from 'react-image-gallery';
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux"; // JS ONLY- does not convert to TS
+import { useAppSelector } from '../utility/hooks'; // Must be used in TS in place of useSelector
 import homepageBannerImages from "../../images/homepageBannerImages";
 import flyingFoxLogo from '../../images/Flying_Fox_Logo.png'
 import "./home.css"
@@ -12,7 +13,7 @@ const HomePage = () => {
         price: string,
         description: string,
         category: string
-    } = useSelector(state => state.items)
+    } = useAppSelector(state => state.items)
 
     const homeImagesCarousel = () => {
         let images = homepageBannerImages.map(image => {
