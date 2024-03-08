@@ -7,7 +7,12 @@ import "./home.css"
 import HomepageArticles from '../articles/homepageArticles';
 
 const HomePage = () => {
-    const items = useSelector(state => state.items)
+    const items: {
+        item_name: string,
+        price: string,
+        description: string,
+        category: string
+    } = useSelector(state => state.items)
 
     const homeImagesCarousel = () => {
         let images = homepageBannerImages.map(image => {

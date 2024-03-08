@@ -8,6 +8,13 @@ import purchasesItemsReducer from './purchasesItems';
 import reviewsReducer from './reviews';
 import session from './session'
 
+/* correct the route for accessing the window in TypeScript */
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
+
 const rootReducer = combineReducers({
   session,
   items:itemsReducer,
@@ -19,7 +26,7 @@ const rootReducer = combineReducers({
 });
 
 
-let enhancer;
+let enhancer: any;
 
 if (process.env.NODE_ENV === 'production') {
   enhancer = applyMiddleware(thunk);
@@ -30,11 +37,14 @@ if (process.env.NODE_ENV === 'production') {
   enhancer = composeEnhancers(applyMiddleware(thunk, logger));
 }
 
-const configureStore = (preloadedState) => {
-  return createStore(rootReducer, preloadedState, enhancer);
+let store: any;
+
+const configureStore = (preloadedState: any) => {
+  store = createStore(rootReducer, preloadedState, enhancer);
+  return store
 };
 
 export default configureStore;
 /* TypeScript type gathering for State */
-// export type RootState = ReturnType<typeof configureStore.getState>
-// export type AppDispatch = typeof configureStore.dispatch
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
