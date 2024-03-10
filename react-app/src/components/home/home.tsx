@@ -6,14 +6,10 @@ import homepageBannerImages from "../../images/homepageBannerImages";
 import flyingFoxLogo from '../../images/Flying_Fox_Logo.png'
 import "./home.css"
 import HomepageArticles from '../articles/homepageArticles';
+import React from 'react';
 
 const HomePage = () => {
-    const items: {
-        item_name: string,
-        price: string,
-        description: string,
-        category: string
-    } = useAppSelector(state => state.items)
+    const items = useAppSelector(state => state.items)
 
     const homeImagesCarousel = () => {
         let images = homepageBannerImages.map(image => {
