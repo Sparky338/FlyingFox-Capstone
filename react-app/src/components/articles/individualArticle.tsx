@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux"; // JS ONLY- does not convert to TS
+import { useAppSelector } from '../utility/hooks'; // Must be used in TS in place of useSelector
 import { Link, useParams } from "react-router-dom";
 import flyingFoxLogo from '../../images/Flying_Fox_Logo.png'
 
@@ -8,8 +9,8 @@ import "./articles.css"
 const IndividualAricle = () => {
 
     const { articleId } = useParams();
-    const articlesObj = useSelector(state => state.articles);
-    const articles = Object.values(articlesObj);
+    const articlesObj = useAppSelector(state => state.articles);
+    const articles: any = Object.values(articlesObj);
 
     useEffect(() => {
         document.body.classList.add('bg-white');
@@ -19,7 +20,8 @@ const IndividualAricle = () => {
         }
     }, [])
 
-    const filteredArticle = articles.filter(article => article.id === +articleId)
+    const filteredArticle: any = articles.filter(
+        (article: { id: number; }) => article.id === +articleId)
 
     return (
         <div className="individual-outer">
@@ -43,7 +45,7 @@ const IndividualAricle = () => {
                             </div>
                         </div>
                         <div className="individual-news-column">
-                            {filteredArticle.map((article) => {
+                            {filteredArticle.map((article: any) => {
                                 return (
                                     <div className="individual-article-display" key={article.id}>
                                         <div className="individual-article-outer">
@@ -67,7 +69,7 @@ const IndividualAricle = () => {
                                     :
                                     <div className="previous-article-link-container">
                                         <Link to={`/news/${+articleId - 1}`} className="previous-article-link">
-                                            <i class="fa-solid fa-angles-left"></i> Previous Article
+                                            <i className="fa-solid fa-angles-left"></i> Previous Article
                                         </Link>
                                         <div className="previous-article-container">
                                             <div className="previous-article-image-container">
@@ -89,7 +91,7 @@ const IndividualAricle = () => {
                                     :
                                     <div className="next-article-link-container">
                                         <Link to={`/news/${+articleId + 1}`} className="next-article-link">
-                                            Next Article <i class="fa-solid fa-angles-right"></i>
+                                            Next Article <i className="fa-solid fa-angles-right"></i>
                                         </Link>
                                         <div className="next-article-container">
                                             <div className="next-article-image-container">
