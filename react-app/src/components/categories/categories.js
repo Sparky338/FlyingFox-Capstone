@@ -22,6 +22,7 @@ const Categories = () => {
         const categoryItems = items.filter(item => item.category.toLowerCase() === categoryName)
 
         setCategoryItems(categoryItems);
+        // eslint-disable-next-line
     }, [categoryName])
 
     if (!itemsObj) return null;

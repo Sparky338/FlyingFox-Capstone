@@ -44,6 +44,7 @@ const SignUpForm = () => {
     }
 
     setErrors(validationError);
+    // eslint-disable-next-line
   }, [firstName, lastName, email, repeatEmail, password, repeatPassword])
 
   const onSignUp = async (e) => {
