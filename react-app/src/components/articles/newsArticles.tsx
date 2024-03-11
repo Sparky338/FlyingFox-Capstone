@@ -1,14 +1,15 @@
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux"; // JS ONLY- does not convert to TS
+import { useAppSelector } from "../utility/hooks";// Must be used in TS in place of useSelector
 import { Link } from "react-router-dom";
 
 const NewsArticles = () => { //HOC for news page
-    const articlesObj = useSelector(state => state.articles);
+    const articlesObj = useAppSelector(state => state.articles);
     const reversedArticles = Object.entries(articlesObj).reverse();
 
 
     return (
         <div className="news-articles-outer">
-            {reversedArticles.map((article, i) => {
+            {reversedArticles.map((article: any, i) => {
                 return (
                     <div className="news-articles-container" key={i}>
                         <img src={article[1].image_url}
