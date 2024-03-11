@@ -25,7 +25,7 @@ const HomepageArticles = () => { //HOC for articles on homepage
                             <div className="article-content">{article[1].article}</div>
                         </div>
                         <div className="full-articles-container">
-                            <Link to={`/news/${article[0]}`} className="full-articles">Read More <i class="fa-solid fa-angles-right"></i></Link>
+                            <Link to={`/news/${article[0]}`} className="full-articles">Read More <i className="fa-solid fa-angles-right"></i></Link>
                         </div>
                     </div>
                 )

@@ -35,6 +35,7 @@ export default function itemsReducer(state = initialState, action) {
     switch (action.type) {
         case GET_ITEMS:
             action.items.forEach((item) =>
+            // eslint-disable-next-line
                 (item.images.sort((a, b) => a.id - b.id),
                 newState[item.id] = item))
             return newState;

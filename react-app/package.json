@@ -44,6 +44,7 @@
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
+    "@typescript-eslint/parser": "^5.62.0",
     "source-map-loader": "^5.0.0",
     "ts-loader": "^9.5.1",
     "typescript": "^5.3.3"
