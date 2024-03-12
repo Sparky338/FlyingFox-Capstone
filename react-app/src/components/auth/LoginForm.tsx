@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import { useSelector, useDispatch } from 'react-redux'; // JS ONLY- does not convert to TS
-import { useAppSelector, useAppDispatch } from '../utility/hooks'; // Must be used in TS in place of useSelector
+import { useAppSelector, useAppDispatch } from '../utility/hooks'; // Must be used in TS in place of useSelector and useDispatch
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
