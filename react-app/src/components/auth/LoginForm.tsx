@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+// import { useSelector, useDispatch } from 'react-redux'; // JS ONLY- does not convert to TS
+import { useAppSelector, useAppDispatch } from '../utility/hooks'; // Must be used in TS in place of useSelector
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
@@ -9,10 +10,10 @@ const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const user = useSelector(state => state.session.user);
-  const dispatch = useDispatch();
+  const user = useAppSelector(state => state.session.user);
+  const dispatch = useAppDispatch();
 
-  const onLogin = async (e) => {
+  const onLogin = async (e: any) => {
     e.preventDefault();
     const data = await dispatch(login(email, password));
     if (data) {
@@ -25,11 +26,11 @@ const LoginForm = () => {
     setPassword('password');
   }
 
-  const updateEmail = (e) => {
+  const updateEmail = (e: any) => {
     setEmail(e.target.value);
   };
 
-  const updatePassword = (e) => {
+  const updatePassword = (e: any) => {
     setPassword(e.target.value);
   };
 
