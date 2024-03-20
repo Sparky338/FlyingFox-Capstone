@@ -1,5 +1,6 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux'; // JS ONLY- does not convert to TS
+import { useAppDispatch } from '../utility/hooks'; // Must be used in TS in place of useDispatch
 import { useHistory } from 'react-router-dom';
 import { clearPurchaseAction } from '../../store/purchases';
 import { clearPurchaseItemsAction } from '../../store/purchasesItems';
@@ -8,8 +9,8 @@ import "../Navbar.css"
 
 const LogoutButton = () => {
   const history = useHistory()
-  const dispatch = useDispatch()
-  const onLogout = async (e) => {
+  const dispatch = useAppDispatch()
+  const onLogout = async (e: any) => {
     localStorage.clear()
     await dispatch(logout());
     await dispatch(clearPurchaseItemsAction())

@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+// Must be used in TS in place of useSelector/ useDispatch
+import { useAppSelector, useAppDispatch } from '../utility/hooks';
+// JS ONLY- does not convert to TS
+// import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 
 import validator from 'validator';
 
 const SignUpForm = () => {
-  const user = useSelector(state => state.session.user);
-  const dispatch = useDispatch();
+  const user = useAppSelector(state => state.session.user);
+  const dispatch = useAppDispatch();
 
   const [errors, setErrors] = useState([]);
   const [firstName, setFirstName] = useState('');
@@ -18,7 +21,10 @@ const SignUpForm = () => {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const validationError = [];
+  const validationError: any = [];
+  // type should be string[], however errors is typed never[],
+  // causing issues with setErrors below
+
   useEffect(() => {
     if (!firstName) {
       validationError.push("First name is required")
@@ -47,7 +53,7 @@ const SignUpForm = () => {
     // eslint-disable-next-line
   }, [firstName, lastName, email, repeatEmail, password, repeatPassword])
 
-  const onSignUp = async (e) => {
+  const onSignUp = async (e: any) => {
     e.preventDefault();
     setIsSubmitted(true);
     if (errors.length) return;
@@ -60,27 +66,27 @@ const SignUpForm = () => {
     }
   };
 
-  const updateFirstName = (e) => {
+  const updateFirstName = (e: any) => {
     setFirstName(e.target.value);
   };
 
-  const updateLastName = (e) => {
+  const updateLastName = (e: any) => {
     setLastName(e.target.value);
   };
 
-  const updateEmail = (e) => {
+  const updateEmail = (e: any) => {
     setEmail(e.target.value);
   };
 
-  const updateRepeatEmail = (e) => {
+  const updateRepeatEmail = (e: any) => {
     setRepeatEmail(e.target.value);
   };
 
-  const updatePassword = (e) => {
+  const updatePassword = (e: any) => {
     setPassword(e.target.value);
   };
 
-  const updateRepeatPassword = (e) => {
+  const updateRepeatPassword = (e: any) => {
     setRepeatPassword(e.target.value);
   };
 

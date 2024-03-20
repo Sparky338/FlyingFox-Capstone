@@ -10,7 +10,7 @@ const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
   const itemsState = useSelector(state => state.items);
 
-  const cartIcon = <i class="fa-solid fa-cart-shopping"></i>
+  const cartIcon = <i className="fa-solid fa-cart-shopping"></i>
 
   let sessionLinks;
   sessionUser ?

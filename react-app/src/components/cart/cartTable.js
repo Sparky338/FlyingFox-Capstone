@@ -9,7 +9,7 @@ const CartTable = ({cartState, setCartState, itemQty, setQtyState}) => {
     };
     const dollarFormatter = new Intl.NumberFormat("en-US", formatting_options);
 
-    const xIcon = <i class="fa-solid fa-x"></i>;
+    const xIcon = <i className="fa-solid fa-x"></i>;
 
     const handleQty = (qty, itemId) => {
         if (parseInt(qty) <= 0 || isNaN(parseInt(qty))) {
