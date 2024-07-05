@@ -16,7 +16,7 @@ def seed_reviews():
         purchase_id="2",
         first_name="Demo",
         last_name="Lition",
-        review="This is an wingsuit rocks! so much more power than the Dash.",
+        review="This wingsuit rocks! so much more power than the Dash.",
         image_url="https://www.rockskymarket.com/9504/squirrel-swift-3-wingsuit-jumpsuits.jpg"
     )
     third_demo = Review (
@@ -25,7 +25,7 @@ def seed_reviews():
         purchase_id="3",
         first_name="Demo",
         last_name="Lition",
-        review="This is an wingsuit is even better! I love flying with my friends in it!",
+        review="This wingsuit is even better! I love flying with my friends in it!",
         image_url="https://www.rockskymarket.com/9514-thickbox_default/squirrel-atc-2-wingsuit-jumpsuits.jpg"
     )
     three_demo = Review (

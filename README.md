@@ -86,10 +86,14 @@ pipenv install -r requirements.txt
    flask run
    ```
 
-6. To run the React App in development, in a new terminal, get into react-app and start it
+6. To run the React App in development, in a new terminal, get into react-app, install the npm packages, and start it
 
    ```bash
    cd react-app
+   ```
+
+   ```bash
+   npm install
    ```
 
    ```bash
