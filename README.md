@@ -108,4 +108,35 @@ pipenv install -r requirements.txt
 [Portfolio](https://sparky338.github.io/)
 
 [matthewjhutter@gmail.com](mailto:matthewjhutter@gmail.com)
-# Key_Conservation_assessment
+
+## Troubleshooting
+
+If you encounter
+```bash
+ImportError: cannot import name 'safe_str_cmp' from 'werkzeug.security' (.../FlyingFox-Capstone/.venv/lib/python3.9/site-packages/werkzeug/security.py)
+```
+some code must be added to import 'safe_str_cmp' using hmac due to the deprecation of
+'safe_str_cmp'. Please find a working snippet here that can be added to the end of
+```security.py```
+
+<details>
+   <summary>hmac 'safe_str_cmp' code</summary>
+
+   ```python
+   def safe_str_cmp(a: str, b: str) -> bool:
+      """This function compares strings in somewhat constant time. This
+      requires that the length of at least one string is known in advance.
+
+      Returns `True` if the two strings are equal, or `False` if they are not.
+      """
+
+      if isinstance(a, str):
+         a = a.encode("utf-8")  # type: ignore
+
+      if isinstance(b, str):
+         b = b.encode("utf-8")  # type: ignore
+
+      return hmac.compare_digest(a, b)
+
+    ```
+</details>
