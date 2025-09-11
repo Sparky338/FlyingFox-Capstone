@@ -19,7 +19,7 @@ const DeveloperAbout = () => {
                     to code in Javascript, Typescript, Python, Pandas, Flask, and
                     React/Redux while attending AppAcademy and beyond with mentorship.
                     Matt learned to skydive in May 2021 and has loved every second of it.
-                    He currently pilots an ATC 3 wingsuit, after receiving coaching
+                    He currently pilots an ATC 4 wingsuit, after receiving coaching
                     from some of the best wingsuit pilots in the Pacific Northwest at
                     Skydive Kapowsin.
                 </div>
